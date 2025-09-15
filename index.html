@@ -472,86 +472,143 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="bg-light">
-        <div class="container">
-            <div class="section-title">
-                <h2>Mes projets</h2>
-            </div>
-            
-            <!-- Projects Tabs -->
-            <ul class="nav nav-pills justify-content-center mb-5" id="projectsTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="bloc1-programmation-tab" data-bs-toggle="pill" data-bs-target="#bloc1-programmation" type="button" role="tab" aria-controls="bloc1-programmation" aria-selected="true">Bloc1-Programmation</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="bloc1-reseau-tab" data-bs-toggle="pill" data-bs-target="#bloc1-reseau" type="button" role="tab" aria-controls="bloc1-reseau" aria-selected="false">Bloc1-Réseau</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="atelier-pro-tab" data-bs-toggle="pill" data-bs-target="#atelier-pro" type="button" role="tab" aria-controls="atelier-pro" aria-selected="false">Atelier Pro</button>
-                </li>
-            </ul>
-            
-            <div class="tab-content" id="projectsTabContent">
-                <!-- Bloc1-Programmation -->
-                <div class="tab-pane fade show active" id="bloc1-programmation" role="tabpanel" aria-labelledby="bloc1-programmation-tab">
-                    <div class="row">
-                        <!-- Projet 1 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="project-card">
-                                <img src="minialabyrinthe.png" class="project-img card-img-top" alt="Projet développement web">
-                                <div class="card-body">
-                                    <h5 class="card-title">Labyrinthe</h5>
-                                    <p class="card-text">Début de la programmation en Java</p>
-                                    <button class="btn btn-report" onclick="downloadReport('labyrinthe.pdf')">
-                                        <i class="fas fa-download me-2"></i>Compte rendu
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Bloc1-Réseau -->
-                <div class="tab-pane fade" id="bloc1-reseau" role="tabpanel" aria-labelledby="bloc1-reseau-tab">
-                    <div class="row">
-                        <!-- Projet 2 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="project-card">
-                                <img src="testcable.jpg" class="project-img card-img-top" alt="Projet réseau">
-                                <div class="card-body">
-                                    <h5 class="card-title">La panne</h5>
-                                    <p class="card-text">Trouver et résoudre les différentes pannes dans notre réseau</p>
-                                    <button class="btn btn-report" onclick="downloadReport('reparerreseau.pdf')">
-                                        <i class="fas fa-download me-2"></i>Compte rendu
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Atelier Pro -->
-                <div class="tab-pane fade" id="atelier-pro" role="tabpanel" aria-labelledby="atelier-pro-tab">
-                    <div class="row">
-                        <!-- Projet 3 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="project-card">
-                                <img src="deepseek.png" class="project-img card-img-top" alt="Projet entreprise">
-                                <div class="card-body">
-                                    <h5 class="card-title">Le Portfolio</h5>
-                                    <p class="card-text">Comment développer un portdolio uniquement grâce à l'IA</p>
-                                    <button class="btn btn-report" onclick="downloadReport('creationportfolio.pdf')">
-                                        <i class="fas fa-download me-2"></i>Compte rendu
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+ <!-- Projects Section -->
+<section id="projects" class="bg-light">
+    <div class="container">
+        <div class="section-title">
+            <h2>Mes projets</h2>
         </div>
-    </section>
+        
+        <!-- Projects Tabs -->
+        <ul class="nav nav-pills justify-content-center mb-5" id="projectsTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="bloc1-programmation-tab" data-bs-toggle="pill" data-bs-target="#bloc1-programmation" type="button" role="tab" aria-controls="bloc1-programmation" aria-selected="true">Bloc1-Programmation</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="bloc1-reseau-tab" data-bs-toggle="pill" data-bs-target="#bloc1-reseau" type="button" role="tab" aria-controls="bloc1-reseau" aria-selected="false">Bloc1-Réseau</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="atelier-pro-tab" data-bs-toggle="pill" data-bs-target="#atelier-pro" type="button" role="tab" aria-controls="atelier-pro" aria-selected="false">Atelier Pro</button>
+            </li>
+            <!-- NOUVEAUX ONGLET -->
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="bloc3-programmation-tab" data-bs-toggle="pill" data-bs-target="#bloc3-programmation" type="button" role="tab" aria-controls="bloc3-programmation" aria-selected="false">Bloc3-Programmation</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="bloc3-reseau-tab" data-bs-toggle="pill" data-bs-target="#bloc3-reseau" type="button" role="tab" aria-controls="bloc3-reseau" aria-selected="false">Bloc3-Réseau</button>
+            </li>
+        </ul>
+        
+        <div class="tab-content" id="projectsTabContent">
+            <!-- Bloc1-Programmation -->
+            <div class="tab-pane fade show active" id="bloc1-programmation" role="tabpanel" aria-labelledby="bloc1-programmation-tab">
+                <div class="row">
+                    <!-- Projet 1 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="project-card">
+                            <img src="minialabyrinthe.png" class="project-img card-img-top" alt="Projet développement web">
+                            <div class="card-body">
+                                <h5 class="card-title">Labyrinthe</h5>
+                                <p class="card-text">Début de la programmation en Java</p>
+                                <button class="btn btn-report" onclick="downloadReport('labyrinthe.pdf')">
+                                    <i class="fas fa-download me-2"></i>Compte rendu
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- NOUVEAU PROJET -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="project-card">
+                            <img src="echecs.png" class="project-img card-img-top" alt="Projet jeu d'échecs">
+                            <div class="card-body">
+                                <h5 class="card-title">Jeu d'Échecs</h5>
+                                <p class="card-text">Création d'un jeu d'échecs en Python avec interface graphique</p>
+                                <button class="btn btn-report" onclick="downloadReport('echecs.pdf')">
+                                    <i class="fas fa-download me-2"></i>Compte rendu
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bloc1-Réseau -->
+            <div class="tab-pane fade" id="bloc1-reseau" role="tabpanel" aria-labelledby="bloc1-reseau-tab">
+                <div class="row">
+                    <!-- Projet 2 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="project-card">
+                            <img src="testcable.jpg" class="project-img card-img-top" alt="Projet réseau">
+                            <div class="card-body">
+                                <h5 class="card-title">La panne</h5>
+                                <p class="card-text">Trouver et résoudre les différentes pannes dans notre réseau</p>
+                                <button class="btn btn-report" onclick="downloadReport('reparerreseau.pdf')">
+                                    <i class="fas fa-download me-2"></i>Compte rendu
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Atelier Pro -->
+            <div class="tab-pane fade" id="atelier-pro" role="tabpanel" aria-labelledby="atelier-pro-tab">
+                <div class="row">
+                    <!-- Projet 3 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="project-card">
+                            <img src="deepseek.png" class="project-img card-img-top" alt="Projet entreprise">
+                            <div class="card-body">
+                                <h5 class="card-title">Le Portfolio</h5>
+                                <p class="card-text">Comment développer un portfolio uniquement grâce à l'IA</p>
+                                <button class="btn btn-report" onclick="downloadReport('creationportfolio.pdf')">
+                                    <i class="fas fa-download me-2"></i>Compte rendu
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bloc3-Programmation -->
+            <div class="tab-pane fade" id="bloc3-programmation" role="tabpanel" aria-labelledby="bloc3-programmation-tab">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="project-card">
+                            <img src="projetbloc3prog.png" class="project-img card-img-top" alt="Projet bloc3 prog">
+                            <div class="card-body">
+                                <h5 class="card-title">Projet Bloc3 Programmation</h5>
+                                <p class="card-text">Description de ton projet Bloc3 Programmation</p>
+                                <button class="btn btn-report" onclick="downloadReport('bloc3prog.pdf')">
+                                    <i class="fas fa-download me-2"></i>Compte rendu
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bloc3-Réseau -->
+            <div class="tab-pane fade" id="bloc3-reseau" role="tabpanel" aria-labelledby="bloc3-reseau-tab">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="project-card">
+                            <img src="projetbloc3reseau.png" class="project-img card-img-top" alt="Projet bloc3 réseau">
+                            <div class="card-body">
+                                <h5 class="card-title">Projet Bloc3 Réseau</h5>
+                                <p class="card-text">Description de ton projet Bloc3 Réseau</p>
+                                <button class="btn btn-report" onclick="downloadReport('bloc3reseau.pdf')">
+                                    <i class="fas fa-download me-2"></i>Compte rendu
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
 
     <!-- Experience Section -->
     <section id="experience">
