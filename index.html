@@ -72,8 +72,6 @@
             display: flex;
             align-items: center;
         }
-        /* Style profile-img supprimé car l'image est retirée, mais je laisse la classe au cas où tu voudrais la remettre ailleurs plus tard
-        .profile-img { ... } */
         
         .hero h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; color: #ffffff; text-shadow: 0 0 20px rgba(16, 185, 129, 0.2); }
         .hero .lead { color: var(--text-sub) !important; font-weight: 400; font-size: 1.1rem;}
@@ -373,6 +371,7 @@
                 <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#bloc1-prog">Prog (Bloc 1)</button></li>
                 <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#bloc1-net">Réseau (Bloc 1)</button></li>
                 <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#atelier">Atelier Pro</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#bloc3-prog">Prog (Bloc 3)</button></li>
                 <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#bloc3-reseau">Réseau (Bloc 3)</button></li>
             </ul>
 
@@ -436,6 +435,21 @@
                                     <h5>Portfolio IA</h5>
                                     <p class="small text-muted">Création assistée</p>
                                     <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('creationportfolio.pdf')">Compte-rendu</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="bloc3-prog">
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="glass-card project-card">
+                                <img src="projet_b3.jpg" class="project-img card-img-top" alt="Projet B3">
+                                <div class="p-4 text-center">
+                                    <h5>Projet de Dev (B3)</h5>
+                                    <p class="small text-muted">Développement Avancé</p>
+                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('rapport_b3_prog.pdf')">Compte-rendu</button>
                                 </div>
                             </div>
                         </div>
