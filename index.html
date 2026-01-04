@@ -157,8 +157,21 @@
         .project-card:hover { transform: translateY(-10px); }
         .project-img { height: 200px; object-fit: cover; opacity: 0.9; transition: 0.3s; border-bottom: 1px solid var(--glass-border); }
         .project-card:hover .project-img { opacity: 1; }
-        .project-card h5 { color: var(--primary); font-weight: 700; }
-        .project-card p { color: var(--text-sub) !important; }
+        .project-card h5 { color: var(--primary); font-weight: 700; margin-bottom: 5px; }
+        .project-card p { color: var(--text-sub) !important; margin-bottom: 10px; }
+
+        /* STYLE POUR LA DATE DES PROJETS */
+        .project-date {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            opacity: 0.8;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        .project-date i {
+            color: var(--secondary);
+            margin-right: 5px;
+        }
 
         /* Badges & Veille Elements */
         .language-badge {
@@ -384,6 +397,7 @@
                                 <div class="p-4 text-center">
                                     <h5>Labyrinthe Java</h5>
                                     <p class="small text-muted">Algorithmique & Java</p>
+                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 15 oct. 2024</div>
                                     <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('labyrinthe.pdf')">Compte-rendu</button>
                                 </div>
                             </div>
@@ -394,6 +408,7 @@
                                 <div class="p-4 text-center">
                                     <h5>Jeu Shifumi</h5>
                                     <p class="small text-muted">Logique de jeu en Java</p>
+                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 20 nov. 2024</div>
                                     <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('shifumi.pdf')">Compte-rendu</button>
                                 </div>
                             </div>
@@ -404,6 +419,7 @@
                                 <div class="p-4 text-center">
                                     <h5>Bataille Navale</h5>
                                     <p class="small text-muted">Tableaux & Structures</p>
+                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 10 déc. 2024</div>
                                     <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp08.pdf')">Compte-rendu</button>
                                 </div>
                             </div>
@@ -419,6 +435,7 @@
                                 <div class="p-4 text-center">
                                     <h5>Dépannage Réseau</h5>
                                     <p class="small text-muted">Diagnostic physique</p>
+                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 5 janv. 2025</div>
                                     <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('reparerreseau.pdf')">Compte-rendu</button>
                                 </div>
                             </div>
@@ -434,6 +451,7 @@
                                 <div class="p-4 text-center">
                                     <h5>Portfolio IA</h5>
                                     <p class="small text-muted">Création assistée</p>
+                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 3 janv. 2026</div>
                                     <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('creationportfolio.pdf')">Compte-rendu</button>
                                 </div>
                             </div>
@@ -449,6 +467,7 @@
                                 <div class="p-4 text-center">
                                     <h5>Projet de Dev (B3)</h5>
                                     <p class="small text-muted">Développement Avancé</p>
+                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 12 déc. 2025</div>
                                     <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('rapport_b3_prog.pdf')">Compte-rendu</button>
                                 </div>
                             </div>
@@ -464,6 +483,7 @@
                                 <div class="p-4 text-center">
                                     <h5>Serveur NAS</h5>
                                     <p class="small text-muted">Stockage réseau</p>
+                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 28 nov. 2025</div>
                                     <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3stp04.pdf')">Compte-rendu</button>
                                 </div>
                             </div>
