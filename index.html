@@ -12,14 +12,14 @@
     <style>
         :root {
             /* PALETTE EMERAUDE & OR CUIVRÉ */
-            --bg-dark: #050a08;           /* Fond très sombre (presque noir mais teinté vert) */
-            --bg-card: rgba(10, 20, 15, 0.85); /* Fond des cartes plus opaque */
+            --bg-dark: #050a08;           
+            --bg-card: rgba(10, 20, 15, 0.85); 
             --primary: #10b981;           /* Vert Émeraude */
-            --secondary: #fbbf24;         /* Or / Ambre plus lumineux */
+            --secondary: #fbbf24;         /* Or / Ambre */
             
             /* COULEURS DE TEXTE (PLUS DE GRIS) */
-            --text-main: #ffffff;         /* Blanc Pur */
-            --text-sub: #d1fae5;          /* Vert Menthe très pâle (remplace le gris) */
+            --text-main: #ffffff;         
+            --text-sub: #d1fae5;          /* Vert Menthe très pâle */
             
             --glass-border: rgba(16, 185, 129, 0.3);
         }
@@ -32,17 +32,14 @@
             overflow-x: hidden;
         }
 
-        /* Override Bootstrap text-muted pour enlever le gris */
-        .text-muted {
-            color: var(--text-sub) !important;
-        }
+        .text-muted { color: var(--text-sub) !important; }
 
         /* Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: var(--bg-dark); }
         ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
 
-        /* Effet Glassmorphism */
+        /* Glassmorphism */
         .glass-card {
             background: var(--bg-card);
             backdrop-filter: blur(12px);
@@ -67,7 +64,7 @@
         .nav-link { color: var(--text-main) !important; font-weight: 500; margin: 0 10px; transition: 0.3s; opacity: 0.9; }
         .nav-link:hover { color: var(--secondary) !important; opacity: 1; text-shadow: 0 0 10px rgba(251, 191, 36, 0.4); }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
             padding: 180px 0 100px;
             background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.2), transparent 40%),
@@ -82,47 +79,31 @@
             box-shadow: 0 0 25px rgba(16, 185, 129, 0.4);
             background: rgba(255,255,255,0.05);
         }
-        .hero h1 { 
-            font-size: 4rem; 
-            font-weight: 800; 
-            margin-bottom: 1rem; 
-            color: #ffffff;
-            text-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
-        }
-        .hero .lead {
-            color: var(--text-sub) !important;
-            font-weight: 400;
-        }
+        .hero h1 { font-size: 4rem; font-weight: 800; margin-bottom: 1rem; color: #ffffff; text-shadow: 0 0 20px rgba(16, 185, 129, 0.2); }
+        .hero .lead { color: var(--text-sub) !important; font-weight: 400; }
 
         /* Sections */
         section { padding: 100px 0; }
-        .section-title h2 {
-            font-weight: 700;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            text-align: center;
-            color: #ffffff;
-        }
+        .section-title h2 { font-weight: 700; font-size: 2.5rem; margin-bottom: 50px; text-align: center; color: #ffffff; }
         .section-title h2 span { 
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* Progress Bars */
+        /* Skills */
         .skill-bar { height: 8px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
         .skill-progress { background: linear-gradient(90deg, var(--primary), #34d399); }
 
-        /* Project Cards */
+        /* Projects */
         .project-card { height: 100%; overflow: hidden; }
         .project-card:hover { transform: translateY(-10px); }
         .project-img { height: 200px; object-fit: cover; opacity: 0.9; transition: 0.3s; border-bottom: 1px solid var(--glass-border); }
         .project-card:hover .project-img { opacity: 1; }
-        
         .project-card h5 { color: var(--primary); font-weight: 700; }
         .project-card p { color: var(--text-sub) !important; }
 
-        /* Badges */
+        /* Badges & Veille Elements */
         .language-badge {
             background: rgba(251, 191, 36, 0.15);
             border: 1px solid var(--secondary);
@@ -134,13 +115,45 @@
             font-weight: 600;
         }
 
-        /* Table */
+        /* Nouveaux styles pour la Veille (Grille d'évaluation) */
+        .veille-method-card {
+            height: 100%;
+            padding: 20px;
+            text-align: left;
+        }
+        .veille-icon {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        .veille-label {
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        
+        /* Table Veille Améliorée */
         .table-veille { color: var(--text-main); border-color: var(--glass-border); }
         .table-veille thead { border-bottom: 2px solid var(--primary); }
-        .table-veille th { color: var(--primary); font-weight: 600; border: none; font-size: 1.1rem; }
-        .table-veille td { border-bottom: 1px solid rgba(16, 185, 129, 0.2); padding: 15px; }
-        .table-veille a { color: var(--secondary); font-weight: 600; text-decoration: none; }
-        .table-veille a:hover { text-decoration: underline; color: #ffffff; }
+        .table-veille th { color: var(--primary); font-weight: 600; border: none; font-size: 1rem; vertical-align: middle; }
+        .table-veille td { border-bottom: 1px solid rgba(16, 185, 129, 0.2); padding: 20px 15px; vertical-align: middle; font-size: 0.95rem; }
+        .table-veille a { color: var(--secondary); font-weight: 600; text-decoration: none; border-bottom: 1px dashed var(--secondary); }
+        .table-veille a:hover { color: #ffffff; border-color: #ffffff; }
+
+        /* Badges d'impact */
+        .badge-impact {
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .impact-high { background: rgba(251, 191, 36, 0.2); color: var(--secondary); border: 1px solid var(--secondary); }
+        .impact-med { background: rgba(16, 185, 129, 0.2); color: var(--primary); border: 1px solid var(--primary); }
+        .impact-low { background: rgba(255, 255, 255, 0.1); color: var(--text-sub); border: 1px solid var(--text-sub); }
 
         /* Buttons */
         .btn-custom {
@@ -148,47 +161,32 @@
             border: 1px solid rgba(255,255,255,0.2);
             color: white; border-radius: 50px;
             padding: 12px 30px; font-weight: 700; transition: 0.3s;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+            text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;
         }
         .btn-custom:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(16, 185, 129, 0.5); color: white; border-color: white; }
         
         .btn-outline-light { border-color: var(--text-sub); color: var(--text-main); }
         .btn-outline-light:hover { border-color: var(--secondary); color: var(--bg-dark); background: var(--secondary); }
 
-        .btn-outline-primary {
-            border-color: var(--primary); color: var(--primary); font-weight: 600;
-        }
-        .btn-outline-primary:hover {
-            background: var(--primary); border-color: var(--primary); color: #ffffff; box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
-        }
+        .btn-outline-primary { border-color: var(--primary); color: var(--primary); font-weight: 600; }
+        .btn-outline-primary:hover { background: var(--primary); border-color: var(--primary); color: #ffffff; box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
 
-        /* Nav Pills (Projects) */
+        /* Nav Pills */
         .nav-pills .nav-link { background: rgba(255,255,255,0.05); color: var(--text-main) !important; border: 1px solid var(--glass-border); margin: 5px; border-radius: 50px; }
         .nav-pills .nav-link:hover { border-color: var(--primary); color: var(--primary) !important; }
         .nav-pills .nav-link.active { background: var(--primary) !important; color: white !important; border-color: var(--primary); box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
 
-        /* Form inputs */
-        .form-control {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid var(--glass-border);
-            color: #ffffff;
-            font-weight: 500;
-        }
+        /* Forms */
+        .form-control { background: rgba(255, 255, 255, 0.08); border: 1px solid var(--glass-border); color: #ffffff; font-weight: 500; }
         .form-control::placeholder { color: rgba(255,255,255,0.5); }
-        .form-control:focus {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: var(--primary);
-            box-shadow: 0 0 0 0.25rem rgba(16, 185, 129, 0.25);
-            color: #ffffff;
-        }
+        .form-control:focus { background: rgba(255, 255, 255, 0.15); border-color: var(--primary); box-shadow: 0 0 0 0.25rem rgba(16, 185, 129, 0.25); color: #ffffff; }
 
-        /* Footer */
         footer p { color: var(--text-sub) !important; }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
+            .table-veille th, .table-veille td { min-width: 120px; }
+            .table-veille td:nth-child(2) { min-width: 200px; } /* Colonne synthèse plus large */
         }
     </style>
 </head>
@@ -458,17 +456,99 @@
 
     <section id="veille" style="background: rgba(0,0,0,0.2);">
         <div class="container">
-            <div class="section-title"><h2>Veille <span>Domotique</span></h2></div>
+            <div class="section-title">
+                <h2>Veille <span>Domotique</span></h2>
+                <p class="text-muted text-center">Suivi des innovations IoT et Maison Connectée</p>
+            </div>
+            
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="glass-card veille-method-card">
+                        <i class="fas fa-tools veille-icon"></i>
+                        <div class="veille-label">Outils de Veille</div>
+                        <ul class="list-unstyled text-white small mb-0">
+                            <li><i class="fas fa-rss me-2 text-muted"></i>Feedly (Flux RSS)</li>
+                            <li><i class="fas fa-bell me-2 text-muted"></i>Google Alerts</li>
+                            <li><i class="fab fa-linkedin me-2 text-muted"></i>Groupes LinkedIn IoT</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glass-card veille-method-card">
+                        <i class="fas fa-filter veille-icon"></i>
+                        <div class="veille-label">Mots-clés & Sources</div>
+                        <p class="text-white small mb-2">Matter, Zigbee, Home Assistant, IoT Security.</p>
+                        <p class="text-muted small mb-0">Sources: Les Numériques, BeGeek, TechCrunch, Forums spécialisés.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glass-card veille-method-card">
+                        <i class="fas fa-calendar-check veille-icon"></i>
+                        <div class="veille-label">Méthode</div>
+                        <p class="text-white small mb-2"><strong>Fréquence :</strong> Hebdomadaire (Lundi matin)</p>
+                        <p class="text-muted small mb-0">Collecte via Feedly, tri sur Pocket, synthèse mensuelle.</p>
+                    </div>
+                </div>
+            </div>
+
             <div class="glass-card p-2 overflow-hidden">
                 <div class="table-responsive">
                     <table class="table table-veille table-hover mb-0">
                         <thead>
-                            <tr><th>Sujet</th><th>Source</th><th>Avancée</th><th>Date</th></tr>
+                            <tr>
+                                <th>Date</th>
+                                <th>Sujet / Titre</th>
+                                <th>Catégorie</th>
+                                <th>Synthèse & Analyse</th>
+                                <th>Impact</th>
+                                <th>Source</th>
+                            </tr>
                         </thead>
                         <tbody class="text-muted">
-                            <tr><td>Matter 1.5</td><td><a href="#">BeGeek</a></td><td>Caméras & VE</td><td>21/11/25</td></tr>
-                            <tr><td>Hub Aqara M200</td><td><a href="#">Alexiens</a></td><td>Thread/Zigbee</td><td>19/11/25</td></tr>
-                            <tr><td>Lidl Smart Home</td><td><a href="#">SoonNight</a></td><td>Zigbee Low Cost</td><td>18/11/25</td></tr>
+                            <tr>
+                                <td>21/11/25</td>
+                                <td><strong>Matter 1.5 Dévoilé</strong></td>
+                                <td>Protocole</td>
+                                <td>
+                                    Support officiel des caméras de sécurité avancées et des chargeurs de VE.
+                                    <br><small class="text-white"><em>Analyse : Unification cruciale pour l'interopérabilité énergétique.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-high">Fort</span></td>
+                                <td><a href="#" target="_blank">BeGeek</a></td>
+                            </tr>
+                            <tr>
+                                <td>19/11/25</td>
+                                <td><strong>Hub Aqara M200</strong></td>
+                                <td>Matériel</td>
+                                <td>
+                                    Lancement d'un Hub "Border Router" compatible Thread et Zigbee.
+                                    <br><small class="text-white"><em>Analyse : Facilite la transition vers Matter pour les anciens équipements.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="#" target="_blank">Les Alexiens</a></td>
+                            </tr>
+                            <tr>
+                                <td>18/11/25</td>
+                                <td><strong>Lidl Smart Home</strong></td>
+                                <td>Marché</td>
+                                <td>
+                                    Offensive prix sur les vannes thermostatiques Zigbee (< 10€).
+                                    <br><small class="text-white"><em>Analyse : Démocratisation accélérée de la gestion énergétique.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-low">Faible</span></td>
+                                <td><a href="#" target="_blank">SoonNight</a></td>
+                            </tr>
+                            <tr>
+                                <td>18/11/25</td>
+                                <td><strong>Intégration Ajax / HA</strong></td>
+                                <td>Logiciel</td>
+                                <td>
+                                    Intégration native des alarmes Ajax Systems dans Home Assistant.
+                                    <br><small class="text-white"><em>Analyse : Répond à une forte demande de la communauté open-source.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="#" target="_blank">Maison & Domotique</a></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
