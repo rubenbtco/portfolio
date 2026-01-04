@@ -18,11 +18,8 @@
             --bg-card: rgba(10, 20, 15, 0.85); 
             --primary: #10b981;           /* Vert Émeraude */
             --secondary: #fbbf24;         /* Or / Ambre */
-            
-            /* COULEURS DE TEXTE */
             --text-main: #ffffff;         
             --text-sub: #d1fae5;          /* Vert Menthe très pâle */
-            
             --glass-border: rgba(16, 185, 129, 0.3);
         }
 
@@ -68,15 +65,15 @@
 
         /* Hero */
         .hero {
-            padding: 160px 0 100px; /* Un peu moins de padding haut pour laisser place à l'éditeur */
+            padding: 160px 0 100px;
             background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.2), transparent 40%),
                         radial-gradient(circle at bottom left, rgba(251, 191, 36, 0.15), transparent 40%);
-            min-height: 100vh; /* S'assure que le hero prend toute la hauteur */
+            min-height: 100vh;
             display: flex;
             align-items: center;
         }
         .profile-img {
-            width: 150px; height: 150px; /* Un peu plus petit pour l'équilibre */
+            width: 150px; height: 150px;
             border-radius: 50%;
             border: 3px solid var(--primary);
             padding: 5px;
@@ -87,16 +84,16 @@
         .hero h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; color: #ffffff; text-shadow: 0 0 20px rgba(16, 185, 129, 0.2); }
         .hero .lead { color: var(--text-sub) !important; font-weight: 400; font-size: 1.1rem;}
 
-        /* --- NOUVEAUX STYLES POUR L'ÉDITEUR DE CODE --- */
+        /* Code Editor */
         .code-editor-container {
             text-align: left;
-            background: rgba(0, 0, 0, 0.6); /* Fond plus sombre pour le contraste du code */
+            background: rgba(0, 0, 0, 0.6);
             border: 1px solid var(--glass-border);
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             max-width: 700px;
-            margin: 0 auto 2rem auto; /* Centré et marge en bas */
+            margin: 0 auto 2rem auto;
             font-family: 'Fira Code', monospace;
             font-size: 0.9rem;
         }
@@ -125,7 +122,6 @@
             display: flex;
             position: relative;
         }
-        /* Numéros de ligne */
         .line-numbers {
             text-align: right;
             padding-right: 15px;
@@ -136,26 +132,20 @@
         }
         .line-numbers span { display: block; }
         
-        /* Zone de code */
         .code-content {
             padding-left: 15px;
-            white-space: pre; /* Important pour garder les sauts de ligne */
+            white-space: pre;
             color: var(--text-main);
-            overflow-x: auto; /* Scroll si ça dépasse */
+            overflow-x: auto;
         }
 
-        /* Couleurs de syntaxe adaptées au thème */
-        .syntax-comment { color: #6b7280; font-style: italic; } /* Gris/Vert pâle */
-        .syntax-keyword { color: var(--secondary); font-weight: bold; } /* Or */
-        .syntax-string { color: var(--primary); } /* Vert Émeraude */
-        .syntax-function { color: #60a5fa; } /* Bleu clair compatible */
-        .syntax-variable { color: #f87171; } /* Rouge/Corail compatible */
+        .syntax-comment { color: #6b7280; font-style: italic; }
+        .syntax-keyword { color: var(--secondary); font-weight: bold; }
+        .syntax-string { color: var(--primary); }
+        .syntax-function { color: #60a5fa; }
+        .syntax-variable { color: #f87171; }
 
-        /* Curseur TypeIt */
-        .ti-cursor {
-            color: var(--primary); 
-            font-weight: bold;
-        }
+        .ti-cursor { color: var(--primary); font-weight: bold; }
 
         /* Sections */
         section { padding: 100px 0; }
@@ -190,26 +180,11 @@
             font-weight: 600;
         }
 
-        .veille-method-card {
-            height: 100%;
-            padding: 20px;
-            text-align: left;
-        }
-        .veille-icon {
-            font-size: 2rem;
-            color: var(--secondary);
-            margin-bottom: 15px;
-        }
-        .veille-label {
-            color: var(--primary);
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
+        .veille-method-card { height: 100%; padding: 20px; text-align: left; }
+        .veille-icon { font-size: 2rem; color: var(--secondary); margin-bottom: 15px; }
+        .veille-label { color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 5px; }
         
-        /* Table Veille Style Arrondi */
+        /* Table Veille */
         .table-veille { 
             color: var(--text-main); 
             border-color: var(--glass-border);
@@ -236,26 +211,16 @@
         .impact-med { background: rgba(16, 185, 129, 0.2); color: var(--primary); border: 1px solid var(--primary); }
         .impact-low { background: rgba(255, 255, 255, 0.1); color: var(--text-sub); border: 1px solid var(--text-sub); }
 
-        /* Buttons */
-        .btn-custom {
-            background: linear-gradient(90deg, var(--primary), #059669);
-            border: 1px solid rgba(255,255,255,0.2);
-            color: white; border-radius: 50px;
-            padding: 12px 30px; font-weight: 700; transition: 0.3s;
-            text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;
-        }
+        /* Buttons & Forms */
+        .btn-custom { background: linear-gradient(90deg, var(--primary), #059669); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 50px; padding: 12px 30px; font-weight: 700; transition: 0.3s; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
         .btn-custom:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(16, 185, 129, 0.5); color: white; border-color: white; }
         .btn-outline-light { border-color: var(--text-sub); color: var(--text-main); }
         .btn-outline-light:hover { border-color: var(--secondary); color: var(--bg-dark); background: var(--secondary); }
         .btn-outline-primary { border-color: var(--primary); color: var(--primary); font-weight: 600; }
         .btn-outline-primary:hover { background: var(--primary); border-color: var(--primary); color: #ffffff; box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
-
-        /* Nav Pills */
         .nav-pills .nav-link { background: rgba(255,255,255,0.05); color: var(--text-main) !important; border: 1px solid var(--glass-border); margin: 5px; border-radius: 50px; }
         .nav-pills .nav-link:hover { border-color: var(--primary); color: var(--primary) !important; }
         .nav-pills .nav-link.active { background: var(--primary) !important; color: white !important; border-color: var(--primary); box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
-
-        /* Forms */
         .form-control { background: rgba(255, 255, 255, 0.08); border: 1px solid var(--glass-border); color: #ffffff; font-weight: 500; }
         .form-control::placeholder { color: rgba(255,255,255,0.5); }
         .form-control:focus { background: rgba(255, 255, 255, 0.15); border-color: var(--primary); box-shadow: 0 0 0 0.25rem rgba(16, 185, 129, 0.25); color: #ffffff; }
@@ -265,7 +230,6 @@
         @media (max-width: 768px) {
             .hero { padding-top: 120px; text-align: center; }
             .hero h1 { font-size: 2.5rem; }
-            /* Sur mobile, on cache les numéros de ligne pour gagner de la place */
             .line-numbers { display: none; }
             .code-content { padding-left: 15px; }
             .table-veille th, .table-veille td { min-width: 120px; }
@@ -346,6 +310,7 @@
                         </div>
                         <h4 class="mt-4 text-white">Formation</h4>
                         <ul class="list-unstyled text-muted">
+                            <li class="mb-2"><i class="fas fa-school me-2" style="color: var(--primary);"></i> <strong>Lycée Dominique Villars</strong> - BTS SIO</li>
                             <li class="mb-2"><i class="fas fa-graduation-cap me-2" style="color: var(--primary);"></i> <strong>Lycée A. Briand</strong> - Bac Général (Spé Math/NSI)</li>
                             <li><i class="fas fa-university me-2" style="color: var(--primary);"></i> <strong>Université d'Avignon</strong> - Licence Informatique</li>
                         </ul>
@@ -649,18 +614,14 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
-                }
+                if (target) { window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' }); }
             });
         });
 
-        // CV Download script
         document.getElementById('downloadCV').addEventListener('click', function(e) {
             e.preventDefault();
             const link = document.createElement('a');
@@ -680,21 +641,20 @@
             document.body.removeChild(link);
         }
 
-        // --- SCRIPT D'ANIMATION DE L'ÉDITEUR DE CODE ---
+        // --- SCRIPT D'ANIMATION MIS À JOUR ---
         document.addEventListener('DOMContentLoaded', function() {
-            // Le contenu à taper, formaté comme du code avec des spans pour les couleurs
             const codeContent = `
 <span class="syntax-comment">// Initialisation du profil étudiant</span><br>
 <span class="syntax-keyword">const</span> <span class="syntax-variable">Ruben</span> <span class="text-white">=</span> {<br>
-&nbsp;&nbsp;<span class="syntax-variable">role</span>: <span class="syntax-string">"Développeur Fullstack Junior"</span>,<br>
+&nbsp;&nbsp;<span class="syntax-variable">role</span>: <span class="syntax-string">"Étudiant en BTS SIO au lycée Dominique Villars"</span>,<br>
 &nbsp;&nbsp;<span class="syntax-variable">localisation</span>: <span class="syntax-string">"Gap, France"</span>,<br>
-&nbsp;&nbsp;<span class="syntax-variable">passion</span>: [<span class="syntax-string">"Code"</span>, <span class="syntax-string">"Réseaux"</span>, <span class="syntax-string">"Innovation"</span>],<br>
+&nbsp;&nbsp;<span class="syntax-variable">passion</span>: [<span class="syntax-string">"Basketball"</span>, <span class="syntax-string">"Jeu Vidéo"</span>, <span class="syntax-string">"Cinéma"</span>],<br>
 <br>
 &nbsp;&nbsp;<span class="syntax-comment">// Compétences principales</span><br>
 &nbsp;&nbsp;<span class="syntax-variable">stackTechnique</span>: {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="syntax-variable">front</span>: [<span class="syntax-string">"HTML/CSS"</span>, <span class="syntax-string">"JS"</span>, <span class="syntax-string">"Bootstrap"</span>],<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="syntax-variable">back</span>: [<span class="syntax-string">"Python"</span>, <span class="syntax-string">"Java"</span>, <span class="syntax-string">"SQL"</span>],<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="syntax-variable">tools</span>: [<span class="syntax-string">"Git"</span>, <span class="syntax-string">"Wireshark"</span>, <span class="syntax-string">"VS Code"</span>]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="syntax-variable">tools</span>: [<span class="syntax-string">"Git"</span>, <span class="syntax-string">"VS Code"</span>]<br>
 &nbsp;&nbsp;},<br>
 <br>
 &nbsp;&nbsp;<span class="syntax-comment">// Fonction d'initialisation</span><br>
@@ -710,10 +670,10 @@
 
             new TypeIt("#typing-code", {
                 strings: codeContent,
-                speed: 30,     // Vitesse de frappe
-                lifeLike: true, // Frappe plus naturelle
-                html: true,     // Important : permet d'interpréter les spans de couleur
-                cursorChar: "▋", // Curseur style bloc
+                speed: 30,
+                lifeLike: true,
+                html: true,
+                cursorChar: "▋",
             }).go();
         });
     </script>
