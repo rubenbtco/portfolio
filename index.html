@@ -12,12 +12,12 @@
     <style>
         :root {
             /* PALETTE EMERAUDE & OR CUIVRÉ */
-            --bg-dark: #050a08;           
+            --bg-dark: #050a08;            
             --bg-card: rgba(10, 20, 15, 0.85); 
             --primary: #10b981;           /* Vert Émeraude */
             --secondary: #fbbf24;         /* Or / Ambre */
             
-            /* COULEURS DE TEXTE (PLUS DE GRIS) */
+            /* COULEURS DE TEXTE */
             --text-main: #ffffff;         
             --text-sub: #d1fae5;          /* Vert Menthe très pâle */
             
@@ -115,7 +115,6 @@
             font-weight: 600;
         }
 
-        /* Nouveaux styles pour la Veille (Grille d'évaluation) */
         .veille-method-card {
             height: 100%;
             padding: 20px;
@@ -135,7 +134,7 @@
             margin-bottom: 5px;
         }
         
-        /* Table Veille Améliorée */
+        /* Table Veille */
         .table-veille { color: var(--text-main); border-color: var(--glass-border); }
         .table-veille thead { border-bottom: 2px solid var(--primary); }
         .table-veille th { color: var(--primary); font-weight: 600; border: none; font-size: 1rem; vertical-align: middle; }
@@ -186,7 +185,7 @@
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             .table-veille th, .table-veille td { min-width: 120px; }
-            .table-veille td:nth-child(2) { min-width: 200px; } /* Colonne synthèse plus large */
+            .table-veille td:nth-child(2) { min-width: 200px; } 
         }
     </style>
 </head>
@@ -213,7 +212,7 @@
 
     <section id="home" class="hero text-center">
         <div class="container">
-            <img src="pp.jpg.jpg" alt="Ruben Battocchio" class="profile-img mb-4">
+            <img src="pp.jpg" alt="Ruben Battocchio" class="profile-img mb-4">
             <h1>Ruben Battocchio</h1>
             <p class="lead mx-auto" style="max-width: 600px;">Futur développeur, explorateur de technologies et passionné par la résolution de problèmes complexes.</p>
             <div class="mt-5">
@@ -343,16 +342,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="miniajava.png" class="project-img card-img-top" alt="Java">
-                                <div class="p-4 text-center">
-                                    <h5>Initiation Java</h5>
-                                    <p class="small text-muted">Bases de l'algorithmique</p>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('premierspasenjava.pdf')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -365,26 +354,6 @@
                                     <h5>Dépannage Réseau</h5>
                                     <p class="small text-muted">Diagnostic physique</p>
                                     <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('reparerreseau.pdf')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="miniadiagnostic.png" class="project-img card-img-top" alt="Diagnostic">
-                                <div class="p-4 text-center">
-                                    <h5>Diagnostic PC</h5>
-                                    <p class="small text-muted">Hardware & Software</p>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('Diagnostic.pdf')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="miniacmd.png" class="project-img card-img-top" alt="CMD">
-                                <div class="p-4 text-center">
-                                    <h5>Commandes DOS</h5>
-                                    <p class="small text-muted">Invite de commande</p>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1stp05.pdf')">Compte-rendu</button>
                                 </div>
                             </div>
                         </div>
@@ -403,41 +372,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="chuckminia.png" class="project-img card-img-top" alt="HTML">
-                                <div class="p-4 text-center">
-                                    <h5>Débuts HTML</h5>
-                                    <p class="small text-muted">Structure Web</p>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('chucknorris.pdf')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="CSS.png" class="project-img card-img-top" alt="CSS">
-                                <div class="p-4 text-center">
-                                    <h5>Style CSS</h5>
-                                    <p class="small text-muted">Design & Mise en page</p>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('premierspascss.pdf')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
-                 <div class="tab-pane fade" id="bloc3-reseau">
+                <div class="tab-pane fade" id="bloc3-reseau">
                     <div class="row g-4">
-                        <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="miniacapture.png" class="project-img card-img-top" alt="Capture">
-                                <div class="p-4 text-center">
-                                    <h5>Outils Capture</h5>
-                                    <p class="small text-muted">Comparatif logiciels</p>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('capture.pdf')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
                         <div class="col-md-6 col-lg-4">
                             <div class="glass-card project-card">
                                 <img src="minianas.png" class="project-img card-img-top" alt="NAS">
@@ -458,7 +397,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Veille <span>Domotique</span></h2>
-                <p class="text-muted text-center">Suivi des innovations IoT et Maison Connectée</p>
+                <p class="text-muted text-center">Suivi des innovations IoT et Maison Connectée - Mis à jour le 04/01/2026</p>
             </div>
             
             <div class="row g-4 mb-5">
@@ -477,15 +416,15 @@
                     <div class="glass-card veille-method-card">
                         <i class="fas fa-filter veille-icon"></i>
                         <div class="veille-label">Mots-clés & Sources</div>
-                        <p class="text-white small mb-2">Matter, Zigbee, Home Assistant, IoT Security.</p>
-                        <p class="text-muted small mb-0">Sources: Les Numériques, BeGeek, TechCrunch, Forums spécialisés.</p>
+                        <p class="text-white small mb-2">Matter, Zigbee, IA Locale, Thread, IoT Security.</p>
+                        <p class="text-muted small mb-0">Sources: The Verge, HA Blog, Les Numériques, BeGeek.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="glass-card veille-method-card">
                         <i class="fas fa-calendar-check veille-icon"></i>
                         <div class="veille-label">Méthode</div>
-                        <p class="text-white small mb-2"><strong>Fréquence :</strong> Hebdomadaire (Lundi matin)</p>
+                        <p class="text-white small mb-2"><strong>Fréquence :</strong> Hebdomadaire</p>
                         <p class="text-muted small mb-0">Collecte via Feedly, tri sur Pocket, synthèse mensuelle.</p>
                     </div>
                 </div>
@@ -505,6 +444,28 @@
                             </tr>
                         </thead>
                         <tbody class="text-muted">
+                            <tr>
+                                <td>04/01/26</td>
+                                <td><strong>Matter 1.4 & Smart Grid</strong></td>
+                                <td>Protocole</td>
+                                <td>
+                                    Standardisation de la gestion des batteries domestiques et pompes à chaleur.
+                                    <br><small class="text-white"><em>Analyse : Un pas géant vers l'autosuffisance énergétique pilotée par IA.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-high">Fort</span></td>
+                                <td><a href="#" target="_blank">The Verge</a></td>
+                            </tr>
+                            <tr>
+                                <td>28/12/25</td>
+                                <td><strong>IA Générative Locale</strong></td>
+                                <td>Logiciel</td>
+                                <td>
+                                    Home Assistant intègre des LLM tournant à 100% en local sur NPU.
+                                    <br><small class="text-white"><em>Analyse : Contrôle vocal naturel sans aucune fuite de données cloud.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-high">Fort</span></td>
+                                <td><a href="#" target="_blank">HA Blog</a></td>
+                            </tr>
                             <tr>
                                 <td>21/11/25</td>
                                 <td><strong>Matter 1.5 Dévoilé</strong></td>
@@ -532,22 +493,11 @@
                                 <td><strong>Lidl Smart Home</strong></td>
                                 <td>Marché</td>
                                 <td>
-                                    Offensive prix sur les vannes thermostatiques Zigbee (< 10€).
+                                    Offensive prix sur les vannes thermostatiques Zigbee à prix cassé.
                                     <br><small class="text-white"><em>Analyse : Démocratisation accélérée de la gestion énergétique.</em></small>
                                 </td>
                                 <td><span class="badge-impact impact-low">Faible</span></td>
                                 <td><a href="#" target="_blank">SoonNight</a></td>
-                            </tr>
-                            <tr>
-                                <td>18/11/25</td>
-                                <td><strong>Intégration Ajax / HA</strong></td>
-                                <td>Logiciel</td>
-                                <td>
-                                    Intégration native des alarmes Ajax Systems dans Home Assistant.
-                                    <br><small class="text-white"><em>Analyse : Répond à une forte demande de la communauté open-source.</em></small>
-                                </td>
-                                <td><span class="badge-impact impact-med">Moyen</span></td>
-                                <td><a href="#" target="_blank">Maison & Domotique</a></td>
                             </tr>
                         </tbody>
                     </table>
