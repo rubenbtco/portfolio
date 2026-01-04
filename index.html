@@ -93,7 +93,7 @@
 
         /* Skills */
         .skill-bar { height: 8px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
-        .skill-progress { background: linear-gradient(90deg, var(--primary), #34d399); }
+        .skill-progress { background: linear-gradient(90deg, var(--primary), #34d399); transition: width 1.5s ease-in-out; }
 
         /* Projects */
         .project-card { height: 100%; overflow: hidden; }
@@ -134,11 +134,42 @@
             margin-bottom: 5px;
         }
         
-        /* Table Veille */
-        .table-veille { color: var(--text-main); border-color: var(--glass-border); }
-        .table-veille thead { border-bottom: 2px solid var(--primary); }
-        .table-veille th { color: var(--primary); font-weight: 600; border: none; font-size: 1rem; vertical-align: middle; }
-        .table-veille td { border-bottom: 1px solid rgba(16, 185, 129, 0.2); padding: 20px 15px; vertical-align: middle; font-size: 0.95rem; }
+        /* --- NOUVEAUX STYLES TABLEAU ARRONDIS --- */
+        .table-veille { 
+            color: var(--text-main); 
+            border-color: var(--glass-border);
+            border-collapse: separate; /* Crucial pour les bordures arrondies */
+            border-spacing: 0;
+            border-radius: 15px; /* Arrondi global du tableau */
+            overflow: hidden; /* Coupe ce qui dépasse */
+            width: 100%;
+        }
+        .table-veille thead { 
+            background: rgba(16, 185, 129, 0.1); /* Fond léger pour l'entête */
+        }
+        .table-veille th { 
+            color: var(--primary); 
+            font-weight: 600; 
+            border: none; 
+            font-size: 1rem; 
+            vertical-align: middle; 
+            padding: 20px;
+        }
+        .table-veille td { 
+            border-bottom: 1px solid rgba(16, 185, 129, 0.2); 
+            padding: 20px 15px; 
+            vertical-align: middle; 
+            font-size: 0.95rem; 
+        }
+        /* Arrondir les coins spécifiques des headers */
+        .table-veille thead tr:first-child th:first-child { border-top-left-radius: 15px; }
+        .table-veille thead tr:first-child th:last-child { border-top-right-radius: 15px; }
+        
+        /* Arrondir les coins du bas */
+        .table-veille tbody tr:last-child td:first-child { border-bottom-left-radius: 15px; }
+        .table-veille tbody tr:last-child td:last-child { border-bottom-right-radius: 15px; }
+        .table-veille tbody tr:last-child td { border-bottom: none; } /* Enlever la bordure du bas */
+
         .table-veille a { color: var(--secondary); font-weight: 600; text-decoration: none; border-bottom: 1px dashed var(--secondary); }
         .table-veille a:hover { color: #ffffff; border-color: #ffffff; }
 
@@ -452,7 +483,7 @@
                                     Standardisation de la gestion des batteries domestiques et pompes à chaleur.
                                     <br><small class="text-white"><em>Analyse : Un pas géant vers l'autosuffisance énergétique pilotée par IA.</em></small>
                                 </td>
-                                <td><span class="badge-impact impact-high">Fort</span></td>
+                                <td><span class="badge-impact impact-high">Critique</span></td>
                                 <td><a href="#" target="_blank">The Verge</a></td>
                             </tr>
                             <tr>
