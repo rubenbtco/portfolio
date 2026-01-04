@@ -12,13 +12,16 @@
     <style>
         :root {
             /* PALETTE EMERAUDE & OR CUIVRÉ */
-            --bg-dark: #0a0f0d;           /* Noir profond teinté de vert (au lieu du bleu nuit) */
-            --bg-card: rgba(20, 26, 24, 0.7); /* Verre fumé sombre */
+            --bg-dark: #050a08;           /* Fond très sombre (presque noir mais teinté vert) */
+            --bg-card: rgba(10, 20, 15, 0.85); /* Fond des cartes plus opaque */
             --primary: #10b981;           /* Vert Émeraude */
-            --secondary: #f59e0b;         /* Or / Ambre */
-            --text-main: #e2e8f0;         /* Gris perle */
-            --text-muted: #94a3b8;        /* Gris moyen */
-            --glass-border: rgba(16, 185, 129, 0.2); /* Bordure subtile verte */
+            --secondary: #fbbf24;         /* Or / Ambre plus lumineux */
+            
+            /* COULEURS DE TEXTE (PLUS DE GRIS) */
+            --text-main: #ffffff;         /* Blanc Pur */
+            --text-sub: #d1fae5;          /* Vert Menthe très pâle (remplace le gris) */
+            
+            --glass-border: rgba(16, 185, 129, 0.3);
         }
 
         body {
@@ -29,7 +32,12 @@
             overflow-x: hidden;
         }
 
-        /* Scrollbar personnalisée */
+        /* Override Bootstrap text-muted pour enlever le gris */
+        .text-muted {
+            color: var(--text-sub) !important;
+        }
+
+        /* Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: var(--bg-dark); }
         ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
@@ -43,7 +51,6 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
         }
         
-        /* Effet de survol vert émeraude */
         .glass-card:hover {
             border-color: var(--primary);
             box-shadow: 0 15px 30px rgba(16, 185, 129, 0.15);
@@ -51,39 +58,40 @@
 
         /* Navbar */
         .navbar {
-            background: rgba(10, 15, 13, 0.85) !important; /* Adapté au fond vert sombre */
+            background: rgba(5, 10, 8, 0.95) !important;
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--glass-border);
             padding: 1rem 0;
         }
-        .navbar-brand { font-weight: 800; color: var(--primary) !important; }
-        .nav-link { color: var(--text-main) !important; font-weight: 500; margin: 0 10px; transition: 0.3s; }
-        .nav-link:hover { color: var(--secondary) !important; }
+        .navbar-brand { font-weight: 800; color: var(--primary) !important; letter-spacing: 1px; }
+        .nav-link { color: var(--text-main) !important; font-weight: 500; margin: 0 10px; transition: 0.3s; opacity: 0.9; }
+        .nav-link:hover { color: var(--secondary) !important; opacity: 1; text-shadow: 0 0 10px rgba(251, 191, 36, 0.4); }
 
         /* Hero Section */
         .hero {
             padding: 180px 0 100px;
-            /* Dégradés adaptés : Vert à gauche, Ambre à droite */
-            background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.15), transparent),
-                        radial-gradient(circle at bottom left, rgba(245, 158, 11, 0.1), transparent);
+            background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.2), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(251, 191, 36, 0.15), transparent 40%);
         }
         .profile-img {
             width: 180px; height: 180px;
             border-radius: 50%;
-            border: 4px solid var(--primary);
+            border: 3px solid var(--primary);
             padding: 5px;
             object-fit: cover;
-            /* Lueur verte */
-            box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.4);
+            background: rgba(255,255,255,0.05);
         }
         .hero h1 { 
             font-size: 4rem; 
             font-weight: 800; 
             margin-bottom: 1rem; 
-            /* Dégradé de texte Blanc vers Vert */
-            background: linear-gradient(to right, #fff, var(--primary)); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
+            color: #ffffff;
+            text-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+        }
+        .hero .lead {
+            color: var(--text-sub) !important;
+            font-weight: 400;
         }
 
         /* Sections */
@@ -93,32 +101,35 @@
             font-size: 2.5rem;
             margin-bottom: 50px;
             text-align: center;
+            color: #ffffff;
         }
         .section-title h2 span { 
-            /* Dégradé Vert vers Ambre */
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         /* Progress Bars */
-        .skill-bar { height: 8px; background: rgba(255,255,255,0.05); border-radius: 10px; overflow: hidden; }
-        .skill-progress { background: linear-gradient(90deg, var(--primary), #059669); }
+        .skill-bar { height: 8px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
+        .skill-progress { background: linear-gradient(90deg, var(--primary), #34d399); }
 
         /* Project Cards */
         .project-card { height: 100%; overflow: hidden; }
         .project-card:hover { transform: translateY(-10px); }
-        .project-img { height: 200px; object-fit: cover; opacity: 0.8; transition: 0.3s; border-bottom: 1px solid var(--glass-border); }
+        .project-img { height: 200px; object-fit: cover; opacity: 0.9; transition: 0.3s; border-bottom: 1px solid var(--glass-border); }
         .project-card:hover .project-img { opacity: 1; }
+        
+        .project-card h5 { color: var(--primary); font-weight: 700; }
+        .project-card p { color: var(--text-sub) !important; }
 
         /* Badges */
         .language-badge {
-            background: rgba(245, 158, 11, 0.1); /* Fond ambre léger */
+            background: rgba(251, 191, 36, 0.15);
             border: 1px solid var(--secondary);
             color: var(--secondary);
             padding: 5px 15px;
             border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             margin: 5px;
             font-weight: 600;
         }
@@ -126,46 +137,55 @@
         /* Table */
         .table-veille { color: var(--text-main); border-color: var(--glass-border); }
         .table-veille thead { border-bottom: 2px solid var(--primary); }
-        .table-veille th { color: var(--primary); font-weight: 600; border: none; }
-        .table-veille td { border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .table-veille th { color: var(--primary); font-weight: 600; border: none; font-size: 1.1rem; }
+        .table-veille td { border-bottom: 1px solid rgba(16, 185, 129, 0.2); padding: 15px; }
         .table-veille a { color: var(--secondary); font-weight: 600; text-decoration: none; }
-        .table-veille a:hover { text-decoration: underline; }
+        .table-veille a:hover { text-decoration: underline; color: #ffffff; }
 
         /* Buttons */
         .btn-custom {
-            /* Dégradé Vert */
             background: linear-gradient(90deg, var(--primary), #059669);
-            border: none; color: white; border-radius: 50px;
-            padding: 12px 30px; font-weight: 600; transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white; border-radius: 50px;
+            padding: 12px 30px; font-weight: 700; transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
         }
-        .btn-custom:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(16, 185, 129, 0.4); color: white; }
+        .btn-custom:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(16, 185, 129, 0.5); color: white; border-color: white; }
         
-        .btn-outline-light { border-color: var(--glass-border); color: var(--text-main); }
-        .btn-outline-light:hover { border-color: var(--secondary); color: var(--secondary); background: transparent; }
+        .btn-outline-light { border-color: var(--text-sub); color: var(--text-main); }
+        .btn-outline-light:hover { border-color: var(--secondary); color: var(--bg-dark); background: var(--secondary); }
 
         .btn-outline-primary {
-            border-color: var(--primary); color: var(--primary);
+            border-color: var(--primary); color: var(--primary); font-weight: 600;
         }
         .btn-outline-primary:hover {
-            background: var(--primary); border-color: var(--primary); color: white;
+            background: var(--primary); border-color: var(--primary); color: #ffffff; box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
         }
 
         /* Nav Pills (Projects) */
-        .nav-pills .nav-link { background: transparent; color: var(--text-muted) !important; border: 1px solid var(--glass-border); margin: 5px; border-radius: 50px; }
-        .nav-pills .nav-link.active { background: var(--primary) !important; color: white !important; border-color: var(--primary); }
+        .nav-pills .nav-link { background: rgba(255,255,255,0.05); color: var(--text-main) !important; border: 1px solid var(--glass-border); margin: 5px; border-radius: 50px; }
+        .nav-pills .nav-link:hover { border-color: var(--primary); color: var(--primary) !important; }
+        .nav-pills .nav-link.active { background: var(--primary) !important; color: white !important; border-color: var(--primary); box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
 
         /* Form inputs */
         .form-control {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.08);
             border: 1px solid var(--glass-border);
-            color: white;
+            color: #ffffff;
+            font-weight: 500;
         }
+        .form-control::placeholder { color: rgba(255,255,255,0.5); }
         .form-control:focus {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.15);
             border-color: var(--primary);
             box-shadow: 0 0 0 0.25rem rgba(16, 185, 129, 0.25);
-            color: white;
+            color: #ffffff;
         }
+
+        /* Footer */
+        footer p { color: var(--text-sub) !important; }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
@@ -177,7 +197,7 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">RUBEN<span>.B</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="border: none; color: white;">
+            <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="border: none; color: white;">
                 <span class="fas fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -197,7 +217,7 @@
         <div class="container">
             <img src="pp.jpg.jpg" alt="Ruben Battocchio" class="profile-img mb-4">
             <h1>Ruben Battocchio</h1>
-            <p class="lead text-muted mx-auto" style="max-width: 600px;">Futur développeur, explorateur de technologies et passionné par la résolution de problèmes complexes.</p>
+            <p class="lead mx-auto" style="max-width: 600px;">Futur développeur, explorateur de technologies et passionné par la résolution de problèmes complexes.</p>
             <div class="mt-5">
                 <a href="#about" class="btn btn-custom me-3">Me découvrir</a>
                 <a href="#contact" class="btn btn-outline-light rounded-pill px-4 py-2">Me contacter</a>
@@ -212,7 +232,7 @@
                 <div class="col-lg-6">
                     <div class="glass-card p-4 h-100">
                         <h3 class="mb-4" style="color: var(--primary);">Mon Parcours</h3>
-                        <p>Étudiant motivé et polyvalent, je me spécialise dans le développement logiciel et les réseaux. J'aime transformer des idées en lignes de code concrètes.</p>
+                        <p class="text-muted">Étudiant motivé et polyvalent, je me spécialise dans le développement logiciel et les réseaux. J'aime transformer des idées en lignes de code concrètes.</p>
                         <div class="mt-4">
                             <span class="language-badge">Anglais (B2-C1)</span>
                             <span class="language-badge">Italien (B2)</span>
@@ -229,9 +249,9 @@
                     <div class="glass-card p-4 h-100">
                         <h3 class="mb-4" style="color: var(--secondary);">Infos & Contact</h3>
                         <div class="row g-3">
-                            <div class="col-sm-6"><p class="small text-muted mb-1">Téléphone</p><p>06 69 45 51 35</p></div>
-                            <div class="col-sm-6"><p class="small text-muted mb-1">Email</p><p>ruben.battocchio28@gmail.com</p></div>
-                            <div class="col-12"><p class="small text-muted mb-1">Localisation</p><p>40g route Sainte-Marguerite, 05000 Gap</p></div>
+                            <div class="col-sm-6"><p class="small text-muted mb-1">Téléphone</p><p class="text-white fw-bold">06 69 45 51 35</p></div>
+                            <div class="col-sm-6"><p class="small text-muted mb-1">Email</p><p class="text-white fw-bold">ruben.battocchio28@gmail.com</p></div>
+                            <div class="col-12"><p class="small text-muted mb-1">Localisation</p><p class="text-white fw-bold">40g route Sainte-Marguerite, 05000 Gap</p></div>
                         </div>
                         <h4 class="mt-4 text-white">Passions</h4>
                         <div class="d-flex flex-wrap gap-3">
@@ -245,7 +265,7 @@
         </div>
     </section>
 
-    <section id="skills" style="background-color: #050807;">
+    <section id="skills" style="background: rgba(0,0,0,0.2);">
         <div class="container">
             <div class="section-title"><h2>Mes <span>Skills</span></h2></div>
             <div class="row g-5">
@@ -299,7 +319,7 @@
                             <div class="glass-card project-card">
                                 <img src="minialabyrinthe.png" class="project-img card-img-top" alt="Labyrinthe">
                                 <div class="p-4 text-center">
-                                    <h5 style="color: var(--primary);">Labyrinthe Java</h5>
+                                    <h5>Labyrinthe Java</h5>
                                     <p class="small text-muted">Algorithmique & Java</p>
                                     <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('labyrinthe.pdf')">Compte-rendu</button>
                                 </div>
@@ -309,7 +329,7 @@
                             <div class="glass-card project-card">
                                 <img src="miniashifumi.png" class="project-img card-img-top" alt="Shifumi">
                                 <div class="p-4 text-center">
-                                    <h5 style="color: var(--primary);">Jeu Shifumi</h5>
+                                    <h5>Jeu Shifumi</h5>
                                     <p class="small text-muted">Logique de jeu en Java</p>
                                     <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('shifumi.pdf')">Compte-rendu</button>
                                 </div>
@@ -319,7 +339,7 @@
                             <div class="glass-card project-card">
                                 <img src="miniabataillenavale.jpg" class="project-img card-img-top" alt="Bataille Navale">
                                 <div class="p-4 text-center">
-                                    <h5 style="color: var(--primary);">Bataille Navale</h5>
+                                    <h5>Bataille Navale</h5>
                                     <p class="small text-muted">Tableaux & Structures</p>
                                     <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp08.pdf')">Compte-rendu</button>
                                 </div>
@@ -329,7 +349,7 @@
                             <div class="glass-card project-card">
                                 <img src="miniajava.png" class="project-img card-img-top" alt="Java">
                                 <div class="p-4 text-center">
-                                    <h5 style="color: var(--primary);">Initiation Java</h5>
+                                    <h5>Initiation Java</h5>
                                     <p class="small text-muted">Bases de l'algorithmique</p>
                                     <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('premierspasenjava.pdf')">Compte-rendu</button>
                                 </div>
@@ -344,7 +364,7 @@
                             <div class="glass-card project-card">
                                 <img src="testcable.jpg" class="project-img card-img-top" alt="Réseau">
                                 <div class="p-4 text-center">
-                                    <h5 style="color: var(--primary);">Dépannage Réseau</h5>
+                                    <h5>Dépannage Réseau</h5>
                                     <p class="small text-muted">Diagnostic physique</p>
                                     <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('reparerreseau.pdf')">Compte-rendu</button>
                                 </div>
@@ -354,7 +374,7 @@
                             <div class="glass-card project-card">
                                 <img src="miniadiagnostic.png" class="project-img card-img-top" alt="Diagnostic">
                                 <div class="p-4 text-center">
-                                    <h5 style="color: var(--primary);">Diagnostic PC</h5>
+                                    <h5>Diagnostic PC</h5>
                                     <p class="small text-muted">Hardware & Software</p>
                                     <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('Diagnostic.pdf')">Compte-rendu</button>
                                 </div>
@@ -364,7 +384,7 @@
                             <div class="glass-card project-card">
                                 <img src="miniacmd.png" class="project-img card-img-top" alt="CMD">
                                 <div class="p-4 text-center">
-                                    <h5 style="color: var(--primary);">Commandes DOS</h5>
+                                    <h5>Commandes DOS</h5>
                                     <p class="small text-muted">Invite de commande</p>
                                     <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1stp05.pdf')">Compte-rendu</button>
                                 </div>
@@ -379,7 +399,7 @@
                             <div class="glass-card project-card">
                                 <img src="deepseek.png" class="project-img card-img-top" alt="IA">
                                 <div class="p-4 text-center">
-                                    <h5 style="color: var(--primary);">Portfolio IA</h5>
+                                    <h5>Portfolio IA</h5>
                                     <p class="small text-muted">Création assistée</p>
                                     <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('creationportfolio.pdf')">Compte-rendu</button>
                                 </div>
@@ -389,7 +409,7 @@
                             <div class="glass-card project-card">
                                 <img src="chuckminia.png" class="project-img card-img-top" alt="HTML">
                                 <div class="p-4 text-center">
-                                    <h5 style="color: var(--primary);">Débuts HTML</h5>
+                                    <h5>Débuts HTML</h5>
                                     <p class="small text-muted">Structure Web</p>
                                     <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('chucknorris.pdf')">Compte-rendu</button>
                                 </div>
@@ -399,7 +419,7 @@
                             <div class="glass-card project-card">
                                 <img src="CSS.png" class="project-img card-img-top" alt="CSS">
                                 <div class="p-4 text-center">
-                                    <h5 style="color: var(--primary);">Style CSS</h5>
+                                    <h5>Style CSS</h5>
                                     <p class="small text-muted">Design & Mise en page</p>
                                     <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('premierspascss.pdf')">Compte-rendu</button>
                                 </div>
@@ -414,7 +434,7 @@
                             <div class="glass-card project-card">
                                 <img src="miniacapture.png" class="project-img card-img-top" alt="Capture">
                                 <div class="p-4 text-center">
-                                    <h5 style="color: var(--primary);">Outils Capture</h5>
+                                    <h5>Outils Capture</h5>
                                     <p class="small text-muted">Comparatif logiciels</p>
                                     <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('capture.pdf')">Compte-rendu</button>
                                 </div>
@@ -424,7 +444,7 @@
                             <div class="glass-card project-card">
                                 <img src="minianas.png" class="project-img card-img-top" alt="NAS">
                                 <div class="p-4 text-center">
-                                    <h5 style="color: var(--primary);">Serveur NAS</h5>
+                                    <h5>Serveur NAS</h5>
                                     <p class="small text-muted">Stockage réseau</p>
                                     <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3stp04.pdf')">Compte-rendu</button>
                                 </div>
@@ -436,7 +456,7 @@
         </div>
     </section>
 
-    <section id="veille" style="background-color: #050807;">
+    <section id="veille" style="background: rgba(0,0,0,0.2);">
         <div class="container">
             <div class="section-title"><h2>Veille <span>Domotique</span></h2></div>
             <div class="glass-card p-2 overflow-hidden">
@@ -476,10 +496,10 @@
         </div>
     </section>
 
-    <footer class="py-5 border-top border-secondary border-opacity-25 mt-5">
+    <footer class="py-5 border-top" style="border-color: rgba(255,255,255,0.1) !important;">
         <div class="container text-center">
             <div class="social-links mb-4">
-                <a href="https://github.com/rubenbtco" class="text-light fs-2 mx-3"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/rubenbtco" class="text-white fs-2 mx-3"><i class="fab fa-github"></i></a>
             </div>
             <div class="mb-4">
                  <a href="#" class="btn btn-outline-light btn-sm" id="downloadCV">Télécharger mon CV</a>
