@@ -5,350 +5,197 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruben Battocchio | Portfolio</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --bg-dark: #0f172a;
-            --bg-card: rgba(30, 41, 59, 0.7);
-            --primary: #6366f1;
-            --secondary: #a855f7;
-            --text-main: #f1f5f9;
+            --bg-dark: #0a0f0d; /* Noir de jais avec une pointe de vert */
+            --bg-card: rgba(20, 26, 24, 0.8);
+            --primary: #10b981; /* Vert Émeraude */
+            --secondary: #f59e0b; /* Ambre / Or */
+            --text-main: #e2e8f0; /* Gris perle (évite le blanc pur) */
             --text-muted: #94a3b8;
-            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(16, 185, 129, 0.2);
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg-dark);
             color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
+            line-height: 1.7;
         }
 
-        /* Scrollbar personnalisée */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--bg-dark); }
-        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+        /* Effet de lueur en arrière-plan */
+        .bg-glow {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% -20%, rgba(16, 185, 129, 0.15), transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.05), transparent 40%);
+            z-index: -1;
+        }
 
-        /* Effet Glassmorphism */
         .glass-card {
             background: var(--bg-card);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        /* Navbar */
-        .navbar {
-            background: rgba(15, 23, 42, 0.8) !important;
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--glass-border);
-            padding: 1rem 0;
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .navbar-brand { font-weight: 700; color: var(--primary) !important; }
-        .nav-link { color: var(--text-main) !important; font-weight: 500; margin: 0 10px; }
-        .nav-link:hover { color: var(--secondary) !important; }
 
-        /* Hero Section */
-        .hero {
-            padding: 180px 0 100px;
-            background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.15), transparent),
-                        radial-gradient(circle at bottom left, rgba(168, 85, 247, 0.15), transparent);
+        .glass-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(16, 185, 129, 0.1);
         }
-        .profile-img {
-            width: 180px; height: 180px;
-            border-radius: 50%;
-            border: 4px solid var(--primary);
-            padding: 5px;
-            box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
-        }
-        .hero h1 { font-size: 4rem; font-weight: 800; margin-bottom: 1rem; background: linear-gradient(to right, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        /* Sections */
-        section { padding: 100px 0; }
-        .section-title h2 {
-            font-weight: 700;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            text-align: center;
+        /* Titres avec dégradé Ambre/Emeraude */
+        h1, h2, .navbar-brand {
+            background: linear-gradient(135deg, #fff 30%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
         }
-        .section-title h2 span { color: var(--primary); }
+
+        .section-title h2 span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Boutons */
+        .btn-custom {
+            background: linear-gradient(135deg, var(--primary), #059669);
+            border: none; color: white; border-radius: 12px;
+            padding: 12px 32px; font-weight: 600;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-custom:hover {
+            filter: brightness(1.1);
+            color: white;
+            transform: scale(1.02);
+        }
 
         /* Progress Bars */
-        .skill-bar { height: 8px; background: #334155; border-radius: 10px; overflow: hidden; }
-        .skill-progress { background: linear-gradient(90deg, var(--primary), var(--secondary)); }
+        .skill-bar { height: 6px; background: #1e293b; border-radius: 10px; margin-top: 8px; }
+        .skill-progress { background: var(--primary); box-shadow: 0 0 10px var(--primary); }
 
-        /* Project Cards */
-        .project-card { height: 100%; overflow: hidden; }
-        .project-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
-        .project-img { height: 200px; object-fit: cover; opacity: 0.8; transition: 0.3s; }
-        .project-card:hover .project-img { opacity: 1; }
-
-        /* Badges */
-        .language-badge {
-            background: rgba(99, 102, 241, 0.1);
-            border: 1px solid var(--primary);
-            color: var(--primary);
-            padding: 5px 15px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            margin: 5px;
-        }
+        /* Navigation */
+        .navbar { background: rgba(10, 15, 13, 0.9) !important; border-bottom: 1px solid var(--glass-border); }
+        .nav-link { color: var(--text-muted) !important; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { color: var(--primary) !important; }
 
         /* Table */
-        .table-veille { color: var(--text-main); border-color: var(--glass-border); }
-        .table-veille thead { background: var(--primary); color: white; }
-        .table-veille a { color: var(--secondary); font-weight: 600; }
+        .table { --bs-table-bg: transparent; color: var(--text-main); }
+        .table-veille thead { border-bottom: 2px solid var(--primary); }
+        .table-veille a { color: var(--secondary); text-decoration: none; }
 
-        /* Buttons */
-        .btn-custom {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            border: none; color: white; border-radius: 50px;
-            padding: 12px 30px; font-weight: 600; transition: 0.3s;
+        .language-badge {
+            border: 1px solid var(--secondary);
+            color: var(--secondary);
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            background: rgba(245, 158, 11, 0.05);
         }
-        .btn-custom:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(99, 102, 241, 0.4); color: white; }
 
-        /* Nav Pills (Projects) */
-        .nav-pills .nav-link { background: transparent; color: var(--text-muted) !important; border: 1px solid var(--glass-border); margin: 5px; border-radius: 50px; }
-        .nav-pills .nav-link.active { background: var(--primary) !important; color: white !important; }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
+        .profile-img {
+            width: 160px; height: 160px;
+            border-radius: 30px;
+            transform: rotate(-3deg);
+            border: 3px solid var(--primary);
+            transition: 0.5s;
         }
+        .profile-img:hover { transform: rotate(0deg) scale(1.05); }
+
     </style>
 </head>
 <body>
 
+    <div class="bg-glow"></div>
+
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">RUBEN<span>.B</span></a>
-            <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="fas fa-bars"></span>
-            </button>
+            <a class="navbar-brand" href="#">RUBEN.B</a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">Accueil</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">Bio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Compétences</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projets</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#veille">Veille</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="hero text-center">
+    <section id="home" class="vh-100 d-flex align-items-center text-center">
         <div class="container">
-            <img src="pp.jpg.jpg" alt="Ruben Battocchio" class="profile-img mb-4">
-            <h1>Ruben Battocchio</h1>
-            <p class="lead text-muted mx-auto" style="max-width: 600px;">Futur développeur, explorateur de technologies et passionné par la résolution de problèmes complexes.</p>
-            <div class="mt-5">
-                <a href="#about" class="btn btn-custom me-3">Me découvrir</a>
-                <a href="#contact" class="btn btn-outline-light rounded-pill px-4 py-2">Me contacter</a>
+            <img src="pp.jpg.jpg" alt="Ruben" class="profile-img mb-5">
+            <h1 class="display-3">Ruben Battocchio</h1>
+            <p class="lead text-muted mb-5">Développeur & Passionné de Tech</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#projects" class="btn btn-custom">Voir mes travaux</a>
+                <a href="#contact" class="btn btn-outline-secondary rounded-pill px-4" style="color: var(--text-main); border-color: var(--glass-border);">Contact</a>
             </div>
         </div>
     </section>
 
-    <section id="about">
+    <section id="about" class="py-5">
         <div class="container">
-            <div class="section-title"><h2>À propos <span>de moi</span></h2></div>
+            <div class="section-title mb-5"><h2>Mon <span>Univers</span></h2></div>
             <div class="row g-4">
-                <div class="col-lg-6">
-                    <div class="glass-card p-4 h-100">
-                        <h3 class="mb-4 text-primary">Mon Parcours</h3>
-                        <p>Étudiant motivé et polyvalent, je me spécialise dans le développement logiciel et les réseaux. J'aime transformer des idées en lignes de code concrètes.</p>
-                        <div class="mt-4">
-                            <span class="language-badge">Anglais (B2-C1)</span>
-                            <span class="language-badge">Italien (B2)</span>
-                            <span class="language-badge">Espagnol (A1)</span>
+                <div class="col-md-7">
+                    <div class="glass-card p-5">
+                        <h3 class="h4 mb-4" style="color: var(--primary)">Le Parcours</h3>
+                        <p>Étudiant en Licence Informatique à l'Université d'Avignon, je forge mes compétences dans la création de solutions logicielles durables et performantes.</p>
+                        <div class="d-flex gap-2 mt-4">
+                            <span class="language-badge">Anglais C1</span>
+                            <span class="language-badge">Italien B2</span>
                         </div>
-                        <h4 class="mt-4">Formation</h4>
-                        <ul class="list-unstyled text-muted">
-                            <li class="mb-2"><i class="fas fa-graduation-cap me-2 text-primary"></i> <strong>Lycée A. Briand</strong> - Bac Général (Spé Math/NSI)</li>
-                            <li><i class="fas fa-university me-2 text-primary"></i> <strong>Université d'Avignon</strong> - Licence Informatique</li>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="glass-card p-5 border-secondary" style="--glass-border: rgba(245, 158, 11, 0.2)">
+                        <h3 class="h4 mb-4" style="color: var(--secondary)">Soft Skills</h3>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-primary"></i> Résolution de problèmes</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-primary"></i> Travail d'équipe</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-primary"></i> Veille constante</li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="glass-card p-4 h-100">
-                        <h3 class="mb-4 text-primary">Infos & Contact</h3>
-                        <div class="row g-3">
-                            <div class="col-sm-6"><p class="small text-muted mb-1">Téléphone</p><p>06 69 45 51 35</p></div>
-                            <div class="col-sm-6"><p class="small text-muted mb-1">Email</p><p>ruben.battocchio28@gmail.com</p></div>
-                            <div class="col-12"><p class="small text-muted mb-1">Localisation</p><p>40g route Sainte-Marguerite, 05000 Gap</p></div>
-                        </div>
-                        <h4 class="mt-4">Passions</h4>
-                        <div class="d-flex flex-wrap gap-3">
-                            <span class="text-muted"><i class="fas fa-basketball-ball text-primary me-2"></i>Basket</span>
-                            <span class="text-muted"><i class="fas fa-film text-primary me-2"></i>Cinéma</span>
-                            <span class="text-muted"><i class="fas fa-gamepad text-primary me-2"></i>Jeux Vidéo</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="bg-dark">
+    <section id="skills" class="py-5">
         <div class="container">
-            <div class="section-title"><h2>Mes <span>Skills</span></h2></div>
-            <div class="row g-5">
-                <div class="col-md-6">
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-2"><span>HTML/CSS</span><span>90%</span></div>
-                        <div class="skill-bar"><div class="skill-progress h-100" style="width: 90%"></div></div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-2"><span>Python</span><span>85%</span></div>
+            <div class="section-title text-center mb-5"><h2>Expertise <span>Technique</span></h2></div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="glass-card p-4">
+                        <div class="d-flex justify-content-between"><span>Python / C++</span><span class="text-primary">85%</span></div>
                         <div class="skill-bar"><div class="skill-progress h-100" style="width: 85%"></div></div>
                     </div>
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-2"><span>SQL</span><span>80%</span></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glass-card p-4">
+                        <div class="d-flex justify-content-between"><span>Web (HTML/CSS/JS)</span><span class="text-primary">90%</span></div>
+                        <div class="skill-bar"><div class="skill-progress h-100" style="width: 90%"></div></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glass-card p-4">
+                        <div class="d-flex justify-content-between"><span>SQL / Bases de données</span><span class="text-primary">80%</span></div>
                         <div class="skill-bar"><div class="skill-progress h-100" style="width: 80%"></div></div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-2"><span>C++</span><span>75%</span></div>
-                        <div class="skill-bar"><div class="skill-progress h-100" style="width: 75%"></div></div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-2"><span>JavaScript</span><span>70%</span></div>
-                        <div class="skill-bar"><div class="skill-progress h-100" style="width: 70%"></div></div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-2"><span>Mathématiques</span><span>70%</span></div>
-                        <div class="skill-bar"><div class="skill-progress h-100" style="width: 70%"></div></div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
-
-    <section id="projects">
-        <div class="container">
-            <div class="section-title"><h2>Réalisations <span>Projets</span></h2></div>
-            
-            <ul class="nav nav-pills justify-content-center mb-5" id="projectsTab" role="tablist">
-                <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#bloc1-prog">Prog (Bloc 1)</button></li>
-                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#bloc1-net">Réseau (Bloc 1)</button></li>
-                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#atelier">Atelier Pro</button></li>
-            </ul>
-
-            <div class="tab-content">
-                <div class="tab-pane fade show active" id="bloc1-prog">
-                    <div class="row g-4">
-                        <div class="col-md-4">
-                            <div class="glass-card project-card">
-                                <img src="minialabyrinthe.png" class="project-img card-img-top" alt="Labyrinthe">
-                                <div class="p-4 text-center">
-                                    <h5>Labyrinthe Java</h5>
-                                    <p class="small text-muted">Algorithmique & Java</p>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('labyrinthe.pdf')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="glass-card project-card">
-                                <img src="miniashifumi.png" class="project-img card-img-top" alt="Shifumi">
-                                <div class="p-4 text-center">
-                                    <h5>Jeu Shifumi</h5>
-                                    <p class="small text-muted">Logique de jeu en Java</p>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('shifumi.pdf')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="glass-card project-card">
-                                <img src="miniabataillenavale.jpg" class="project-img card-img-top" alt="Bataille Navale">
-                                <div class="p-4 text-center">
-                                    <h5>Bataille Navale</h5>
-                                    <p class="small text-muted">Tableaux & Structures</p>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp08.pdf')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
-        </div>
-    </section>
-
-    <section id="veille" class="bg-dark">
-        <div class="container">
-            <div class="section-title"><h2>Veille <span>Domotique</span></h2></div>
-            <div class="glass-card p-2 overflow-hidden">
-                <div class="table-responsive">
-                    <table class="table table-dark table-hover mb-0">
-                        <thead>
-                            <tr><th>Sujet</th><th>Source</th><th>Avancée</th><th>Date</th></tr>
-                        </thead>
-                        <tbody class="text-muted">
-                            <tr><td>Matter 1.5</td><td><a href="#">BeGeek</a></td><td>Caméras & VE</td><td>21/11/25</td></tr>
-                            <tr><td>Hub Aqara M200</td><td><a href="#">Alexiens</a></td><td>Thread/Zigbee</td><td>19/11/25</td></tr>
-                            <tr><td>Lidl Smart Home</td><td><a href="#">SoonNight</a></td><td>Zigbee Low Cost</td><td>18/11/25</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="container">
-            <div class="section-title"><h2>Me <span>Contacter</span></h2></div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="glass-card p-5">
-                        <form id="contactForm">
-                            <div class="row g-3">
-                                <div class="col-md-6"><input type="text" class="form-control bg-dark border-secondary text-light rounded-pill" placeholder="Nom" required></div>
-                                <div class="col-md-6"><input type="email" class="form-control bg-dark border-secondary text-light rounded-pill" placeholder="Email" required></div>
-                                <div class="col-12"><textarea class="form-control bg-dark border-secondary text-light rounded-3" rows="5" placeholder="Message" required></textarea></div>
-                                <div class="col-12 text-center mt-4"><button type="submit" class="btn btn-custom px-5">Envoyer</button></div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-5 border-top border-secondary mt-5">
-        <div class="container text-center">
-            <div class="social-links mb-4">
-                <a href="https://github.com/rubenbtco" class="text-light fs-2 mx-3"><i class="fab fa-github"></i></a>
-            </div>
-            <p class="text-muted mb-0">&copy; 2026 Ruben Battocchio. Créé avec passion.</p>
-        </div>
-    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
-                }
-            });
-        });
-
-        function downloadReport(fileName) {
-            const link = document.createElement('a');
-            link.href = fileName;
-            link.download = fileName;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-    </script>
 </body>
 </html>
