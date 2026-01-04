@@ -3,460 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruben Battocchio - Portfolio</title>
+    <title>Ruben Battocchio | Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --primary-color: #4e54c8;
-            --secondary-color: #8f94fb;
-            --dark-color: #2c2c2c;
-            --light-color: #f8f9fa;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: #333;
-            scroll-behavior: smooth;
-        }
-        
-        .navbar {
-            background-color: rgba(255, 255, 255, 0.95) !important;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 15px 0;
-            transition: all 0.3s ease;
-        }
-        
-        .navbar-brand {
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-        
-        .nav-link {
-            font-weight: 500;
-            margin: 0 10px;
-            color: var(--dark-color);
-            transition: color 0.3s;
-        }
-        
-        .nav-link:hover {
-            color: var(--primary-color);
-        }
-        
-        section {
-            padding: 80px 0;
-        }
-        
-        .hero {
-            background: linear-gradient(to right, #4e54c8, #8f94fb);
-            color: white;
-            padding: 150px 0 100px;
-            text-align: center;
-        }
-        
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid white;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            margin-bottom: 30px;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(to right, #4e54c8, #8f94fb);
-            border: none;
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .btn-report {
-            background: linear-gradient(to right, #28a745, #20c997);
-            border: none;
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-weight: 500;
-            transition: all 0.3s;
-            color: white;
-            width: 100%;
-            margin-top: 15px;
-        }
-        
-        .btn-report:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            color: white;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-title h2 {
-            font-weight: 700;
-            color: var(--dark-color);
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 3px;
-            background: linear-gradient(to right, #4e54c8, #8f94fb);
-        }
-        
-        .about-content, .experience-item, .contact-form, .veille-content {
-            padding: 25px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .skill-item {
-            margin-bottom: 20px;
-        }
-        
-        .skill-info {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-        }
-        
-        .skill-bar {
-            height: 10px;
-            background: #e9ecef;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
-        .skill-progress {
-            height: 100%;
-            border-radius: 10px;
-            background: linear-gradient(to right, #4e54c8, #8f94fb);
-        }
-        
-        .project-card {
-            border: none;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s;
-            margin-bottom: 30px;
-            height: 100%;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .project-img {
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .experience-item {
-            margin-bottom: 25px;
-        }
-        
-        .form-control {
-            padding: 12px;
-            border-radius: 10px;
-            border: 1px solid #e9ecef;
-            margin-bottom: 15px;
-        }
-        
-        .form-control:focus {
-            box-shadow: none;
-            border-color: var(--primary-color);
+            --bg-dark: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.7);
+            --primary: #6366f1;
+            --secondary: #a855f7;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --glass-border: rgba(255, 255, 255, 0.1);
         }
 
-        /* Style spécifique pour le tableau de veille */
-        .table-veille th {
-            background-color: #f8f9fa;
-            color: var(--primary-color);
-            font-weight: 600;
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
-        
-        footer {
-            background: var(--dark-color);
-            color: white;
-            padding: 50px 0 20px;
-        }
-        
-        .social-links a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            text-align: center;
-            line-height: 40px;
-            color: white;
-            margin: 0 5px;
-            transition: all 0.3s;
-        }
-        
-        .social-links a:hover {
-            background: var(--primary-color);
-            transform: translateY(-5px);
-        }
-        
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 40px;
-            height: 40px;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 40px;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-        }
-        
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .language-badge {
-            display: inline-block;
-            padding: 5px 15px;
-            background: linear-gradient(to right, #4e54c8, #8f94fb);
-            color: white;
+
+        /* Scrollbar personnalisée */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+
+        /* Effet Glassmorphism */
+        .glass-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
             border-radius: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(15, 23, 42, 0.8) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 0;
+        }
+        .navbar-brand { font-weight: 700; color: var(--primary) !important; }
+        .nav-link { color: var(--text-main) !important; font-weight: 500; margin: 0 10px; }
+        .nav-link:hover { color: var(--secondary) !important; }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px;
+            background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.15), transparent),
+                        radial-gradient(circle at bottom left, rgba(168, 85, 247, 0.15), transparent);
+        }
+        .profile-img {
+            width: 180px; height: 180px;
+            border-radius: 50%;
+            border: 4px solid var(--primary);
+            padding: 5px;
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+        }
+        .hero h1 { font-size: 4rem; font-weight: 800; margin-bottom: 1rem; background: linear-gradient(to right, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* Sections */
+        section { padding: 100px 0; }
+        .section-title h2 {
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        .section-title h2 span { color: var(--primary); }
+
+        /* Progress Bars */
+        .skill-bar { height: 8px; background: #334155; border-radius: 10px; overflow: hidden; }
+        .skill-progress { background: linear-gradient(90deg, var(--primary), var(--secondary)); }
+
+        /* Project Cards */
+        .project-card { height: 100%; overflow: hidden; }
+        .project-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        .project-img { height: 200px; object-fit: cover; opacity: 0.8; transition: 0.3s; }
+        .project-card:hover .project-img { opacity: 1; }
+
+        /* Badges */
+        .language-badge {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.85rem;
             margin: 5px;
-            font-size: 0.9rem;
         }
-        
-        .nav-pills .nav-link.active {
-            background: linear-gradient(to right, #4e54c8, #8f94fb);
+
+        /* Table */
+        .table-veille { color: var(--text-main); border-color: var(--glass-border); }
+        .table-veille thead { background: var(--primary); color: white; }
+        .table-veille a { color: var(--secondary); font-weight: 600; }
+
+        /* Buttons */
+        .btn-custom {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border: none; color: white; border-radius: 50px;
+            padding: 12px 30px; font-weight: 600; transition: 0.3s;
         }
-        
-        .nav-pills .nav-link {
-            color: var(--dark-color);
-            font-weight: 500;
-        }
-        
+        .btn-custom:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(99, 102, 241, 0.4); color: white; }
+
+        /* Nav Pills (Projects) */
+        .nav-pills .nav-link { background: transparent; color: var(--text-muted) !important; border: 1px solid var(--glass-border); margin: 5px; border-radius: 50px; }
+        .nav-pills .nav-link.active { background: var(--primary) !important; color: white !important; }
+
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            section {
-                padding: 60px 0;
-            }
-            
-            .profile-img {
-                width: 150px;
-                height: 150px;
-            }
+            .hero h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Ruben Battocchio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <a class="navbar-brand" href="#">RUBEN<span>.B</span></a>
+            <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="fas fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Accueil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">À propos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Compétences</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projets</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#experience">Expérience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#veille">Veille Tech</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#home">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Bio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#veille">Veille</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="hero">
+    <section id="home" class="hero text-center">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <img src="pp.jpg.jpg" alt="Ruben Battocchio" class="profile-img">
-                    <h1>Ruben Battocchio</h1>
-                    <p>Étudiant en Informatique Passionné</p>
-                    <div class="mt-4">
-                        <a href="#about" class="btn btn-light btn-lg me-3">Découvrir</a>
-                        <a href="#contact" class="btn btn-outline-light btn-lg">Me contacter</a>
-                    </div>
-                </div>
+            <img src="pp.jpg.jpg" alt="Ruben Battocchio" class="profile-img mb-4">
+            <h1>Ruben Battocchio</h1>
+            <p class="lead text-muted mx-auto" style="max-width: 600px;">Futur développeur, explorateur de technologies et passionné par la résolution de problèmes complexes.</p>
+            <div class="mt-5">
+                <a href="#about" class="btn btn-custom me-3">Me découvrir</a>
+                <a href="#contact" class="btn btn-outline-light rounded-pill px-4 py-2">Me contacter</a>
             </div>
         </div>
     </section>
 
-    <section id="about" class="bg-light">
+    <section id="about">
         <div class="container">
-            <div class="section-title">
-                <h2>À propos de moi</h2>
-            </div>
-            <div class="row">
+            <div class="section-title"><h2>À propos <span>de moi</span></h2></div>
+            <div class="row g-4">
                 <div class="col-lg-6">
-                    <div class="about-content">
-                        <h3>Qui suis-je ?</h3>
-                        <p>Je suis Ruben Battocchio, étudiant en informatique passionné par le développement web et la programmation. Motivé, polyvalent et sociable, je recherche constamment à acquérir de nouvelles compétences et à relever de nouveaux défis.</p>
-                        
-                        <h4 class="mt-4">Mes qualités</h4>
-                        <ul>
-                            <li>Motivé - Je fais preuve de détermination dans tous les projets que j'entreprends</li>
-                            <li>Multi-tâche - Je sais gérer plusieurs projets simultanément avec efficacité</li>
-                            <li>Sociable - J'aime travailler en équipe et échanger avec les autres</li>
-                        </ul>
-                        
-                        <h4 class="mt-4">Langues</h4>
-                        <div>
+                    <div class="glass-card p-4 h-100">
+                        <h3 class="mb-4 text-primary">Mon Parcours</h3>
+                        <p>Étudiant motivé et polyvalent, je me spécialise dans le développement logiciel et les réseaux. J'aime transformer des idées en lignes de code concrètes.</p>
+                        <div class="mt-4">
                             <span class="language-badge">Anglais (B2-C1)</span>
                             <span class="language-badge">Italien (B2)</span>
                             <span class="language-badge">Espagnol (A1)</span>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about-content">
-                        <h3>Informations personnelles</h3>
-                        <div class="row mt-4">
-                            <div class="col-sm-6">
-                                <p><strong>Téléphone:</strong><br>06-69-45-51-35</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <p><strong>Email:</strong><br>ruben.battocchio28@gmail.com</p>
-                            </div>
-                            <div class="col-12">
-                                <p><strong>Adresse:</strong><br>40g route Sainte-Marguerite, 05000 Gap</p>
-                            </div>
-                        </div>
-                        
                         <h4 class="mt-4">Formation</h4>
-                        <ul>
-                            <li><strong>Lycée A. Briand</strong> - Bac Général (2023-2024)<br>Spécialités: Anglais du monde contemporain, Mathématiques, Numérique science de l'informatique</li>
-                            <li><strong>Université d'Avignon</strong> - Premier semestre de Licence Informatique</li>
+                        <ul class="list-unstyled text-muted">
+                            <li class="mb-2"><i class="fas fa-graduation-cap me-2 text-primary"></i> <strong>Lycée A. Briand</strong> - Bac Général (Spé Math/NSI)</li>
+                            <li><i class="fas fa-university me-2 text-primary"></i> <strong>Université d'Avignon</strong> - Licence Informatique</li>
                         </ul>
-                        
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="glass-card p-4 h-100">
+                        <h3 class="mb-4 text-primary">Infos & Contact</h3>
+                        <div class="row g-3">
+                            <div class="col-sm-6"><p class="small text-muted mb-1">Téléphone</p><p>06 69 45 51 35</p></div>
+                            <div class="col-sm-6"><p class="small text-muted mb-1">Email</p><p>ruben.battocchio28@gmail.com</p></div>
+                            <div class="col-12"><p class="small text-muted mb-1">Localisation</p><p>40g route Sainte-Marguerite, 05000 Gap</p></div>
+                        </div>
                         <h4 class="mt-4">Passions</h4>
-                        <p>Cinéma, Jeux vidéo, Musique, Basket-Ball</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills">
-        <div class="container">
-            <div class="section-title">
-                <h2>Mes compétences</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <h5>Mathématiques</h5>
-                            <span>70%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 70%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <h5>HTML/CSS</h5>
-                            <span>90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <h5>Python</h5>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <h5>C++</h5>
-                            <span>75%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 75%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <h5>SQL</h5>
-                            <span>80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <h5>JavaScript</h5>
-                            <span>70%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 70%"></div>
+                        <div class="d-flex flex-wrap gap-3">
+                            <span class="text-muted"><i class="fas fa-basketball-ball text-primary me-2"></i>Basket</span>
+                            <span class="text-muted"><i class="fas fa-film text-primary me-2"></i>Cinéma</span>
+                            <span class="text-muted"><i class="fas fa-gamepad text-primary me-2"></i>Jeux Vidéo</span>
                         </div>
                     </div>
                 </div>
@@ -464,341 +194,106 @@
         </div>
     </section>
 
-    <section id="projects" class="bg-light">
+    <section id="skills" class="bg-dark">
         <div class="container">
-            <div class="section-title">
-                <h2>Mes projets</h2>
+            <div class="section-title"><h2>Mes <span>Skills</span></h2></div>
+            <div class="row g-5">
+                <div class="col-md-6">
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2"><span>HTML/CSS</span><span>90%</span></div>
+                        <div class="skill-bar"><div class="skill-progress h-100" style="width: 90%"></div></div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2"><span>Python</span><span>85%</span></div>
+                        <div class="skill-bar"><div class="skill-progress h-100" style="width: 85%"></div></div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2"><span>SQL</span><span>80%</span></div>
+                        <div class="skill-bar"><div class="skill-progress h-100" style="width: 80%"></div></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2"><span>C++</span><span>75%</span></div>
+                        <div class="skill-bar"><div class="skill-progress h-100" style="width: 75%"></div></div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2"><span>JavaScript</span><span>70%</span></div>
+                        <div class="skill-bar"><div class="skill-progress h-100" style="width: 70%"></div></div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2"><span>Mathématiques</span><span>70%</span></div>
+                        <div class="skill-bar"><div class="skill-progress h-100" style="width: 70%"></div></div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <div class="section-title"><h2>Réalisations <span>Projets</span></h2></div>
             
             <ul class="nav nav-pills justify-content-center mb-5" id="projectsTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="bloc1-programmation-tab" data-bs-toggle="pill" data-bs-target="#bloc1-programmation" type="button" role="tab" aria-controls="bloc1-programmation" aria-selected="true">Bloc1-Programmation</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="bloc1-reseau-tab" data-bs-toggle="pill" data-bs-target="#bloc1-reseau" type="button" role="tab" aria-controls="bloc1-reseau" aria-selected="false">Bloc1-Réseau</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="atelier-pro-tab" data-bs-toggle="pill" data-bs-target="#atelier-pro" type="button" role="tab" aria-controls="atelier-pro" aria-selected="false">Atelier Pro</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="bloc3-programmation-tab" data-bs-toggle="pill" data-bs-target="#bloc3-programmation" type="button" role="tab" aria-controls="bloc3-programmation" aria-selected="false">Bloc3-Programmation</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="bloc3-reseau-tab" data-bs-toggle="pill" data-bs-target="#bloc3-reseau" type="button" role="tab" aria-controls="bloc3-reseau" aria-selected="false">Bloc3-Réseau</button>
-                </li>
+                <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#bloc1-prog">Prog (Bloc 1)</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#bloc1-net">Réseau (Bloc 1)</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#atelier">Atelier Pro</button></li>
             </ul>
-            
-            <div class="tab-content" id="projectsTabContent">
-                <div class="tab-pane fade show active" id="bloc1-programmation" role="tabpanel" aria-labelledby="bloc1-programmation-tab">
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4">
-                            <div class="project-card">
-                                <img src="minialabyrinthe.png" class="project-img card-img-top" alt="Projet développement web">
-                                <div class="card-body">
-                                    <h5 class="card-title">Labyrinthe</h5>
-                                    <p class="card-text">Début de la programmation en Java</p>
-                                    <button class="btn btn-report" onclick="downloadReport('labyrinthe.pdf')">
-                                        <i class="fas fa-download me-2"></i>Compte rendu
-                                    </button>
+
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="bloc1-prog">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="glass-card project-card">
+                                <img src="minialabyrinthe.png" class="project-img card-img-top" alt="Labyrinthe">
+                                <div class="p-4 text-center">
+                                    <h5>Labyrinthe Java</h5>
+                                    <p class="small text-muted">Algorithmique & Java</p>
+                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('labyrinthe.pdf')">Compte-rendu</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="project-card">
-                                <img src="miniajava.png" class="project-img card-img-top" alt="Projet Java">
-                                <div class="card-body">
-                                    <h5 class="card-title">Premiers pas en Java</h5>
-                                    <p class="card-text">Création d'un algorithme en Java</p>
-                                    <button class="btn btn-report" onclick="downloadReport('premierspasenjava.pdf')">
-                                        <i class="fas fa-download me-2"></i>Compte rendu
-                                    </button>
+                        <div class="col-md-4">
+                            <div class="glass-card project-card">
+                                <img src="miniashifumi.png" class="project-img card-img-top" alt="Shifumi">
+                                <div class="p-4 text-center">
+                                    <h5>Jeu Shifumi</h5>
+                                    <p class="small text-muted">Logique de jeu en Java</p>
+                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('shifumi.pdf')">Compte-rendu</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="project-card">
-                                <img src="miniajava.png" class="project-img card-img-top" alt="Projet TP3">
-                                <div class="card-body">
-                                    <h5 class="card-title">TP3 Java</h5>
-                                    <p class="card-text">Suite d'exercices en Java</p>
-                                    <button class="btn btn-report" onclick="downloadReport('javatp3.pdf')">
-                                        <i class="fas fa-download me-2"></i>Compte rendu
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="project-card">
-                                <img src="miniashifumi.png" class="project-img card-img-top" alt="Projet Shifumi">
-                                <div class="card-body">
-                                    <h5 class="card-title">TP04 Shifumi</h5>
-                                    <p class="card-text">Création d'un jeu de Shifumi en Java</p>
-                                    <button class="btn btn-report" onclick="downloadReport('shifumi.pdf')">
-                                        <i class="fas fa-download me-2"></i>Compte rendu
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="project-card">
-                                <img src="miniajava.png" class="project-img card-img-top" alt="Projet TP5">
-                                <div class="card-body">
-                                    <h5 class="card-title">TP5 Java</h5>
-                                    <p class="card-text">Suite d'exercices en Java</p>
-                                    <button class="btn btn-report" onclick="downloadReport('b1btp05.pdf')">
-                                        <i class="fas fa-download me-2"></i>Compte rendu
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="project-card">
-                                <img src="miniabataillenavale.jpg" class="project-img card-img-top" alt="Projet TP5">
-                                <div class="card-body">
-                                    <h5 class="card-title">TP7 Bataille Navale</h5>
-                                    <p class="card-text">Jeu de bataille navale</p>
-                                    <button class="btn btn-report" onclick="downloadReport('b1btp08.pdf')">
-                                        <i class="fas fa-download me-2"></i>Compte rendu
-                                    </button>
+                        <div class="col-md-4">
+                            <div class="glass-card project-card">
+                                <img src="miniabataillenavale.jpg" class="project-img card-img-top" alt="Bataille Navale">
+                                <div class="p-4 text-center">
+                                    <h5>Bataille Navale</h5>
+                                    <p class="small text-muted">Tableaux & Structures</p>
+                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp08.pdf')">Compte-rendu</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="tab-pane fade" id="bloc1-reseau" role="tabpanel" aria-labelledby="bloc1-reseau-tab">
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4">
-                            <div class="project-card">
-                                <img src="testcable.jpg" class="project-img card-img-top" alt="Projet réseau">
-                                <div class="card-body">
-                                    <h5 class="card-title">La panne</h5>
-                                    <p class="card-text">Trouver et résoudre les différentes pannes dans notre réseau</p>
-                                    <button class="btn btn-report" onclick="downloadReport('reparerreseau.pdf')">
-                                        <i class="fas fa-download me-2"></i>Compte rendu
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="project-card">
-                                <img src="miniadiagnostic.png" class="project-img card-img-top" alt="Diagnostic">
-                                <div class="card-body">
-                                    <h5 class="card-title">Diagnostic</h5>
-                                    <p class="card-text">Diagnostiquer sa machine</p>
-                                    <button class="btn btn-report" onclick="downloadReport('Diagnostic.pdf')">
-                                        <i class="fas fa-download me-2"></i>Compte rendu
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="project-card">
-                                <img src="miniacmd.png" class="project-img card-img-top" alt="Commandes DOS">
-                                <div class="card-body">
-                                    <h5 class="card-title">Commandes DOS</h5>
-                                    <p class="card-text">Comprendre l'utilisation des commandes DOS</p>
-                                    <button class="btn btn-report" onclick="downloadReport('b1stp05.pdf')">
-                                        <i class="fas fa-download me-2"></i>Compte rendu
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                
-                <div class="tab-pane fade" id="atelier-pro" role="tabpanel" aria-labelledby="atelier-pro-tab">
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4">
-                            <div class="project-card">
-                                <img src="deepseek.png" class="project-img card-img-top" alt="Projet portfolio">
-                                <div class="card-body">
-                                    <h5 class="card-title">Le Portfolio</h5>
-                                    <p class="card-text">Comment développer un portfolio uniquement grâce à l'IA</p>
-                                    <button class="btn btn-report" onclick="downloadReport('creationportfolio.pdf')">
-                                        <i class="fas fa-download me-2"></i>Compte rendu
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="project-card">
-                                <img src="chuckminia.png" class="project-img card-img-top" alt="HTML">
-                                <div class="card-body">
-                                    <h5 class="card-title">Premiers pas en HTML</h5>
-                                    <p class="card-text">Création d'une page Web en HTML</p>
-                                    <button class="btn btn-report" onclick="downloadReport('chucknorris.pdf')">
-                                        <i class="fas fa-download me-2"></i>Compte rendu
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="project-card">
-                                <img src="CSS.png" class="project-img card-img-top" alt="CSS">
-                                <div class="card-body">
-                                    <h5 class="card-title">Premiers pas en CSS</h5>
-                                    <p class="card-text">Création d'une page Web en HTML</p>
-                                    <button class="btn btn-report" onclick="downloadReport('premierspascss.pdf')">
-                                        <i class="fas fa-download me-2"></i>Compte rendu
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="project-card">
-                                <img src="CSS.png" class="project-img card-img-top" alt="CSS Avancé">
-                                <div class="card-body">
-                                    <h5 class="card-title">CSS/HTML avancé</h5>
-                                    <p class="card-text">Avancée sur le HTML</p>
-                                    <button class="btn btn-report" onclick="downloadReport('proftp04.pdf')">
-                                        <i class="fas fa-download me-2"></i>Compte rendu
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="project-card">
-                                <img src="CSS.png" class="project-img card-img-top" alt="CSS Avancé 2">
-                                <div class="card-body">
-                                    <h5 class="card-title">CSS/HTML avancé partie 2</h5>
-                                    <p class="card-text">Avancée sur le HTML</p>
-                                    <button class="btn btn-report" onclick="downloadReport('htmlcssavancepart2.pdf')">
-                                        <i class="fas fa-download me-2"></i>Compte rendu
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="tab-pane fade" id="bloc3-programmation" role="tabpanel" aria-labelledby="bloc3-programmation-tab">
-                    <div class="row">
-                    </div>
-                </div>
-                
-                <div class="tab-pane fade" id="bloc3-reseau" role="tabpanel" aria-labelledby="bloc3-reseau-tab">
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4">
-                            <div class="project-card">
-                                <img src="miniacapture.png" class="project-img card-img-top" alt="Capture">
-                                <div class="card-body">
-                                    <h5 class="card-title">Capture d'écran</h5>
-                                    <p class="card-text">Présentation et comparaison d'outils de capture d'écran</p>
-                                    <button class="btn btn-report" onclick="downloadReport('capture.pdf')">
-                                        <i class="fas fa-download me-2"></i>Compte rendu
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="project-card">
-                                <img src="minianas.png" class="project-img card-img-top" alt="NAS">
-                                <div class="card-body">
-                                    <h5 class="card-title">Serveur NAS</h5>
-                                    <p class="card-text">Fonctionnement d'un serveur NAS</p>
-                                    <button class="btn btn-report" onclick="downloadReport('b3stp04.pdf')">
-                                        <i class="fas fa-download me-2"></i>Compte rendu
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
         </div>
     </section>
 
-    <section id="experience">
+    <section id="veille" class="bg-dark">
         <div class="container">
-            <div class="section-title">
-                <h2>Mon expérience</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="experience-item">
-                        <h4>Aide à la personne</h4>
-                        <p class="text-primary">Été 2024</p>
-                        <p>Assistance et accompagnement de personnes âgées de plus de 80 ans dans les activités quotidiennes.</p>
-                    </div>
-                    <div class="experience-item">
-                        <h4>Babysitting</h4>
-                        <p class="text-primary">Été 2024</p>
-                        <p>Garde d'enfants de moins de 10 ans, organisation d'activités ludiques et éducatives.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="experience-item">
-                        <h4>Ménage en hôtel</h4>
-                        <p class="text-primary">Été 2024</p>
-                        <p>Entretien et nettoyage des chambres dans un établissement hôtelier.</p>
-                    </div>
-                    <div class="experience-item">
-                        <h4>Équipier polyvalent - McDonald's</h4>
-                        <p class="text-primary">Été 2024</p>
-                        <p>Service en salle, préparation des commandes et gestion de la caisse.</p>
-                    </div>
-                    <div class="experience-item">
-                        <h4>Préparateur de commande - Alpagel</h4>
-                        <p class="text-primary">Été 2024</p>
-                        <p>Réception, préparation et expédition des commandes dans le respect des délais.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="veille" class="bg-light">
-        <div class="container">
-            <div class="section-title">
-                <h2>Veille Technologique - Domotique</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="veille-content">
-                        <div class="table-responsive">
-                            <table class="table table-hover table-bordered table-veille">
-                                <thead>
-                                    <tr>
-                                        <th scope="col"><i class="fas fa-tools me-2"></i>Outil / Sujet</th>
-                                        <th scope="col"><i class="fas fa-link me-2"></i>Source</th>
-                                        <th scope="col"><i class="fas fa-tasks me-2"></i>Avancée</th>
-                                        <th scope="col"><i class="far fa-calendar-alt me-2"></i>Date</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><strong>Protocole Matter 1.5</strong></td>
-                                        <td><a href="https://www.begeek.fr" target="_blank" class="text-decoration-none">BeGeek / CSA</a></td>
-                                        <td>Support officiel des caméras de sécurité & chargeurs VE</td>
-                                        <td>21/11/2025</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><strong>Hub Aqara M200</strong></td>
-                                        <td><a href="https://www.lesalexiens.fr" target="_blank" class="text-decoration-none">Les Alexiens</a></td>
-                                        <td>Lancement du Hub "tous protocoles" (Thread/Zigbee) & capteur FP300</td>
-                                        <td>19/11/2025</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><strong>Lidl Smart Home</strong></td>
-                                        <td><a href="https://www.soonnight.com" target="_blank" class="text-decoration-none">SoonNight</a></td>
-                                        <td>Offensive prix : Thermostats connectés Zigbee sous les 10€</td>
-                                        <td>18/11/2025</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><strong>Alarme Ajax / Home Assistant</strong></td>
-                                        <td><a href="https://www.maison-et-domotique.com" target="_blank" class="text-decoration-none">Maison & Domotique</a></td>
-                                        <td>Nouvelle intégration native pour piloter l'alarme depuis HA</td>
-                                        <td>18/11/2025</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+            <div class="section-title"><h2>Veille <span>Domotique</span></h2></div>
+            <div class="glass-card p-2 overflow-hidden">
+                <div class="table-responsive">
+                    <table class="table table-dark table-hover mb-0">
+                        <thead>
+                            <tr><th>Sujet</th><th>Source</th><th>Avancée</th><th>Date</th></tr>
+                        </thead>
+                        <tbody class="text-muted">
+                            <tr><td>Matter 1.5</td><td><a href="#">BeGeek</a></td><td>Caméras & VE</td><td>21/11/25</td></tr>
+                            <tr><td>Hub Aqara M200</td><td><a href="#">Alexiens</a></td><td>Thread/Zigbee</td><td>19/11/25</td></tr>
+                            <tr><td>Lidl Smart Home</td><td><a href="#">SoonNight</a></td><td>Zigbee Low Cost</td><td>18/11/25</td></tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -806,29 +301,16 @@
 
     <section id="contact">
         <div class="container">
-            <div class="section-title">
-                <h2>Me contacter</h2>
-            </div>
+            <div class="section-title"><h2>Me <span>Contacter</span></h2></div>
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <div class="contact-form">
+                    <div class="glass-card p-5">
                         <form id="contactForm">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Votre nom" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="email" class="form-control" placeholder="Votre email" required>
-                                </div>
-                                <div class="col-12">
-                                    <input type="text" class="form-control" placeholder="Sujet">
-                                </div>
-                                <div class="col-12">
-                                    <textarea class="form-control" rows="5" placeholder="Votre message" required></textarea>
-                                </div>
-                                <div class="col-12 text-center">
-                                    <button type="submit" class="btn btn-primary">Envoyer le message</button>
-                                </div>
+                            <div class="row g-3">
+                                <div class="col-md-6"><input type="text" class="form-control bg-dark border-secondary text-light rounded-pill" placeholder="Nom" required></div>
+                                <div class="col-md-6"><input type="email" class="form-control bg-dark border-secondary text-light rounded-pill" placeholder="Email" required></div>
+                                <div class="col-12"><textarea class="form-control bg-dark border-secondary text-light rounded-3" rows="5" placeholder="Message" required></textarea></div>
+                                <div class="col-12 text-center mt-4"><button type="submit" class="btn btn-custom px-5">Envoyer</button></div>
                             </div>
                         </form>
                     </div>
@@ -837,104 +319,32 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 mx-auto text-center">
-                    <h3>Ruben Battocchio</h3>
-                    <p>Étudiant en Informatique Passionné</p>
-                    <div class="social-links mt-4">
-                        <a href="https://github.com/rubenbtco" target="_blank"><i class="fab fa-github"></i></a>
-                    </div>
-                    <div class="mt-4">
-                        <a href="#" class="btn btn-outline-light" id="downloadCV">Télécharger mon CV</a>
-                    </div>
-                    <p class="mt-4">&copy; 2024 Ruben Battocchio. Tous droits réservés.</p>
-                </div>
+    <footer class="py-5 border-top border-secondary mt-5">
+        <div class="container text-center">
+            <div class="social-links mb-4">
+                <a href="https://github.com/rubenbtco" class="text-light fs-2 mx-3"><i class="fab fa-github"></i></a>
             </div>
+            <p class="text-muted mb-0">&copy; 2026 Ruben Battocchio. Créé avec passion.</p>
         </div>
     </footer>
 
-    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Back to top button
-        const backToTopButton = document.querySelector('.back-to-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('active');
-            } else {
-                backToTopButton.classList.remove('active');
-            }
-        });
-        
-        backToTopButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-        
-        // Navbar background change on scroll
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.pageYOffset > 50) {
-                navbar.style.padding = '10px 0';
-                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            } else {
-                navbar.style.padding = '15px 0';
-                navbar.style.boxShadow = 'none';
-            }
-        });
-        
-        // Smooth scrolling for navigation links
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 70,
-                        behavior: 'smooth'
-                    });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
                 }
             });
         });
-        
-        // CV Download
-        document.getElementById('downloadCV').addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Create a temporary link element
-            const link = document.createElement('a');
-            link.href = 'Copie de CV Ruben Battocchio 2024.pdf'; // This should be the path to your CV file
-            link.download = 'CV_Ruben_Battocchio.pdf';
-            
-            // Append to body, click and remove
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        });
-        
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Merci pour votre message ! Je vous répondrai dès que possible.');
-            this.reset();
-        });
-        
-        // Function to download project reports
+
         function downloadReport(fileName) {
-            // Create a temporary link element
             const link = document.createElement('a');
-            link.href = fileName; // This should be the path to your report file
+            link.href = fileName;
             link.download = fileName;
-            
-            // Append to body, click and remove
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
