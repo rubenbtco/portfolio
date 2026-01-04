@@ -72,15 +72,9 @@
             display: flex;
             align-items: center;
         }
-        .profile-img {
-            width: 150px; height: 150px;
-            border-radius: 50%;
-            border: 3px solid var(--primary);
-            padding: 5px;
-            object-fit: cover;
-            box-shadow: 0 0 25px rgba(16, 185, 129, 0.4);
-            background: rgba(255,255,255,0.05);
-        }
+        /* Style profile-img supprimé car l'image est retirée, mais je laisse la classe au cas où tu voudrais la remettre ailleurs plus tard
+        .profile-img { ... } */
+        
         .hero h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; color: #ffffff; text-shadow: 0 0 20px rgba(16, 185, 129, 0.2); }
         .hero .lead { color: var(--text-sub) !important; font-weight: 400; font-size: 1.1rem;}
 
@@ -262,7 +256,6 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 text-center text-lg-start mb-5 mb-lg-0">
-                    <img src="pp.jpg" alt="Ruben Battocchio" class="profile-img mb-4 d-inline-block">
                     <h1>Ruben Battocchio</h1>
                     <p class="lead">Futur développeur, explorateur de technologies et passionné par la résolution de problèmes complexes.</p>
                     <div class="mt-4">
@@ -641,7 +634,6 @@
             document.body.removeChild(link);
         }
 
-        // --- SCRIPT D'ANIMATION MIS À JOUR ---
         document.addEventListener('DOMContentLoaded', function() {
             const codeContent = `
 <span class="syntax-comment">// Initialisation du profil étudiant</span><br>
