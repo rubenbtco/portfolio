@@ -5,256 +5,187 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruben Battocchio | Portfolio</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
             /* PALETTE EMERAUDE & OR CUIVRÉ */
-            --bg-dark: #0a0f0d;           /* Noir profond teinté de vert */
-            --bg-card: rgba(20, 26, 24, 0.7); /* Verre fumé */
-            --primary: #10b981;           /* Vert Émeraude (Action principale) */
-            --primary-hover: #059669;     /* Vert plus foncé pour survol */
-            --secondary: #f59e0b;         /* Or / Ambre (Accents) */
-            --text-main: #e2e8f0;         /* Gris perle (Lisibilité max) */
+            --bg-dark: #0a0f0d;           /* Noir profond teinté de vert (au lieu du bleu nuit) */
+            --bg-card: rgba(20, 26, 24, 0.7); /* Verre fumé sombre */
+            --primary: #10b981;           /* Vert Émeraude */
+            --secondary: #f59e0b;         /* Or / Ambre */
+            --text-main: #e2e8f0;         /* Gris perle */
             --text-muted: #94a3b8;        /* Gris moyen */
-            --glass-border: rgba(16, 185, 129, 0.15); /* Bordure subtile verte */
+            --glass-border: rgba(16, 185, 129, 0.2); /* Bordure subtile verte */
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: var(--bg-dark);
             color: var(--text-main);
-            line-height: 1.7;
+            line-height: 1.6;
             overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Arrière-plan lumineux d'ambiance */
-        .bg-glow {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: 
-                radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.08), transparent 40%),
-                radial-gradient(circle at 85% 85%, rgba(245, 158, 11, 0.05), transparent 40%);
-            z-index: -1;
-            pointer-events: none;
         }
 
         /* Scrollbar personnalisée */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: var(--bg-dark); }
         ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--secondary); }
 
-        /* Styles Généraux */
-        a { text-decoration: none; transition: 0.3s; }
+        /* Effet Glassmorphism */
+        .glass-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+        }
+        
+        /* Effet de survol vert émeraude */
+        .glass-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(16, 185, 129, 0.15);
+        }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(10, 15, 13, 0.85) !important; /* Adapté au fond vert sombre */
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 0;
+        }
+        .navbar-brand { font-weight: 800; color: var(--primary) !important; }
+        .nav-link { color: var(--text-main) !important; font-weight: 500; margin: 0 10px; transition: 0.3s; }
+        .nav-link:hover { color: var(--secondary) !important; }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px;
+            /* Dégradés adaptés : Vert à gauche, Ambre à droite */
+            background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.15), transparent),
+                        radial-gradient(circle at bottom left, rgba(245, 158, 11, 0.1), transparent);
+        }
+        .profile-img {
+            width: 180px; height: 180px;
+            border-radius: 50%;
+            border: 4px solid var(--primary);
+            padding: 5px;
+            object-fit: cover;
+            /* Lueur verte */
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+        }
+        .hero h1 { 
+            font-size: 4rem; 
+            font-weight: 800; 
+            margin-bottom: 1rem; 
+            /* Dégradé de texte Blanc vers Vert */
+            background: linear-gradient(to right, #fff, var(--primary)); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
+
+        /* Sections */
         section { padding: 100px 0; }
-        
-        /* Titres */
-        h1, h2, h3, h4, h5 { font-weight: 700; color: #fff; }
-        
         .section-title h2 {
+            font-weight: 700;
             font-size: 2.5rem;
             margin-bottom: 50px;
             text-align: center;
         }
-        .section-title h2 span {
+        .section-title h2 span { 
+            /* Dégradé Vert vers Ambre */
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* Navbar Glassmorphism */
-        .navbar {
-            background: rgba(10, 15, 13, 0.85) !important;
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--glass-border);
-            padding: 1rem 0;
-        }
-        .navbar-brand { 
-            font-weight: 800; 
-            letter-spacing: -0.5px;
-            background: linear-gradient(to right, #fff, var(--primary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .nav-link { color: var(--text-muted) !important; font-weight: 500; margin: 0 5px; border-radius: 8px; }
-        .nav-link:hover, .nav-link.active { color: var(--primary) !important; background: rgba(16, 185, 129, 0.05); }
-
-        /* Hero Section */
-        .hero {
-            padding: 160px 0 100px;
-            position: relative;
-        }
-        .profile-wrapper {
-            position: relative;
-            display: inline-block;
-        }
-        .profile-img {
-            width: 180px; height: 180px;
-            border-radius: 40px; /* Forme "Squircle" moderne */
-            border: 2px solid var(--primary);
-            padding: 5px;
-            object-fit: cover;
-            background: rgba(255,255,255,0.05);
-            transition: transform 0.5s ease;
-        }
-        .profile-img:hover { transform: rotate(-3deg) scale(1.02); border-color: var(--secondary); }
-        
-        .hero h1 { 
-            font-size: 3.8rem; 
-            font-weight: 800; 
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
-        }
-
-        /* Cartes Effet Verre */
-        .glass-card {
-            background: var(--bg-card);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
-            height: 100%;
-        }
-        .glass-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--primary);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Boutons */
-        .btn-custom {
-            background: linear-gradient(135deg, var(--primary), var(--primary-hover));
-            border: none; color: #fff; border-radius: 12px;
-            padding: 12px 30px; font-weight: 600;
-            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
-            transition: all 0.3s ease;
-        }
-        .btn-custom:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4); color: white; }
-        
-        .btn-outline-custom {
-            background: transparent;
-            border: 1px solid var(--glass-border);
-            color: var(--text-main);
-            border-radius: 12px;
-            padding: 10px 25px;
-            transition: all 0.3s;
-        }
-        .btn-outline-custom:hover { border-color: var(--secondary); color: var(--secondary); }
-
-        /* Skills */
+        /* Progress Bars */
         .skill-bar { height: 8px; background: rgba(255,255,255,0.05); border-radius: 10px; overflow: hidden; }
-        .skill-progress { background: var(--primary); border-radius: 10px; box-shadow: 0 0 10px rgba(16, 185, 129, 0.5); }
-        .skill-info h5 { font-size: 1rem; margin-bottom: 0.5rem; color: var(--text-main); }
-        .skill-info span { color: var(--primary); font-weight: 600; }
+        .skill-progress { background: linear-gradient(90deg, var(--primary), #059669); }
 
-        /* Badges Langues */
+        /* Project Cards */
+        .project-card { height: 100%; overflow: hidden; }
+        .project-card:hover { transform: translateY(-10px); }
+        .project-img { height: 200px; object-fit: cover; opacity: 0.8; transition: 0.3s; border-bottom: 1px solid var(--glass-border); }
+        .project-card:hover .project-img { opacity: 1; }
+
+        /* Badges */
         .language-badge {
-            display: inline-block;
-            background: rgba(245, 158, 11, 0.1); /* Fond ambre très léger */
-            border: 1px solid rgba(245, 158, 11, 0.3);
+            background: rgba(245, 158, 11, 0.1); /* Fond ambre léger */
+            border: 1px solid var(--secondary);
             color: var(--secondary);
-            padding: 6px 16px;
+            padding: 5px 15px;
             border-radius: 50px;
             font-size: 0.85rem;
             margin: 5px;
             font-weight: 600;
         }
 
-        /* Projets Tabs & Cards */
-        .nav-pills .nav-link { 
-            background: transparent; 
-            color: var(--text-muted) !important; 
-            border: 1px solid var(--glass-border); 
-            margin: 0 5px 10px; 
-            border-radius: 50px;
-            padding: 10px 25px;
-        }
-        .nav-pills .nav-link.active { 
-            background: var(--primary) !important; 
-            color: white !important; 
-            border-color: var(--primary);
-            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
-        }
-        
-        .project-img { height: 180px; object-fit: cover; border-bottom: 1px solid var(--glass-border); opacity: 0.9; transition: 0.3s; }
-        .project-card:hover .project-img { opacity: 1; }
-        .card-body h5 { color: var(--primary); margin-bottom: 0.5rem; }
-        
-        /* Table Veille */
-        .table-custom { color: var(--text-main); border-collapse: separate; border-spacing: 0; }
-        .table-custom th { color: var(--secondary); border-bottom: 1px solid var(--glass-border); padding: 15px; font-weight: 600; }
-        .table-custom td { border-bottom: 1px solid rgba(255,255,255,0.05); padding: 15px; vertical-align: middle; }
-        .table-custom a { color: var(--text-main); text-decoration: underline; text-decoration-color: var(--primary); }
-        .table-custom a:hover { color: var(--primary); }
+        /* Table */
+        .table-veille { color: var(--text-main); border-color: var(--glass-border); }
+        .table-veille thead { border-bottom: 2px solid var(--primary); }
+        .table-veille th { color: var(--primary); font-weight: 600; border: none; }
+        .table-veille td { border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .table-veille a { color: var(--secondary); font-weight: 600; text-decoration: none; }
+        .table-veille a:hover { text-decoration: underline; }
 
-        /* Formulaire */
+        /* Buttons */
+        .btn-custom {
+            /* Dégradé Vert */
+            background: linear-gradient(90deg, var(--primary), #059669);
+            border: none; color: white; border-radius: 50px;
+            padding: 12px 30px; font-weight: 600; transition: 0.3s;
+        }
+        .btn-custom:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(16, 185, 129, 0.4); color: white; }
+        
+        .btn-outline-light { border-color: var(--glass-border); color: var(--text-main); }
+        .btn-outline-light:hover { border-color: var(--secondary); color: var(--secondary); background: transparent; }
+
+        .btn-outline-primary {
+            border-color: var(--primary); color: var(--primary);
+        }
+        .btn-outline-primary:hover {
+            background: var(--primary); border-color: var(--primary); color: white;
+        }
+
+        /* Nav Pills (Projects) */
+        .nav-pills .nav-link { background: transparent; color: var(--text-muted) !important; border: 1px solid var(--glass-border); margin: 5px; border-radius: 50px; }
+        .nav-pills .nav-link.active { background: var(--primary) !important; color: white !important; border-color: var(--primary); }
+
+        /* Form inputs */
         .form-control {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--glass-border);
-            color: var(--text-main);
-            border-radius: 12px;
-            padding: 15px;
+            color: white;
         }
         .form-control:focus {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.1);
             border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
-            color: #fff;
-        }
-        ::placeholder { color: rgba(148, 163, 184, 0.5); }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--glass-border);
-            background: rgba(10, 15, 13, 0.95);
-            padding: 50px 0 30px;
-        }
-        .social-links a {
-            display: inline-flex; justify-content: center; align-items: center;
-            width: 45px; height: 45px;
-            background: rgba(255,255,255,0.05);
-            color: var(--text-main);
-            border-radius: 50%;
-            margin: 0 8px;
-            transition: 0.3s;
-            border: 1px solid transparent;
-        }
-        .social-links a:hover {
-            background: var(--bg-dark);
-            color: var(--primary);
-            border-color: var(--primary);
-            transform: translateY(-5px);
+            box-shadow: 0 0 0 0.25rem rgba(16, 185, 129, 0.25);
+            color: white;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            section { padding: 60px 0; }
         }
     </style>
 </head>
 <body>
 
-    <div class="bg-glow"></div>
-
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">RUBEN<span>.B</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="border: none; color: white;">
-                <i class="fas fa-bars fa-lg"></i>
+                <span class="fas fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">Accueil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">À propos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Compétences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Bio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projets</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">Expérience</a></li>
                     <li class="nav-item"><a class="nav-link" href="#veille">Veille</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
@@ -262,80 +193,51 @@
         </div>
     </nav>
 
-    <section id="home" class="hero text-center d-flex align-items-center">
+    <section id="home" class="hero text-center">
         <div class="container">
-            <div class="profile-wrapper mb-4">
-                <img src="pp.jpg.jpg" alt="Ruben Battocchio" class="profile-img">
-            </div>
+            <img src="pp.jpg.jpg" alt="Ruben Battocchio" class="profile-img mb-4">
             <h1>Ruben Battocchio</h1>
-            <p class="lead text-muted mx-auto mb-5" style="max-width: 600px;">
-                Étudiant en informatique passionné par le développement et l'innovation technologique.
-            </p>
-            <div>
-                <a href="#projects" class="btn btn-custom me-3"><i class="fas fa-code me-2"></i>Mes Projets</a>
-                <a href="#contact" class="btn btn-outline-custom"><i class="fas fa-paper-plane me-2"></i>Me contacter</a>
+            <p class="lead text-muted mx-auto" style="max-width: 600px;">Futur développeur, explorateur de technologies et passionné par la résolution de problèmes complexes.</p>
+            <div class="mt-5">
+                <a href="#about" class="btn btn-custom me-3">Me découvrir</a>
+                <a href="#contact" class="btn btn-outline-light rounded-pill px-4 py-2">Me contacter</a>
             </div>
         </div>
     </section>
 
     <section id="about">
         <div class="container">
-            <div class="section-title">
-                <h2>À propos <span>de moi</span></h2>
-            </div>
+            <div class="section-title"><h2>À propos <span>de moi</span></h2></div>
             <div class="row g-4">
                 <div class="col-lg-6">
-                    <div class="glass-card p-5 h-100">
-                        <h3 class="mb-4" style="color: var(--primary);">Qui suis-je ?</h3>
-                        <p>Je suis Ruben Battocchio, étudiant déterminé en informatique. Mon objectif est de concevoir des solutions numériques utiles et ergonomiques. Curieux et autonome, j'apprends continuellement de nouvelles technologies.</p>
-                        
-                        <h4 class="mt-4 h5 text-muted">Mes atouts</h4>
-                        <ul class="list-unstyled mt-3">
-                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-primary"></i> Motivé et persévérant</li>
-                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-primary"></i> Capacité d'adaptation</li>
-                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-primary"></i> Esprit d'équipe</li>
-                        </ul>
-
-                        <h4 class="mt-4 h5 text-muted">Langues</h4>
-                        <div class="mt-2">
+                    <div class="glass-card p-4 h-100">
+                        <h3 class="mb-4" style="color: var(--primary);">Mon Parcours</h3>
+                        <p>Étudiant motivé et polyvalent, je me spécialise dans le développement logiciel et les réseaux. J'aime transformer des idées en lignes de code concrètes.</p>
+                        <div class="mt-4">
                             <span class="language-badge">Anglais (B2-C1)</span>
                             <span class="language-badge">Italien (B2)</span>
                             <span class="language-badge">Espagnol (A1)</span>
                         </div>
+                        <h4 class="mt-4 text-white">Formation</h4>
+                        <ul class="list-unstyled text-muted">
+                            <li class="mb-2"><i class="fas fa-graduation-cap me-2" style="color: var(--primary);"></i> <strong>Lycée A. Briand</strong> - Bac Général (Spé Math/NSI)</li>
+                            <li><i class="fas fa-university me-2" style="color: var(--primary);"></i> <strong>Université d'Avignon</strong> - Licence Informatique</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="glass-card p-5 h-100">
-                        <h3 class="mb-4" style="color: var(--secondary);">Infos & Formation</h3>
-                        <div class="row g-3 mb-4">
-                            <div class="col-sm-6">
-                                <p class="small text-muted mb-1">Email</p>
-                                <p class="fw-bold">ruben.battocchio28@gmail.com</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <p class="small text-muted mb-1">Téléphone</p>
-                                <p class="fw-bold">06-69-45-51-35</p>
-                            </div>
-                            <div class="col-12">
-                                <p class="small text-muted mb-1">Localisation</p>
-                                <p class="fw-bold">40g route Sainte-Marguerite, 05000 Gap</p>
-                            </div>
+                    <div class="glass-card p-4 h-100">
+                        <h3 class="mb-4" style="color: var(--secondary);">Infos & Contact</h3>
+                        <div class="row g-3">
+                            <div class="col-sm-6"><p class="small text-muted mb-1">Téléphone</p><p>06 69 45 51 35</p></div>
+                            <div class="col-sm-6"><p class="small text-muted mb-1">Email</p><p>ruben.battocchio28@gmail.com</p></div>
+                            <div class="col-12"><p class="small text-muted mb-1">Localisation</p><p>40g route Sainte-Marguerite, 05000 Gap</p></div>
                         </div>
-
-                        <h4 class="h5 text-muted mb-3">Parcours scolaire</h4>
-                        <ul class="list-unstyled border-start border-secondary ps-3">
-                            <li class="mb-3">
-                                <strong class="text-white">Université d'Avignon</strong>
-                                <br><small class="text-muted">Licence Informatique (En cours)</small>
-                            </li>
-                            <li>
-                                <strong class="text-white">Lycée A. Briand</strong>
-                                <br><small class="text-muted">Bac Général (Maths / NSI) - 2024</small>
-                            </li>
-                        </ul>
-                        
-                        <div class="mt-4 pt-3 border-top border-secondary border-opacity-25">
-                            <p class="mb-0"><i class="fas fa-heart text-secondary me-2"></i> <strong>Passions :</strong> Cinéma, Jeux vidéo, Basket-Ball</p>
+                        <h4 class="mt-4 text-white">Passions</h4>
+                        <div class="d-flex flex-wrap gap-3">
+                            <span class="text-muted"><i class="fas fa-basketball-ball me-2" style="color: var(--secondary);"></i>Basket</span>
+                            <span class="text-muted"><i class="fas fa-film me-2" style="color: var(--secondary);"></i>Cinéma</span>
+                            <span class="text-muted"><i class="fas fa-gamepad me-2" style="color: var(--secondary);"></i>Jeux Vidéo</span>
                         </div>
                     </div>
                 </div>
@@ -343,56 +245,36 @@
         </div>
     </section>
 
-    <section id="skills">
+    <section id="skills" style="background-color: #050807;">
         <div class="container">
-            <div class="section-title">
-                <h2>Mes <span>Compétences</span></h2>
-            </div>
+            <div class="section-title"><h2>Mes <span>Skills</span></h2></div>
             <div class="row g-5">
-                <div class="col-lg-6">
-                    <div class="mb-4 skill-item">
-                        <div class="skill-info d-flex justify-content-between">
-                            <h5><i class="fas fa-square-root-alt me-2 text-secondary"></i>Mathématiques</h5>
-                            <span>70%</span>
-                        </div>
-                        <div class="skill-bar"><div class="skill-progress" style="width: 70%"></div></div>
+                <div class="col-md-6">
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2"><span>HTML/CSS</span><span style="color: var(--primary);">90%</span></div>
+                        <div class="skill-bar"><div class="skill-progress h-100" style="width: 90%"></div></div>
                     </div>
-                    <div class="mb-4 skill-item">
-                        <div class="skill-info d-flex justify-content-between">
-                            <h5><i class="fab fa-html5 me-2 text-secondary"></i>HTML/CSS</h5>
-                            <span>90%</span>
-                        </div>
-                        <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2"><span>Python</span><span style="color: var(--primary);">85%</span></div>
+                        <div class="skill-bar"><div class="skill-progress h-100" style="width: 85%"></div></div>
                     </div>
-                    <div class="mb-4 skill-item">
-                        <div class="skill-info d-flex justify-content-between">
-                            <h5><i class="fab fa-python me-2 text-secondary"></i>Python</h5>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2"><span>SQL</span><span style="color: var(--primary);">80%</span></div>
+                        <div class="skill-bar"><div class="skill-progress h-100" style="width: 80%"></div></div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="mb-4 skill-item">
-                        <div class="skill-info d-flex justify-content-between">
-                            <h5><i class="fas fa-code me-2 text-secondary"></i>C++</h5>
-                            <span>75%</span>
-                        </div>
-                        <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+                <div class="col-md-6">
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2"><span>C++</span><span style="color: var(--primary);">75%</span></div>
+                        <div class="skill-bar"><div class="skill-progress h-100" style="width: 75%"></div></div>
                     </div>
-                    <div class="mb-4 skill-item">
-                        <div class="skill-info d-flex justify-content-between">
-                            <h5><i class="fas fa-database me-2 text-secondary"></i>SQL</h5>
-                            <span>80%</span>
-                        </div>
-                        <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2"><span>JavaScript</span><span style="color: var(--primary);">70%</span></div>
+                        <div class="skill-bar"><div class="skill-progress h-100" style="width: 70%"></div></div>
                     </div>
-                    <div class="mb-4 skill-item">
-                        <div class="skill-info d-flex justify-content-between">
-                            <h5><i class="fab fa-js me-2 text-secondary"></i>JavaScript</h5>
-                            <span>70%</span>
-                        </div>
-                        <div class="skill-bar"><div class="skill-progress" style="width: 70%"></div></div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2"><span>Mathématiques</span><span style="color: var(--primary);">70%</span></div>
+                        <div class="skill-bar"><div class="skill-progress h-100" style="width: 70%"></div></div>
                     </div>
                 </div>
             </div>
@@ -401,192 +283,150 @@
 
     <section id="projects">
         <div class="container">
-            <div class="section-title">
-                <h2>Mes <span>Projets</span></h2>
-            </div>
+            <div class="section-title"><h2>Réalisations <span>Projets</span></h2></div>
             
             <ul class="nav nav-pills justify-content-center mb-5" id="projectsTab" role="tablist">
-                <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#bloc1-programmation">Bloc1-Programmation</button></li>
-                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#bloc1-reseau">Bloc1-Réseau</button></li>
-                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#atelier-pro">Atelier Pro</button></li>
-                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#bloc3-reseau">Bloc3-Réseau</button></li>
+                <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#bloc1-prog">Prog (Bloc 1)</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#bloc1-net">Réseau (Bloc 1)</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#atelier">Atelier Pro</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#bloc3-reseau">Réseau (Bloc 3)</button></li>
             </ul>
-            
-            <div class="tab-content" id="projectsTabContent">
-                <div class="tab-pane fade show active" id="bloc1-programmation">
+
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="bloc1-prog">
                     <div class="row g-4">
                         <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card h-100 overflow-hidden">
-                                <img src="minialabyrinthe.png" class="project-img w-100" alt="Labyrinthe">
-                                <div class="card-body p-4 text-center">
-                                    <h5>Labyrinthe</h5>
-                                    <p class="small text-muted mb-3">Algorithmique avancée en Java</p>
-                                    <button class="btn btn-outline-custom btn-sm w-100" onclick="downloadReport('labyrinthe.pdf')"><i class="fas fa-download me-2"></i>Compte rendu</button>
+                            <div class="glass-card project-card">
+                                <img src="minialabyrinthe.png" class="project-img card-img-top" alt="Labyrinthe">
+                                <div class="p-4 text-center">
+                                    <h5 style="color: var(--primary);">Labyrinthe Java</h5>
+                                    <p class="small text-muted">Algorithmique & Java</p>
+                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('labyrinthe.pdf')">Compte-rendu</button>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card h-100 overflow-hidden">
-                                <img src="miniajava.png" class="project-img w-100" alt="Java Basics">
-                                <div class="card-body p-4 text-center">
-                                    <h5>Initiation Java</h5>
-                                    <p class="small text-muted mb-3">Premiers algorithmes et logique</p>
-                                    <button class="btn btn-outline-custom btn-sm w-100" onclick="downloadReport('premierspasenjava.pdf')"><i class="fas fa-download me-2"></i>Compte rendu</button>
+                            <div class="glass-card project-card">
+                                <img src="miniashifumi.png" class="project-img card-img-top" alt="Shifumi">
+                                <div class="p-4 text-center">
+                                    <h5 style="color: var(--primary);">Jeu Shifumi</h5>
+                                    <p class="small text-muted">Logique de jeu en Java</p>
+                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('shifumi.pdf')">Compte-rendu</button>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card h-100 overflow-hidden">
-                                <img src="miniashifumi.png" class="project-img w-100" alt="Shifumi">
-                                <div class="card-body p-4 text-center">
-                                    <h5>Jeu Shifumi</h5>
-                                    <p class="small text-muted mb-3">Développement d'un mini-jeu interactif</p>
-                                    <button class="btn btn-outline-custom btn-sm w-100" onclick="downloadReport('shifumi.pdf')"><i class="fas fa-download me-2"></i>Compte rendu</button>
+                            <div class="glass-card project-card">
+                                <img src="miniabataillenavale.jpg" class="project-img card-img-top" alt="Bataille Navale">
+                                <div class="p-4 text-center">
+                                    <h5 style="color: var(--primary);">Bataille Navale</h5>
+                                    <p class="small text-muted">Tableaux & Structures</p>
+                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp08.pdf')">Compte-rendu</button>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card h-100 overflow-hidden">
-                                <img src="miniabataillenavale.jpg" class="project-img w-100" alt="Bataille Navale">
-                                <div class="card-body p-4 text-center">
-                                    <h5>Bataille Navale</h5>
-                                    <p class="small text-muted mb-3">Gestion de tableaux et boucles complexes</p>
-                                    <button class="btn btn-outline-custom btn-sm w-100" onclick="downloadReport('b1btp08.pdf')"><i class="fas fa-download me-2"></i>Compte rendu</button>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card h-100 overflow-hidden">
-                                <img src="miniajava.png" class="project-img w-100" alt="Java TP3">
-                                <div class="card-body p-4 text-center">
-                                    <h5>TP3 Java</h5>
-                                    <p class="small text-muted mb-3">Exercices structurés</p>
-                                    <button class="btn btn-outline-custom btn-sm w-100" onclick="downloadReport('javatp3.pdf')"><i class="fas fa-download me-2"></i>Compte rendu</button>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card h-100 overflow-hidden">
-                                <img src="miniajava.png" class="project-img w-100" alt="Java TP5">
-                                <div class="card-body p-4 text-center">
-                                    <h5>TP5 Java</h5>
-                                    <p class="small text-muted mb-3">Approfondissement des concepts</p>
-                                    <button class="btn btn-outline-custom btn-sm w-100" onclick="downloadReport('b1btp05.pdf')"><i class="fas fa-download me-2"></i>Compte rendu</button>
+                            <div class="glass-card project-card">
+                                <img src="miniajava.png" class="project-img card-img-top" alt="Java">
+                                <div class="p-4 text-center">
+                                    <h5 style="color: var(--primary);">Initiation Java</h5>
+                                    <p class="small text-muted">Bases de l'algorithmique</p>
+                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('premierspasenjava.pdf')">Compte-rendu</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="tab-pane fade" id="bloc1-reseau">
+                <div class="tab-pane fade" id="bloc1-net">
                     <div class="row g-4">
                         <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card h-100 overflow-hidden">
-                                <img src="testcable.jpg" class="project-img w-100" alt="Panne Réseau">
-                                <div class="card-body p-4 text-center">
-                                    <h5>Dépannage Réseau</h5>
-                                    <p class="small text-muted mb-3">Diagnostic et résolution de pannes physiques</p>
-                                    <button class="btn btn-outline-custom btn-sm w-100" onclick="downloadReport('reparerreseau.pdf')"><i class="fas fa-download me-2"></i>Compte rendu</button>
+                            <div class="glass-card project-card">
+                                <img src="testcable.jpg" class="project-img card-img-top" alt="Réseau">
+                                <div class="p-4 text-center">
+                                    <h5 style="color: var(--primary);">Dépannage Réseau</h5>
+                                    <p class="small text-muted">Diagnostic physique</p>
+                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('reparerreseau.pdf')">Compte-rendu</button>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card h-100 overflow-hidden">
-                                <img src="miniadiagnostic.png" class="project-img w-100" alt="Diagnostic">
-                                <div class="card-body p-4 text-center">
-                                    <h5>Diagnostic Machine</h5>
-                                    <p class="small text-muted mb-3">Analyse hardware et software</p>
-                                    <button class="btn btn-outline-custom btn-sm w-100" onclick="downloadReport('Diagnostic.pdf')"><i class="fas fa-download me-2"></i>Compte rendu</button>
+                            <div class="glass-card project-card">
+                                <img src="miniadiagnostic.png" class="project-img card-img-top" alt="Diagnostic">
+                                <div class="p-4 text-center">
+                                    <h5 style="color: var(--primary);">Diagnostic PC</h5>
+                                    <p class="small text-muted">Hardware & Software</p>
+                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('Diagnostic.pdf')">Compte-rendu</button>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card h-100 overflow-hidden">
-                                <img src="miniacmd.png" class="project-img w-100" alt="CMD">
-                                <div class="card-body p-4 text-center">
-                                    <h5>Commandes DOS</h5>
-                                    <p class="small text-muted mb-3">Maîtrise de l'invite de commande</p>
-                                    <button class="btn btn-outline-custom btn-sm w-100" onclick="downloadReport('b1stp05.pdf')"><i class="fas fa-download me-2"></i>Compte rendu</button>
+                            <div class="glass-card project-card">
+                                <img src="miniacmd.png" class="project-img card-img-top" alt="CMD">
+                                <div class="p-4 text-center">
+                                    <h5 style="color: var(--primary);">Commandes DOS</h5>
+                                    <p class="small text-muted">Invite de commande</p>
+                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1stp05.pdf')">Compte-rendu</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="tab-pane fade" id="atelier-pro">
+                <div class="tab-pane fade" id="atelier">
                     <div class="row g-4">
                         <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card h-100 overflow-hidden">
-                                <img src="deepseek.png" class="project-img w-100" alt="IA Portfolio">
-                                <div class="card-body p-4 text-center">
-                                    <h5>Portfolio & IA</h5>
-                                    <p class="small text-muted mb-3">Création assistée par Intelligence Artificielle</p>
-                                    <button class="btn btn-outline-custom btn-sm w-100" onclick="downloadReport('creationportfolio.pdf')"><i class="fas fa-download me-2"></i>Compte rendu</button>
+                            <div class="glass-card project-card">
+                                <img src="deepseek.png" class="project-img card-img-top" alt="IA">
+                                <div class="p-4 text-center">
+                                    <h5 style="color: var(--primary);">Portfolio IA</h5>
+                                    <p class="small text-muted">Création assistée</p>
+                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('creationportfolio.pdf')">Compte-rendu</button>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card h-100 overflow-hidden">
-                                <img src="chuckminia.png" class="project-img w-100" alt="HTML">
-                                <div class="card-body p-4 text-center">
-                                    <h5>Débuts HTML</h5>
-                                    <p class="small text-muted mb-3">Structure de page web</p>
-                                    <button class="btn btn-outline-custom btn-sm w-100" onclick="downloadReport('chucknorris.pdf')"><i class="fas fa-download me-2"></i>Compte rendu</button>
+                            <div class="glass-card project-card">
+                                <img src="chuckminia.png" class="project-img card-img-top" alt="HTML">
+                                <div class="p-4 text-center">
+                                    <h5 style="color: var(--primary);">Débuts HTML</h5>
+                                    <p class="small text-muted">Structure Web</p>
+                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('chucknorris.pdf')">Compte-rendu</button>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card h-100 overflow-hidden">
-                                <img src="CSS.png" class="project-img w-100" alt="CSS">
-                                <div class="card-body p-4 text-center">
-                                    <h5>Style CSS</h5>
-                                    <p class="small text-muted mb-3">Mise en forme et design</p>
-                                    <button class="btn btn-outline-custom btn-sm w-100" onclick="downloadReport('premierspascss.pdf')"><i class="fas fa-download me-2"></i>Compte rendu</button>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card h-100 overflow-hidden">
-                                <img src="CSS.png" class="project-img w-100" alt="CSS">
-                                <div class="card-body p-4 text-center">
-                                    <h5>HTML/CSS Avancé</h5>
-                                    <p class="small text-muted mb-3">Techniques modernes</p>
-                                    <button class="btn btn-outline-custom btn-sm w-100" onclick="downloadReport('proftp04.pdf')"><i class="fas fa-download me-2"></i>Compte rendu</button>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card h-100 overflow-hidden">
-                                <img src="CSS.png" class="project-img w-100" alt="CSS">
-                                <div class="card-body p-4 text-center">
-                                    <h5>HTML/CSS Expert</h5>
-                                    <p class="small text-muted mb-3">Finalisation et Responsive</p>
-                                    <button class="btn btn-outline-custom btn-sm w-100" onclick="downloadReport('htmlcssavancepart2.pdf')"><i class="fas fa-download me-2"></i>Compte rendu</button>
+                            <div class="glass-card project-card">
+                                <img src="CSS.png" class="project-img card-img-top" alt="CSS">
+                                <div class="p-4 text-center">
+                                    <h5 style="color: var(--primary);">Style CSS</h5>
+                                    <p class="small text-muted">Design & Mise en page</p>
+                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('premierspascss.pdf')">Compte-rendu</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="tab-pane fade" id="bloc3-reseau">
+                 <div class="tab-pane fade" id="bloc3-reseau">
                     <div class="row g-4">
                         <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card h-100 overflow-hidden">
-                                <img src="miniacapture.png" class="project-img w-100" alt="Capture">
-                                <div class="card-body p-4 text-center">
-                                    <h5>Outils de Capture</h5>
-                                    <p class="small text-muted mb-3">Comparatif et utilisation</p>
-                                    <button class="btn btn-outline-custom btn-sm w-100" onclick="downloadReport('capture.pdf')"><i class="fas fa-download me-2"></i>Compte rendu</button>
+                            <div class="glass-card project-card">
+                                <img src="miniacapture.png" class="project-img card-img-top" alt="Capture">
+                                <div class="p-4 text-center">
+                                    <h5 style="color: var(--primary);">Outils Capture</h5>
+                                    <p class="small text-muted">Comparatif logiciels</p>
+                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('capture.pdf')">Compte-rendu</button>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card h-100 overflow-hidden">
-                                <img src="minianas.png" class="project-img w-100" alt="NAS">
-                                <div class="card-body p-4 text-center">
-                                    <h5>Serveur NAS</h5>
-                                    <p class="small text-muted mb-3">Configuration et stockage réseau</p>
-                                    <button class="btn btn-outline-custom btn-sm w-100" onclick="downloadReport('b3stp04.pdf')"><i class="fas fa-download me-2"></i>Compte rendu</button>
+                            <div class="glass-card project-card">
+                                <img src="minianas.png" class="project-img card-img-top" alt="NAS">
+                                <div class="p-4 text-center">
+                                    <h5 style="color: var(--primary);">Serveur NAS</h5>
+                                    <p class="small text-muted">Stockage réseau</p>
+                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3stp04.pdf')">Compte-rendu</button>
                                 </div>
                             </div>
                         </div>
@@ -596,93 +436,19 @@
         </div>
     </section>
 
-    <section id="experience">
+    <section id="veille" style="background-color: #050807;">
         <div class="container">
-            <div class="section-title">
-                <h2>Mon <span>Expérience</span></h2>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-6">
-                    <div class="glass-card p-4 h-100">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h4 class="mb-0 h5">Aide à la personne</h4>
-                            <span class="badge bg-secondary text-dark">Été 2024</span>
-                        </div>
-                        <p class="text-muted">Assistance et accompagnement de personnes âgées. Développement de l'écoute active et de la patience.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="glass-card p-4 h-100">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h4 class="mb-0 h5">Babysitting</h4>
-                            <span class="badge bg-secondary text-dark">Été 2024</span>
-                        </div>
-                        <p class="text-muted">Garde d'enfants et organisation d'activités. Gestion des responsabilités et créativité.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="glass-card p-4 h-100">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h4 class="mb-0 h5">Équipier McDonald's</h4>
-                            <span class="badge bg-secondary text-dark">Été 2024</span>
-                        </div>
-                        <p class="text-muted">Travail en équipe sous pression, rapidité d'exécution et relation client.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="glass-card p-4 h-100">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h4 class="mb-0 h5">Préparateur Alpagel</h4>
-                            <span class="badge bg-secondary text-dark">Été 2024</span>
-                        </div>
-                        <p class="text-muted">Logistique, organisation rigoureuse et respect des délais de livraison.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="veille">
-        <div class="container">
-            <div class="section-title">
-                <h2>Veille <span>Domotique</span></h2>
-            </div>
-            <div class="glass-card p-1 overflow-hidden">
+            <div class="section-title"><h2>Veille <span>Domotique</span></h2></div>
+            <div class="glass-card p-2 overflow-hidden">
                 <div class="table-responsive">
-                    <table class="table table-custom w-100 mb-0">
+                    <table class="table table-veille table-hover mb-0">
                         <thead>
-                            <tr>
-                                <th scope="col"><i class="fas fa-tools me-2"></i>Sujet</th>
-                                <th scope="col"><i class="fas fa-link me-2"></i>Source</th>
-                                <th scope="col"><i class="fas fa-tasks me-2"></i>Détails</th>
-                                <th scope="col"><i class="far fa-calendar-alt me-2"></i>Date</th>
-                            </tr>
+                            <tr><th>Sujet</th><th>Source</th><th>Avancée</th><th>Date</th></tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Protocole Matter 1.5</strong></td>
-                                <td><a href="https://www.begeek.fr" target="_blank">BeGeek / CSA</a></td>
-                                <td>Support officiel caméras & chargeurs VE</td>
-                                <td>21/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Hub Aqara M200</strong></td>
-                                <td><a href="https://www.lesalexiens.fr" target="_blank">Les Alexiens</a></td>
-                                <td>Nouveau Hub Thread/Zigbee & capteur FP300</td>
-                                <td>19/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Lidl Smart Home</strong></td>
-                                <td><a href="https://www.soonnight.com" target="_blank">SoonNight</a></td>
-                                <td>Thermostats connectés Zigbee low-cost</td>
-                                <td>18/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Alarme Ajax / HA</strong></td>
-                                <td><a href="https://www.maison-et-domotique.com" target="_blank">Maison & Domotique</a></td>
-                                <td>Intégration native Home Assistant</td>
-                                <td>18/11/2025</td>
-                            </tr>
+                        <tbody class="text-muted">
+                            <tr><td>Matter 1.5</td><td><a href="#">BeGeek</a></td><td>Caméras & VE</td><td>21/11/25</td></tr>
+                            <tr><td>Hub Aqara M200</td><td><a href="#">Alexiens</a></td><td>Thread/Zigbee</td><td>19/11/25</td></tr>
+                            <tr><td>Lidl Smart Home</td><td><a href="#">SoonNight</a></td><td>Zigbee Low Cost</td><td>18/11/25</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -692,29 +458,16 @@
 
     <section id="contact">
         <div class="container">
-            <div class="section-title">
-                <h2>Me <span>Contacter</span></h2>
-            </div>
+            <div class="section-title"><h2>Me <span>Contacter</span></h2></div>
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <div class="glass-card p-5">
                         <form id="contactForm">
                             <div class="row g-3">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Votre Nom" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="email" class="form-control" placeholder="Votre Email" required>
-                                </div>
-                                <div class="col-12">
-                                    <input type="text" class="form-control" placeholder="Sujet">
-                                </div>
-                                <div class="col-12">
-                                    <textarea class="form-control" rows="5" placeholder="Votre Message" required></textarea>
-                                </div>
-                                <div class="col-12 text-center mt-3">
-                                    <button type="submit" class="btn btn-custom px-5 py-3">Envoyer le message</button>
-                                </div>
+                                <div class="col-md-6"><input type="text" class="form-control rounded-pill" placeholder="Nom" required></div>
+                                <div class="col-md-6"><input type="email" class="form-control rounded-pill" placeholder="Email" required></div>
+                                <div class="col-12"><textarea class="form-control rounded-3" rows="5" placeholder="Message" required></textarea></div>
+                                <div class="col-12 text-center mt-4"><button type="submit" class="btn btn-custom px-5">Envoyer</button></div>
                             </div>
                         </form>
                     </div>
@@ -723,43 +476,32 @@
         </div>
     </section>
 
-    <footer>
+    <footer class="py-5 border-top border-secondary border-opacity-25 mt-5">
         <div class="container text-center">
-            <h3 class="mb-3 text-white">Ruben Battocchio</h3>
-            <p class="text-muted mb-4">Étudiant en Informatique • Passionné de Tech</p>
-            
             <div class="social-links mb-4">
-                <a href="https://github.com/rubenbtco" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="mailto:ruben.battocchio28@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/rubenbtco" class="text-light fs-2 mx-3"><i class="fab fa-github"></i></a>
             </div>
-            
             <div class="mb-4">
-                <a href="#" class="btn btn-outline-custom btn-sm" id="downloadCV">Télécharger mon CV</a>
+                 <a href="#" class="btn btn-outline-light btn-sm" id="downloadCV">Télécharger mon CV</a>
             </div>
-            
-            <p class="small text-muted mb-0">&copy; 2026 Ruben Battocchio. Design Emerald & Copper.</p>
+            <p class="text-muted mb-0">&copy; 2026 Ruben Battocchio. Créé avec passion.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Smooth scrolling
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 85,
-                        behavior: 'smooth'
-                    });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
                 }
             });
         });
 
-        // CV Download
+        // CV Download script
         document.getElementById('downloadCV').addEventListener('click', function(e) {
             e.preventDefault();
             const link = document.createElement('a');
@@ -770,7 +512,6 @@
             document.body.removeChild(link);
         });
 
-        // Report Download
         function downloadReport(fileName) {
             const link = document.createElement('a');
             link.href = fileName;
@@ -779,13 +520,6 @@
             link.click();
             document.body.removeChild(link);
         }
-
-        // Form Alert
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Merci pour votre message ! (Simulation)');
-            this.reset();
-        });
     </script>
 </body>
 </html>
