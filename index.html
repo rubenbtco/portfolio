@@ -384,7 +384,6 @@
                 <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#beauvallet">Mme. Beauvallet</button></li>
                 <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#sotoca">Mr. Sotoca</button></li>
                 <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#atelier">Atelier Pro</button></li>
-                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#b2">B2</button></li>
             </ul>
 
             <div class="tab-content">
@@ -592,22 +591,6 @@
                     </div>
                 </div>
 
-                <div class="tab-pane fade" id="b2">
-                    <div class="row g-4">
-                        <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="miniajava.png" class="project-img card-img-top" alt="Projet B2">
-                                <div class="p-4 text-center">
-                                    <h5>Arraylist</h5>
-                                    <p class="small text-muted">Découverte de Arraylist</p>
-                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 19 jan. 2026</div>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b2tp01.zip')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
@@ -616,7 +599,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Veille <span>Domotique</span></h2>
-                <p class="text-muted text-center">Suivi des innovations IoT et Maison Connectée - Mis à jour le 20/01/2026</p>
+                <p class="text-muted text-center">Suivi des innovations IoT et Maison Connectée - Mis à jour le 27/01/2026</p>
             </div>
             
             <div class="row g-4 mb-5">
@@ -664,14 +647,47 @@
                         </thead>
                         <tbody class="text-muted">
                             <tr>
+                                <td>27/01/26</td>
+                                <td><strong>Home Assistant "Year of Voice" Final</strong></td>
+                                <td>Logiciel</td>
+                                <td>
+                                    La version bêta 2026.2 intègre les commandes vocales complexes sans cloud. Le projet est mature.
+                                    <br><small class="text-white"><em>Analyse : Alternative crédible et privée face à Alexa/Google.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-high">Critique</span></td>
+                                <td><a href="#" target="_blank">HA Blog</a></td>
+                            </tr>
+                            <tr>
+                                <td>25/01/26</td>
+                                <td><strong>Faille Bluetooth "BlueKey"</strong></td>
+                                <td>Sécurité</td>
+                                <td>
+                                    Vulnérabilité critique affectant plusieurs serrures connectées utilisant le BLE 5.2. Patch attendu.
+                                    <br><small class="text-white"><em>Analyse : Rappel de l'importance des mises à jour firmware OTA rapides.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-high">Fort</span></td>
+                                <td><a href="#" target="_blank">Cnet France</a></td>
+                            </tr>
+                            <tr>
+                                <td>22/01/26</td>
+                                <td><strong>Raspberry Pi AI Kit v2</strong></td>
+                                <td>Matériel</td>
+                                <td>
+                                    Nouveau HAT officiel avec NPU dédié pour booster la reconnaissance d'objets sur caméras (Frigate).
+                                    <br><small class="text-white"><em>Analyse : Baisse du coût d'entrée pour la vidéosurveillance intelligente.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="#" target="_blank">RaspberryPi.org</a></td>
+                            </tr>
+                            <tr>
                                 <td>18/01/26</td>
                                 <td><strong>Failover Local pour Home Assistant</strong></td>
                                 <td>Logiciel</td>
                                 <td>
-                                    Nouvelle fonctionnalité permettant le basculement automatique sur un serveur secondaire en cas de panne du NUC principal.
+                                    Nouvelle fonctionnalité permettant le basculement automatique sur un serveur secondaire en cas de panne.
                                     <br><small class="text-white"><em>Analyse : Fiabilité accrue pour les installations critiques (chauffage/alarme).</em></small>
                                 </td>
-                                <td><span class="badge-impact impact-high">Critique</span></td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
                                 <td><a href="#" target="_blank">HA Blog</a></td>
                             </tr>
                             <tr>
@@ -682,41 +698,8 @@
                                     Présentation de capteurs "invisibles" utilisant les ondes Wi-Fi pour détecter la présence sans caméra.
                                     <br><small class="text-white"><em>Analyse : L'avenir de la domotique devient moins intrusif et plus proactif.</em></small>
                                 </td>
-                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><span class="badge-impact impact-low">Faible</span></td>
                                 <td><a href="#" target="_blank">TechCrunch</a></td>
-                            </tr>
-                            <tr>
-                                <td>09/01/26</td>
-                                <td><strong>Wi-Fi 8 (802.11bn) & IoT</strong></td>
-                                <td>Réseau</td>
-                                <td>
-                                    Premiers routeurs Wi-Fi 8 dévoilés. Priorisation ultra-basse latence dédiée aux paquets IoT critiques.
-                                    <br><small class="text-white"><em>Analyse : Pourrait à terme concurrencer Thread sur la réactivité locale.</em></small>
-                                </td>
-                                <td><span class="badge-impact impact-high">Fort</span></td>
-                                <td><a href="#" target="_blank">Frandroid</a></td>
-                            </tr>
-                            <tr>
-                                <td>04/01/26</td>
-                                <td><strong>Matter 1.4 & Smart Grid</strong></td>
-                                <td>Protocole</td>
-                                <td>
-                                    Standardisation de la gestion des batteries domestiques et pompes à chaleur.
-                                    <br><small class="text-white"><em>Analyse : Un pas géant vers l'autosuffisance énergétique pilotée par IA.</em></small>
-                                </td>
-                                <td><span class="badge-impact impact-high">Critique</span></td>
-                                <td><a href="#" target="_blank">The Verge</a></td>
-                            </tr>
-                            <tr>
-                                <td>28/12/25</td>
-                                <td><strong>IA Générative Locale</strong></td>
-                                <td>Logiciel</td>
-                                <td>
-                                    Home Assistant intègre des LLM tournant à 100% en local sur NPU.
-                                    <br><small class="text-white"><em>Analyse : Contrôle vocal naturel sans aucune fuite de données cloud.</em></small>
-                                </td>
-                                <td><span class="badge-impact impact-high">Fort</span></td>
-                                <td><a href="#" target="_blank">HA Blog</a></td>
                             </tr>
                         </tbody>
                     </table>
