@@ -254,6 +254,11 @@
 
         .rev-def { background: var(--rev-def-bg); border-color: var(--rev-def-border); }
         .rev-def strong { color: var(--primary); display: block; margin-bottom: 5px; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
+        
+        /* Liste de définitions dans l'encadré */
+        .rev-def ul.def-list { list-style: none; padding: 0; margin: 0; }
+        .rev-def ul.def-list li { margin-bottom: 10px; padding-left: 15px; border-left: 2px solid rgba(16, 185, 129, 0.3); }
+        .rev-def ul.def-list li span.term { color: var(--secondary); font-weight: 700; }
 
         .rev-mech { background: var(--rev-mech-bg); border-color: var(--rev-mech-border); }
         .rev-mech strong { color: #34d399; display: block; margin-bottom: 5px; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;}
@@ -861,6 +866,31 @@
             <div class="tab-content">
                 
                 <div class="tab-pane fade show active" id="chap6">
+                    <div class="glass-card p-4 mb-4" style="border-left: 5px solid var(--primary);">
+                        <h4 style="color: var(--primary);"><i class="fas fa-book-open me-2"></i>Glossaire & Définitions</h4>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="rev-def">
+                                    <ul class="def-list">
+                                        [cite_start]<li><span class="term">Défaillance de marché :</span> Situation de dysfonctionnement (ex: monopole, externalité) justifiant l'intervention de l'État[cite: 580].</li>
+                                        [cite_start]<li><span class="term">Fonction d'Allocation :</span> L'État fournit des biens publics et gère les défaillances[cite: 583].</li>
+                                        [cite_start]<li><span class="term">Fonction de Redistribution :</span> Réduction des inégalités via impôts et prestations sociales (Justice sociale)[cite: 599].</li>
+                                        [cite_start]<li><span class="term">Fonction de Régulation :</span> Stabilisation de l'économie (chômage, inflation) à court terme [cite: 614-615].</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="rev-def">
+                                    <ul class="def-list">
+                                        [cite_start]<li><span class="term">PIB (Produit Intérieur Brut) :</span> Indicateur quantitatif de richesse (somme des valeurs ajoutées)[cite: 371, 638].</li>
+                                        [cite_start]<li><span class="term">Développement (IDH) :</span> Notion qualitative (Santé, Éducation, Niveau de vie)[cite: 389, 645].</li>
+                                        [cite_start]<li><span class="term">Carré Magique :</span> 4 objectifs simultanés : Croissance, Plein emploi, Stabilité des prix, Équilibre extérieur [cite: 302-305, 627].</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="glass-card p-4 mb-4">
                         <h3 class="mb-4" style="color: var(--primary);">Les 3 Fonctions de l'État (Musgrave)</h3>
                         <div class="row g-4">
@@ -917,6 +947,32 @@
                 </div>
 
                 <div class="tab-pane fade" id="chap7">
+                    <div class="glass-card p-4 mb-4" style="border-left: 5px solid var(--primary);">
+                        <h4 style="color: var(--primary);"><i class="fas fa-book-open me-2"></i>Glossaire & Définitions</h4>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="rev-def">
+                                    <ul class="def-list">
+                                        [cite_start]<li><span class="term">Politique Économique :</span> Ensemble des décisions de l'État pour atteindre des objectifs éco via divers instruments[cite: 212].</li>
+                                        [cite_start]<li><span class="term">Politique Conjoncturelle :</span> Action à court terme pour réguler l'activité (Budget + Monnaie)[cite: 216].</li>
+                                        [cite_start]<li><span class="term">Politique Structurelle :</span> Action à long terme sur les structures (Innovation, Industriel, Environnement)[cite: 251].</li>
+                                        [cite_start]<li><span class="term">Politique Budgétaire :</span> Usage du budget de l'État (Recettes vs Dépenses) pour relancer ou rigueur[cite: 218].</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="rev-def">
+                                    <ul class="def-list">
+                                        [cite_start]<li><span class="term">Politique Monétaire :</span> Action de la Banque Centrale (BCE) sur la masse monétaire et les taux[cite: 238].</li>
+                                        <li><span class="term">Taux Directeur :</span> Taux d'intérêt fixé par la BCE pour les banques commerciales. [cite_start]Influence le coût du crédit[cite: 240].</li>
+                                        [cite_start]<li><span class="term">Soutenabilité de la dette :</span> Capacité de l'État à rembourser sa dette (solvabilité) sans défaut[cite: 281].</li>
+                                        [cite_start]<li><span class="term">Déficit Public :</span> Quand les Dépenses > Recettes sur une année[cite: 227].</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="row g-4">
                         <div class="col-md-6">
                             <div class="glass-card p-4 h-100">
@@ -936,8 +992,8 @@
                                 <div class="rev-box rev-def mt-3">
                                     <strong>A. Budgétaire (Gouv)</strong>
                                     <ul>
-                                        <li><strong>Relance :</strong> + Dépenses / - Impôts</li>
-                                        <li><strong>Rigueur :</strong> - Dépenses / + Impôts</li>
+                                        [cite_start]<li><strong>Relance :</strong> + Dépenses / - Impôts (Soutien demande)[cite: 266].</li>
+                                        <li><strong>Rigueur :</strong> - Dépenses / + Impôts (Lutte inflation/dette).</li>
                                     </ul>
                                 </div>
                                 <div class="rev-box rev-mech">
@@ -954,9 +1010,9 @@
                                 <div class="rev-box rev-lim mb-0">
                                     <strong>Limites & Contraintes</strong>
                                     <ul class="mb-0">
-                                        <li><strong>PSC (Europe) :</strong> Déficit < 3% PIB, Dette < 60% PIB.</li>
-                                        <li><strong>Soutenabilité :</strong> Risque effet boule de neige de la dette.</li>
-                                        <li><strong>Mondialisation :</strong> Risque de fuite des capitaux.</li>
+                                        [cite_start]<li><strong>PSC (Europe) :</strong> Déficit < 3% PIB, Dette < 60% PIB (Théorique)[cite: 273].</li>
+                                        <li><strong>Soutenabilité :</strong> Risque effet boule de neige (s'endetter pour payer les intérêts).</li>
+                                        [cite_start]<li><strong>Mondialisation :</strong> Risque de fuite des capitaux vers des pays à fiscalité plus basse[cite: 288].</li>
                                     </ul>
                                 </div>
                             </div>
@@ -965,6 +1021,32 @@
                 </div>
 
                 <div class="tab-pane fade" id="chap8">
+                    <div class="glass-card p-4 mb-4" style="border-left: 5px solid var(--primary);">
+                        <h4 style="color: var(--primary);"><i class="fas fa-book-open me-2"></i>Glossaire & Définitions</h4>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="rev-def">
+                                    <ul class="def-list">
+                                        [cite_start]<li><span class="term">Économie de marché :</span> Système d'échanges libres (offre/demande) sur un marché[cite: 83].</li>
+                                        [cite_start]<li><span class="term">AAI (Autorité Admin. Indép.) :</span> Organe de régulation indépendant de l'État (ex: Autorité de la Concurrence)[cite: 119].</li>
+                                        [cite_start]<li><span class="term">Entente illicite (Cartel) :</span> Accord secret entre concurrents pour fausser le marché (prix/partage)[cite: 144].</li>
+                                        [cite_start]<li><span class="term">Abus de position dominante :</span> Entreprise leader exploitant sa force pour éliminer la concurrence[cite: 153].</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="rev-def">
+                                    <ul class="def-list">
+                                        [cite_start]<li><span class="term">Concurrence déloyale :</span> Pratiques fautives envers un concurrent (Dénigrement, Imitation, Parasitisme, Désorganisation) [cite: 160-164].</li>
+                                        [cite_start]<li><span class="term">Pratiques restrictives :</span> Déséquilibre dans la relation commerciale (Rupture brutale, soumission)[cite: 170].</li>
+                                        [cite_start]<li><span class="term">Propriété Industrielle :</span> Droit exclusif sur une création (INPI) pour garantir l'innovation[cite: 181].</li>
+                                        [cite_start]<li><span class="term">Contrefaçon :</span> Violation d'un droit de propriété intellectuelle (délit pénal)[cite: 206].</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="glass-card p-4 mb-4">
                         <h3 class="mb-3" style="color: var(--primary);">1. Droit de la Concurrence</h3>
                         <p class="text-muted small mb-4">Autorité de la Concurrence (FR) / Commission Européenne (UE)</p>
@@ -1013,6 +1095,30 @@
                 </div>
 
                 <div class="tab-pane fade" id="chap9">
+                    <div class="glass-card p-4 mb-4" style="border-left: 5px solid var(--primary);">
+                        <h4 style="color: var(--primary);"><i class="fas fa-book-open me-2"></i>Glossaire & Définitions</h4>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="rev-def">
+                                    <ul class="def-list">
+                                        [cite_start]<li><span class="term">Macro-environnement :</span> Ensemble des facteurs globaux (PESTEL) qui influencent l'entreprise sans qu'elle puisse les contrôler [cite: 15-16].</li>
+                                        [cite_start]<li><span class="term">Micro-environnement :</span> Acteurs proches en relation directe (Clients, Fournisseurs, Concurrents)[cite: 17].</li>
+                                        [cite_start]<li><span class="term">Veille :</span> Surveillance active de l'environnement pour anticiper les changements[cite: 58].</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="rev-def">
+                                    <ul class="def-list">
+                                        [cite_start]<li><span class="term">Opportunités :</span> Facteurs externes positifs dont l'entreprise peut tirer profit[cite: 51].</li>
+                                        [cite_start]<li><span class="term">Menaces :</span> Contraintes externes qui risquent de nuire à l'activité (Crise, Guerre)[cite: 52].</li>
+                                        [cite_start]<li><span class="term">Innovation :</span> Réponse stratégique de l'entreprise face à l'incertitude du marché (Schumpeter)[cite: 59].</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="glass-card p-4">
                         <h3 class="text-center mb-4" style="color: var(--primary);">L'Environnement de l'Entreprise</h3>
                         
