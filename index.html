@@ -13,13 +13,12 @@
     
     <style>
         :root {
-            /* PALETTE EMERAUDE & OR CUIVRÉ */
             --bg-dark: #050a08;            
             --bg-card: rgba(10, 20, 15, 0.85); 
-            --primary: #10b981;           /* Vert Émeraude */
-            --secondary: #fbbf24;         /* Or / Ambre */
+            --primary: #10b981;
+            --secondary: #fbbf24;
             --text-main: #ffffff;         
-            --text-sub: #d1fae5;          /* Vert Menthe très pâle */
+            --text-sub: #d1fae5;
             --glass-border: rgba(16, 185, 129, 0.3);
         }
 
@@ -33,12 +32,10 @@
 
         .text-muted { color: var(--text-sub) !important; }
 
-        /* Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: var(--bg-dark); }
         ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
 
-        /* Glassmorphism */
         .glass-card {
             background: var(--bg-card);
             backdrop-filter: blur(12px);
@@ -52,7 +49,6 @@
             box-shadow: 0 15px 30px rgba(16, 185, 129, 0.15);
         }
 
-        /* Navbar */
         .navbar {
             background: rgba(5, 10, 8, 0.95) !important;
             backdrop-filter: blur(10px);
@@ -63,7 +59,6 @@
         .nav-link { color: var(--text-main) !important; font-weight: 500; margin: 0 10px; transition: 0.3s; opacity: 0.9; }
         .nav-link:hover { color: var(--secondary) !important; opacity: 1; text-shadow: 0 0 10px rgba(251, 191, 36, 0.4); }
 
-        /* Hero */
         .hero {
             padding: 160px 0 100px;
             background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.2), transparent 40%),
@@ -76,7 +71,6 @@
         .hero h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; color: #ffffff; text-shadow: 0 0 20px rgba(16, 185, 129, 0.2); }
         .hero .lead { color: var(--text-sub) !important; font-weight: 400; font-size: 1.1rem;}
 
-        /* Code Editor */
         .code-editor-container {
             text-align: left;
             background: rgba(0, 0, 0, 0.6);
@@ -99,21 +93,13 @@
             font-size: 0.8rem;
             color: var(--text-sub);
         }
-        .editor-dots {
-            display: flex;
-            gap: 6px;
-            margin-right: 15px;
-        }
+        .editor-dots { display: flex; gap: 6px; margin-right: 15px; }
         .dot { width: 10px; height: 10px; border-radius: 50%; }
         .dot-red { background: #ff5f56; }
         .dot-yellow { background: #ffbd2e; }
         .dot-green { background: #27c93f; }
 
-        .editor-body {
-            padding: 15px 0;
-            display: flex;
-            position: relative;
-        }
+        .editor-body { padding: 15px 0; display: flex; position: relative; }
         .line-numbers {
             text-align: right;
             padding-right: 15px;
@@ -124,22 +110,15 @@
         }
         .line-numbers span { display: block; }
         
-        .code-content {
-            padding-left: 15px;
-            white-space: pre;
-            color: var(--text-main);
-            overflow-x: auto;
-        }
+        .code-content { padding-left: 15px; white-space: pre; color: var(--text-main); overflow-x: auto; }
 
         .syntax-comment { color: #6b7280; font-style: italic; }
         .syntax-keyword { color: var(--secondary); font-weight: bold; }
         .syntax-string { color: var(--primary); }
         .syntax-function { color: #60a5fa; }
         .syntax-variable { color: #f87171; }
-
         .ti-cursor { color: var(--primary); font-weight: bold; }
 
-        /* Sections */
         section { padding: 100px 0; }
         .section-title h2 { font-weight: 700; font-size: 2.5rem; margin-bottom: 50px; text-align: center; color: #ffffff; }
         .section-title h2 span { 
@@ -148,11 +127,9 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Skills */
         .skill-bar { height: 8px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
         .skill-progress { background: linear-gradient(90deg, var(--primary), #34d399); transition: width 1.5s ease-in-out; }
 
-        /* Projects */
         .project-card { height: 100%; overflow: hidden; }
         .project-card:hover { transform: translateY(-10px); }
         .project-img { height: 200px; object-fit: cover; opacity: 0.9; transition: 0.3s; border-bottom: 1px solid var(--glass-border); }
@@ -160,7 +137,6 @@
         .project-card h5 { color: var(--primary); font-weight: 700; margin-bottom: 5px; }
         .project-card p { color: var(--text-sub) !important; margin-bottom: 10px; }
 
-        /* STYLE POUR LA DATE DES PROJETS */
         .project-date {
             font-size: 0.85rem;
             color: var(--text-sub);
@@ -168,12 +144,8 @@
             margin-bottom: 15px;
             font-weight: 500;
         }
-        .project-date i {
-            color: var(--secondary);
-            margin-right: 5px;
-        }
+        .project-date i { color: var(--secondary); margin-right: 5px; }
 
-        /* Badges & Veille Elements */
         .language-badge {
             background: rgba(251, 191, 36, 0.15);
             border: 1px solid var(--secondary);
@@ -189,7 +161,6 @@
         .veille-icon { font-size: 2rem; color: var(--secondary); margin-bottom: 15px; }
         .veille-label { color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 5px; }
         
-        /* Table Veille */
         .table-veille { 
             color: var(--text-main); 
             border-color: var(--glass-border);
@@ -210,36 +181,36 @@
         .table-veille a { color: var(--secondary); font-weight: 600; text-decoration: none; border-bottom: 1px dashed var(--secondary); }
         .table-veille a:hover { color: #ffffff; border-color: #ffffff; }
 
-        /* Badges d'impact */
         .badge-impact { padding: 5px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
         .impact-high { background: rgba(251, 191, 36, 0.2); color: var(--secondary); border: 1px solid var(--secondary); }
         .impact-med { background: rgba(16, 185, 129, 0.2); color: var(--primary); border: 1px solid var(--primary); }
         .impact-low { background: rgba(255, 255, 255, 0.1); color: var(--text-sub); border: 1px solid var(--text-sub); }
 
-        /* Buttons & Forms */
         .btn-custom { background: linear-gradient(90deg, var(--primary), #059669); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 50px; padding: 12px 30px; font-weight: 700; transition: 0.3s; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
         .btn-custom:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(16, 185, 129, 0.5); color: white; border-color: white; }
         .btn-outline-light { border-color: var(--text-sub); color: var(--text-main); }
         .btn-outline-light:hover { border-color: var(--secondary); color: var(--bg-dark); background: var(--secondary); }
         .btn-outline-primary { border-color: var(--primary); color: var(--primary); font-weight: 600; }
         .btn-outline-primary:hover { background: var(--primary); border-color: var(--primary); color: #ffffff; box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
-        
-        /* Main Tabs styling */
+
+        /* Nav pills - tabs principaux */
         .nav-pills .nav-link { background: rgba(255,255,255,0.05); color: var(--text-main) !important; border: 1px solid var(--glass-border); margin: 5px; border-radius: 50px; }
         .nav-pills .nav-link:hover { border-color: var(--primary); color: var(--primary) !important; }
         .nav-pills .nav-link.active { background: var(--primary) !important; color: white !important; border-color: var(--primary); box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
-        
-        /* Sub-Tabs styling */
-        .sub-nav-pills { margin-top: 15px; margin-bottom: 30px; }
-        .sub-nav-pills .nav-link { padding: 6px 20px; font-size: 0.85rem; border-color: rgba(251, 191, 36, 0.4); }
-        .sub-nav-pills .nav-link:hover { border-color: var(--secondary); color: var(--secondary) !important; }
-        .sub-nav-pills .nav-link.active { background: var(--secondary) !important; border-color: var(--secondary); color: var(--bg-dark) !important; box-shadow: 0 0 15px rgba(251, 191, 36, 0.3); font-weight: 700;}
+
+        /* Nav pills - sous-catégories (style secondaire ambre) */
+        .nav-pills-sub .nav-link { background: rgba(255,255,255,0.03); color: var(--text-sub) !important; border: 1px solid rgba(251, 191, 36, 0.25); margin: 4px; border-radius: 50px; padding: 6px 20px; font-size: 0.88rem; font-weight: 600; transition: 0.3s; }
+        .nav-pills-sub .nav-link:hover { border-color: var(--secondary); color: var(--secondary) !important; }
+        .nav-pills-sub .nav-link.active { background: rgba(251, 191, 36, 0.15) !important; color: var(--secondary) !important; border-color: var(--secondary); box-shadow: 0 0 12px rgba(251, 191, 36, 0.25); }
 
         .form-control { background: rgba(255, 255, 255, 0.08); border: 1px solid var(--glass-border); color: #ffffff; font-weight: 500; }
         .form-control::placeholder { color: rgba(255,255,255,0.5); }
         .form-control:focus { background: rgba(255, 255, 255, 0.15); border-color: var(--primary); box-shadow: 0 0 0 0.25rem rgba(16, 185, 129, 0.25); color: #ffffff; }
 
         footer p { color: var(--text-sub) !important; }
+
+        /* Séparateur sous-catégorie */
+        .sub-tab-content { margin-top: 20px; }
 
         @media (max-width: 768px) {
             .hero { padding-top: 120px; text-align: center; }
@@ -389,27 +360,28 @@
         <div class="container">
             <div class="section-title"><h2>Réalisations <span>Projets</span></h2></div>
             
+            <!-- TABS PRINCIPAUX -->
             <ul class="nav nav-pills justify-content-center mb-5" id="projectsTab" role="tablist">
                 <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#beauvallet">Mme. Beauvallet</button></li>
                 <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#sotoca">Mr. Sotoca</button></li>
-                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#atelier">Atelier Pro</button></li>
             </ul>
 
             <div class="tab-content">
-                
-                <!-- ONGLETS MME BEAUVALLET -->
+
+                <!-- ===================== BEAUVALLET ===================== -->
                 <div class="tab-pane fade show active" id="beauvallet">
-                    
-                    <!-- Sous-menu B1 / B2 / B3 pour Beauvallet -->
-                    <ul class="nav nav-pills sub-nav-pills justify-content-center" role="tablist">
-                        <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#beauvallet-b1">Niveau B1</button></li>
-                        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#beauvallet-b2">Niveau B2</button></li>
-                        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#beauvallet-b3">Niveau B3</button></li>
+                    <!-- Sous-tabs Beauvallet -->
+                    <ul class="nav nav-pills nav-pills-sub justify-content-center mb-4" id="beauvalletSubTab" role="tablist">
+                        <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#bv-b1">B1</button></li>
+                        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#bv-b2">B2</button></li>
+                        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#bv-b3">B3</button></li>
+                        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#bv-atelier">Atelier Pro</button></li>
                     </ul>
 
-                    <div class="tab-content mt-4">
-                        <!-- Beauvallet B1 -->
-                        <div class="tab-pane fade show active" id="beauvallet-b1">
+                    <div class="tab-content sub-tab-content">
+
+                        <!-- BV - B1 -->
+                        <div class="tab-pane fade show active" id="bv-b1">
                             <div class="row g-4">
                                 <div class="col-md-6 col-lg-4">
                                     <div class="glass-card project-card">
@@ -568,8 +540,8 @@
                             </div>
                         </div>
 
-                        <!-- Beauvallet B2 -->
-                        <div class="tab-pane fade" id="beauvallet-b2">
+                        <!-- BV - B2 -->
+                        <div class="tab-pane fade" id="bv-b2">
                             <div class="row g-4">
                                 <div class="col-md-6 col-lg-4">
                                     <div class="glass-card project-card">
@@ -607,8 +579,8 @@
                             </div>
                         </div>
 
-                        <!-- Beauvallet B3 -->
-                        <div class="tab-pane fade" id="beauvallet-b3">
+                        <!-- BV - B3 -->
+                        <div class="tab-pane fade" id="bv-b3">
                             <div class="row g-4">
                                 <div class="col-md-6 col-lg-4">
                                     <div class="glass-card project-card">
@@ -678,21 +650,35 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- ONGLETS MR SOTOCA -->
+                        <!-- BV - Atelier Pro -->
+                        <div class="tab-pane fade" id="bv-atelier">
+                            <div class="row g-4">
+                                <div class="col-12 text-center text-muted py-5">
+                                    <i class="fas fa-folder-open fa-3x mb-3" style="color: var(--secondary); opacity: 0.4;"></i>
+                                    <p>Aucun projet Atelier Pro pour Mme. Beauvallet pour l'instant.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- /sub tab-content beauvallet -->
+                </div><!-- /beauvallet tab-pane -->
+
+
+                <!-- ===================== SOTOCA ===================== -->
                 <div class="tab-pane fade" id="sotoca">
-                    <!-- Sous-menu B1 / B2 / B3 pour Sotoca -->
-                    <ul class="nav nav-pills sub-nav-pills justify-content-center" role="tablist">
-                        <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#sotoca-b1">Niveau B1</button></li>
-                        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#sotoca-b2">Niveau B2</button></li>
-                        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#sotoca-b3">Niveau B3</button></li>
+                    <!-- Sous-tabs Sotoca -->
+                    <ul class="nav nav-pills nav-pills-sub justify-content-center mb-4" id="sotocaSubTab" role="tablist">
+                        <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#st-b1">B1</button></li>
+                        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#st-b2">B2</button></li>
+                        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#st-b3">B3</button></li>
+                        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#st-atelier">Atelier Pro</button></li>
                     </ul>
 
-                    <div class="tab-content mt-4">
-                        <!-- Sotoca B1 -->
-                        <div class="tab-pane fade show active" id="sotoca-b1">
+                    <div class="tab-content sub-tab-content">
+
+                        <!-- ST - B1 -->
+                        <div class="tab-pane fade show active" id="st-b1">
                             <div class="row g-4">
                                 <div class="col-md-6 col-lg-4">
                                     <div class="glass-card project-card">
@@ -719,17 +705,18 @@
                             </div>
                         </div>
 
-                        <!-- Sotoca B2 -->
-                        <div class="tab-pane fade" id="sotoca-b2">
+                        <!-- ST - B2 -->
+                        <div class="tab-pane fade" id="st-b2">
                             <div class="row g-4">
-                                <div class="col-12 text-center py-5">
-                                    <p class="text-muted mb-0">Aucun projet B2 pour le moment dans cette catégorie.</p>
+                                <div class="col-12 text-center text-muted py-5">
+                                    <i class="fas fa-folder-open fa-3x mb-3" style="color: var(--secondary); opacity: 0.4;"></i>
+                                    <p>Aucun projet B2 pour Mr. Sotoca pour l'instant.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Sotoca B3 -->
-                        <div class="tab-pane fade" id="sotoca-b3">
+                        <!-- ST - B3 -->
+                        <div class="tab-pane fade" id="st-b3">
                             <div class="row g-4">
                                 <div class="col-md-6 col-lg-4">
                                     <div class="glass-card project-card">
@@ -744,21 +731,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- ONGLETS ATELIER PRO -->
-                <div class="tab-pane fade" id="atelier">
-                    <!-- Sous-menu B1 / B2 / B3 pour Atelier -->
-                    <ul class="nav nav-pills sub-nav-pills justify-content-center" role="tablist">
-                        <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#atelier-b1">Niveau B1</button></li>
-                        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#atelier-b2">Niveau B2</button></li>
-                        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#atelier-b3">Niveau B3</button></li>
-                    </ul>
-
-                    <div class="tab-content mt-4">
-                        <!-- Atelier B1 -->
-                        <div class="tab-pane fade show active" id="atelier-b1">
+                        <!-- ST - Atelier Pro -->
+                        <div class="tab-pane fade" id="st-atelier">
                             <div class="row g-4">
                                 <div class="col-md-6 col-lg-4">
                                     <div class="glass-card project-card">
@@ -774,27 +749,10 @@
                             </div>
                         </div>
 
-                        <!-- Atelier B2 -->
-                        <div class="tab-pane fade" id="atelier-b2">
-                            <div class="row g-4">
-                                <div class="col-12 text-center py-5">
-                                    <p class="text-muted mb-0">Aucun projet B2 pour le moment dans cette catégorie.</p>
-                                </div>
-                            </div>
-                        </div>
+                    </div><!-- /sub tab-content sotoca -->
+                </div><!-- /sotoca tab-pane -->
 
-                        <!-- Atelier B3 -->
-                        <div class="tab-pane fade" id="atelier-b3">
-                            <div class="row g-4">
-                                <div class="col-12 text-center py-5">
-                                    <p class="text-muted mb-0">Aucun projet B3 pour le moment dans cette catégorie.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            </div><!-- /tab-content principal -->
         </div>
     </section>
 
