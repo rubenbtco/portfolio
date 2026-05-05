@@ -670,7 +670,6 @@
                     <!-- Sous-tabs Sotoca -->
                     <ul class="nav nav-pills nav-pills-sub justify-content-center mb-4" id="sotocaSubTab" role="tablist">
                         <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#st-b1">B1</button></li>
-                        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#st-b2">B2</button></li>
                         <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#st-b3">B3</button></li>
                         <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#st-atelier">Atelier Pro</button></li>
                     </ul>
@@ -680,6 +679,7 @@
                         <!-- ST - B1 -->
                         <div class="tab-pane fade show active" id="st-b1">
                             <div class="row g-4">
+
                                 <div class="col-md-6 col-lg-4">
                                     <div class="glass-card project-card">
                                         <img src="testcable.jpg" class="project-img card-img-top" alt="Réseau">
@@ -691,6 +691,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                
                                 <div class="col-md-6 col-lg-4">
                                     <div class="glass-card project-card">
                                         <img src="minialinux.png" class="project-img card-img-top" alt="Linux">
@@ -702,22 +703,28 @@
                                         </div>
                                     </div>
                                 </div>
+                                
                             </div>
                         </div>
 
                         <!-- ST - B2 -->
-                        <div class="tab-pane fade" id="st-b2">
-                            <div class="row g-4">
-                                <div class="col-12 text-center text-muted py-5">
-                                    <i class="fas fa-folder-open fa-3x mb-3" style="color: var(--secondary); opacity: 0.4;"></i>
-                                    <p>Aucun projet B2 pour Mr. Sotoca pour l'instant.</p>
-                                </div>
-                            </div>
-                        </div>
 
                         <!-- ST - B3 -->
                         <div class="tab-pane fade" id="st-b3">
-                            <div class="row g-4">
+                            <div class="row g-4
+
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="glass-card project-card">
+                                        <img src="capture.jpg" class="project-img card-img-top" alt="NAS">
+                                        <div class="p-4 text-center">
+                                            <h5>Capture d'écran</h5>
+                                            <p class="small text-muted">Outil</p>
+                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 11 sep. 2025</div>
+                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1s_capture.pdf')">Compte-rendu</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                                 <div class="col-md-6 col-lg-4">
                                     <div class="glass-card project-card">
                                         <img src="minianas.png" class="project-img card-img-top" alt="NAS">
@@ -729,6 +736,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                
                             </div>
                         </div>
 
