@@ -21,18 +21,6 @@
             --text-main: #ffffff;         
             --text-sub: #d1fae5;          /* Vert Menthe très pâle */
             --glass-border: rgba(16, 185, 129, 0.3);
-            
-            /* COULEURS SPECIFIQUES REVISIONS (Adaptées Dark Mode) */
-            --rev-def-border: #10b981;    /* Vert (Définitions) */
-            --rev-def-bg: rgba(16, 185, 129, 0.1);
-            --rev-mech-border: #34d399;   /* Vert clair (Mécanismes) */
-            --rev-mech-bg: rgba(52, 211, 153, 0.1);
-            --rev-lim-border: #ef4444;    /* Rouge (Limites/Menaces) */
-            --rev-lim-bg: rgba(239, 68, 68, 0.1);
-            --rev-ex-border: #fbbf24;     /* Or (Exemples/Conclusion) */
-            --rev-ex-bg: rgba(251, 191, 36, 0.1);
-            --rev-metho-border: #a855f7;  /* Violet (Métho) */
-            --rev-metho-bg: rgba(168, 85, 247, 0.1);
         }
 
         body {
@@ -242,63 +230,6 @@
         .form-control::placeholder { color: rgba(255,255,255,0.5); }
         .form-control:focus { background: rgba(255, 255, 255, 0.15); border-color: var(--primary); box-shadow: 0 0 0 0.25rem rgba(16, 185, 129, 0.25); color: #ffffff; }
 
-        /* --- STYLES REVISIONS CEJM (INTEGRATION) --- */
-        .rev-box {
-            padding: 15px;
-            margin-bottom: 15px;
-            border-left: 5px solid;
-            border-radius: 0 8px 8px 0;
-            font-size: 0.95rem;
-            color: #fff;
-        }
-
-        .rev-def { background: var(--rev-def-bg); border-color: var(--rev-def-border); }
-        .rev-def strong { color: var(--primary); display: block; margin-bottom: 5px; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
-        
-        /* Liste de définitions dans l'encadré */
-        .rev-def ul.def-list { list-style: none; padding: 0; margin: 0; }
-        .rev-def ul.def-list li { margin-bottom: 10px; padding-left: 15px; border-left: 2px solid rgba(16, 185, 129, 0.3); }
-        .rev-def ul.def-list li span.term { color: var(--secondary); font-weight: 700; }
-
-        .rev-mech { background: var(--rev-mech-bg); border-color: var(--rev-mech-border); }
-        .rev-mech strong { color: #34d399; display: block; margin-bottom: 5px; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;}
-
-        .rev-lim { background: var(--rev-lim-bg); border-color: var(--rev-lim-border); }
-        .rev-lim strong { color: #f87171; display: block; margin-bottom: 5px; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;}
-
-        .rev-ex { background: var(--rev-ex-bg); border-color: var(--rev-ex-border); font-style: italic; }
-        .rev-ex strong { color: var(--secondary); font-style: normal; display: block; margin-bottom: 5px; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;}
-
-        .rev-metho { background: var(--rev-metho-bg); border-color: var(--rev-metho-border); }
-        .rev-metho strong { color: #c084fc; display: block; margin-bottom: 5px; font-size: 1.1em; }
-
-        /* Tableaux Révisions (Style Dark) */
-        .rev-table { width: 100%; border-collapse: collapse; margin-top: 15px; background: rgba(0,0,0,0.3); border-radius: 8px; overflow: hidden; border: 1px solid var(--glass-border); }
-        .rev-table th, .rev-table td { border: 1px solid rgba(255,255,255,0.1); padding: 12px; text-align: left; }
-        .rev-table th { background-color: rgba(16, 185, 129, 0.15); color: var(--primary); font-weight: 700; }
-        .rev-table td { color: var(--text-sub); }
-
-        /* Schéma en couches (Chap 9) */
-        .schema-layers { display: flex; justify-content: center; padding: 20px; }
-        .layer-box { border-radius: 20px; padding: 25px; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.2); transition: transform 0.3s; }
-        
-        .layer-macro { background-color: rgba(16, 185, 129, 0.05); border: 2px solid var(--primary); width: 100%; max-width: 900px; }
-        .layer-micro { background-color: rgba(52, 211, 153, 0.1); border: 2px solid #34d399; margin: 20px auto; width: 85%; }
-        .layer-interne { background-color: rgba(251, 191, 36, 0.05); border: 2px solid var(--secondary); margin: 20px auto; width: 80%; text-align: center; }
-
-        .layer-title { font-weight: 800; text-transform: uppercase; margin-bottom: 15px; display: inline-block; padding: 6px 15px; border-radius: 4px; color: white; font-size: 0.85em; letter-spacing: 1px; }
-        .bg-macro { background-color: var(--primary); }
-        .bg-micro { background-color: #34d399; color: #000;}
-        .bg-interne { background-color: var(--secondary); color: #000; }
-
-        .items-grid { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 10px; }
-        .item-badge { padding: 8px 12px; background: rgba(255,255,255,0.05); border-radius: 6px; font-size: 0.85em; border: 1px solid rgba(255,255,255,0.1); font-weight: 600; color: var(--text-sub); }
-
-        .arrow-down { text-align: center; font-size: 24px; color: var(--text-sub); margin: 5px 0; font-weight: bold; }
-
-        .nav-pills .metho-btn .nav-link { border: 1px solid #a855f7 !important; color: #e9d5ff !important; }
-        .nav-pills .metho-btn .nav-link.active { background: #7e22ce !important; color: white !important; border-color: #7e22ce !important; }
-
         footer p { color: var(--text-sub) !important; }
 
         @media (max-width: 768px) {
@@ -326,7 +257,6 @@
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projets</a></li>
                     <li class="nav-item"><a class="nav-link" href="#veille">Veille</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#cejm">Révisions CEJM</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -459,268 +389,279 @@
             <div class="tab-content">
                 
                 <div class="tab-pane fade show active" id="beauvallet">
-                    <div class="row g-4">
-                        <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="minialabyrinthe.png" class="project-img card-img-top" alt="Labyrinthe">
-                                <div class="p-4 text-center">
-                                    <h5>Labyrinthe Java</h5>
-                                    <p class="small text-muted">Algorithmique & Java</p>
-                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 08 sep. 2025</div>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('labyrinthe.pdf')">Compte-rendu</button>
+                    
+                    <!-- SOUS CATEGORIE B1 -->
+                    <div class="mb-5">
+                        <h3 class="text-primary mb-4 border-bottom pb-2" style="border-color: rgba(16, 185, 129, 0.3) !important;">Niveau B1</h3>
+                        <div class="row g-4">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="glass-card project-card">
+                                    <img src="minialabyrinthe.png" class="project-img card-img-top" alt="Labyrinthe">
+                                    <div class="p-4 text-center">
+                                        <h5>Labyrinthe Java</h5>
+                                        <p class="small text-muted">Algorithmique & Java</p>
+                                        <div class="project-date"><i class="far fa-calendar-alt"></i> 08 sep. 2025</div>
+                                        <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('labyrinthe.pdf')">Compte-rendu</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="glass-card project-card">
+                                    <img src="miniab1btp02.jpg" class="project-img card-img-top" alt="Projet B1">
+                                    <div class="p-4 text-center">
+                                        <h5>Premiers pas en Java</h5>
+                                        <p class="small text-muted">Découverte java avec eclipse</p>
+                                        <div class="project-date"><i class="far fa-calendar-alt"></i> 08 sep. 2025</div>
+                                        <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp02.pdf')">Compte-rendu</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="glass-card project-card">
+                                    <img src="miniajava.png" class="project-img card-img-top" alt="Projet B1">
+                                    <div class="p-4 text-center">
+                                        <h5>Java TP03</h5>
+                                        <p class="small text-muted">Poursuite de la découverte de Java</p>
+                                        <div class="project-date"><i class="far fa-calendar-alt"></i> 15 sep. 2025</div>
+                                        <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp03.pdf')">Compte-rendu</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="glass-card project-card">
+                                    <img src="miniashifumi.png" class="project-img card-img-top" alt="Shifumi">
+                                    <div class="p-4 text-center">
+                                        <h5>Jeu Shifumi</h5>
+                                        <p class="small text-muted">Logique de jeu en Java</p>
+                                        <div class="project-date"><i class="far fa-calendar-alt"></i> 30 sep. 2025</div>
+                                        <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('shifumi.pdf')">Compte-rendu</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="glass-card project-card">
+                                    <img src="miniajava.png" class="project-img card-img-top" alt="Projet B1">
+                                    <div class="p-4 text-center">
+                                        <h5>Java TP05</h5>
+                                        <p class="small text-muted">Poursuite des exercices sur le java</p>
+                                        <div class="project-date"><i class="far fa-calendar-alt"></i> 06 oct. 2025</div>
+                                        <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp05.pdf')">Compte-rendu</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="glass-card project-card">
+                                    <img src="miniajava.png" class="project-img card-img-top" alt="Projet B1">
+                                    <div class="p-4 text-center">
+                                        <h5>Java TP06</h5>
+                                        <p class="small text-muted">Procédures et fonctions en Java</p>
+                                        <div class="project-date"><i class="far fa-calendar-alt"></i> 21 oct. 2025</div>
+                                        <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp06.pdf')">Compte-rendu</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="glass-card project-card">
+                                    <img src="miniabataillenavale.jpg" class="project-img card-img-top" alt="Bataille Navale">
+                                    <div class="p-4 text-center">
+                                        <h5>Bataille Navale</h5>
+                                        <p class="small text-muted">Tableaux & Structures</p>
+                                        <div class="project-date"><i class="far fa-calendar-alt"></i> 10 nov. 2025</div>
+                                        <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp08.pdf')">Compte-rendu</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="glass-card project-card">
+                                    <img src="miniajava.png" class="project-img card-img-top" alt="Projet B1">
+                                    <div class="p-4 text-center">
+                                        <h5>Java TP07</h5>
+                                        <p class="small text-muted">La banque</p>
+                                        <div class="project-date"><i class="far fa-calendar-alt"></i> 28 nov. 2025</div>
+                                        <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp09.pdf')">Compte-rendu</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="glass-card project-card">
+                                    <img src="phpmyadmin.png" class="project-img card-img-top" alt="Projet B1">
+                                    <div class="p-4 text-center">
+                                        <h5>TP-BDD01</h5>
+                                        <p class="small text-muted">Les bases de données</p>
+                                        <div class="project-date"><i class="far fa-calendar-alt"></i> 01 dec. 2025</div>
+                                        <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp10.pdf')">Compte-rendu</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="glass-card project-card">
+                                    <img src="miniajava.png" class="project-img card-img-top" alt="Projet B1">
+                                    <div class="p-4 text-center">
+                                        <h5>TP-JAVA08</h5>
+                                        <p class="small text-muted">JavaFX</p>
+                                        <div class="project-date"><i class="far fa-calendar-alt"></i> 09 dec. 2025</div>
+                                        <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp11.pdf')">Compte-rendu</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="glass-card project-card">
+                                    <img src="miniaphpmyadmin.png" class="project-img card-img-top" alt="Projet B1">
+                                    <div class="p-4 text-center">
+                                        <h5>B1B-S2-TD1</h5>
+                                        <p class="small text-muted">Bases de données & PHP</p>
+                                        <div class="project-date"><i class="far fa-calendar-alt"></i> 23 Mar. 2026</div>
+                                        <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1b_s2_td1.zip')">Compte-rendu</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="glass-card project-card">
+                                    <img src="miniaphpmyadmin.png" class="project-img card-img-top" alt="Projet B1">
+                                    <div class="p-4 text-center">
+                                        <h5>B1B-S2-TD2 Bases de PHP</h5>
+                                        <p class="small text-muted">Introduction au PHP</p>
+                                        <div class="project-date"><i class="far fa-calendar-alt"></i> 28 Mar. 2026</div>
+                                        <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1b_s2_td2.zip')">Compte-rendu</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="glass-card project-card">
+                                    <img src="miniaphpmyadmin.png" class="project-img card-img-top" alt="Projet B1">
+                                    <div class="p-4 text-center">
+                                        <h5>B1B-S2-TD3 Programmation en PHP</h5>
+                                        <p class="small text-muted">Logique PHP avancée</p>
+                                        <div class="project-date"><i class="far fa-calendar-alt"></i> 30 Mar. 2026</div>
+                                        <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1b_s2_td3.zip')">Compte-rendu</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="glass-card project-card">
+                                    <img src="miniaphpmyadmin.png" class="project-img card-img-top" alt="Projet B1">
+                                    <div class="p-4 text-center">
+                                        <h5>B1B-S2-TD4 Transmission de données</h5>
+                                        <p class="small text-muted">Formulaires et requêtes</p>
+                                        <div class="project-date"><i class="far fa-calendar-alt"></i> 30 Mar. 2026</div>
+                                        <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1b_s2_td4.zip')">Compte-rendu</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="miniab1btp02.jpg" class="project-img card-img-top" alt="Projet B3">
-                                <div class="p-4 text-center">
-                                    <h5>Premiers pas en Java</h5>
-                                    <p class="small text-muted">Découverde java avec eclipse</p>
-                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 08 sep. 2025</div>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp02.pdf')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="miniajava.png" class="project-img card-img-top" alt="Projet B3">
-                                <div class="p-4 text-center">
-                                    <h5>Java TP03</h5>
-                                    <p class="small text-muted">poursuite de la découverte de Java</p>
-                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 15 sep. 2025</div>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp03.pdf')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="miniab3btp01.jpg" class="project-img card-img-top" alt="Projet B3">
-                                <div class="p-4 text-center">
-                                    <h5>Traitement de données personnelles</h5>
-                                    <p class="small text-muted">Découverde des traitements de données</p>
-                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 25 sep. 2025</div>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3btp01.pdf')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="miniashifumi.png" class="project-img card-img-top" alt="Shifumi">
-                                <div class="p-4 text-center">
-                                    <h5>Jeu Shifumi</h5>
-                                    <p class="small text-muted">Logique de jeu en Java</p>
-                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 30 sep. 2025</div>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('shifumi.pdf')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="miniapia.png" class="project-img card-img-top" alt="Projet B3">
-                                <div class="p-4 text-center">
-                                    <h5>PIA TP01</h5>
-                                    <p class="small text-muted">Decouverte du logiciel PIA</p>
-                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 02 oct. 2025</div>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3btp02.pdf')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="miniajava.png" class="project-img card-img-top" alt="Projet B3">
-                                <div class="p-4 text-center">
-                                    <h5>Java TP05</h5>
-                                    <p class="small text-muted">Poursuite des exercices sur le java</p>
-                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 06 oct. 2025</div>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp05.pdf')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="miniajava.png" class="project-img card-img-top" alt="Projet B3">
-                                <div class="p-4 text-center">
-                                    <h5>Java TP06</h5>
-                                    <p class="small text-muted">Procédures et fonctions en Java</p>
-                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 21 oct. 2025</div>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp06.pdf')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="miniabataillenavale.jpg" class="project-img card-img-top" alt="Bataille Navale">
-                                <div class="p-4 text-center">
-                                    <h5>Bataille Navale</h5>
-                                    <p class="small text-muted">Tableaux & Structures</p>
-                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 10 nov. 2025</div>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp08.pdf')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="cyber.png" class="project-img card-img-top" alt="Projet B3">
-                                <div class="p-4 text-center">
-                                    <h5>CH3-TD1</h5>
-                                    <p class="small text-muted">Cybersécurité</p>
-                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 13 nov. 2025</div>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3btp04.pdf')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="miniajava.png" class="project-img card-img-top" alt="Projet B3">
-                                <div class="p-4 text-center">
-                                    <h5>Java TP07</h5>
-                                    <p class="small text-muted">La banque</p>
-                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 28 nov. 2025</div>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp09.pdf')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="phpmyadmin.png" class="project-img card-img-top" alt="Projet B3">
-                                <div class="p-4 text-center">
-                                    <h5>TP-BDD01</h5>
-                                    <p class="small text-muted">Les bases de données</p>
-                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 01 dec. 2025</div>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp10.pdf')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="miniajava.png" class="project-img card-img-top" alt="Projet B3">
-                                <div class="p-4 text-center">
-                                    <h5>TP-JAVA08</h5>
-                                    <p class="small text-muted">JavaFX</p>
-                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 09 dec. 2025</div>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp11.pdf')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="cyber.png" class="project-img card-img-top" alt="Projet B3">
-                                <div class="p-4 text-center">
-                                    <h5>CH3-TD2</h5>
-                                    <p class="small text-muted">Cybersécurité</p>
-                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 20 janv. 2026</div>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3btp06.pdf')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="cyber.png" class="project-img card-img-top" alt="Projet B3">
-                                <div class="p-4 text-center">
-                                    <h5>CH4-TD1</h5>
-                                    <p class="small text-muted">Cybersécurité</p>
-                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 20 janv. 2026</div>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3btp07.pdf')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="cyber.png" class="project-img card-img-top" alt="Projet B3">
-                                <div class="p-4 text-center">
-                                    <h5>CH4-TD2</h5>
-                                    <p class="small text-muted">Cybersécurité</p>
-                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 20 janv. 2026</div>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3btp08.pdf')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
 
-                        <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="miniajava.png" class="project-img card-img-top" alt="Projet B3">
-                                <div class="p-4 text-center">
-                                    <h5>B2-S2-TD7[Programmation]</h5>
-                                    <p class="small text-muted">B2</p>
-                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 10 Mar. 2026</div>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b2_s2_td7.zip')">Compte-rendu</button>
+                    <!-- SOUS CATEGORIE B2 -->
+                    <div class="mb-5">
+                        <h3 class="text-primary mb-4 border-bottom pb-2" style="border-color: rgba(16, 185, 129, 0.3) !important;">Niveau B2</h3>
+                        <div class="row g-4">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="glass-card project-card">
+                                    <img src="miniajava.png" class="project-img card-img-top" alt="Projet B2">
+                                    <div class="p-4 text-center">
+                                        <h5>B2-S2-TD7[Programmation]</h5>
+                                        <p class="small text-muted">Algorithmes avancés</p>
+                                        <div class="project-date"><i class="far fa-calendar-alt"></i> 10 Mar. 2026</div>
+                                        <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b2_s2_td7.zip')">Compte-rendu</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="glass-card project-card">
+                                    <img src="modelminia.jpg" class="project-img card-img-top" alt="Projet B2">
+                                    <div class="p-4 text-center">
+                                        <h5>B2-S2-TD1[Modélisation]</h5>
+                                        <p class="small text-muted">UML & Conception</p>
+                                        <div class="project-date"><i class="far fa-calendar-alt"></i> 27 Avr. 2026</div>
+                                        <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b2b_s2_td1_modelisation.zip')">Compte-rendu</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="glass-card project-card">
+                                    <img src="modelminia.jpg" class="project-img card-img-top" alt="Projet B2">
+                                    <div class="p-4 text-center">
+                                        <h5>B2-S2-TD2[Modélisation]</h5>
+                                        <p class="small text-muted">UML & Conception</p>
+                                        <div class="project-date"><i class="far fa-calendar-alt"></i> 27 Avr. 2026</div>
+                                        <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b2b_s2_td2_modelisation.zip')">Compte-rendu</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="miniaphpmyadmin.png" class="project-img card-img-top" alt="Projet B3">
-                                <div class="p-4 text-center">
-                                    <h5>B1B-S2-TD1</h5>
-                                    <p class="small text-muted">B1</p>
-                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 23 Mar. 2026</div>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1b_s2_td1.zip')">Compte-rendu</button>
+                    <!-- SOUS CATEGORIE B3 -->
+                    <div class="mb-5">
+                        <h3 class="text-primary mb-4 border-bottom pb-2" style="border-color: rgba(16, 185, 129, 0.3) !important;">Niveau B3</h3>
+                        <div class="row g-4">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="glass-card project-card">
+                                    <img src="miniab3btp01.jpg" class="project-img card-img-top" alt="Projet B3">
+                                    <div class="p-4 text-center">
+                                        <h5>Traitement de données personnelles</h5>
+                                        <p class="small text-muted">Découverte des traitements de données</p>
+                                        <div class="project-date"><i class="far fa-calendar-alt"></i> 25 sep. 2025</div>
+                                        <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3btp01.pdf')">Compte-rendu</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="glass-card project-card">
+                                    <img src="miniapia.png" class="project-img card-img-top" alt="Projet B3">
+                                    <div class="p-4 text-center">
+                                        <h5>PIA TP01</h5>
+                                        <p class="small text-muted">Découverte du logiciel PIA</p>
+                                        <div class="project-date"><i class="far fa-calendar-alt"></i> 02 oct. 2025</div>
+                                        <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3btp02.pdf')">Compte-rendu</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="glass-card project-card">
+                                    <img src="cyber.png" class="project-img card-img-top" alt="Projet B3">
+                                    <div class="p-4 text-center">
+                                        <h5>CH3-TD1</h5>
+                                        <p class="small text-muted">Cybersécurité</p>
+                                        <div class="project-date"><i class="far fa-calendar-alt"></i> 13 nov. 2025</div>
+                                        <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3btp04.pdf')">Compte-rendu</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="glass-card project-card">
+                                    <img src="cyber.png" class="project-img card-img-top" alt="Projet B3">
+                                    <div class="p-4 text-center">
+                                        <h5>CH3-TD2</h5>
+                                        <p class="small text-muted">Cybersécurité</p>
+                                        <div class="project-date"><i class="far fa-calendar-alt"></i> 20 janv. 2026</div>
+                                        <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3btp06.pdf')">Compte-rendu</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="glass-card project-card">
+                                    <img src="cyber.png" class="project-img card-img-top" alt="Projet B3">
+                                    <div class="p-4 text-center">
+                                        <h5>CH4-TD1</h5>
+                                        <p class="small text-muted">Cybersécurité</p>
+                                        <div class="project-date"><i class="far fa-calendar-alt"></i> 20 janv. 2026</div>
+                                        <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3btp07.pdf')">Compte-rendu</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="glass-card project-card">
+                                    <img src="cyber.png" class="project-img card-img-top" alt="Projet B3">
+                                    <div class="p-4 text-center">
+                                        <h5>CH4-TD2</h5>
+                                        <p class="small text-muted">Cybersécurité</p>
+                                        <div class="project-date"><i class="far fa-calendar-alt"></i> 20 janv. 2026</div>
+                                        <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3btp08.pdf')">Compte-rendu</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="miniaphpmyadmin.png" class="project-img card-img-top" alt="Projet B3">
-                                <div class="p-4 text-center">
-                                    <h5>B1B-S2-TD2 Bases de PHP</h5>
-                                    <p class="small text-muted">B1 </p>
-                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 28 Mar. 2026</div>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1b_s2_td2.zip')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="miniaphpmyadmin.png" class="project-img card-img-top" alt="Projet B3">
-                                <div class="p-4 text-center">
-                                    <h5>B1B-S2-TD3 Programmation en PHP</h5>
-                                    <p class="small text-muted">B1 </p>
-                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 30 Mar. 2026</div>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1b_s2_td3.zip')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="miniaphpmyadmin.png" class="project-img card-img-top" alt="Projet B3">
-                                <div class="p-4 text-center">
-                                    <h5>B1B-S2-TD4 Transmission de données</h5>
-                                    <p class="small text-muted">B1 </p>
-                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 30 Mar. 2026</div>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1b_s2_td4.zip')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
-
-                         <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="modelminia.jpg" class="project-img card-img-top" alt="Projet B3">
-                                <div class="p-4 text-center">
-                                    <h5>B2-S2-TD1[Modélisation]</h5>
-                                    <p class="small text-muted">B2 </p>
-                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 27 Avr. 2026</div>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b2b_s2_td1_modelisation.zip')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-lg-4">
-                            <div class="glass-card project-card">
-                                <img src="modelminia.jpg" class="project-img card-img-top" alt="Projet B3">
-                                <div class="p-4 text-center">
-                                    <h5>B2-S2-TD2[Modélisation]</h5>
-                                    <p class="small text-muted">B2 </p>
-                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 27 Avr. 2026</div>
-                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b2b_s2_td2_modelisation.zip')">Compte-rendu</button>
-                                </div>
-                            </div>
-                        </div>
-                        
                     </div>
                 </div>
 
@@ -788,7 +729,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Veille <span>Domotique</span></h2>
-                <p class="text-muted text-center">Suivi des innovations IoT et Maison Connectée - Mis à jour le 03/02/2026</p>
+                <p class="text-muted text-center">Suivi des innovations IoT et Maison Connectée - Mis à jour le 05/05/2026</p>
             </div>
             
             <div class="row g-4 mb-5">
@@ -841,6 +782,39 @@
                             </tr>
                         </thead>
                         <tbody class="text-muted">
+                            <tr>
+                                <td>02/05/26</td>
+                                <td><strong>Lancement de Home Assistant Core 2026.5</strong></td>
+                                <td>Logiciel</td>
+                                <td>
+                                    Intégration native et optimisée des grands modèles de langage (LLM) fonctionnant intégralement en local sur Raspberry Pi 5.
+                                    <br><small class="text-white"><em>Analyse : L'automatisation par IA générative sans dépendance au cloud devient la norme accessible.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-high">Critique</span></td>
+                                <td><a href="#" target="_blank">HA Blog</a></td>
+                            </tr>
+                            <tr>
+                                <td>15/04/26</td>
+                                <td><strong>Aqara Hub M4 Pro & Capteurs Energy Harvesting</strong></td>
+                                <td>Matériel</td>
+                                <td>
+                                    Déploiement d'une nouvelle gamme de capteurs natifs Thread fonctionnant sans pile (recharge via ondes radio et lumière ambiante).
+                                    <br><small class="text-white"><em>Analyse : Disparition progressive de la maintenance des piles, un enjeu clé de l'IoT écologique.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="#" target="_blank">Domadoo</a></td>
+                            </tr>
+                            <tr>
+                                <td>22/03/26</td>
+                                <td><strong>Adoption massive du standard Matter 1.6</strong></td>
+                                <td>Standard</td>
+                                <td>
+                                    Le protocole Matter unifie désormais totalement les caméras de sécurité en gérant nativement un flux vidéo chiffré de bout en bout en local.
+                                    <br><small class="text-white"><em>Analyse : Un coup dur pour les abonnements cloud payants des grands constructeurs.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-high">Fort</span></td>
+                                <td><a href="#" target="_blank">Connectivity Alliance</a></td>
+                            </tr>
                             <tr>
                                 <td>03/02/26</td>
                                 <td><strong>Matter 1.5 : Énergie & Solaire</strong></td>
@@ -932,371 +906,6 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="cejm">
-        <div class="container">
-            <div class="section-title"><h2>Révisions <span>CEJM</span></h2></div>
-            
-            <ul class="nav nav-pills justify-content-center mb-5" id="cejmTab" role="tablist">
-                <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#chap6">Chap 6 : État</button></li>
-                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#chap7">Chap 7 : Politiques</button></li>
-                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#chap8">Chap 8 : Droit</button></li>
-                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#chap9">Chap 9 : Environnement</button></li>
-                <li class="nav-item metho-btn"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#metho">Métho Juridique</button></li>
-            </ul>
-
-            <div class="tab-content">
-                
-                <div class="tab-pane fade show active" id="chap6">
-                    <div class="glass-card p-4 mb-4" style="border-left: 5px solid var(--primary);">
-                        <h4 style="color: var(--primary);"><i class="fas fa-book-open me-2"></i>Glossaire & Définitions</h4>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="rev-def">
-                                    <ul class="def-list">
-                                        [cite_start]<li><span class="term">Défaillance de marché :</span> Situation de dysfonctionnement (ex: monopole, externalité) justifiant l'intervention de l'État[cite: 580].</li>
-                                        [cite_start]<li><span class="term">Fonction d'Allocation :</span> L'État fournit des biens publics et gère les défaillances[cite: 583].</li>
-                                        [cite_start]<li><span class="term">Fonction de Redistribution :</span> Réduction des inégalités via impôts et prestations sociales (Justice sociale)[cite: 599].</li>
-                                        [cite_start]<li><span class="term">Fonction de Régulation :</span> Stabilisation de l'économie (chômage, inflation) à court terme [cite: 614-615].</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="rev-def">
-                                    <ul class="def-list">
-                                        [cite_start]<li><span class="term">PIB (Produit Intérieur Brut) :</span> Indicateur quantitatif de richesse (somme des valeurs ajoutées)[cite: 371, 638].</li>
-                                        [cite_start]<li><span class="term">Développement (IDH) :</span> Notion qualitative (Santé, Éducation, Niveau de vie)[cite: 389, 645].</li>
-                                        [cite_start]<li><span class="term">Carré Magique :</span> 4 objectifs simultanés : Croissance, Plein emploi, Stabilité des prix, Équilibre extérieur [cite: 302-305, 627].</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="glass-card p-4 mb-4">
-                        <h3 class="mb-4" style="color: var(--primary);">Les 3 Fonctions de l'État (Musgrave)</h3>
-                        <div class="row g-4">
-                            <div class="col-md-4">
-                                <div class="rev-box rev-def h-100">
-                                    <strong>1. Allocation</strong>
-                                    L'État intervient pour corriger les défaillances du marché :
-                                    <ul class="mt-2 small text-muted">
-                                        <li>Biens Publics (éclairage, défense)</li>
-                                        <li>Externalités (pollution)</li>
-                                        <li>Monopoles naturels</li>
-                                        <li>Asymétrie d'information</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="rev-box rev-mech h-100">
-                                    <strong>2. Redistribution</strong>
-                                    Réduire les inégalités (Justice sociale).
-                                    <br><br>
-                                    <em>Mécanisme :</em> Impôts/Cotisations -> État -> Prestations sociales -> Revenu Disponible.
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="rev-box rev-def h-100">
-                                    <strong>3. Régulation</strong>
-                                    Stabiliser l'économie à court terme :
-                                    <ul class="mt-2 small text-muted">
-                                        <li>Lutte contre chômage</li>
-                                        <li>Lutte contre inflation</li>
-                                        <li>Soutien croissance</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="glass-card p-4">
-                        <h3 class="mb-4" style="color: var(--secondary);">Objectifs : Carré Magique de Kaldor</h3>
-                        <div class="table-responsive">
-                            <table class="rev-table">
-                                <thead>
-                                    <tr><th>Objectif</th><th>Indicateur</th><th>Cible</th></tr>
-                                </thead>
-                                <tbody>
-                                    <tr><td><strong>Croissance</strong></td><td>Taux variation PIB</td><td>Positif</td></tr>
-                                    <tr><td><strong>Plein Emploi</strong></td><td>Taux de chômage</td><td>~5%</td></tr>
-                                    <tr><td><strong>Stabilité Prix</strong></td><td>Taux d'inflation</td><td>~2%</td></tr>
-                                    <tr><td><strong>Équilibre Ext.</strong></td><td>Solde Balance Com.</td><td>Export > Import</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tab-pane fade" id="chap7">
-                    <div class="glass-card p-4 mb-4" style="border-left: 5px solid var(--primary);">
-                        <h4 style="color: var(--primary);"><i class="fas fa-book-open me-2"></i>Glossaire & Définitions</h4>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="rev-def">
-                                    <ul class="def-list">
-                                        [cite_start]<li><span class="term">Politique Économique :</span> Ensemble des décisions de l'État pour atteindre des objectifs éco via divers instruments[cite: 212].</li>
-                                        [cite_start]<li><span class="term">Politique Conjoncturelle :</span> Action à court terme pour réguler l'activité (Budget + Monnaie)[cite: 216].</li>
-                                        [cite_start]<li><span class="term">Politique Structurelle :</span> Action à long terme sur les structures (Innovation, Industriel, Environnement)[cite: 251].</li>
-                                        [cite_start]<li><span class="term">Politique Budgétaire :</span> Usage du budget de l'État (Recettes vs Dépenses) pour relancer ou rigueur[cite: 218].</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="rev-def">
-                                    <ul class="def-list">
-                                        [cite_start]<li><span class="term">Politique Monétaire :</span> Action de la Banque Centrale (BCE) sur la masse monétaire et les taux[cite: 238].</li>
-                                        <li><span class="term">Taux Directeur :</span> Taux d'intérêt fixé par la BCE pour les banques commerciales. [cite_start]Influence le coût du crédit[cite: 240].</li>
-                                        [cite_start]<li><span class="term">Soutenabilité de la dette :</span> Capacité de l'État à rembourser sa dette (solvabilité) sans défaut[cite: 281].</li>
-                                        [cite_start]<li><span class="term">Déficit Public :</span> Quand les Dépenses > Recettes sur une année[cite: 227].</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <div class="glass-card p-4 h-100">
-                                <h3 style="color: var(--secondary);">Politique Structurelle (Long Terme)</h3>
-                                <p class="text-muted small">Agit sur les structures profondes (> 5 ans).</p>
-                                <ul class="text-white">
-                                    <li>Politique industrielle (Secteurs stratégiques)</li>
-                                    <li>Politique d'innovation (Aides R&D)</li>
-                                    <li>Politique de concurrence</li>
-                                    <li>Transition énergétique</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="glass-card p-4 h-100">
-                                <h3 style="color: var(--primary);">Politique Conjoncturelle (Court Terme)</h3>
-                                <div class="rev-box rev-def mt-3">
-                                    <strong>A. Budgétaire (Gouv)</strong>
-                                    <ul>
-                                        [cite_start]<li><strong>Relance :</strong> + Dépenses / - Impôts (Soutien demande)[cite: 266].</li>
-                                        <li><strong>Rigueur :</strong> - Dépenses / + Impôts (Lutte inflation/dette).</li>
-                                    </ul>
-                                </div>
-                                <div class="rev-box rev-mech">
-                                    <strong>B. Monétaire (BCE)</strong>
-                                    Gestion via <em>Taux Directeurs</em>.
-                                    <br>
-                                    <small>Baisse taux -> Crédit moins cher -> Croissance.<br>
-                                    Hausse taux -> Crédit cher -> Baisse Inflation.</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="glass-card p-4">
-                                <div class="rev-box rev-lim mb-0">
-                                    <strong>Limites & Contraintes</strong>
-                                    <ul class="mb-0">
-                                        [cite_start]<li><strong>PSC (Europe) :</strong> Déficit < 3% PIB, Dette < 60% PIB (Théorique)[cite: 273].</li>
-                                        <li><strong>Soutenabilité :</strong> Risque effet boule de neige (s'endetter pour payer les intérêts).</li>
-                                        [cite_start]<li><strong>Mondialisation :</strong> Risque de fuite des capitaux vers des pays à fiscalité plus basse[cite: 288].</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tab-pane fade" id="chap8">
-                    <div class="glass-card p-4 mb-4" style="border-left: 5px solid var(--primary);">
-                        <h4 style="color: var(--primary);"><i class="fas fa-book-open me-2"></i>Glossaire & Définitions</h4>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="rev-def">
-                                    <ul class="def-list">
-                                        [cite_start]<li><span class="term">Économie de marché :</span> Système d'échanges libres (offre/demande) sur un marché[cite: 83].</li>
-                                        [cite_start]<li><span class="term">AAI (Autorité Admin. Indép.) :</span> Organe de régulation indépendant de l'État (ex: Autorité de la Concurrence)[cite: 119].</li>
-                                        [cite_start]<li><span class="term">Entente illicite (Cartel) :</span> Accord secret entre concurrents pour fausser le marché (prix/partage)[cite: 144].</li>
-                                        [cite_start]<li><span class="term">Abus de position dominante :</span> Entreprise leader exploitant sa force pour éliminer la concurrence[cite: 153].</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="rev-def">
-                                    <ul class="def-list">
-                                        [cite_start]<li><span class="term">Concurrence déloyale :</span> Pratiques fautives envers un concurrent (Dénigrement, Imitation, Parasitisme, Désorganisation) [cite: 160-164].</li>
-                                        [cite_start]<li><span class="term">Pratiques restrictives :</span> Déséquilibre dans la relation commerciale (Rupture brutale, soumission)[cite: 170].</li>
-                                        [cite_start]<li><span class="term">Propriété Industrielle :</span> Droit exclusif sur une création (INPI) pour garantir l'innovation[cite: 181].</li>
-                                        [cite_start]<li><span class="term">Contrefaçon :</span> Violation d'un droit de propriété intellectuelle (délit pénal)[cite: 206].</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="glass-card p-4 mb-4">
-                        <h3 class="mb-3" style="color: var(--primary);">1. Droit de la Concurrence</h3>
-                        <p class="text-muted small mb-4">Autorité de la Concurrence (FR) / Commission Européenne (UE)</p>
-                        
-                        <div class="row g-4">
-                            <div class="col-md-6">
-                                <div class="rev-box rev-lim h-100">
-                                    <strong>Pratiques Anticoncurrentielles (INTERDITES)</strong>
-                                    <ul>
-                                        <li><strong>Entente illicite (Cartel) :</strong> Accord sur les prix/marchés.</li>
-                                        <li><strong>Abus de position dominante :</strong> Évincer les concurrents.</li>
-                                    </ul>
-                                    <div class="rev-ex mt-2">Sanction : Lourdes amendes (% CA).</div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="rev-box rev-mech h-100">
-                                    <strong>Concurrence Déloyale</strong>
-                                    Sanctionnée par le tribunal (Dommages-Intérêts).
-                                    <ul>
-                                        <li><strong>Dénigrement :</strong> Critiquer un concurrent.</li>
-                                        <li><strong>Confusion :</strong> Imitation (logo/nom).</li>
-                                        <li><strong>Désorganisation :</strong> Débauchage massif.</li>
-                                        <li><strong>Parasitisme :</strong> Profiter de la notoriété.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="glass-card p-4">
-                        <h3 class="mb-3" style="color: var(--secondary);">2. Propriété Industrielle (INPI)</h3>
-                        <div class="table-responsive">
-                            <table class="rev-table">
-                                <thead><tr><th>Outil</th><th>Objet</th><th>Durée</th><th>Avantage</th></tr></thead>
-                                <tbody>
-                                    <tr><td><strong>Brevet</strong></td><td>Invention technique</td><td>20 ans (non renouv.)</td><td>Monopole.</td></tr>
-                                    <tr><td><strong>Marque</strong></td><td>Signe distinctif</td><td>10 ans (Renouv.)</td><td>Image.</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="rev-box rev-lim mt-3 mb-0">
-                            <strong>Contrefaçon :</strong> Utilisation sans droit. Sanctions Pénales (Prison/Amende) & Civiles.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tab-pane fade" id="chap9">
-                    <div class="glass-card p-4 mb-4" style="border-left: 5px solid var(--primary);">
-                        <h4 style="color: var(--primary);"><i class="fas fa-book-open me-2"></i>Glossaire & Définitions</h4>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="rev-def">
-                                    <ul class="def-list">
-                                        [cite_start]<li><span class="term">Macro-environnement :</span> Ensemble des facteurs globaux (PESTEL) qui influencent l'entreprise sans qu'elle puisse les contrôler [cite: 15-16].</li>
-                                        [cite_start]<li><span class="term">Micro-environnement :</span> Acteurs proches en relation directe (Clients, Fournisseurs, Concurrents)[cite: 17].</li>
-                                        [cite_start]<li><span class="term">Veille :</span> Surveillance active de l'environnement pour anticiper les changements[cite: 58].</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="rev-def">
-                                    <ul class="def-list">
-                                        [cite_start]<li><span class="term">Opportunités :</span> Facteurs externes positifs dont l'entreprise peut tirer profit[cite: 51].</li>
-                                        [cite_start]<li><span class="term">Menaces :</span> Contraintes externes qui risquent de nuire à l'activité (Crise, Guerre)[cite: 52].</li>
-                                        [cite_start]<li><span class="term">Innovation :</span> Réponse stratégique de l'entreprise face à l'incertitude du marché (Schumpeter)[cite: 59].</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="glass-card p-4">
-                        <h3 class="text-center mb-4" style="color: var(--primary);">L'Environnement de l'Entreprise</h3>
-                        
-                        <div class="schema-layers">
-                            <div class="layer-box layer-macro">
-                                <span class="layer-title bg-macro">1. Macro (SUBI)</span>
-                                <p class="small text-muted mb-2">Incontrôlable (Opportunités/Menaces)</p>
-                                <div class="items-grid">
-                                    <div class="item-badge">Politique</div>
-                                    <div class="item-badge">Économique</div>
-                                    <div class="item-badge">Socioculturel</div>
-                                    <div class="item-badge">Technologique</div>
-                                    <div class="item-badge">Écologique</div>
-                                    <div class="item-badge">Légal</div>
-                                </div>
-
-                                <div class="layer-box layer-micro">
-                                    <span class="layer-title bg-micro">2. Micro (INFLUENCÉ)</span>
-                                    <p class="small text-dark mb-2">Acteurs directs</p>
-                                    <div class="items-grid">
-                                        <div class="item-badge text-dark border-dark">Clients</div>
-                                        <div class="item-badge text-dark border-dark">Fournisseurs</div>
-                                        <div class="item-badge text-dark border-dark">Concurrents</div>
-                                        <div class="item-badge text-dark border-dark">État</div>
-                                    </div>
-
-                                    <div class="layer-box layer-interne">
-                                        <span class="layer-title bg-interne">3. Interne (MAÎTRISÉ)</span>
-                                        <p class="small text-dark mb-2">Forces / Faiblesses</p>
-                                        <div class="items-grid">
-                                            <div class="item-badge text-dark border-dark">RH</div>
-                                            <div class="item-badge text-dark border-dark">Finance</div>
-                                            <div class="item-badge text-dark border-dark">Savoir-faire</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row g-4 mt-2">
-                            <div class="col-md-6">
-                                <div class="rev-box rev-mech h-100">
-                                    <strong>Opportunités (Positif)</strong><br>
-                                    Facteurs externes favorables (ex: Baisse impôts, Faillite concurrent).
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="rev-box rev-lim h-100">
-                                    <strong>Menaces (Négatif)</strong><br>
-                                    Contraintes externes (ex: Nouvelle loi, Crise éco).
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tab-pane fade" id="metho">
-                    <div class="glass-card p-5">
-                        <h3 class="text-center mb-5" style="color: #a855f7;">Le Syllogisme Juridique</h3>
-                        
-                        <div style="max-width: 700px; margin: 0 auto;">
-                            <div class="rev-box rev-metho">
-                                <strong>1. LA MAJEURE : La Règle</strong>
-                                <p class="mb-1">Énoncé de la règle générale (abstraite).</p>
-                                <em style="color: #e9d5ff;">"En droit, [Article/Principe] dispose que..."</em>
-                                <ul class="small mt-2 text-muted">
-                                    <li>Ne jamais citer les noms ici.</li>
-                                    <li>Rester théorique.</li>
-                                </ul>
-                            </div>
-
-                            <div class="arrow-down">⬇️</div>
-
-                            <div class="rev-box rev-mech">
-                                <strong>2. LA MINEURE : Les Faits</strong>
-                                <p class="mb-1">Application au cas pratique (Qualification juridique).</p>
-                                <em style="color: #6ee7b7;">"Or, en l'espèce, [M. X / Le salarié]..."</em>
-                                <ul class="small mt-2 text-muted">
-                                    <li>Utiliser les termes juridiques (Consommateur, CDD...).</li>
-                                </ul>
-                            </div>
-
-                            <div class="arrow-down">⬇️</div>
-
-                            <div class="rev-box rev-ex">
-                                <strong>3. LA CONCLUSION : La Solution</strong>
-                                <p class="mb-1">Déduction logique.</p>
-                                <em style="color: #fcd34d;">"Donc, [Solution concrète]..."</em>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
