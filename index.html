@@ -193,15 +193,20 @@
         .btn-outline-primary { border-color: var(--primary); color: var(--primary); font-weight: 600; }
         .btn-outline-primary:hover { background: var(--primary); border-color: var(--primary); color: #ffffff; box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
 
-        /* Nav pills - tabs principaux */
-        .nav-pills .nav-link { background: rgba(255,255,255,0.05); color: var(--text-main) !important; border: 1px solid var(--glass-border); margin: 5px; border-radius: 50px; }
+        /* Nav pills - Niveau 1 (Semestres - Émeraude) */
+        .nav-pills .nav-link { background: rgba(255,255,255,0.05); color: var(--text-main) !important; border: 1px solid var(--glass-border); margin: 5px; border-radius: 50px; font-weight: 600; padding: 10px 25px;}
         .nav-pills .nav-link:hover { border-color: var(--primary); color: var(--primary) !important; }
         .nav-pills .nav-link.active { background: var(--primary) !important; color: white !important; border-color: var(--primary); box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
 
-        /* Nav pills - sous-catégories (style secondaire ambre) */
-        .nav-pills-sub .nav-link { background: rgba(255,255,255,0.03); color: var(--text-sub) !important; border: 1px solid rgba(251, 191, 36, 0.25); margin: 4px; border-radius: 50px; padding: 6px 20px; font-size: 0.88rem; font-weight: 600; transition: 0.3s; }
-        .nav-pills-sub .nav-link:hover { border-color: var(--secondary); color: var(--secondary) !important; }
-        .nav-pills-sub .nav-link.active { background: rgba(251, 191, 36, 0.15) !important; color: var(--secondary) !important; border-color: var(--secondary); box-shadow: 0 0 12px rgba(251, 191, 36, 0.25); }
+        /* Nav pills - Niveau 2 (Professeurs - Ambre) */
+        .nav-pills-teacher .nav-link { background: rgba(255,255,255,0.03); color: var(--text-sub) !important; border: 1px solid rgba(251, 191, 36, 0.4); margin: 4px; border-radius: 50px; padding: 8px 20px; font-size: 0.95rem; font-weight: 600; transition: 0.3s; }
+        .nav-pills-teacher .nav-link:hover { border-color: var(--secondary); color: var(--secondary) !important; }
+        .nav-pills-teacher .nav-link.active { background: rgba(251, 191, 36, 0.15) !important; color: var(--secondary) !important; border-color: var(--secondary); box-shadow: 0 0 12px rgba(251, 191, 36, 0.25); }
+
+        /* Nav pills - Niveau 3 (Niveaux - Discret) */
+        .nav-pills-sub .nav-link { background: transparent; color: rgba(255,255,255,0.6) !important; border: 1px dashed rgba(255, 255, 255, 0.3); margin: 3px; border-radius: 50px; padding: 5px 18px; font-size: 0.85rem; font-weight: 500; transition: 0.3s; }
+        .nav-pills-sub .nav-link:hover { border-color: #ffffff; color: #ffffff !important; }
+        .nav-pills-sub .nav-link.active { background: rgba(255, 255, 255, 0.1) !important; color: #ffffff !important; border: 1px solid #ffffff; }
 
         .form-control { background: rgba(255, 255, 255, 0.08); border: 1px solid var(--glass-border); color: #ffffff; font-weight: 500; }
         .form-control::placeholder { color: rgba(255,255,255,0.5); }
@@ -209,7 +214,6 @@
 
         footer p { color: var(--text-sub) !important; }
 
-        /* Séparateur sous-catégorie */
         .sub-tab-content { margin-top: 20px; }
 
         @media (max-width: 768px) {
@@ -360,744 +364,964 @@
         <div class="container">
             <div class="section-title"><h2>Réalisations <span>Projets</span></h2></div>
             
-            <!-- TABS PRINCIPAUX -->
-            <ul class="nav nav-pills justify-content-center mb-5" id="projectsTab" role="tablist">
-                <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#beauvallet">Mme. Beauvallet</button></li>
-                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#sotoca">Mr. Sotoca</button></li>
+            <!-- NIVEAU 1 : SEMESTRES -->
+            <ul class="nav nav-pills justify-content-center mb-5" id="semesterTab" role="tablist">
+                <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#semestre1-2">Semestre 1 & 2</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#semestre3-4">Semestre 3 & 4</button></li>
             </ul>
 
-            <div class="tab-content">
+            <div class="tab-content" id="semesterTabContent">
 
-                <!-- ===================== BEAUVALLET ===================== -->
-                <div class="tab-pane fade show active" id="beauvallet">
-                    <!-- Sous-tabs Beauvallet -->
-                    <ul class="nav nav-pills nav-pills-sub justify-content-center mb-4" id="beauvalletSubTab" role="tablist">
-                        <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#bv-b1">B1</button></li>
-                        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#bv-b2">B2</button></li>
-                        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#bv-b3">B3</button></li>
-                        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#bv-atelier">Atelier Pro</button></li>
+                <!-- ========================================================== -->
+                <!-- ===================== SEMESTRE 1 & 2 ===================== -->
+                <!-- ========================================================== -->
+                <div class="tab-pane fade show active" id="semestre1-2">
+                    
+                    <!-- NIVEAU 2 : PROFESSEURS -->
+                    <ul class="nav nav-pills nav-pills-teacher justify-content-center mb-4" id="teacherTab12" role="tablist">
+                        <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#beauvallet12">Madame Beauvallet</button></li>
+                        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#sotoca12">Monsieur Sotoca</button></li>
                     </ul>
 
-                    <div class="tab-content sub-tab-content">
+                    <div class="tab-content" id="teacherTabContent12">
+                        
+                        <!-- ========= S1&2 : MADAME BEAUVALLET ========= -->
+                        <div class="tab-pane fade show active" id="beauvallet12">
+                            
+                            <!-- NIVEAU 3 : NIVEAUX (B1, B2, B3, Atelier) -->
+                            <ul class="nav nav-pills nav-pills-sub justify-content-center mb-4" id="bvSubTab12" role="tablist">
+                                <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#bv12-b1">B1</button></li>
+                                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#bv12-b2">B2</button></li>
+                                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#bv12-b3">B3</button></li>
+                                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#bv12-atelier">Atelier Pro</button></li>
+                            </ul>
 
-                        <!-- BV - B1 -->
-                        <div class="tab-pane fade show active" id="bv-b1">
-                            <div class="row g-4">
-                                
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="minialabyrinthe.png" class="project-img card-img-top" alt="Labyrinthe">
-                                        <div class="p-4 text-center">
-                                            <h5>Labyrinthe Java</h5>
-                                            <p class="small text-muted">Algorithmique & Java</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 08 sep. 2025</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('labyrinthe.pdf')">Compte-rendu</button>
+                            <div class="tab-content sub-tab-content">
+
+                                <!-- BV S1&2 - B1 -->
+                                <div class="tab-pane fade show active" id="bv12-b1">
+                                    <div class="row g-4">
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="minialabyrinthe.png" class="project-img card-img-top" alt="Labyrinthe">
+                                                <div class="p-4 text-center">
+                                                    <h5>Labyrinthe Java</h5>
+                                                    <p class="small text-muted">Algorithmique & Java</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 08 sep. 2025</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('labyrinthe.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
                                         </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="miniab1btp02.jpg" class="project-img card-img-top" alt="Projet B1">
+                                                <div class="p-4 text-center">
+                                                    <h5>Premiers pas en Java</h5>
+                                                    <p class="small text-muted">Découverte java avec eclipse</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 08 sep. 2025</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp02.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="miniajava.png" class="project-img card-img-top" alt="Projet B1">
+                                                <div class="p-4 text-center">
+                                                    <h5>Java TP03</h5>
+                                                    <p class="small text-muted">Poursuite de la découverte de Java</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 15 sep. 2025</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp03.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="miniashifumi.png" class="project-img card-img-top" alt="Shifumi">
+                                                <div class="p-4 text-center">
+                                                    <h5>Jeu Shifumi</h5>
+                                                    <p class="small text-muted">Logique de jeu en Java</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 30 sep. 2025</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('shifumi.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="miniajava.png" class="project-img card-img-top" alt="Projet B1">
+                                                <div class="p-4 text-center">
+                                                    <h5>Java TP05</h5>
+                                                    <p class="small text-muted">Poursuite des exercices sur le java</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 06 oct. 2025</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp05.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="miniajava.png" class="project-img card-img-top" alt="Projet B1">
+                                                <div class="p-4 text-center">
+                                                    <h5>Java TP06</h5>
+                                                    <p class="small text-muted">Procédures et fonctions en Java</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 21 oct. 2025</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp06.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="miniabataillenavale.jpg" class="project-img card-img-top" alt="Bataille Navale">
+                                                <div class="p-4 text-center">
+                                                    <h5>Bataille Navale</h5>
+                                                    <p class="small text-muted">Tableaux & Structures</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 10 nov. 2025</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp08.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="miniajava.png" class="project-img card-img-top" alt="Projet B1">
+                                                <div class="p-4 text-center">
+                                                    <h5>Java TP07</h5>
+                                                    <p class="small text-muted">La banque</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 28 nov. 2025</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp09.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="phpmyadmin.png" class="project-img card-img-top" alt="Projet B1">
+                                                <div class="p-4 text-center">
+                                                    <h5>TP-BDD01</h5>
+                                                    <p class="small text-muted">Les bases de données</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 01 dec. 2025</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp10.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="miniajava.png" class="project-img card-img-top" alt="Projet B1">
+                                                <div class="p-4 text-center">
+                                                    <h5>TP-JAVA08</h5>
+                                                    <p class="small text-muted">JavaFX</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 09 dec. 2025</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp11.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="miniaphpmyadmin.png" class="project-img card-img-top" alt="Projet B1">
+                                                <div class="p-4 text-center">
+                                                    <h5>B1B-S2-TD1</h5>
+                                                    <p class="small text-muted">Bases de données & PHP</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 23 Mar. 2026</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1b_s2_td1.zip')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="miniaphpmyadmin.png" class="project-img card-img-top" alt="Projet B1">
+                                                <div class="p-4 text-center">
+                                                    <h5>B1B-S2-TD2 Bases de PHP</h5>
+                                                    <p class="small text-muted">Introduction au PHP</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 28 Mar. 2026</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1b_s2_td2.zip')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="miniaphpmyadmin.png" class="project-img card-img-top" alt="Projet B1">
+                                                <div class="p-4 text-center">
+                                                    <h5>B1B-S2-TD3 Programmation en PHP</h5>
+                                                    <p class="small text-muted">Logique PHP avancée</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 30 Mar. 2026</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1b_s2_td3.zip')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="miniaphpmyadmin.png" class="project-img card-img-top" alt="Projet B1">
+                                                <div class="p-4 text-center">
+                                                    <h5>B1B-S2-TD4 Transmission de données</h5>
+                                                    <p class="small text-muted">Formulaires et requêtes</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 30 Mar. 2026</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1b_s2_td4.zip')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="miniaphpmyadmin.png" class="project-img card-img-top" alt="Projet B1">
+                                                <div class="p-4 text-center">
+                                                    <h5>B1B-S2-TD5 Accès à la base de données</h5>
+                                                    <p class="small text-muted">Formulaires et requêtes</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 01 Avr. 2026</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1b_s2_td5.zip')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="miniaphpmyadmin.png" class="project-img card-img-top" alt="Projet B1">
+                                                <div class="p-4 text-center">
+                                                    <h5>B1B-S2-TD6 Utilisation des sessions en PHP</h5>
+                                                    <p class="small text-muted">Formulaires et requêtes</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 03 Avr. 2026</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1b_s2_td6.zip')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- TEMPLATE NOUVEAU PROJET 
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="TON_IMAGE.png" class="project-img card-img-top" alt="Projet">
+                                                <div class="p-4 text-center">
+                                                    <h5>TITRE</h5>
+                                                    <p class="small text-muted">SOUS-TITRE</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> DATE</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('TON_FICHIER.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        ================================= -->
+
                                     </div>
                                 </div>
-                                <!-- FIN PROJET -->
 
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="miniab1btp02.jpg" class="project-img card-img-top" alt="Projet B1">
-                                        <div class="p-4 text-center">
-                                            <h5>Premiers pas en Java</h5>
-                                            <p class="small text-muted">Découverte java avec eclipse</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 08 sep. 2025</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp02.pdf')">Compte-rendu</button>
+                                <!-- BV S1&2 - B2 -->
+                                <div class="tab-pane fade" id="bv12-b2">
+                                    <div class="row g-4">
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="miniajava.png" class="project-img card-img-top" alt="Projet B2">
+                                                <div class="p-4 text-center">
+                                                    <h5>B2-S2-TD2[Programmation]</h5>
+                                                    <p class="small text-muted">Arraylist</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 19 Jan. 2026</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b2b_s2_tp2_progra.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
                                         </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="miniajava.png" class="project-img card-img-top" alt="Projet B2">
+                                                <div class="p-4 text-center">
+                                                    <h5>B2-S2-TD3[Programmation]</h5>
+                                                    <p class="small text-muted">Algorithmes avancés</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 25 Jan. 2026</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b2b_s2_td3_progra.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="miniajava.png" class="project-img card-img-top" alt="Projet B2">
+                                                <div class="p-4 text-center">
+                                                    <h5>B2-S2-TD24/5[Programmation]</h5>
+                                                    <p class="small text-muted">UML & Conception</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 20 Fev. 2026</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b2b_s2_td4_5.zip')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="miniajava.png" class="project-img card-img-top" alt="Projet B2">
+                                                <div class="p-4 text-center">
+                                                    <h5>B2-S2-TD7[Programmation]</h5>
+                                                    <p class="small text-muted">Algorithmes avancés</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 10 Mar. 2026</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b2_s2_td7.zip')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="modelminia.jpg" class="project-img card-img-top" alt="Projet B2">
+                                                <div class="p-4 text-center">
+                                                    <h5>B2-S2-TD1[Modélisation]</h5>
+                                                    <p class="small text-muted">UML & Conception</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 27 Avr. 2026</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b2b_s2_td1_modelisation.zip')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="modelminia.jpg" class="project-img card-img-top" alt="Projet B2">
+                                                <div class="p-4 text-center">
+                                                    <h5>B2-S2-TD2[Modélisation]</h5>
+                                                    <p class="small text-muted">UML & Conception</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 27 Avr. 2026</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b2b_s2_td2_modelisation.zip')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="modelminia.jpg" class="project-img card-img-top" alt="Projet B2">
+                                                <div class="p-4 text-center">
+                                                    <h5>B2-S2-TD4[Modélisation]</h5>
+                                                    <p class="small text-muted">UML & Conception</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 27 Avr. 2026</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b2b_s2_td4_modelisation.zip')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="modelminia.jpg" class="project-img card-img-top" alt="Projet B2">
+                                                <div class="p-4 text-center">
+                                                    <h5>B2-S2-TD8[Modélisation]</h5>
+                                                    <p class="small text-muted">UML & Conception</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 10 Mai. 2026</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b2b_s2_td8_modelisation.zip')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- TEMPLATE NOUVEAU PROJET 
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="TON_IMAGE.png" class="project-img card-img-top" alt="Projet">
+                                                <div class="p-4 text-center">
+                                                    <h5>TITRE</h5>
+                                                    <p class="small text-muted">SOUS-TITRE</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> DATE</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('TON_FICHIER.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        ================================= -->
+
                                     </div>
                                 </div>
-                                <!-- FIN PROJET -->
 
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="miniajava.png" class="project-img card-img-top" alt="Projet B1">
-                                        <div class="p-4 text-center">
-                                            <h5>Java TP03</h5>
-                                            <p class="small text-muted">Poursuite de la découverte de Java</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 15 sep. 2025</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp03.pdf')">Compte-rendu</button>
+                                <!-- BV S1&2 - B3 -->
+                                <div class="tab-pane fade" id="bv12-b3">
+                                    <div class="row g-4">
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="miniab3btp01.jpg" class="project-img card-img-top" alt="Projet B3">
+                                                <div class="p-4 text-center">
+                                                    <h5>Traitement de données personnelles</h5>
+                                                    <p class="small text-muted">Découverte des traitements de données</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 25 sep. 2025</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3btp01.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
                                         </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="miniapia.png" class="project-img card-img-top" alt="Projet B3">
+                                                <div class="p-4 text-center">
+                                                    <h5>PIA TP01</h5>
+                                                    <p class="small text-muted">Découverte du logiciel PIA</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 02 oct. 2025</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3btp02.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="cyber.png" class="project-img card-img-top" alt="Projet B3">
+                                                <div class="p-4 text-center">
+                                                    <h5>CH3-TD1</h5>
+                                                    <p class="small text-muted">Cybersécurité</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 13 nov. 2025</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3btp04.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="cyber.png" class="project-img card-img-top" alt="Projet B3">
+                                                <div class="p-4 text-center">
+                                                    <h5>CH3-TD2</h5>
+                                                    <p class="small text-muted">Cybersécurité</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 20 janv. 2026</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3btp06.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="cyber.png" class="project-img card-img-top" alt="Projet B3">
+                                                <div class="p-4 text-center">
+                                                    <h5>CH4-TD1</h5>
+                                                    <p class="small text-muted">Cybersécurité</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 20 janv. 2026</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3btp07.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="cyber.png" class="project-img card-img-top" alt="Projet B3">
+                                                <div class="p-4 text-center">
+                                                    <h5>CH4-TD2</h5>
+                                                    <p class="small text-muted">Cybersécurité</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 20 janv. 2026</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3btp08.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="cyber.png" class="project-img card-img-top" alt="Projet B3">
+                                                <div class="p-4 text-center">
+                                                    <h5>CH5-TD1</h5>
+                                                    <p class="small text-muted">Cybersécurité</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 05 Avr. 2026</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3b_s2_ch5td1.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="cyber.png" class="project-img card-img-top" alt="Projet B3">
+                                                <div class="p-4 text-center">
+                                                    <h5>CH5-TD2</h5>
+                                                    <p class="small text-muted">Cybersécurité</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 12 Avr. 2026</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3b_s2_ch5td2.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- TEMPLATE NOUVEAU PROJET 
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="TON_IMAGE.png" class="project-img card-img-top" alt="Projet">
+                                                <div class="p-4 text-center">
+                                                    <h5>TITRE</h5>
+                                                    <p class="small text-muted">SOUS-TITRE</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> DATE</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('TON_FICHIER.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        ================================= -->
+
                                     </div>
                                 </div>
-                                <!-- FIN PROJET -->
 
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="miniashifumi.png" class="project-img card-img-top" alt="Shifumi">
-                                        <div class="p-4 text-center">
-                                            <h5>Jeu Shifumi</h5>
-                                            <p class="small text-muted">Logique de jeu en Java</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 30 sep. 2025</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('shifumi.pdf')">Compte-rendu</button>
+                                <!-- BV S1&2 - Atelier Pro -->
+                                <div class="tab-pane fade" id="bv12-atelier">
+                                    <div class="row g-4">
+                                        <!-- AUCUN PROJET ACTUELLEMENT -->
+                                        <div class="col-12 text-center text-muted py-5">
+                                            <i class="fas fa-folder-open fa-3x mb-3" style="color: var(--secondary); opacity: 0.4;"></i>
+                                            <p>Aucun projet Atelier Pro pour Madame Beauvallet pour l'instant.</p>
                                         </div>
+
+                                        <!-- TEMPLATE NOUVEAU PROJET 
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="TON_IMAGE.png" class="project-img card-img-top" alt="Projet">
+                                                <div class="p-4 text-center">
+                                                    <h5>TITRE</h5>
+                                                    <p class="small text-muted">SOUS-TITRE</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> DATE</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('TON_FICHIER.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        ================================= -->
                                     </div>
                                 </div>
-                                <!-- FIN PROJET -->
-
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="miniajava.png" class="project-img card-img-top" alt="Projet B1">
-                                        <div class="p-4 text-center">
-                                            <h5>Java TP05</h5>
-                                            <p class="small text-muted">Poursuite des exercices sur le java</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 06 oct. 2025</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp05.pdf')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
-
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="miniajava.png" class="project-img card-img-top" alt="Projet B1">
-                                        <div class="p-4 text-center">
-                                            <h5>Java TP06</h5>
-                                            <p class="small text-muted">Procédures et fonctions en Java</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 21 oct. 2025</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp06.pdf')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
-
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="miniabataillenavale.jpg" class="project-img card-img-top" alt="Bataille Navale">
-                                        <div class="p-4 text-center">
-                                            <h5>Bataille Navale</h5>
-                                            <p class="small text-muted">Tableaux & Structures</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 10 nov. 2025</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp08.pdf')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
-
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="miniajava.png" class="project-img card-img-top" alt="Projet B1">
-                                        <div class="p-4 text-center">
-                                            <h5>Java TP07</h5>
-                                            <p class="small text-muted">La banque</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 28 nov. 2025</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp09.pdf')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
-
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="phpmyadmin.png" class="project-img card-img-top" alt="Projet B1">
-                                        <div class="p-4 text-center">
-                                            <h5>TP-BDD01</h5>
-                                            <p class="small text-muted">Les bases de données</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 01 dec. 2025</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp10.pdf')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
-
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="miniajava.png" class="project-img card-img-top" alt="Projet B1">
-                                        <div class="p-4 text-center">
-                                            <h5>TP-JAVA08</h5>
-                                            <p class="small text-muted">JavaFX</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 09 dec. 2025</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1btp11.pdf')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
-
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="miniaphpmyadmin.png" class="project-img card-img-top" alt="Projet B1">
-                                        <div class="p-4 text-center">
-                                            <h5>B1B-S2-TD1</h5>
-                                            <p class="small text-muted">Bases de données & PHP</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 23 Mar. 2026</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1b_s2_td1.zip')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
-
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="miniaphpmyadmin.png" class="project-img card-img-top" alt="Projet B1">
-                                        <div class="p-4 text-center">
-                                            <h5>B1B-S2-TD2 Bases de PHP</h5>
-                                            <p class="small text-muted">Introduction au PHP</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 28 Mar. 2026</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1b_s2_td2.zip')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
-
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="miniaphpmyadmin.png" class="project-img card-img-top" alt="Projet B1">
-                                        <div class="p-4 text-center">
-                                            <h5>B1B-S2-TD3 Programmation en PHP</h5>
-                                            <p class="small text-muted">Logique PHP avancée</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 30 Mar. 2026</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1b_s2_td3.zip')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
-
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="miniaphpmyadmin.png" class="project-img card-img-top" alt="Projet B1">
-                                        <div class="p-4 text-center">
-                                            <h5>B1B-S2-TD4 Transmission de données</h5>
-                                            <p class="small text-muted">Formulaires et requêtes</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 30 Mar. 2026</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1b_s2_td4.zip')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
-
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="miniaphpmyadmin.png" class="project-img card-img-top" alt="Projet B1">
-                                        <div class="p-4 text-center">
-                                            <h5>B1B-S2-TD5 Accès à la base de données</h5>
-                                            <p class="small text-muted">Formulaires et requêtes</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 01 Avr. 2026</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1b_s2_td5.zip')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
-
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="miniaphpmyadmin.png" class="project-img card-img-top" alt="Projet B1">
-                                        <div class="p-4 text-center">
-                                            <h5>B1B-S2-TD6 Utilisation des sessions en PHP</h5>
-                                            <p class="small text-muted">Formulaires et requêtes</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 03 Avr. 2026</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1b_s2_td6.zip')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
-
-
-                                <!-- TEMPLATE NOUVEAU PROJET 
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="TON_IMAGE.png" class="project-img card-img-top" alt="Projet">
-                                        <div class="p-4 text-center">
-                                            <h5>TITRE</h5>
-                                            <p class="small text-muted">SOUS-TITRE</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> DATE</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('TON_FICHIER.pdf')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                ================================= -->
 
                             </div>
                         </div>
 
-                        <!-- BV - B2 -->
-                        <div class="tab-pane fade" id="bv-b2">
-                            <div class="row g-4">
+                        <!-- ========= S1&2 : MONSIEUR SOTOCA ========= -->
+                        <div class="tab-pane fade" id="sotoca12">
+                            
+                            <!-- NIVEAU 3 : NIVEAUX (B1, B3, Atelier) -->
+                            <ul class="nav nav-pills nav-pills-sub justify-content-center mb-4" id="stSubTab12" role="tablist">
+                                <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#st12-b1">B1</button></li>
+                                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#st12-b3">B3</button></li>
+                                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#st12-atelier">Atelier Pro</button></li>
+                            </ul>
 
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="miniajava.png" class="project-img card-img-top" alt="Projet B2">
-                                        <div class="p-4 text-center">
-                                            <h5>B2-S2-TD2[Programmation]</h5>
-                                            <p class="small text-muted">Arraylist</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 19 Jan. 2026</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b2b_s2_tp2_progra.pdf')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
+                            <div class="tab-content sub-tab-content">
 
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="miniajava.png" class="project-img card-img-top" alt="Projet B2">
-                                        <div class="p-4 text-center">
-                                            <h5>B2-S2-TD3[Programmation]</h5>
-                                            <p class="small text-muted">Algorithmes avancés</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 25 Jan. 2026</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b2b_s2_td3_progra.pdf')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
+                                <!-- ST S1&2 - B1 -->
+                                <div class="tab-pane fade show active" id="st12-b1">
+                                    <div class="row g-4">
 
-                                 <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="miniajava.png" class="project-img card-img-top" alt="Projet B2">
-                                        <div class="p-4 text-center">
-                                            <h5>B2-S2-TD24/5[Programmation]</h5>
-                                            <p class="small text-muted">UML & Conception</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 20 Fev. 2026</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b2b_s2_td4_5.zip')">Compte-rendu</button>
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="testcable.jpg" class="project-img card-img-top" alt="Réseau">
+                                                <div class="p-4 text-center">
+                                                    <h5>Dépannage Réseau</h5>
+                                                    <p class="small text-muted">Diagnostic physique</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 02 sep. 2025</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('reparerreseau.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
-                                
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="miniajava.png" class="project-img card-img-top" alt="Projet B2">
-                                        <div class="p-4 text-center">
-                                            <h5>B2-S2-TD7[Programmation]</h5>
-                                            <p class="small text-muted">Algorithmes avancés</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 10 Mar. 2026</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b2_s2_td7.zip')">Compte-rendu</button>
+                                        <!-- FIN PROJET -->
+                                        
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="minialinux.png" class="project-img card-img-top" alt="Linux">
+                                                <div class="p-4 text-center">
+                                                    <h5>Scénario Linux</h5>
+                                                    <p class="small text-muted">Commandes Linux</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 22 jan. 2026</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1stp08.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
+                                        <!-- FIN PROJET -->
 
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="modelminia.jpg" class="project-img card-img-top" alt="Projet B2">
-                                        <div class="p-4 text-center">
-                                            <h5>B2-S2-TD1[Modélisation]</h5>
-                                            <p class="small text-muted">UML & Conception</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 27 Avr. 2026</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b2b_s2_td1_modelisation.zip')">Compte-rendu</button>
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="miniadhcp.png" class="project-img card-img-top" alt="Linux">
+                                                <div class="p-4 text-center">
+                                                    <h5>DHCP</h5>
+                                                    <p class="small text-muted">Découverte du fonctionnement du serveur DHCP</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 31 mar. 2026</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('serveur_dhcp.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
+                                        <!-- FIN PROJET -->
 
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="modelminia.jpg" class="project-img card-img-top" alt="Projet B2">
-                                        <div class="p-4 text-center">
-                                            <h5>B2-S2-TD2[Modélisation]</h5>
-                                            <p class="small text-muted">UML & Conception</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 27 Avr. 2026</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b2b_s2_td2_modelisation.zip')">Compte-rendu</button>
+                                        <!-- TEMPLATE NOUVEAU PROJET 
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="TON_IMAGE.png" class="project-img card-img-top" alt="Projet">
+                                                <div class="p-4 text-center">
+                                                    <h5>TITRE</h5>
+                                                    <p class="small text-muted">SOUS-TITRE</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> DATE</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('TON_FICHIER.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
                                         </div>
+                                        ================================= -->
+                                        
                                     </div>
                                 </div>
-                                <!-- FIN PROJET -->
 
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="modelminia.jpg" class="project-img card-img-top" alt="Projet B2">
-                                        <div class="p-4 text-center">
-                                            <h5>B2-S2-TD4[Modélisation]</h5>
-                                            <p class="small text-muted">UML & Conception</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 27 Avr. 2026</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b2b_s2_td4_modelisation.zip')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
+                                <!-- ST S1&2 - B3 -->
+                                <div class="tab-pane fade" id="st12-b3">
+                                    <div class="row g-4">
 
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="modelminia.jpg" class="project-img card-img-top" alt="Projet B2">
-                                        <div class="p-4 text-center">
-                                            <h5>B2-S2-TD8[Modélisation]</h5>
-                                            <p class="small text-muted">UML & Conception</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 10 Mai. 2026</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b2b_s2_td8_modelisation.zip')">Compte-rendu</button>
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="capture.jpg" class="project-img card-img-top" alt="NAS">
+                                                <div class="p-4 text-center">
+                                                    <h5>Capture d'écran</h5>
+                                                    <p class="small text-muted">Outil</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 11 sep. 2025</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1s_capture.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
+                                        <!-- FIN PROJET -->
 
-                                <!-- TEMPLATE NOUVEAU PROJET 
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="TON_IMAGE.png" class="project-img card-img-top" alt="Projet">
-                                        <div class="p-4 text-center">
-                                            <h5>TITRE</h5>
-                                            <p class="small text-muted">SOUS-TITRE</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> DATE</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('TON_FICHIER.pdf')">Compte-rendu</button>
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="minianas.png" class="project-img card-img-top" alt="NAS">
+                                                <div class="p-4 text-center">
+                                                    <h5>Serveur NAS</h5>
+                                                    <p class="small text-muted">Stockage réseau</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 02 oct. 2025</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3stp04.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
                                         </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="deepfreez.png" class="project-img card-img-top" alt="NAS">
+                                                <div class="p-4 text-center">
+                                                    <h5>Deep Freez</h5>
+                                                    <p class="small text-muted">Attaque</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 31 Mar. 2026</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('deepfreez.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+
+                                        <!-- TEMPLATE NOUVEAU PROJET 
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="TON_IMAGE.png" class="project-img card-img-top" alt="Projet">
+                                                <div class="p-4 text-center">
+                                                    <h5>TITRE</h5>
+                                                    <p class="small text-muted">SOUS-TITRE</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> DATE</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('TON_FICHIER.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        ================================= -->
+                                        
                                     </div>
                                 </div>
-                                ================================= -->
+
+                                <!-- ST S1&2 - Atelier Pro -->
+                                <div class="tab-pane fade" id="st12-atelier">
+                                    <div class="row g-4">
+
+                                        <!-- DEBUT PROJET -->
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="deepseek.png" class="project-img card-img-top" alt="IA">
+                                                <div class="p-4 text-center">
+                                                    <h5>Portfolio IA</h5>
+                                                    <p class="small text-muted">Création assistée</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> 03 sept. 2025</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('creationportfolio.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN PROJET -->
+
+                                        <!-- TEMPLATE NOUVEAU PROJET 
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="TON_IMAGE.png" class="project-img card-img-top" alt="Projet">
+                                                <div class="p-4 text-center">
+                                                    <h5>TITRE</h5>
+                                                    <p class="small text-muted">SOUS-TITRE</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> DATE</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('TON_FICHIER.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        ================================= -->
+
+                                    </div>
+                                </div>
 
                             </div>
                         </div>
 
-                        <!-- BV - B3 -->
-                        <div class="tab-pane fade" id="bv-b3">
-                            <div class="row g-4">
-
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="miniab3btp01.jpg" class="project-img card-img-top" alt="Projet B3">
-                                        <div class="p-4 text-center">
-                                            <h5>Traitement de données personnelles</h5>
-                                            <p class="small text-muted">Découverte des traitements de données</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 25 sep. 2025</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3btp01.pdf')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
-
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="miniapia.png" class="project-img card-img-top" alt="Projet B3">
-                                        <div class="p-4 text-center">
-                                            <h5>PIA TP01</h5>
-                                            <p class="small text-muted">Découverte du logiciel PIA</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 02 oct. 2025</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3btp02.pdf')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
-
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="cyber.png" class="project-img card-img-top" alt="Projet B3">
-                                        <div class="p-4 text-center">
-                                            <h5>CH3-TD1</h5>
-                                            <p class="small text-muted">Cybersécurité</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 13 nov. 2025</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3btp04.pdf')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
-
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="cyber.png" class="project-img card-img-top" alt="Projet B3">
-                                        <div class="p-4 text-center">
-                                            <h5>CH3-TD2</h5>
-                                            <p class="small text-muted">Cybersécurité</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 20 janv. 2026</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3btp06.pdf')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
-
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="cyber.png" class="project-img card-img-top" alt="Projet B3">
-                                        <div class="p-4 text-center">
-                                            <h5>CH4-TD1</h5>
-                                            <p class="small text-muted">Cybersécurité</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 20 janv. 2026</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3btp07.pdf')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
-
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="cyber.png" class="project-img card-img-top" alt="Projet B3">
-                                        <div class="p-4 text-center">
-                                            <h5>CH4-TD2</h5>
-                                            <p class="small text-muted">Cybersécurité</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 20 janv. 2026</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3btp08.pdf')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
-
-                                 <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="cyber.png" class="project-img card-img-top" alt="Projet B3">
-                                        <div class="p-4 text-center">
-                                            <h5>CH5-TD1</h5>
-                                            <p class="small text-muted">Cybersécurité</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 05 Avr. 2026</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3b_s2_ch5td1.pdf')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
-
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="cyber.png" class="project-img card-img-top" alt="Projet B3">
-                                        <div class="p-4 text-center">
-                                            <h5>CH5-TD2</h5>
-                                            <p class="small text-muted">Cybersécurité</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 12 Avr. 2026</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3b_s2_ch5td2.pdf')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
-
-                                <!-- TEMPLATE NOUVEAU PROJET 
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="TON_IMAGE.png" class="project-img card-img-top" alt="Projet">
-                                        <div class="p-4 text-center">
-                                            <h5>TITRE</h5>
-                                            <p class="small text-muted">SOUS-TITRE</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> DATE</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('TON_FICHIER.pdf')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                ================================= -->
-
-                            </div>
-                        </div>
-
-                        <!-- BV - Atelier Pro -->
-                        <div class="tab-pane fade" id="bv-atelier">
-                            <div class="row g-4">
-                                <!-- AUCUN PROJET ACTUELLEMENT -->
-                                <div class="col-12 text-center text-muted py-5">
-                                    <i class="fas fa-folder-open fa-3x mb-3" style="color: var(--secondary); opacity: 0.4;"></i>
-                                    <p>Aucun projet Atelier Pro pour Mme. Beauvallet pour l'instant.</p>
-                                </div>
-
-                                <!-- TEMPLATE NOUVEAU PROJET 
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="TON_IMAGE.png" class="project-img card-img-top" alt="Projet">
-                                        <div class="p-4 text-center">
-                                            <h5>TITRE</h5>
-                                            <p class="small text-muted">SOUS-TITRE</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> DATE</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('TON_FICHIER.pdf')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                ================================= -->
-                            </div>
-                        </div>
-
-                    </div><!-- /sub tab-content beauvallet -->
-                </div><!-- /beauvallet tab-pane -->
+                    </div> <!-- Fin TeacherTabContent12 -->
+                </div><!-- Fin semestre1-2 -->
 
 
-                <!-- ===================== SOTOCA ===================== -->
-                <div class="tab-pane fade" id="sotoca">
-                    <!-- Sous-tabs Sotoca -->
-                    <ul class="nav nav-pills nav-pills-sub justify-content-center mb-4" id="sotocaSubTab" role="tablist">
-                        <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#st-b1">B1</button></li>
-                        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#st-b3">B3</button></li>
-                        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#st-atelier">Atelier Pro</button></li>
+                <!-- ========================================================== -->
+                <!-- ===================== SEMESTRE 3 & 4 ===================== -->
+                <!-- ========================================================== -->
+                <div class="tab-pane fade" id="semestre3-4">
+                    
+                    <!-- NIVEAU 2 : PROFESSEURS -->
+                    <ul class="nav nav-pills nav-pills-teacher justify-content-center mb-4" id="teacherTab34" role="tablist">
+                        <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#beauvallet34">Madame Beauvallet</button></li>
+                        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#sotoca34">Monsieur Sotoca</button></li>
                     </ul>
 
-                    <div class="tab-content sub-tab-content">
+                    <div class="tab-content" id="teacherTabContent34">
+                        
+                        <!-- ========= S3&4 : MADAME BEAUVALLET ========= -->
+                        <div class="tab-pane fade show active" id="beauvallet34">
+                            
+                            <!-- NIVEAU 3 : NIVEAUX (B1, B2, B3, Atelier) -->
+                            <ul class="nav nav-pills nav-pills-sub justify-content-center mb-4" id="bvSubTab34" role="tablist">
+                                <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#bv34-b1">B1</button></li>
+                                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#bv34-b2">B2</button></li>
+                                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#bv34-b3">B3</button></li>
+                                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#bv34-atelier">Atelier Pro</button></li>
+                            </ul>
 
-                        <!-- ST - B1 -->
-                        <div class="tab-pane fade show active" id="st-b1">
-                            <div class="row g-4">
-
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="testcable.jpg" class="project-img card-img-top" alt="Réseau">
-                                        <div class="p-4 text-center">
-                                            <h5>Dépannage Réseau</h5>
-                                            <p class="small text-muted">Diagnostic physique</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 02 sep. 2025</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('reparerreseau.pdf')">Compte-rendu</button>
+                            <div class="tab-content sub-tab-content">
+                                <!-- BV S3&4 - B1 -->
+                                <div class="tab-pane fade show active" id="bv34-b1">
+                                    <div class="row g-4">
+                                        <div class="col-12 text-center text-muted py-5">
+                                            <i class="fas fa-folder-open fa-3x mb-3" style="color: var(--secondary); opacity: 0.4;"></i>
+                                            <p>Aucun projet B1 pour l'instant.</p>
                                         </div>
+                                        <!-- TEMPLATE NOUVEAU PROJET 
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="TON_IMAGE.png" class="project-img card-img-top" alt="Projet">
+                                                <div class="p-4 text-center">
+                                                    <h5>TITRE</h5>
+                                                    <p class="small text-muted">SOUS-TITRE</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> DATE</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('TON_FICHIER.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        ================================= -->
                                     </div>
                                 </div>
-                                <!-- FIN PROJET -->
-                                
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="minialinux.png" class="project-img card-img-top" alt="Linux">
-                                        <div class="p-4 text-center">
-                                            <h5>Scénario Linux</h5>
-                                            <p class="small text-muted">Commandes Linux</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 22 jan. 2026</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1stp08.pdf')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
 
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="miniadhcp.png" class="project-img card-img-top" alt="Linux">
-                                        <div class="p-4 text-center">
-                                            <h5>DHCP</h5>
-                                            <p class="small text-muted">Découverte du fonctionnement du serveur DHCP</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 31 mar. 2026</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('serveur_dhcp.pdf')">Compte-rendu</button>
+                                <!-- BV S3&4 - B2 -->
+                                <div class="tab-pane fade" id="bv34-b2">
+                                    <div class="row g-4">
+                                        <div class="col-12 text-center text-muted py-5">
+                                            <i class="fas fa-folder-open fa-3x mb-3" style="color: var(--secondary); opacity: 0.4;"></i>
+                                            <p>Aucun projet B2 pour l'instant.</p>
                                         </div>
+                                        <!-- TEMPLATE NOUVEAU PROJET 
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="TON_IMAGE.png" class="project-img card-img-top" alt="Projet">
+                                                <div class="p-4 text-center">
+                                                    <h5>TITRE</h5>
+                                                    <p class="small text-muted">SOUS-TITRE</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> DATE</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('TON_FICHIER.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        ================================= -->
                                     </div>
                                 </div>
-                                <!-- FIN PROJET -->
 
-                                <!-- TEMPLATE NOUVEAU PROJET 
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="TON_IMAGE.png" class="project-img card-img-top" alt="Projet">
-                                        <div class="p-4 text-center">
-                                            <h5>TITRE</h5>
-                                            <p class="small text-muted">SOUS-TITRE</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> DATE</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('TON_FICHIER.pdf')">Compte-rendu</button>
+                                <!-- BV S3&4 - B3 -->
+                                <div class="tab-pane fade" id="bv34-b3">
+                                    <div class="row g-4">
+                                        <div class="col-12 text-center text-muted py-5">
+                                            <i class="fas fa-folder-open fa-3x mb-3" style="color: var(--secondary); opacity: 0.4;"></i>
+                                            <p>Aucun projet B3 pour l'instant.</p>
                                         </div>
+                                        <!-- TEMPLATE NOUVEAU PROJET 
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="TON_IMAGE.png" class="project-img card-img-top" alt="Projet">
+                                                <div class="p-4 text-center">
+                                                    <h5>TITRE</h5>
+                                                    <p class="small text-muted">SOUS-TITRE</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> DATE</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('TON_FICHIER.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        ================================= -->
                                     </div>
                                 </div>
-                                ================================= -->
-                                
+
+                                <!-- BV S3&4 - Atelier Pro -->
+                                <div class="tab-pane fade" id="bv34-atelier">
+                                    <div class="row g-4">
+                                        <div class="col-12 text-center text-muted py-5">
+                                            <i class="fas fa-folder-open fa-3x mb-3" style="color: var(--secondary); opacity: 0.4;"></i>
+                                            <p>Aucun projet Atelier Pro pour l'instant.</p>
+                                        </div>
+                                        <!-- TEMPLATE NOUVEAU PROJET 
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="TON_IMAGE.png" class="project-img card-img-top" alt="Projet">
+                                                <div class="p-4 text-center">
+                                                    <h5>TITRE</h5>
+                                                    <p class="small text-muted">SOUS-TITRE</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> DATE</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('TON_FICHIER.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        ================================= -->
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- ST - B3 -->
-                        <div class="tab-pane fade" id="st-b3">
-                            <div class="row g-4">
+                        <!-- ========= S3&4 : MONSIEUR SOTOCA ========= -->
+                        <div class="tab-pane fade" id="sotoca34">
+                            
+                            <!-- NIVEAU 3 : NIVEAUX (B1, B3, Atelier) -->
+                            <ul class="nav nav-pills nav-pills-sub justify-content-center mb-4" id="stSubTab34" role="tablist">
+                                <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#st34-b1">B1</button></li>
+                                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#st34-b3">B3</button></li>
+                                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#st34-atelier">Atelier Pro</button></li>
+                            </ul>
 
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="capture.jpg" class="project-img card-img-top" alt="NAS">
-                                        <div class="p-4 text-center">
-                                            <h5>Capture d'écran</h5>
-                                            <p class="small text-muted">Outil</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 11 sep. 2025</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b1s_capture.pdf')">Compte-rendu</button>
+                            <div class="tab-content sub-tab-content">
+                                <!-- ST S3&4 - B1 -->
+                                <div class="tab-pane fade show active" id="st34-b1">
+                                    <div class="row g-4">
+                                        <div class="col-12 text-center text-muted py-5">
+                                            <i class="fas fa-folder-open fa-3x mb-3" style="color: var(--secondary); opacity: 0.4;"></i>
+                                            <p>Aucun projet B1 pour l'instant.</p>
                                         </div>
+                                        <!-- TEMPLATE NOUVEAU PROJET 
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="TON_IMAGE.png" class="project-img card-img-top" alt="Projet">
+                                                <div class="p-4 text-center">
+                                                    <h5>TITRE</h5>
+                                                    <p class="small text-muted">SOUS-TITRE</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> DATE</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('TON_FICHIER.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        ================================= -->
                                     </div>
                                 </div>
-                                <!-- FIN PROJET -->
 
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="minianas.png" class="project-img card-img-top" alt="NAS">
-                                        <div class="p-4 text-center">
-                                            <h5>Serveur NAS</h5>
-                                            <p class="small text-muted">Stockage réseau</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 02 oct. 2025</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('b3stp04.pdf')">Compte-rendu</button>
+                                <!-- ST S3&4 - B3 -->
+                                <div class="tab-pane fade" id="st34-b3">
+                                    <div class="row g-4">
+                                        <div class="col-12 text-center text-muted py-5">
+                                            <i class="fas fa-folder-open fa-3x mb-3" style="color: var(--secondary); opacity: 0.4;"></i>
+                                            <p>Aucun projet B3 pour l'instant.</p>
                                         </div>
+                                        <!-- TEMPLATE NOUVEAU PROJET 
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="TON_IMAGE.png" class="project-img card-img-top" alt="Projet">
+                                                <div class="p-4 text-center">
+                                                    <h5>TITRE</h5>
+                                                    <p class="small text-muted">SOUS-TITRE</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> DATE</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('TON_FICHIER.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        ================================= -->
                                     </div>
                                 </div>
-                                <!-- FIN PROJET -->
 
-                                 <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="deepfreez.png" class="project-img card-img-top" alt="NAS">
-                                        <div class="p-4 text-center">
-                                            <h5>Deep Freez</h5>
-                                            <p class="small text-muted">Attaque</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 31 Mar. 2026</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('deepfreez.pdf')">Compte-rendu</button>
+                                <!-- ST S3&4 - Atelier Pro -->
+                                <div class="tab-pane fade" id="st34-atelier">
+                                    <div class="row g-4">
+                                        <div class="col-12 text-center text-muted py-5">
+                                            <i class="fas fa-folder-open fa-3x mb-3" style="color: var(--secondary); opacity: 0.4;"></i>
+                                            <p>Aucun projet Atelier Pro pour l'instant.</p>
                                         </div>
+                                        <!-- TEMPLATE NOUVEAU PROJET 
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="glass-card project-card">
+                                                <img src="TON_IMAGE.png" class="project-img card-img-top" alt="Projet">
+                                                <div class="p-4 text-center">
+                                                    <h5>TITRE</h5>
+                                                    <p class="small text-muted">SOUS-TITRE</p>
+                                                    <div class="project-date"><i class="far fa-calendar-alt"></i> DATE</div>
+                                                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('TON_FICHIER.pdf')">Compte-rendu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        ================================= -->
                                     </div>
                                 </div>
-                                <!-- FIN PROJET -->
-
-
-                                <!-- TEMPLATE NOUVEAU PROJET 
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="TON_IMAGE.png" class="project-img card-img-top" alt="Projet">
-                                        <div class="p-4 text-center">
-                                            <h5>TITRE</h5>
-                                            <p class="small text-muted">SOUS-TITRE</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> DATE</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('TON_FICHIER.pdf')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                ================================= -->
-                                
                             </div>
                         </div>
 
-                        <!-- ST - Atelier Pro -->
-                        <div class="tab-pane fade" id="st-atelier">
-                            <div class="row g-4">
+                    </div><!-- Fin TeacherTabContent34 -->
+                </div><!-- Fin semestre3-4 -->
 
-                                <!-- DEBUT PROJET -->
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="deepseek.png" class="project-img card-img-top" alt="IA">
-                                        <div class="p-4 text-center">
-                                            <h5>Portfolio IA</h5>
-                                            <p class="small text-muted">Création assistée</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> 03 sept. 2025</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('creationportfolio.pdf')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- FIN PROJET -->
-
-                                <!-- TEMPLATE NOUVEAU PROJET 
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="glass-card project-card">
-                                        <img src="TON_IMAGE.png" class="project-img card-img-top" alt="Projet">
-                                        <div class="p-4 text-center">
-                                            <h5>TITRE</h5>
-                                            <p class="small text-muted">SOUS-TITRE</p>
-                                            <div class="project-date"><i class="far fa-calendar-alt"></i> DATE</div>
-                                            <button class="btn btn-outline-primary btn-sm rounded-pill w-100" onclick="downloadReport('TON_FICHIER.pdf')">Compte-rendu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                ================================= -->
-
-                            </div>
-                        </div>
-
-                    </div><!-- /sub tab-content sotoca -->
-                </div><!-- /sotoca tab-pane -->
-
-            </div><!-- /tab-content principal -->
+            </div>
         </div>
     </section>
 
