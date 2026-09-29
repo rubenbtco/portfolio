@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruben Battocchio | Portfolio</title>
-    <meta name="description" content="Portfolio de Ruben Battocchio, étudiant en BTS SIO : projets, compétences et veille technologique.">
-    <meta name="theme-color" content="#05060f">
+    <meta name="description" content="Portfolio de Ruben Battocchio, étudiant en BTS SIO : projets, compétences et veille technologique domotique.">
+    <meta name="theme-color" content="#f4f6fb">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
 </head>
 <body>
 
-    <!-- Fond animé global -->
+    <!-- Fond décoratif -->
     <div class="bg-grid" aria-hidden="true"></div>
     <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
     <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
@@ -25,16 +25,16 @@
     <!-- ===================== NAVIGATION ===================== -->
     <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
         <div class="container nav-shell">
-            <a class="navbar-brand" href="#home"><span class="brand-mark">RB</span><span>Ruben<span class="brand-dot">.</span>dev</span></a>
+            <a class="navbar-brand" href="#intro"><span class="brand-mark">RB</span><span>Ruben<span class="brand-dot">.</span>dev</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Menu">
                 <span class="fas fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#intro">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projets</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">Bio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projets</a></li>
                     <li class="nav-item"><a class="nav-link" href="#veille">Veille</a></li>
                     <li class="nav-item"><a class="nav-link nav-cta" href="#contact">Contact</a></li>
                 </ul>
@@ -42,128 +42,56 @@
         </div>
     </nav>
 
-    <!-- ===================== ACCUEIL (3D) ===================== -->
-    <section id="home" class="hero">
-        <canvas id="hero-canvas" aria-hidden="true"></canvas>
-        <div class="container position-relative">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6 hero-text">
-                    <div class="hero-badge"><span class="pulse"></span> Étudiant BTS SIO · Gap</div>
-                    <h1>
-                        <span class="hero-hello">Salut, moi c'est</span>
-                        <span class="hero-name" data-text="Ruben Battocchio">Ruben Battocchio</span>
-                    </h1>
-                    <p class="hero-lead">Futur développeur, explorateur de technologies et passionné par la résolution de problèmes complexes.</p>
-                    <div class="hero-cta">
-                        <a href="#projects" class="btn-neo btn-neo-primary"><i class="fas fa-cube me-2"></i>Voir mes projets</a>
-                        <a href="#contact" class="btn-neo btn-neo-ghost">Me contacter</a>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="stat"><span class="stat-num" data-count="projects">0</span><span class="stat-label">Projets</span></div>
-                        <div class="stat"><span class="stat-num" data-count="veille">0</span><span class="stat-label">Articles de veille</span></div>
-                        <div class="stat"><span class="stat-num">3</span><span class="stat-label">Langues</span></div>
-                    </div>
-                </div>
+    <!-- ===================== INTRO (animation 3D au scroll) ===================== -->
+    <!-- Les particules changent de forme au fil du scroll, puis disparaissent pour laisser place aux projets. -->
+    <section id="intro" class="intro">
+        <div class="intro-sticky">
+            <canvas id="intro-canvas" aria-hidden="true"></canvas>
 
-                <div class="col-lg-6">
-                    <div class="editor-stage">
-                        <div class="code-editor-container" data-tilt data-tilt-max="10">
-                            <div class="editor-header">
-                                <div class="editor-dots">
-                                    <div class="dot dot-red"></div>
-                                    <div class="dot dot-yellow"></div>
-                                    <div class="dot dot-green"></div>
-                                </div>
-                                <span>profile_ruben.js — Portfolio</span>
-                            </div>
-                            <div class="editor-body">
-                                <div class="line-numbers">
-                                    <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
-                                    <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
-                                    <span>11</span><span>12</span><span>13</span><span>14</span><span>15</span>
-                                    <span>16</span><span>17</span><span>18</span><span>19</span><span>20</span>
-                                    <span>21</span><span>22</span><span>23</span>
-                                </div>
-                                <div class="code-content" id="typing-code"></div>
-                            </div>
-                        </div>
-                        <div class="orbit-chip chip-1"><i class="fab fa-java"></i> Java</div>
-                        <div class="orbit-chip chip-2"><i class="fab fa-php"></i> PHP</div>
-                        <div class="orbit-chip chip-3"><i class="fas fa-network-wired"></i> Réseau</div>
+            <div class="intro-captions">
+                <div class="intro-caption" data-stage="0" style="opacity:1">
+                    <div class="intro-badge"><span class="pulse"></span> Étudiant BTS SIO · Gap</div>
+                    <h1>Ruben<br><span class="grad">Battocchio</span></h1>
+                    <p>Futur développeur, explorateur de technologies et passionné par la résolution de problèmes complexes.</p>
+                </div>
+                <div class="intro-caption" data-stage="1">
+                    <div class="intro-step">01 · Développement</div>
+                    <h2>Du code qui<br><span class="grad">prend forme</span></h2>
+                    <p>Des premiers pas en Java aux applications PHP connectées à une base de données : j'apprends à concevoir des programmes solides.</p>
+                    <div class="intro-tags"><span>Java</span><span>PHP</span><span>Python</span><span>SQL</span><span>JavaFX</span></div>
+                </div>
+                <div class="intro-caption" data-stage="2">
+                    <div class="intro-step">02 · Réseaux &amp; systèmes</div>
+                    <h2>Des machines qui<br><span class="grad">communiquent</span></h2>
+                    <p>Serveur DHCP, Linux, NAS, GLPI : je configure, je dépanne et je documente des infrastructures.</p>
+                    <div class="intro-tags"><span>DHCP</span><span>Linux</span><span>GLPI</span><span>Kali</span></div>
+                </div>
+                <div class="intro-caption" data-stage="3">
+                    <div class="intro-step">03 · Veille domotique</div>
+                    <h2>La maison devient<br><span class="grad">intelligente</span></h2>
+                    <p>Chaque semaine, je suis l'actualité de la maison connectée : protocoles, sécurité, énergie et open source.</p>
+                    <div class="intro-tags"><span>Matter</span><span>Zigbee</span><span>Thread</span><span>Home Assistant</span></div>
+                </div>
+                <div class="intro-caption" data-stage="4">
+                    <div class="intro-step">04 · Réalisations</div>
+                    <h2>Place aux<br><span class="grad">projets</span></h2>
+                    <div class="intro-stats">
+                        <div><strong data-count="projects">0</strong><small>Projets</small></div>
+                        <div><strong data-count="veille">0</strong><small>Articles de veille</small></div>
+                        <div><strong>3</strong><small>Langues</small></div>
                     </div>
                 </div>
             </div>
-        </div>
-        <a href="#about" class="scroll-hint" aria-label="Descendre"><span></span></a>
-    </section>
 
-    <!-- ===================== À PROPOS ===================== -->
-    <section id="about">
-        <div class="container">
-            <div class="section-title reveal">
-                <span class="section-kicker">01 — Bio</span>
-                <h2>À propos <span>de moi</span></h2>
+            <div class="intro-progress" aria-label="Étapes de l'intro">
+                <button type="button"><span>Accueil</span></button>
+                <button type="button"><span>Dév</span></button>
+                <button type="button"><span>Réseaux</span></button>
+                <button type="button"><span>Domotique</span></button>
+                <button type="button"><span>Projets</span></button>
             </div>
-            <div class="row g-4">
-                <div class="col-lg-7 reveal">
-                    <div class="glass-card p-4 p-lg-5 h-100" data-tilt data-tilt-max="4">
-                        <h3 class="card-heading"><i class="fas fa-route"></i> Mon Parcours</h3>
-                        <p class="text-muted">Étudiant motivé et polyvalent, je me spécialise dans le développement logiciel et les réseaux. J'aime transformer des idées en lignes de code concrètes.</p>
-                        <div class="mt-3 mb-4">
-                            <span class="language-badge">Anglais (B2-C1)</span>
-                            <span class="language-badge">Italien (B2)</span>
-                            <span class="language-badge">Espagnol (A1)</span>
-                        </div>
-                        <h4 class="card-subheading">Formation</h4>
-                        <ul class="timeline">
-                            <li><span class="tl-icon"><i class="fas fa-school"></i></span><div><strong>Lycée Dominique Villars</strong><small>BTS SIO</small></div></li>
-                            <li><span class="tl-icon"><i class="fas fa-university"></i></span><div><strong>Université d'Avignon</strong><small>Licence Informatique</small></div></li>
-                            <li><span class="tl-icon"><i class="fas fa-graduation-cap"></i></span><div><strong>Lycée A. Briand</strong><small>Bac Général (Spé Math/NSI)</small></div></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-5 reveal">
-                    <div class="glass-card p-4 p-lg-5 h-100" data-tilt data-tilt-max="4">
-                        <h3 class="card-heading accent"><i class="fas fa-id-card"></i> Infos & Contact</h3>
-                        <div class="info-list">
-                            <div class="info-item"><i class="fas fa-phone"></i><div><small>Téléphone</small><a href="tel:+33669455135">06 69 45 51 35</a></div></div>
-                            <div class="info-item"><i class="fas fa-envelope"></i><div><small>Email</small><a href="mailto:ruben.battocchio28@gmail.com">ruben.battocchio28@gmail.com</a></div></div>
-                            <div class="info-item"><i class="fas fa-location-dot"></i><div><small>Localisation</small><span>40g route Sainte-Marguerite, 05000 Gap</span></div></div>
-                        </div>
-                        <h4 class="card-subheading">Passions</h4>
-                        <div class="passions">
-                            <span><i class="fas fa-basketball-ball"></i>Basket</span>
-                            <span><i class="fas fa-film"></i>Cinéma</span>
-                            <span><i class="fas fa-gamepad"></i>Jeux Vidéo</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ===================== SKILLS ===================== -->
-    <!-- Pour changer un niveau : modifie data-level (0 à 100) -->
-    <section id="skills">
-        <div class="container">
-            <div class="section-title reveal">
-                <span class="section-kicker">02 — Compétences</span>
-                <h2>Mes <span>Skills</span></h2>
-            </div>
-            <div class="row g-4">
-                <div class="col-6 col-md-4 col-lg-2 reveal"><div class="skill-card" data-tilt data-level="90"><div class="skill-ring"><svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fg" cx="60" cy="60" r="52"/></svg><i class="fab fa-html5"></i></div><h5>HTML/CSS</h5><span class="skill-pct">90%</span></div></div>
-                <div class="col-6 col-md-4 col-lg-2 reveal"><div class="skill-card" data-tilt data-level="85"><div class="skill-ring"><svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fg" cx="60" cy="60" r="52"/></svg><i class="fab fa-python"></i></div><h5>Python</h5><span class="skill-pct">85%</span></div></div>
-                <div class="col-6 col-md-4 col-lg-2 reveal"><div class="skill-card" data-tilt data-level="80"><div class="skill-ring"><svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fg" cx="60" cy="60" r="52"/></svg><i class="fas fa-database"></i></div><h5>SQL</h5><span class="skill-pct">80%</span></div></div>
-                <div class="col-6 col-md-4 col-lg-2 reveal"><div class="skill-card" data-tilt data-level="75"><div class="skill-ring"><svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fg" cx="60" cy="60" r="52"/></svg><i class="fas fa-code"></i></div><h5>C++</h5><span class="skill-pct">75%</span></div></div>
-                <div class="col-6 col-md-4 col-lg-2 reveal"><div class="skill-card" data-tilt data-level="70"><div class="skill-ring"><svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fg" cx="60" cy="60" r="52"/></svg><i class="fab fa-js"></i></div><h5>JavaScript</h5><span class="skill-pct">70%</span></div></div>
-                <div class="col-6 col-md-4 col-lg-2 reveal"><div class="skill-card" data-tilt data-level="70"><div class="skill-ring"><svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fg" cx="60" cy="60" r="52"/></svg><i class="fas fa-square-root-variable"></i></div><h5>Mathématiques</h5><span class="skill-pct">70%</span></div></div>
-            </div>
-            <div class="tech-marquee reveal" aria-hidden="true">
-                <div class="marquee-track">
-                    <span>Java</span><span>PHP</span><span>Python</span><span>SQL</span><span>JavaFX</span><span>HTML / CSS</span><span>JavaScript</span><span>Bootstrap</span><span>Git</span><span>Linux</span><span>DHCP</span><span>GLPI</span><span>Symfony</span><span>Flutter</span><span>Kali</span>
-                    <span>Java</span><span>PHP</span><span>Python</span><span>SQL</span><span>JavaFX</span><span>HTML / CSS</span><span>JavaScript</span><span>Bootstrap</span><span>Git</span><span>Linux</span><span>DHCP</span><span>GLPI</span><span>Symfony</span><span>Flutter</span><span>Kali</span>
-                </div>
-            </div>
+            <div class="intro-hint"><i></i>Défiler</div>
         </div>
     </section>
 
@@ -173,7 +101,7 @@
     <section id="projects">
         <div class="container">
             <div class="section-title reveal">
-                <span class="section-kicker">03 — Réalisations</span>
+                <span class="section-kicker">01 — Réalisations</span>
                 <h2>Mes <span>Projets</span></h2>
             </div>
 
@@ -1025,52 +953,140 @@
         </div>
     </section>
 
+    <!-- ===================== À PROPOS ===================== -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title reveal">
+                <span class="section-kicker">02 — Bio</span>
+                <h2>À propos <span>de moi</span></h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-7 reveal">
+                    <div class="glass-card p-4 p-lg-5 h-100" data-tilt data-tilt-max="4">
+                        <h3 class="card-heading"><i class="fas fa-route"></i> Mon Parcours</h3>
+                        <p class="text-muted">Étudiant motivé et polyvalent, je me spécialise dans le développement logiciel et les réseaux. J'aime transformer des idées en lignes de code concrètes.</p>
+                        <div class="mt-3 mb-4">
+                            <span class="language-badge">Anglais (B2-C1)</span>
+                            <span class="language-badge">Italien (B2)</span>
+                            <span class="language-badge">Espagnol (A1)</span>
+                        </div>
+                        <h4 class="card-subheading">Formation</h4>
+                        <ul class="timeline">
+                            <li><span class="tl-icon"><i class="fas fa-school"></i></span><div><strong>Lycée Dominique Villars</strong><small>BTS SIO</small></div></li>
+                            <li><span class="tl-icon"><i class="fas fa-university"></i></span><div><strong>Université d'Avignon</strong><small>Licence Informatique</small></div></li>
+                            <li><span class="tl-icon"><i class="fas fa-graduation-cap"></i></span><div><strong>Lycée A. Briand</strong><small>Bac Général (Spé Math/NSI)</small></div></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-5 reveal">
+                    <div class="glass-card p-4 p-lg-5 h-100" data-tilt data-tilt-max="4">
+                        <h3 class="card-heading accent"><i class="fas fa-id-card"></i> Infos & Contact</h3>
+                        <div class="info-list">
+                            <div class="info-item"><i class="fas fa-phone"></i><div><small>Téléphone</small><a href="tel:+33669455135">06 69 45 51 35</a></div></div>
+                            <div class="info-item"><i class="fas fa-envelope"></i><div><small>Email</small><a href="mailto:ruben.battocchio28@gmail.com">ruben.battocchio28@gmail.com</a></div></div>
+                            <div class="info-item"><i class="fas fa-location-dot"></i><div><small>Localisation</small><span>40g route Sainte-Marguerite, 05000 Gap</span></div></div>
+                        </div>
+                        <h4 class="card-subheading">Passions</h4>
+                        <div class="passions">
+                            <span><i class="fas fa-basketball-ball"></i>Basket</span>
+                            <span><i class="fas fa-film"></i>Cinéma</span>
+                            <span><i class="fas fa-gamepad"></i>Jeux Vidéo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <!-- Pour changer un niveau : modifie data-level (0 à 100) -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-title reveal">
+                <span class="section-kicker">03 — Compétences</span>
+                <h2>Mes <span>Skills</span></h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-6 col-md-4 col-lg-2 reveal"><div class="skill-card" data-tilt data-level="90"><div class="skill-ring"><svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fg" cx="60" cy="60" r="52"/></svg><i class="fab fa-html5"></i></div><h5>HTML/CSS</h5><span class="skill-pct">90%</span></div></div>
+                <div class="col-6 col-md-4 col-lg-2 reveal"><div class="skill-card" data-tilt data-level="85"><div class="skill-ring"><svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fg" cx="60" cy="60" r="52"/></svg><i class="fab fa-python"></i></div><h5>Python</h5><span class="skill-pct">85%</span></div></div>
+                <div class="col-6 col-md-4 col-lg-2 reveal"><div class="skill-card" data-tilt data-level="80"><div class="skill-ring"><svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fg" cx="60" cy="60" r="52"/></svg><i class="fas fa-database"></i></div><h5>SQL</h5><span class="skill-pct">80%</span></div></div>
+                <div class="col-6 col-md-4 col-lg-2 reveal"><div class="skill-card" data-tilt data-level="75"><div class="skill-ring"><svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fg" cx="60" cy="60" r="52"/></svg><i class="fas fa-code"></i></div><h5>C++</h5><span class="skill-pct">75%</span></div></div>
+                <div class="col-6 col-md-4 col-lg-2 reveal"><div class="skill-card" data-tilt data-level="70"><div class="skill-ring"><svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fg" cx="60" cy="60" r="52"/></svg><i class="fab fa-js"></i></div><h5>JavaScript</h5><span class="skill-pct">70%</span></div></div>
+                <div class="col-6 col-md-4 col-lg-2 reveal"><div class="skill-card" data-tilt data-level="70"><div class="skill-ring"><svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fg" cx="60" cy="60" r="52"/></svg><i class="fas fa-square-root-variable"></i></div><h5>Mathématiques</h5><span class="skill-pct">70%</span></div></div>
+            </div>
+            <div class="tech-marquee reveal" aria-hidden="true">
+                <div class="marquee-track">
+                    <span>Java</span><span>PHP</span><span>Python</span><span>SQL</span><span>JavaFX</span><span>HTML / CSS</span><span>JavaScript</span><span>Bootstrap</span><span>Git</span><span>Linux</span><span>DHCP</span><span>GLPI</span><span>Symfony</span><span>Flutter</span><span>Kali</span>
+                    <span>Java</span><span>PHP</span><span>Python</span><span>SQL</span><span>JavaFX</span><span>HTML / CSS</span><span>JavaScript</span><span>Bootstrap</span><span>Git</span><span>Linux</span><span>DHCP</span><span>GLPI</span><span>Symfony</span><span>Flutter</span><span>Kali</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ===================== VEILLE ===================== -->
+    <!-- Pour ajouter un article : copie une ligne <tr> en haut du tableau (le plus récent en premier).
+         data-cat sert au filtre : protocoles, ha, energie, securite, ia, materiel -->
     <section id="veille">
         <div class="container">
             <div class="section-title reveal">
                 <span class="section-kicker">04 — Veille technologique</span>
                 <h2>Veille <span>Domotique</span></h2>
-                <p class="section-sub">Suivi des innovations IoT, Protocoles et Maison Connectée - Mis à jour le 16/09/2026</p>
+                <p class="section-sub">Un article par semaine sur la maison connectée : protocoles, Home Assistant, énergie, sécurité et IA. Mis à jour le 29/09/2026.</p>
             </div>
 
             <div class="row g-4 mb-5">
-                <div class="col-md-4">
+                <div class="col-md-4 reveal">
                     <div class="glass-card veille-method-card">
-                        <i class="fas fa-mobile-alt veille-icon"></i>
-                        <div class="veille-label">Apps & Flux</div>
-                        <ul class="list-unstyled text-white small mb-0">
-                            <li><i class="fas fa-newspaper me-2 text-muted"></i>Google News & Feedly</li>
-                            <li><i class="fas fa-rss me-2 text-muted"></i>Abonnements aux blogs spécialisés (Domo-blog, Les Alexiens)</li>
-                            <li><i class="fas fa-robot me-2 text-muted"></i>Filtres automatisés sur les mots-clés Matter/Thread</li>
+                        <i class="fas fa-rss veille-icon"></i>
+                        <div class="veille-label">Apps &amp; Flux</div>
+                        <ul class="list-unstyled small mb-0">
+                            <li><i class="fas fa-newspaper me-2"></i>Google News &amp; Feedly</li>
+                            <li><i class="fas fa-rss me-2"></i>Flux RSS de Domo-Blog, Maison &amp; Domotique et Domotique-News</li>
+                            <li><i class="fas fa-robot me-2"></i>Filtres automatisés sur les mots-clés Matter / Thread / Zigbee</li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 reveal">
                     <div class="glass-card veille-method-card">
                         <i class="fas fa-users veille-icon"></i>
                         <div class="veille-label">Communautaire</div>
-                        <ul class="list-unstyled text-white small mb-0">
-                            <li><i class="fab fa-reddit me-2 text-muted"></i>Reddit (r/homeassistant, r/smarthome)</li>
-                            <li><i class="fab fa-discord me-2 text-muted"></i>Discords Développeurs & IoT</li>
-                            <li><i class="fab fa-github me-2 text-muted"></i>Suivi des releases Home Assistant sur GitHub</li>
+                        <ul class="list-unstyled small mb-0">
+                            <li><i class="fab fa-reddit me-2"></i>Reddit (r/homeassistant, r/smarthome)</li>
+                            <li><i class="fab fa-discord me-2"></i>Discords Développeurs &amp; IoT</li>
+                            <li><i class="fab fa-github me-2"></i>Suivi des releases Home Assistant sur GitHub</li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 reveal">
                     <div class="glass-card veille-method-card">
-                        <i class="fas fa-archive veille-icon"></i>
+                        <i class="fas fa-box-archive veille-icon"></i>
                         <div class="veille-label">Organisation</div>
-                        <ul class="list-unstyled text-white small mb-0">
-                            <li><i class="fas fa-database me-2 text-muted"></i>Notion (Classification des articles par protocole)</li>
-                            <li><i class="fab fa-dev me-2 text-muted"></i>Daily.dev pour l'aspect pur développement</li>
-                            <li><i class="fas fa-tags me-2 text-muted"></i>Pocket (Lecture différée)</li>
+                        <ul class="list-unstyled small mb-0">
+                            <li><i class="fas fa-database me-2"></i>Notion (classement des articles par thème)</li>
+                            <li><i class="fas fa-calendar-week me-2"></i>Un article retenu et analysé chaque semaine</li>
+                            <li><i class="fas fa-tags me-2"></i>Pocket (lecture différée)</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <div class="glass-card p-2 overflow-hidden">
+            <div class="veille-toolbar reveal">
+                <div class="veille-search">
+                    <i class="fas fa-magnifying-glass"></i>
+                    <input type="search" id="veilleSearch" class="form-control" placeholder="Rechercher un article…" aria-label="Rechercher un article">
+                </div>
+                <div class="veille-filters" id="veilleFilters">
+                    <button type="button" class="active" data-filter="all">Tout</button>
+                    <button type="button" data-filter="protocoles">Protocoles</button>
+                    <button type="button" data-filter="ha">Home Assistant</button>
+                    <button type="button" data-filter="energie">Énergie</button>
+                    <button type="button" data-filter="securite">Sécurité</button>
+                    <button type="button" data-filter="ia">IA</button>
+                    <button type="button" data-filter="materiel">Matériel</button>
+                </div>
+            </div>
+
+            <div class="glass-card p-2 overflow-hidden reveal">
                 <div class="table-responsive">
                     <table class="table table-veille table-hover mb-0">
                         <thead>
@@ -1078,217 +1094,672 @@
                                 <th>Date</th>
                                 <th>Sujet / Titre</th>
                                 <th>Catégorie</th>
-                                <th>Synthèse & Analyse</th>
+                                <th>Synthèse &amp; Analyse</th>
                                 <th>Impact</th>
                                 <th>Source</th>
                             </tr>
                         </thead>
                         <tbody class="text-muted">
-                            <!-- SEPTEMBRE 2025 -->
-                            <tr>
-                                <td>08/09/2025</td>
-                                <td><strong>Quel protocole domotique choisir en 2025 ? Comparatif Zigbee, Z-Wave, Wi-Fi, Thread, Matter</strong> <span class="badge-type type-article">Article</span></td>
-                                <td>Protocoles & Réseau</td>
+
+                            <!-- SEPTEMBRE 2026 -->
+                            <tr data-cat="protocoles">
+                                <td>29/09/2026</td>
+                                <td><strong>Zigbee Suzi : La CSA Ouvre officiellement la certification pour le Sub-GHz !</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Protocoles &amp; Réseau</td>
                                 <td>
-                                    Comparatif technique détaillé confirmant que le Zigbee reste le roi du réseau maillé, tandis que le Wi-Fi doit être limité à la vidéo pour ne pas saturer le routeur.
-                                    <br><small class="text-white"><em>Analyse : Un socle essentiel pour comprendre les couches réseau de l'IoT et les enjeux d'adressage IPv6 apportés par Thread.</em></small>
+                                    La CSA ouvre officiellement la certification Zigbee Suzi (Sub-GHz) pour les fabricants.
+                                    <br><small><em>Analyse : Étape qui annonce l'arrivée des premiers produits Sub-GHz certifiés sur le marché.</em></small>
                                 </td>
                                 <td><span class="badge-impact impact-high">Fort</span></td>
-                                <td><a href="https://forumdomotique.com/guides-tutoriels/debuter-domotique/quel-protocole-domotique-choisir-2025-comparatif-zigbee-zwave-wifi-thread-matter/" target="_blank" rel="noopener">Forum Domotique</a></td>
+                                <td><a href="https://www.domo-blog.fr/zigbee-suzi-la-csa-ouvre-officiellement-la-certification-pour-le-sub-ghz/" target="_blank" rel="noopener">Domo-Blog</a></td>
                             </tr>
-
-                            <!-- OCTOBRE 2025 -->
-                            <tr>
-                                <td>20/10/2025</td>
-                                <td><strong>Domotique et maison connectée : suivez le guide !</strong> <span class="badge-type type-article">Article</span></td>
-                                <td>Architecture</td>
+                            <tr data-cat="energie protocoles">
+                                <td>22/09/2026</td>
+                                <td><strong>Gestion de l’énergie via Matter : L’avenir de la maison intelligente et de l’écosystème domotique</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Énergie</td>
                                 <td>
-                                    Guide d'introduction à l'architecture globale d'une maison connectée, mettant l'accent sur le rôle critique d'une box domotique locale.
-                                    <br><small class="text-white"><em>Analyse : Met en perspective l'importance de centraliser les flux de données (hub) plutôt que d'utiliser de multiples ponts propriétaires (cloud).</em></small>
-                                </td>
-                                <td><span class="badge-impact impact-low">Faible</span></td>
-                                <td><a href="https://monenergie-ca.fr/blog/domotique-maison-connectee" target="_blank" rel="noopener">Mon Énergie</a></td>
-                            </tr>
-
-                            <!-- NOVEMBRE 2025 -->
-                            <tr>
-                                <td>20/11/2025</td>
-                                <td><strong>Adoption de la norme Matter et sortie de Matter 1.5</strong> <span class="badge-type type-article">Doc Tech</span></td>
-                                <td>Standard IoT</td>
-                                <td>
-                                    Déploiement de Matter 1.5 incluant enfin la prise en charge locale des caméras IP et de la gestion énergétique. 
-                                    <br><small class="text-white"><em>Analyse : Le support du flux vidéo en local sans dépendre du cloud est une avancée majeure pour la cybersécurité des systèmes domotiques.</em></small>
-                                </td>
-                                <td><span class="badge-impact impact-high">Critique</span></td>
-                                <td><a href="https://docs.aws.amazon.com/fr_fr/prescriptive-guidance/latest/strategy-matter-standard/strategy-matter-standard.pdf" target="_blank" rel="noopener">AWS Guidelines</a></td>
-                            </tr>
-
-                            <!-- DÉCEMBRE 2025 -->
-                            <tr>
-                                <td>22/12/2025</td>
-                                <td><strong>Les 10 objets connectés indispensables en 2026</strong> <span class="badge-type type-article">Article</span></td>
-                                <td>Équipements</td>
-                                <td>
-                                    Tour d'horizon des attentes pour l'année, marquant un vrai virage vers la "domotique solaire" et le pilotage intelligent de l'autoconsommation.
-                                    <br><small class="text-white"><em>Analyse : Les API des routeurs solaires deviennent des cibles de choix pour l'intégration de scripts personnalisés en PHP ou Python.</em></small>
-                                </td>
-                                <td><span class="badge-impact impact-med">Moyen</span></td>
-                                <td><a href="https://www.hellowatt.fr/domotique/maison-connectee/objet" target="_blank" rel="noopener">Hello Watt</a></td>
-                            </tr>
-
-                            <!-- JANVIER 2026 -->
-                            <tr>
-                                <td>26/01/2026</td>
-                                <td><strong>9 Idées de Domotique pour l'Automatisation de la Maison 2026</strong> <span class="badge-type type-article">Article</span></td>
-                                <td>Automatisation</td>
-                                <td>
-                                    Concepts avancés de triggers (déclencheurs) domotiques avec une forte notion de "Scalabilité" (évolutivité) des installations IoT au fil du temps.
-                                    <br><small class="text-white"><em>Analyse : Appuie l'importance de penser l'architecture réseau (VLAN, subnet) pour garantir une bonne couverture Wi-Fi/Thread.</em></small>
-                                </td>
-                                <td><span class="badge-impact impact-med">Moyen</span></td>
-                                <td><a href="https://www.eufy.com/eu-fr/blogs/security-camera/home-automation-ideas" target="_blank" rel="noopener">Eufy Blog</a></td>
-                            </tr>
-
-                            <!-- FÉVRIER 2026 -->
-                            <tr>
-                                <td>18/02/2026</td>
-                                <td><strong>Podcast : Matter, Thread, Zigbee... Tout sur les protocoles</strong> <span class="badge-type type-video">Audio/Vidéo</span></td>
-                                <td>Décryptage</td>
-                                <td>
-                                    Émission audio détaillant le fonctionnement interne des réseaux maillés et l'abandon progressif des box propriétaires.
-                                    <br><small class="text-white"><em>Analyse : Excellent rappel des fondamentaux de communication réseau machine-à-machine (M2M).</em></small>
-                                </td>
-                                <td><span class="badge-impact impact-med">Moyen</span></td>
-                                <td><a href="https://mondenumerique.info/podcast/maison-connectee" target="_blank" rel="noopener">Monde Numérique</a></td>
-                            </tr>
-
-                            <!-- MARS 2026 -->
-                            <tr>
-                                <td>09/03/2026</td>
-                                <td><strong>Cinq tendances de la maison connectée en 2026</strong> <span class="badge-type type-article">Article</span></td>
-                                <td>Tendances</td>
-                                <td>
-                                    Le marché s'oriente vers des OS unifiés, et un interfaçage total avec la gestion des ressources électriques (panneaux solaires, batteries).
-                                    <br><small class="text-white"><em>Analyse : La fin du modèle "gadget". L'informatique s'intègre profondément dans le tableau électrique (Smart Living).</em></small>
+                                    Matter intègre la gestion de l'énergie : bornes de recharge, pompes à chaleur et panneaux solaires dans un même écosystème.
+                                    <br><small><em>Analyse : Un standard commun permettra de piloter toute l'énergie du foyer depuis une seule application.</em></small>
                                 </td>
                                 <td><span class="badge-impact impact-high">Fort</span></td>
-                                <td><a href="https://www.niceforyou.com/fr/actualites/cinq-tendances-de-la-maison-connectee-en-2026-comment-nice-faconne-lavenir-du-smart" target="_blank" rel="noopener">Nice For You</a></td>
+                                <td><a href="https://www.domo-blog.fr/gestion-de-lenergie-via-matter-lavenir-de-la-maison-intelligente-et-de-lecosysteme-domotique/" target="_blank" rel="noopener">Domo-Blog</a></td>
                             </tr>
-
-                            <!-- AVRIL 2026 -->
-                            <tr>
-                                <td>02/04/2026</td>
-                                <td><strong>Home Assistant 2026.4 : La mise à jour à ne pas manquer</strong> <span class="badge-type type-article">Article</span></td>
-                                <td>Software (Open Source)</td>
+                            <tr data-cat="energie materiel">
+                                <td>15/09/2026</td>
+                                <td><strong>Domotique : 6 objets vraiment utiles pour réduire votre consommation d’énergie en 2026</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Énergie</td>
                                 <td>
-                                    Une mise à jour majeure du système open-source modifiant la syntaxe de création d'automatisations et intégrant un gestionnaire d'accès pour les serrures Matter.
-                                    <br><small class="text-white"><em>Analyse : Modification directe de la gestion des bases de données locales de HA (SQLite/MariaDB) et des conventions de nommage d'entités.</em></small>
-                                </td>
-                                <td><span class="badge-impact impact-high">Critique</span></td>
-                                <td><a href="https://www.domo-blog.fr/home-assistant-2026-4-tout-ce-quil-faut-savoir-sur-la-mise-a-jour-davril/" target="_blank" rel="noopener">Domo-Blog</a></td>
-                            </tr>
-                            <tr>
-                                <td>26/04/2026</td>
-                                <td><strong>Faut-il passer de Zigbee à Matter en 2026 ?</strong> <span class="badge-type type-article">Article</span></td>
-                                <td>Protocoles</td>
-                                <td>
-                                    Analyse technique sur la transition entre Zigbee et Matter. Il démontre que la migration n'est pas urgente pour des réseaux locaux déjà stables.
-                                    <br><small class="text-white"><em>Analyse : Confirme le rôle toujours primordial des Coordinateurs USB locaux pour la sécurité.</em></small>
+                                    Six objets domotiques utiles pour réduire sa consommation d'énergie et piloter l'électricité de la maison.
+                                    <br><small><em>Analyse : Relie la domotique à des gains mesurables, ce qui justifie l'investissement.</em></small>
                                 </td>
                                 <td><span class="badge-impact impact-med">Moyen</span></td>
-                                <td><a href="https://howmation.com/fr_FR/blog/article/faut-il-passer-de-zigbee-a-matter-en-2026-que-choisir-vraiment-pour-sa-domotique" target="_blank" rel="noopener">Howmation</a></td>
+                                <td><a href="https://www.maison-et-domotique.com/173143-6-objets-domotiques-pour-reduire-consommation-energie-en-2026/" target="_blank" rel="noopener">Maison &amp; Domotique</a></td>
                             </tr>
-
-                            <!-- MAI 2026 -->
-                            <tr>
-                                <td>18/05/2026</td>
-                                <td><strong>Domotique : 10 exemples concrets pour votre maison connectée</strong> <span class="badge-type type-article">Article</span></td>
-                                <td>Cas Pratiques</td>
+                            <tr data-cat="protocoles securite">
+                                <td>09/09/2026</td>
+                                <td><strong>Zigbee 4.0 et Sub-GHz (Suzi) : Sécurité, Portée et Avenir des Réseaux IoT basse consommation</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Protocoles &amp; Réseau</td>
                                 <td>
-                                    Mise en situation de divers scénarios d'automatisation logique poussés par Somfy (protection solaire couplée à la température intérieure).
-                                    <br><small class="text-white"><em>Analyse : Idéal pour comprendre l'algorithmique derrière un scénario SI [Conditions] ALORS [Action].</em></small>
-                                </td>
-                                <td><span class="badge-impact impact-low">Faible</span></td>
-                                <td><a href="https://www.somfy.fr/idees-et-projets/articles/domotique-10-exemples-concrets-pour-votre-maison-connectee" target="_blank" rel="noopener">Somfy</a></td>
-                            </tr>
-
-                            <!-- JUIN 2026 -->
-                            <tr>
-                                <td>02/06/2026</td>
-                                <td><strong>Home Assistant 2026.6 : La mise à jour de juin repense l'expérience utilisateur !</strong> <span class="badge-type type-article">Article</span></td>
-                                <td>UI / UX</td>
-                                <td>
-                                    Refonte de l'interface utilisateur pour la gestion des tableaux de bord interactifs (Dashboards) et l'ajout de permissions granulaires.
-                                    <br><small class="text-white"><em>Analyse : Un cas pratique parfait de refonte front-end d'une application de contrôle domotique complexe.</em></small>
+                                    Zigbee 4.0 et Suzi (Sub-GHz) : sécurité, portée et avenir des réseaux IoT basse consommation.
+                                    <br><small><em>Analyse : Le Sub-GHz traverse mieux les murs et évite la bande saturée du Wi-Fi : un vrai sujet d'ingénierie radio.</em></small>
                                 </td>
                                 <td><span class="badge-impact impact-high">Fort</span></td>
-                                <td><a href="https://www.domo-blog.fr/home-assistant-2026-6-mise-a-jour-juin-repense-experience-utilisateur/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                                <td><a href="https://www.domo-blog.fr/zigbee-4-sub-ghz-suzi-securite-portee-avenir-reseaux-iot-basse-consommation/" target="_blank" rel="noopener">Domo-Blog</a></td>
                             </tr>
-                            <tr>
-                                <td>22/06/2026</td>
-                                <td><strong>La domotique en 2026 : Pourquoi faire et jusqu'où peut-on aller ?</strong> <span class="badge-type type-video">Vidéo</span></td>
-                                <td>Architecture & Cybersécurité</td>
+                            <tr data-cat="ha">
+                                <td>02/09/2026</td>
+                                <td><strong>Home Assistant fait sa rentrée : Décryptage de la mise à jour 2026.9</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Logiciel open source</td>
                                 <td>
-                                    Conférence vidéo sur l'implémentation d'une domotique poussée et les moyens d'éviter les pièges classiques de sécurité (protection des données privées).
-                                    <br><small class="text-white"><em>Analyse : Met en exergue l'importance de cloisonner les appareils IoT sur un réseau isolé des données personnelles.</em></small>
+                                    Décryptage de la mise à jour de septembre de Home Assistant (2026.9) et de ses principales nouveautés.
+                                    <br><small><em>Analyse : La veille sur les versions permet de planifier les mises à jour au bon moment.</em></small>
                                 </td>
                                 <td><span class="badge-impact impact-med">Moyen</span></td>
-                                <td><a href="https://www.youtube.com/watch?v=9hMwizZvfoA" target="_blank" rel="noopener">YouTube</a></td>
-                            </tr>
-
-                            <!-- JUILLET 2026 -->
-                            <tr>
-                                <td>21/07/2026</td>
-                                <td><strong>Domotique et maison connectée en 2026 : prix, systèmes et installation</strong> <span class="badge-type type-article">Article</span></td>
-                                <td>Infrastructures</td>
-                                <td>
-                                    Comparatif pointu entre les systèmes filaires (KNX) utilisés par les pros et les solutions ouvertes (Home Assistant) favorisées par les développeurs.
-                                    <br><small class="text-white"><em>Analyse : Une perspective indispensable sur le matériel physique et les couches basses de transmission de données (Bus de terrain).</em></small>
-                                </td>
-                                <td><span class="badge-impact impact-med">Moyen</span></td>
-                                <td><a href="https://www.tack.lu/blog/domotique-maison-connectee-luxembourg-2026" target="_blank" rel="noopener">Tack.lu</a></td>
+                                <td><a href="https://www.domo-blog.fr/home-assistant-fait-sa-rentree-decryptage-de-la-mise-a-jour-2026-9/" target="_blank" rel="noopener">Domo-Blog</a></td>
                             </tr>
 
                             <!-- AOÛT 2026 -->
-                            <tr>
-                                <td>25/08/2026</td>
-                                <td><strong>Meilleurs Appareils Maison Connectée 2026 : Guide Local</strong> <span class="badge-type type-article">Article</span></td>
-                                <td>Hardware & Edge Computing</td>
+                            <tr data-cat="materiel protocoles">
+                                <td>27/08/2026</td>
+                                <td><strong>Test FRITZ!Box 7690 : Wi-Fi 7, 2,5 GbE et domotique dans un seul boîtier</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Matériel réseau</td>
                                 <td>
-                                    Guide axé sur la souveraineté des données : choix de l'architecture "Local-First" avec des mini-PC faisant office de routeurs Matter/Zigbee hors ligne.
-                                    <br><small class="text-white"><em>Analyse : Confirme l'importance du traitement local et des API documentées pour se libérer de la dépendance aux Clouds asiatiques.</em></small>
-                                </td>
-                                <td><span class="badge-impact impact-high">Fort</span></td>
-                                <td><a href="https://www.promptquorum.com/fr/smart-home/best-smart-home-devices-2026" target="_blank" rel="noopener">PromptQuorum</a></td>
-                            </tr>
-
-                            <!-- SEPTEMBRE 2026 -->
-                            <tr>
-                                <td>14/09/2026</td>
-                                <td><strong>Matter protocole : fonctionnement, Thread et versions</strong> <span class="badge-type type-article">Article</span></td>
-                                <td>Réseau IPv6</td>
-                                <td>
-                                    Décryptage récent et technique de la norme Matter jusqu'à sa version 1.6 de l'été. Explication approfondie des réseaux Mesh Thread IP.
-                                    <br><small class="text-white"><em>Analyse : La gestion "Multi-Admin" de Matter résout enfin le problème des bases de données isolées entre Google et Apple.</em></small>
-                                </td>
-                                <td><span class="badge-impact impact-high">Critique</span></td>
-                                <td><a href="https://domo-malin.fr/content/50-manuel-du-protocole-matter/" target="_blank" rel="noopener">Domo-Malin</a></td>
-                            </tr>
-                            <tr>
-                                <td>15/09/2026</td>
-                                <td><strong>Domotique : 6 objets vraiment utiles pour réduire l'énergie</strong> <span class="badge-type type-article">Article</span></td>
-                                <td>Gestion Énergétique</td>
-                                <td>
-                                    L'utilisation des pinces ampèremétriques connectées et des plugins de suivi dans les bases de données SQL locales pour tracer chaque Watt.
-                                    <br><small class="text-white"><em>Analyse : Un pont parfait entre le monitoring réseau (SIO) et la gestion des flux de données énergétiques.</em></small>
+                                    Test de la FRITZ!Box 7690 qui réunit Wi-Fi 7, ports 2,5 GbE, VPN, Mesh et domotique Zigbee/DECT.
+                                    <br><small><em>Analyse : La box internet devient aussi une passerelle domotique : un point unique à sécuriser.</em></small>
                                 </td>
                                 <td><span class="badge-impact impact-med">Moyen</span></td>
-                                <td><a href="https://www.maison-et-domotique.com/173143-6-objets-domotiques-pour-reduire-consommation-energie-en-2026/" target="_blank" rel="noopener">Maison & Domotique</a></td>
+                                <td><a href="https://www.maison-et-domotique.com/171636-test-fritzbox-7690/" target="_blank" rel="noopener">Maison &amp; Domotique</a></td>
+                            </tr>
+                            <tr data-cat="securite materiel">
+                                <td>21/08/2026</td>
+                                <td><strong>Découverte de l’ovni de la vidéosurveillance : On a testé la minuscule Reolink Argus MagiCam</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Vidéosurveillance</td>
+                                <td>
+                                    Test de la Reolink Argus MagiCam, une caméra Wi-Fi très compacte alimentée par de simples piles.
+                                    <br><small><em>Analyse : Une caméra Wi-Fi doit être isolée sur le réseau (VLAN) pour limiter les risques d'intrusion.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-low">Faible</span></td>
+                                <td><a href="https://www.domo-blog.fr/decouverte-ovni-videosurveillance-test-minuscule-reolink-argus-magicam/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="materiel energie">
+                                <td>11/08/2026</td>
+                                <td><strong>Les tendances de l’éclairage intelligent pour une maison plus confortable et économe</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Éclairage</td>
+                                <td>
+                                    Tour d'horizon des tendances de l'éclairage intelligent : ampoules connectées, automatisations et économies d'énergie.
+                                    <br><small><em>Analyse : L'éclairage reste la porte d'entrée de la domotique pour la plupart des utilisateurs.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-low">Faible</span></td>
+                                <td><a href="https://www.maison-et-domotique.com/172253-tendances-eclairage-intelligent-pour-maison-plus-confortable-et-econome/" target="_blank" rel="noopener">Maison &amp; Domotique</a></td>
+                            </tr>
+                            <tr data-cat="ha securite">
+                                <td>06/08/2026</td>
+                                <td><strong>Home Assistant 2026.8 : le port 8123 tire sa révérence sur les nouvelles installations</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Logiciel open source</td>
+                                <td>
+                                    Home Assistant 2026.8 abandonne le port 8123 par défaut sur les nouvelles installations et simplifie son interface.
+                                    <br><small><em>Analyse : Changer un port historique a des conséquences sur la configuration réseau et le pare-feu.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.maison-et-domotique.com/172217-home-assistant-2026-8-mise-a-jour/" target="_blank" rel="noopener">Maison &amp; Domotique</a></td>
                             </tr>
 
+                            <!-- JUILLET 2026 -->
+                            <tr data-cat="protocoles materiel">
+                                <td>28/07/2026</td>
+                                <td><strong>La gamme Shelly Gen4 bientôt utilisable aussi sous Matter over Thread après MAJ</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Protocoles &amp; Réseau</td>
+                                <td>
+                                    Les modules Shelly Gen4 vont devenir compatibles Matter over Thread après une mise à jour.
+                                    <br><small><em>Analyse : Un firmware peut ajouter un protocole à un matériel déjà vendu : intérêt du matériel multiprotocole.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.domo-blog.fr/la-gamme-shelly-gen4-bientot-utilisable-sous-matter-over-thread-apres-maj/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="energie ha">
+                                <td>24/07/2026</td>
+                                <td><strong>5 Minutes Domo Episode 8 : Lixee, pour suivre sa conso Linky en temps réel avec Home Assistant</strong> <span class="badge-type type-video">Podcast</span></td>
+                                <td>Énergie</td>
+                                <td>
+                                    Épisode du podcast 5 Minutes Domo sur le module Lixee pour suivre sa consommation Linky en temps réel.
+                                    <br><small><em>Analyse : Accéder aux données du compteur sans le délai de 24 h des applications fournisseurs.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.domo-blog.fr/5-minutes-domo-episode-8-lixee-suivi-conso-intelligent/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="ha securite">
+                                <td>13/07/2026</td>
+                                <td><strong>Simulation de présence simple, dynamique et intelligente avec Home Assistant</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Automatisation</td>
+                                <td>
+                                    Méthode simple et dynamique pour simuler une présence avec Home Assistant pendant les absences.
+                                    <br><small><em>Analyse : Bon exemple d'algorithme conditionnel (horaires, aléatoire, état de la maison) appliqué à la sécurité.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.domo-blog.fr/simulation-de-presence-simple-dynamique-et-intelligente-avec-home-assistant/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="materiel ha">
+                                <td>08/07/2026</td>
+                                <td><strong>Comment créer un Proxy Bluetooth ultime pour Home Assistant avec un ESP32 Atom Lite ?</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Open source &amp; DIY</td>
+                                <td>
+                                    Tutoriel pour créer un proxy Bluetooth avec un ESP32 Atom Lite et étendre la portée du Bluetooth dans Home Assistant.
+                                    <br><small><em>Analyse : Contourne les limites du Bluetooth et du passthrough USB en virtualisation grâce à un petit module réseau.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.domo-blog.fr/comment-creer-un-proxy-bluetooth-ultime-pour-home-assistant-avec-un-esp32-atom-lite/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+
+                            <!-- JUIN 2026 -->
+                            <tr data-cat="protocoles">
+                                <td>29/06/2026</td>
+                                <td><strong>Philips Hue : Fini le choix cornélien, le support simultané de Zigbee et Matter arrive !</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Protocoles &amp; Réseau</td>
+                                <td>
+                                    Les ampoules Philips Hue vont pouvoir fonctionner en Zigbee et en Matter en même temps.
+                                    <br><small><em>Analyse : Faire cohabiter deux protocoles sur un même appareil facilite la transition sans tout remplacer.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.domo-blog.fr/philips-hue-fini-le-choix-cornelien-le-support-simultane-de-zigbee-et-matter-arrive/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="ha protocoles">
+                                <td>25/06/2026</td>
+                                <td><strong>Home Assistant dévoile sa mise à jour majeure pour Matter : Tout savoir sur le nouveau serveur matter.js</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Logiciel open source</td>
+                                <td>
+                                    Home Assistant remplace son serveur Matter par matter.js, pour plus de stabilité et une cartographie des réseaux.
+                                    <br><small><em>Analyse : Réécrire un composant critique est un choix d'architecture lourd, justifié ici par la fiabilité.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-high">Fort</span></td>
+                                <td><a href="https://www.domo-blog.fr/home-assistant-devoile-sa-mise-a-jour-majeure-pour-matter-tout-savoir-sur-le-nouveau-serveur-matter-js/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="protocoles">
+                                <td>18/06/2026</td>
+                                <td><strong>Matter 1.6 est de sortie : La mise à jour qui simplifie l’installation et le multi-écosystème</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Standard IoT</td>
+                                <td>
+                                    Matter 1.6 simplifie l'installation des appareils et améliore le fonctionnement entre plusieurs écosystèmes.
+                                    <br><small><em>Analyse : Après l'ajout de fonctions, le standard se concentre sur l'expérience utilisateur : signe de maturité.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-high">Fort</span></td>
+                                <td><a href="https://www.domo-blog.fr/matter-1-6-sortie-mise-a-jour-qui-simplifie-linstallation-et-le-multi-ecosysteme/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="energie materiel">
+                                <td>09/06/2026</td>
+                                <td><strong>GCE EcoDevices 3 : Le superviseur d’énergie 100% local se renouvelle et devient le gestionnaire d’énergie parfait pour la domotique</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Énergie</td>
+                                <td>
+                                    GCE EcoDevices 3, un superviseur d'énergie 100 % local, se renouvelle pour mieux piloter la consommation.
+                                    <br><small><em>Analyse : Le traitement local des données énergétiques évite la dépendance au cloud d'un fabricant.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.domo-blog.fr/gce-ecodevices-3-superviseur-denergie-local-renouvelle-gestionnaire-domotique/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="ia ha">
+                                <td>01/06/2026</td>
+                                <td><strong>Guide Home Assistant MCP : Fini les prises de tête laissez Claude IA configurer et gérer votre domotique pour vous</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Intelligence artificielle</td>
+                                <td>
+                                    Guide pour connecter Claude à Home Assistant via le protocole MCP, afin que l'IA configure et gère la domotique.
+                                    <br><small><em>Analyse : Le protocole MCP donne à une IA un accès contrôlé à un système : la question des droits accordés devient centrale.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-high">Fort</span></td>
+                                <td><a href="https://www.domo-blog.fr/home-assistant-mcp-fini-les-prises-de-tete-laissez-claude-ia-configurer-et-gerer-votre-domotique-pour-vous/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+
+                            <!-- MAI 2026 -->
+                            <tr data-cat="energie materiel">
+                                <td>27/05/2026</td>
+                                <td><strong>Test du module générique Zigbee double pinces ampèrmétrique, parfait pour le suivi conso sous Home Assistant</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Énergie</td>
+                                <td>
+                                    Test d'un module Zigbee à double pince ampèremétrique pour suivre la consommation électrique dans Home Assistant.
+                                    <br><small><em>Analyse : Mesurer avant d'optimiser : les données de consommation alimentent des tableaux de bord et des alertes.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.domo-blog.fr/test-module-generique-zigbee-double-pinces-ampermetrique-suivi-conso-home-assistant/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="protocoles">
+                                <td>20/05/2026</td>
+                                <td><strong>Homebridge 2 débarque avec Matter : le pont ultime pour faire dialoguer Apple Home, Google Home et Alexa ?</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Interopérabilité</td>
+                                <td>
+                                    Homebridge 2 adopte Matter et relie Apple Home, Google Home et Alexa grâce à des ponts virtuels.
+                                    <br><small><em>Analyse : Un logiciel open source peut faire le lien entre des écosystèmes concurrents.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.maison-et-domotique.com/170096-homebridge-2-debarque-avec-matter-le-pont-ultime-pour-faire-dialoguer-apple-home-google-home-et-alexa/" target="_blank" rel="noopener">Maison &amp; Domotique</a></td>
+                            </tr>
+                            <tr data-cat="energie ia">
+                                <td>12/05/2026</td>
+                                <td><strong>Le solaire plug-and-play, c’est fini : Zendure change complètement de dimension avec le PowerHub</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Énergie</td>
+                                <td>
+                                    Zendure lance PowerHub, une plateforme pilotée par IA pour gérer panneaux solaires, batteries, voiture électrique et secours.
+                                    <br><small><em>Analyse : La gestion d'énergie devient un système d'information à part entière, avec de nombreuses sources de données.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.maison-et-domotique.com/170102-zendure-powerhub-lancement-officiel/" target="_blank" rel="noopener">Maison &amp; Domotique</a></td>
+                            </tr>
+                            <tr data-cat="protocoles ha">
+                                <td>05/05/2026</td>
+                                <td><strong>Philips Hue et Zigbee2MQTT : Les effets natifs enfin supportés (Adieu le pont Hue !)</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Protocoles &amp; Réseau</td>
+                                <td>
+                                    Zigbee2MQTT prend en charge les effets natifs des ampoules Philips Hue, sans passer par le pont Hue.
+                                    <br><small><em>Analyse : Une domotique 100 % locale devient possible sans perdre de fonctionnalités.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.domo-blog.fr/philips-hue-et-zigbee2mqtt-les-effets-natifs-enfin-supportes-adieu-le-pont-hue/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+
+                            <!-- AVRIL 2026 -->
+                            <tr data-cat="protocoles securite">
+                                <td>27/04/2026</td>
+                                <td><strong>Zigbee Direct : L’alliance parfaite entre la connectivité Bluetooth LE et une sécurité domotique infaillible</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Cybersécurité</td>
+                                <td>
+                                    Zigbee Direct relie Zigbee et le Bluetooth LE de façon sécurisée, pour configurer les appareils depuis un smartphone.
+                                    <br><small><em>Analyse : La sécurité doit être pensée dès la connexion entre deux technologies radio.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.domo-blog.fr/zigbee-direct-lalliance-parfaite-entre-la-connectivite-bluetooth-le-et-une-securite-domotique-infaillible/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="ia">
+                                <td>24/04/2026</td>
+                                <td><strong>L’IA Gemini s’installe dans votre maison à la place de Google Assistant</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Intelligence artificielle</td>
+                                <td>
+                                    Gemini remplace Google Assistant dans la maison et permet des échanges conversationnels qui gardent le contexte.
+                                    <br><small><em>Analyse : Le passage aux LLM change la manière de concevoir les commandes : on décrit une intention plutôt qu'une syntaxe.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-high">Fort</span></td>
+                                <td><a href="https://www.domo-blog.fr/lia-gemini-sinstalle-dans-votre-maison-a-la-place-de-google-assistant/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="protocoles">
+                                <td>16/04/2026</td>
+                                <td><strong>Philips Hue : Une mise à jour corrective cruciale pour stabiliser Matter</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Standard IoT</td>
+                                <td>
+                                    Philips Hue publie une mise à jour corrective pour stabiliser Matter, après des déconnexions et des latences.
+                                    <br><small><em>Analyse : Montre qu'un déploiement de standard passe par des phases d'instabilité et de correctifs.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.domo-blog.fr/philips-hue-une-mise-a-jour-corrective-cruciale-pour-stabiliser-matter/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="protocoles ha">
+                                <td>09/04/2026</td>
+                                <td><strong>Home Assistant Connect : Transformez vos clés ZBT-2 et ZWA-2 en répéteurs ultra-puissants</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Protocoles &amp; Réseau</td>
+                                <td>
+                                    Un nouveau firmware transforme les clés ZBT-2 (Zigbee) et ZWA-2 (Z-Wave) en répéteurs pour étendre la couverture.
+                                    <br><small><em>Analyse : Réutiliser du matériel existant pour renforcer le maillage : une solution simple aux zones mortes.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.domo-blog.fr/home-assistant-connect-transformez-vos-cles-zbt-2-et-zwa-2-en-repeteurs-ultra-puissants/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="protocoles securite">
+                                <td>02/04/2026</td>
+                                <td><strong>Matter 1.5.1 : La nouvelle mise à jour booste les caméras de sécurité et les sonnettes connectées</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Standard IoT</td>
+                                <td>
+                                    Matter 1.5.1 améliore la gestion de la vidéo, les performances des caméras et l'interopérabilité des sonnettes.
+                                    <br><small><em>Analyse : Les correctifs mineurs d'un standard comptent autant que les versions majeures pour sa fiabilité.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.domo-blog.fr/matter-1-5-1-nouvelle-mise-a-jour-booste-les-cameras-de-securite-et-sonnettes-connectees/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+
+                            <!-- MARS 2026 -->
+                            <tr data-cat="securite materiel">
+                                <td>25/03/2026</td>
+                                <td><strong>Test Nuki Keypad 2 NFC : La révolution Aliro et Apple Wallet s’invite sur votre porte !</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Contrôle d'accès</td>
+                                <td>
+                                    Test du Nuki Keypad 2 NFC, qui prend en charge Aliro et les clés dans Apple Wallet.
+                                    <br><small><em>Analyse : Premier produit concret basé sur Aliro : on passe de la norme à l'usage réel.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.domo-blog.fr/test-nuki-keypad-2-nfc-la-revolution-aliro-et-apple-wallet-sinvite-sur-votre-porte/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="materiel ha">
+                                <td>20/03/2026</td>
+                                <td><strong>Découverte de la gamme Apollo Automation : Quand l’ESP révolutionne la domotique avec Home Assistant</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Open source &amp; DIY</td>
+                                <td>
+                                    Apollo Automation propose des capteurs basés sur l'ESP32, open source et pensés pour Home Assistant.
+                                    <br><small><em>Analyse : L'ESP32 et ESPHome rendent la création de capteurs accessible : lien avec la programmation embarquée.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.domo-blog.fr/decouverte-gamme-apollo-automation-quand-esp-revolutionne-domotique-home-assistant/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="materiel protocoles">
+                                <td>09/03/2026</td>
+                                <td><strong>Basculez votre antenne Z-Wave ZWA-2 en PoE pour optimiser votre domotique : Guide simple et rapide</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Infrastructure</td>
+                                <td>
+                                    Guide pour passer l'antenne Z-Wave ZWA-2 en PoE et supprimer la dépendance au port USB du serveur.
+                                    <br><small><em>Analyse : Découpler la radio du serveur facilite la virtualisation et la redondance.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.domo-blog.fr/basculez-votre-antenne-z-wave-zwa-2-en-poe-pour-optimiser-votre-domotique-guide-simple-et-rapide/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="protocoles securite">
+                                <td>02/03/2026</td>
+                                <td><strong>Aliro 1.0 est là : Le Matter du contrôle d’accès veut révolutionner nos serrures connectées !</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Contrôle d'accès</td>
+                                <td>
+                                    La CSA publie Aliro 1.0, un standard qui veut faire du smartphone ou de la montre une clé universelle pour les serrures.
+                                    <br><small><em>Analyse : Un standard d'authentification commun pour les serrures : enjeu fort de sécurité physique et numérique.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-high">Fort</span></td>
+                                <td><a href="https://www.domo-blog.fr/aliro-1-matter-controle-acces-veut-revolutionner-nos-serrures-connectees/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+
+                            <!-- FÉVRIER 2026 -->
+                            <tr data-cat="protocoles materiel">
+                                <td>25/02/2026</td>
+                                <td><strong>Texas Instruments rachète Silicon Labs : Quel impact pour l’IoT et le Z-Wave ?</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Industrie</td>
+                                <td>
+                                    Texas Instruments rachète une branche de Silicon Labs, fabricant clé des puces Z-Wave.
+                                    <br><small><em>Analyse : Une concentration du marché des puces peut influencer l'avenir d'un protocole entier.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.domo-blog.fr/texas-instruments-rachete-silicon-labs-quel-impact-pour-liot-et-le-z-wave/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="securite ha">
+                                <td>19/02/2026</td>
+                                <td><strong>Pourquoi vous devriez effectuer la sauvegarde de votre domotique dans le cloud ?</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Sauvegarde</td>
+                                <td>
+                                    Pourquoi sauvegarder sa domotique dans le cloud : un système domotique reste un serveur informatique qui peut tomber en panne.
+                                    <br><small><em>Analyse : Rappelle la règle de sauvegarde (plusieurs copies, dont une hors site) étudiée en gestion du patrimoine informatique.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.domo-blog.fr/pourquoi-vous-devriez-effectuer-la-sauvegarde-de-votre-domotique-dans-le-cloud/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="materiel">
+                                <td>11/02/2026</td>
+                                <td><strong>Raspberry Pi : Une envolée historique des prix face à la crise mondiale de la RAM</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Matériel</td>
+                                <td>
+                                    Forte hausse des prix des Raspberry Pi, causée par la crise mondiale de la mémoire RAM.
+                                    <br><small><em>Analyse : Les tensions sur les composants influencent directement le budget d'un projet et le choix du matériel.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.domo-blog.fr/raspberry-pi-envolee-historique-des-prix-face-crise-mondiale-ram/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="ha materiel">
+                                <td>02/02/2026</td>
+                                <td><strong>Domotique Indestructible : Créez un Cluster Proxmox à Haute Disponibilité pour Home Assistant</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Infrastructure</td>
+                                <td>
+                                    Guide pour monter un cluster Proxmox à haute disponibilité afin que Home Assistant continue de fonctionner si un serveur tombe.
+                                    <br><small><em>Analyse : Mise en pratique de la haute disponibilité et de la virtualisation, deux notions clés du BTS SIO (option SISR).</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-high">Fort</span></td>
+                                <td><a href="https://www.domo-blog.fr/domotique-indestructible-creez-un-cluster-proxmox-a-haute-disponibilite-pour-home-assistant/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+
+                            <!-- JANVIER 2026 -->
+                            <tr data-cat="materiel protocoles">
+                                <td>26/01/2026</td>
+                                <td><strong>SMHUB Nano réinvente le contrôleur domotique multiprotocole sur le réseau local qui a tout compris</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Matériel réseau</td>
+                                <td>
+                                    Le SMHUB Nano est un contrôleur multiprotocole qui fonctionne directement sur le réseau local, sans clé USB.
+                                    <br><small><em>Analyse : Confirme la tendance : les passerelles radio deviennent des équipements réseau à part entière (adressage IP, PoE).</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.domo-blog.fr/smhub-nano-controleur-domotique-multiprotocole-sur-reseau-local-tout-compris/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="ia ha">
+                                <td>19/01/2026</td>
+                                <td><strong>L’IA dans Home Assistant pour prévisions et alertes météo intelligentes via notif ou sur le dashboard</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Intelligence artificielle</td>
+                                <td>
+                                    Utiliser l'IA dans Home Assistant pour produire des prévisions et des alertes météo sur mesure, en notification ou sur le tableau de bord.
+                                    <br><small><em>Analyse : Exemple de traitement de données externes (API météo) mises en forme automatiquement pour l'utilisateur.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.domo-blog.fr/ia-home-assistant-previsions-et-alertes-meteo-intelligentes-via-notif-dashboard/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="materiel ha">
+                                <td>12/01/2026</td>
+                                <td><strong>Augmentation de tarif pour Home Assistant Green en 2026, mais toujours la reine de la domotique</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Matériel</td>
+                                <td>
+                                    Nabu Casa augmente le prix de la box Home Assistant Green en 2026, qui reste une référence.
+                                    <br><small><em>Analyse : Le coût du matériel pèse sur le choix d'une solution : à comparer avec un mini-PC ou une machine virtuelle.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-low">Faible</span></td>
+                                <td><a href="https://www.domo-blog.fr/augmentation-de-tarif-pour-home-assistant-green-en-2026-mais-toujours-la-reine-de-la-domotique/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="protocoles">
+                                <td>05/01/2026</td>
+                                <td><strong>Apple HomeKit et Matter : Comment la maison connectée devient enfin intelligente</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Écosystèmes</td>
+                                <td>
+                                    Grâce à Matter, Apple HomeKit s'ouvre enfin à davantage d'appareils et devient plus simple à utiliser.
+                                    <br><small><em>Analyse : L'interopérabilité entre écosystèmes fermés est l'enjeu central de Matter.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.domo-blog.fr/apple-homekit-matter-comment-maison-connectee-devient-enfin-intelligente/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+
+                            <!-- DÉCEMBRE 2025 -->
+                            <tr data-cat="materiel ia">
+                                <td>29/12/2025</td>
+                                <td><strong>CES Vegas 2026 : LG lance son robot domestique</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Robotique</td>
+                                <td>
+                                    Au CES 2026, LG présente CLOiD, un robot domestique destiné à assister les tâches de la maison.
+                                    <br><small><em>Analyse : Les robots domestiques ouvrent de nouvelles questions de sécurité et de respect de la vie privée dans le foyer.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-low">Faible</span></td>
+                                <td><a href="https://domotique-news.com/ces-vegas-2026-lg-lance-son-robot-domestique/" target="_blank" rel="noopener">Domotique-News</a></td>
+                            </tr>
+                            <tr data-cat="materiel protocoles">
+                                <td>22/12/2025</td>
+                                <td><strong>SONOFF MINI DUO : Le micro module ultra-compact pour la domotique Matter et Zigbee (avec ou sans neutre)</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Équipements</td>
+                                <td>
+                                    Sonoff lance le Mini DUO, un micro-module double canal compatible Matter et Zigbee, avec ou sans neutre.
+                                    <br><small><em>Analyse : Le choix d'un module dépend des contraintes électriques du logement (présence du neutre) autant que du protocole.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-low">Faible</span></td>
+                                <td><a href="https://www.domo-blog.fr/sonoff-mini-duo-le-micro-module-ultra-compact-pour-la-domotique-matter-et-zigbee-avec-ou-sans-neutre/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="materiel">
+                                <td>19/12/2025</td>
+                                <td><strong>IRobot jette l’éponge</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Marché</td>
+                                <td>
+                                    Retour sur les difficultés d'iRobot, pionnier des aspirateurs robots, face à une concurrence de plus en plus forte.
+                                    <br><small><em>Analyse : Quand un fabricant disparaît, ses appareils connectés dépendant du cloud peuvent perdre des fonctions : un risque à anticiper.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://domotique-news.com/irobot-jete-leponge/" target="_blank" rel="noopener">Domotique-News</a></td>
+                            </tr>
+                            <tr data-cat="securite">
+                                <td>10/12/2025</td>
+                                <td><strong>Let’s Encrypt : Vers des certificats de 45 jours, êtes-vous prêt pour votre domotique ?</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Cybersécurité</td>
+                                <td>
+                                    Let's Encrypt va réduire la durée de ses certificats à 45 jours, ce qui impacte les accès distants sécurisés à Home Assistant.
+                                    <br><small><em>Analyse : Renouvellement automatique indispensable : lien direct avec la gestion des certificats TLS étudiée en cybersécurité.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-high">Fort</span></td>
+                                <td><a href="https://www.domo-blog.fr/lets-encrypt-vers-des-certificats-de-45-jours-etes-vous-pret-pour-votre-domotique/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="ha">
+                                <td>03/12/2025</td>
+                                <td><strong>Home Assistant 2025.12 : C’est déjà Noel pour votre domotique !</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Logiciel open source</td>
+                                <td>
+                                    Mise à jour de décembre de Home Assistant, présentée comme un « cadeau » de fin d'année avec de nombreuses nouveautés.
+                                    <br><small><em>Analyse : Suivre les versions permet d'anticiper les changements qui peuvent casser une configuration existante.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-low">Faible</span></td>
+                                <td><a href="https://www.domo-blog.fr/home-assistant-2025-12-cest-deja-noel-pour-votre-domotique/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+
+                            <!-- NOVEMBRE 2025 -->
+                            <tr data-cat="protocoles securite">
+                                <td>25/11/2025</td>
+                                <td><strong>Matter se met à jour en 1.5 : De nouvelles capacités pour améliorer encore la domotique unifiée</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Standard IoT</td>
+                                <td>
+                                    Matter 1.5 ajoute de nouvelles catégories d'appareils, dont les caméras, et élargit fortement le standard.
+                                    <br><small><em>Analyse : La prise en charge locale de la vidéo limite la dépendance au cloud, un vrai progrès pour la confidentialité.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-high">Fort</span></td>
+                                <td><a href="https://www.domo-blog.fr/matter-se-met-a-jour-en-1-5-de-nouvelles-capacites-pour-ameliorer-encore-la-domotique-unifiee/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="protocoles">
+                                <td>19/11/2025</td>
+                                <td><strong>Zigbee 4.0 est de sortie et voit loin : vous pensiez que le Zigbee était fini avec le Z-Wave LR ?</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Protocoles &amp; Réseau</td>
+                                <td>
+                                    La CSA publie Zigbee 4.0 et introduit Suzi, une variante Sub-GHz qui améliore la portée des réseaux.
+                                    <br><small><em>Analyse : Zigbee n'est pas remplacé par Matter : il évolue, notamment pour sortir de la bande 2,4 GHz partagée avec le Wi-Fi.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-high">Fort</span></td>
+                                <td><a href="https://www.domo-blog.fr/zigbee-4-sortie-voit-loin-vous-pensiez-zigbee-etait-fini-avec-z-wave-lr/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="protocoles">
+                                <td>10/11/2025</td>
+                                <td><strong>Le protocole Matter 3 ans après son lancement, l’heure du bilan</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Standard IoT</td>
+                                <td>
+                                    Bilan de Matter trois ans après son lancement : la promesse d'unification reste incomplète et le marché toujours fragmenté.
+                                    <br><small><em>Analyse : Montre l'écart entre l'annonce d'un standard et son adoption réelle, utile pour garder un regard critique sur les technologies.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-high">Fort</span></td>
+                                <td><a href="https://www.domo-blog.fr/le-protocole-matter-3-ans-apres-son-lancement-lheure-du-bilan/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="materiel ha">
+                                <td>07/11/2025</td>
+                                <td><strong>Utiliser un Raspberry Pi pour monitorer un onduleur avec la domotique Home Assistant simplement</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Infrastructure</td>
+                                <td>
+                                    Tutoriel pour superviser un onduleur avec un Raspberry Pi et Home Assistant, afin de réagir aux coupures de courant.
+                                    <br><small><em>Analyse : Lien direct avec la continuité de service vue en BTS SIO : protéger le matériel et prévenir les arrêts brutaux.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.domo-blog.fr/utiliser-raspberry-pi-monitoring-onduleur-avec-domotique-home-assistant-simplement/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+
+                            <!-- OCTOBRE 2025 -->
+                            <tr data-cat="protocoles ha">
+                                <td>27/10/2025</td>
+                                <td><strong>Home Assistant Académie : cours 102 – Le protocole domotique Zigbee sous ZHA et bonnes pratiques</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Protocoles &amp; Réseau</td>
+                                <td>
+                                    Cours sur le protocole Zigbee sous ZHA dans Home Assistant : fonctionnement du maillage et bonnes pratiques d'installation.
+                                    <br><small><em>Analyse : Base essentielle pour comprendre un réseau maillé (coordinateur, routeurs, appareils terminaux) et éviter les interférences avec le Wi-Fi.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-high">Fort</span></td>
+                                <td><a href="https://www.domo-blog.fr/home-assistant-academie-cours-102-le-protocole-domotique-zigbee-sous-zha-et-bonne-pratiques/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="materiel ha">
+                                <td>21/10/2025</td>
+                                <td><strong>Home Assistant Yellow, c’est terminé !</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Matériel</td>
+                                <td>
+                                    Nabu Casa arrête la box Home Assistant Yellow, très appréciée des utilisateurs avancés.
+                                    <br><small><em>Analyse : Rappelle le cycle de vie du matériel : un choix d'infrastructure doit prévoir la fin de support et la migration.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.domo-blog.fr/home-assistant-yellow-cest-termine/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="energie">
+                                <td>14/10/2025</td>
+                                <td><strong>Sunflower : le solaire plug and play c’est aussi possible depuis le balcon</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Énergie</td>
+                                <td>
+                                    Présentation d'un kit solaire plug and play Sunflower qui s'installe sur un balcon en quelques minutes.
+                                    <br><small><em>Analyse : L'autoproduction se démocratise même en appartement, et crée de nouvelles données de production à superviser.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-low">Faible</span></td>
+                                <td><a href="https://www.domo-blog.fr/sunflower-solar-le-solaire-plug-and-play-aussi-possible-depuis-le-balcon/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="ia">
+                                <td>09/10/2025</td>
+                                <td><strong>Google Home : La refonte majeure et l’IA Gemini sont là</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Intelligence artificielle</td>
+                                <td>
+                                    Google refond son application Google Home et remplace l'assistant par Gemini pour piloter la maison en langage naturel.
+                                    <br><small><em>Analyse : Les assistants vocaux passent des commandes rigides à la compréhension du contexte : un changement majeur d'interface homme-machine.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-high">Fort</span></td>
+                                <td><a href="https://www.domo-blog.fr/google-home-la-refonte-majeure-et-lia-gemini-sont-la/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+
+                            <!-- SEPTEMBRE 2025 -->
+                            <tr data-cat="materiel protocoles">
+                                <td>29/09/2025</td>
+                                <td><strong>SLZB-MR1U le contrôleur All in One qui prend aussi en charge l’antenne Z-Wave Home Assistant ZWA-2 en PoE via son port USB</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Matériel réseau</td>
+                                <td>
+                                    Le contrôleur SLZB-MR1U réunit Zigbee, Thread et l'antenne Z-Wave ZWA-2, alimentés en PoE via le réseau local.
+                                    <br><small><em>Analyse : Déporter les contrôleurs radio sur le réseau (PoE) évite les clés USB et rapproche la domotique d'une vraie infrastructure réseau.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.domo-blog.fr/decouverte-slzb-mr1u-controleur-all-in-one-avec-z-wave-home-assistant-zwa-2-poe/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="energie ia">
+                                <td>24/09/2025</td>
+                                <td><strong>tado° transforme 15 ans de données en économies de chauffage grâce à l’IA et lance AI Assist</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Énergie</td>
+                                <td>
+                                    tado° lance AI Assist, qui exploite 15 ans de données de chauffage pour réduire la consommation des foyers.
+                                    <br><small><em>Analyse : Illustre la valeur des données collectées sur le long terme et leur exploitation par l'IA pour optimiser l'énergie.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.domo-blog.fr/tado-transforme-15-ans-de-donnees-en-economies-de-chauffage-grace-a-lia-et-lance-ai-assist/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="ia ha">
+                                <td>17/09/2025</td>
+                                <td><strong>Intégrez Gemini dans vos automatisations Home Assistant et recevez des notifications riches et précises</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Intelligence artificielle</td>
+                                <td>
+                                    Guide pour brancher Gemini sur les automatisations Home Assistant afin d'analyser les images des caméras et envoyer des notifications détaillées.
+                                    <br><small><em>Analyse : Exemple concret d'appel à une API d'IA depuis un système domotique : entrée (image), traitement (LLM), sortie (notification).</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.domo-blog.fr/integrez-gemini-dans-vos-automatisations-home-assistant-et-recevez-des-notifications-riches-et-precises/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="protocoles">
+                                <td>09/09/2025</td>
+                                <td><strong>Le protocole Matter devient beaucoup moins cher grâce à un changement surprenant</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Standard IoT</td>
+                                <td>
+                                    La certification Matter devient beaucoup moins coûteuse pour les fabricants, ce qui lève un frein majeur à son adoption.
+                                    <br><small><em>Analyse : Le coût de certification conditionne l'arrivée de produits compatibles : un standard ne s'impose que si les fabricants peuvent le suivre.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-high">Fort</span></td>
+                                <td><a href="https://www.domo-blog.fr/le-protocole-matter-devient-beaucoup-moins-cher-grace-a-un-changement-surprenant/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
+                            <tr data-cat="ha">
+                                <td>03/09/2025</td>
+                                <td><strong>Home Assistant 2025.9 : Toujours plus simple, plus beau et plus intuitif</strong> <span class="badge-type type-article">Article</span></td>
+                                <td>Logiciel open source</td>
+                                <td>
+                                    Mise à jour de rentrée de Home Assistant, axée sur la simplicité : interface retravaillée et prise en main plus intuitive.
+                                    <br><small><em>Analyse : Montre le rythme de publication mensuel d'un projet open source majeur et l'importance de suivre les notes de version.</em></small>
+                                </td>
+                                <td><span class="badge-impact impact-med">Moyen</span></td>
+                                <td><a href="https://www.domo-blog.fr/home-assistant-2025-9-toujours-plus-simple-et-plus-intuitif/" target="_blank" rel="noopener">Domo-Blog</a></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
+            </div>
+            <p class="veille-count" id="veilleCount"></p>
+            <div class="text-center mt-3">
+                <button type="button" class="btn-neo btn-neo-ghost" id="veilleMore"><i class="fas fa-chevron-down me-2"></i>Afficher plus</button>
             </div>
         </div>
     </section>
@@ -1339,9 +1810,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="js/scene3d.js"></script>
+    <script src="js/intro3d.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

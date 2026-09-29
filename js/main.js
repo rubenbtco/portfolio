@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const target = document.querySelector(id);
             if (!target) return;
             e.preventDefault();
-            window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+            window.scrollTo({ top: id === '#intro' ? 0 : target.offsetTop - 80, behavior: 'smooth' });
             const menu = document.getElementById('navbarNav');
             if (menu.classList.contains('show')) bootstrap.Collapse.getOrCreateInstance(menu).hide();
         });
@@ -69,8 +69,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (canHover && !reduceMotion) {
         document.querySelectorAll('[data-tilt]').forEach(el => {
             const max = parseFloat(el.dataset.tiltMax || 12);
-            const base = getComputedStyle(el).transform;
-            const baseTransform = base && base !== 'none' ? base + ' ' : '';
             const glare = document.createElement('div');
             glare.className = 'tilt-glare';
             el.appendChild(glare);
@@ -80,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const px = (e.clientX - r.left) / r.width;
                 const py = (e.clientY - r.top) / r.height;
                 el.style.transition = 'transform .12s ease-out, box-shadow .5s, border-color .4s';
-                el.style.transform = `${baseTransform}perspective(1000px) rotateX(${(0.5 - py) * max}deg) rotateY(${(px - 0.5) * max}deg) scale3d(1.02, 1.02, 1.02)`;
+                el.style.transform = `perspective(1000px) rotateX(${(0.5 - py) * max}deg) rotateY(${(px - 0.5) * max}deg) scale3d(1.02, 1.02, 1.02)`;
                 el.style.setProperty('--gx', px * 100 + '%');
                 el.style.setProperty('--gy', py * 100 + '%');
             });
@@ -98,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
             entry.target.classList.add('visible');
             revealObs.unobserve(entry.target);
         });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach((el, i) => {
         el.style.transitionDelay = (i % 6) * 70 + 'ms';
         revealObs.observe(el);
@@ -116,57 +114,40 @@ document.addEventListener('DOMContentLoaded', function () {
     }, { threshold: 0.4 });
     document.querySelectorAll('.skill-card').forEach(el => skillObs.observe(el));
 
-    /* ---------- Compteurs de l'accueil (calculés automatiquement) ---------- */
+    /* ---------- Compteurs (calculés automatiquement) ---------- */
+    const veilleRows = [...document.querySelectorAll('.table-veille tbody tr')];
     const totals = {
         projects: document.querySelectorAll('.project-card').length,
-        veille: document.querySelectorAll('.table-veille tbody tr').length
+        veille: veilleRows.length
     };
-    document.querySelectorAll('[data-count]').forEach(el => {
-        const end = totals[el.dataset.count] || 0;
-        if (reduceMotion) { el.textContent = end; return; }
-        const start = performance.now();
-        (function tick(now) {
-            const p = Math.min((now - start) / 1600, 1);
-            el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3)));
-            if (p < 1) requestAnimationFrame(tick);
-        })(start);
-    });
+    document.querySelectorAll('[data-count]').forEach(el => { el.textContent = totals[el.dataset.count] || 0; });
 
-    /* ---------- Éditeur de code animé ---------- */
-    const codeContent = `
-<span class="syntax-comment">// Initialisation du profil étudiant</span><br>
-<span class="syntax-keyword">const</span> <span class="syntax-variable">Ruben</span> <span class="text-white">=</span> {<br>
-&nbsp;&nbsp;<span class="syntax-variable">role</span>: <span class="syntax-string">"Étudiant en BTS SIO au lycée Dominique Villars"</span>,<br>
-&nbsp;&nbsp;<span class="syntax-variable">localisation</span>: <span class="syntax-string">"Gap, France"</span>,<br>
-&nbsp;&nbsp;<span class="syntax-variable">passion</span>: [<span class="syntax-string">"Basketball"</span>, <span class="syntax-string">"Jeu Vidéo"</span>, <span class="syntax-string">"Cinéma"</span>],<br>
-<br>
-&nbsp;&nbsp;<span class="syntax-comment">// Compétences principales</span><br>
-&nbsp;&nbsp;<span class="syntax-variable">stackTechnique</span>: {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="syntax-variable">front</span>: [<span class="syntax-string">"HTML/CSS"</span>, <span class="syntax-string">"JS"</span>, <span class="syntax-string">"Bootstrap"</span>],<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="syntax-variable">back</span>: [<span class="syntax-string">"Python"</span>, <span class="syntax-string">"Java"</span>, <span class="syntax-string">"SQL"</span>],<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="syntax-variable">tools</span>: [<span class="syntax-string">"Git"</span>, <span class="syntax-string">"VS Code"</span>]<br>
-&nbsp;&nbsp;},<br>
-<br>
-&nbsp;&nbsp;<span class="syntax-comment">// Fonction d'initialisation</span><br>
-&nbsp;&nbsp;<span class="syntax-function">startMission</span>: <span class="syntax-keyword">function</span>() {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;console.<span class="syntax-function">log</span>(<span class="syntax-string">"Prêt à transformer des idées en réalité."</span>);<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="syntax-keyword">return</span> <span class="syntax-keyword">true</span>;<br>
-&nbsp;&nbsp;}<br>
-};<br>
-<br>
-<span class="syntax-comment">// Lancement...</span><br>
-<span class="syntax-variable">Ruben</span>.<span class="syntax-function">startMission</span>();
-`;
+    /* ---------- Veille : recherche, filtres et "Afficher plus" ---------- */
+    const PAGE = 10;
+    let limit = PAGE, filter = 'all', query = '';
+    const search = document.getElementById('veilleSearch');
+    const moreBtn = document.getElementById('veilleMore');
+    const countEl = document.getElementById('veilleCount');
+    const normalize = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    veilleRows.forEach(r => { r.dataset.text = normalize(r.textContent); });
 
-    if (typeof TypeIt !== 'undefined' && !reduceMotion) {
-        new TypeIt('#typing-code', {
-            strings: codeContent,
-            speed: 22,
-            lifeLike: true,
-            html: true,
-            cursorChar: '▋'
-        }).go();
-    } else {
-        document.getElementById('typing-code').innerHTML = codeContent;
+    function renderVeille() {
+        const matches = veilleRows.filter(r =>
+            (filter === 'all' || (r.dataset.cat || '').split(' ').includes(filter)) &&
+            (!query || r.dataset.text.includes(query)));
+        veilleRows.forEach(r => r.classList.add('is-hidden'));
+        matches.slice(0, limit).forEach(r => r.classList.remove('is-hidden'));
+        const shown = Math.min(limit, matches.length);
+        countEl.textContent = `${shown} article${shown > 1 ? 's' : ''} affiché${shown > 1 ? 's' : ''} sur ${matches.length}`;
+        moreBtn.style.display = matches.length > limit ? '' : 'none';
     }
+    document.querySelectorAll('#veilleFilters button').forEach(b => b.addEventListener('click', () => {
+        document.querySelectorAll('#veilleFilters button').forEach(x => x.classList.toggle('active', x === b));
+        filter = b.dataset.filter;
+        limit = PAGE;
+        renderVeille();
+    }));
+    search.addEventListener('input', () => { query = normalize(search.value.trim()); limit = PAGE; renderVeille(); });
+    moreBtn.addEventListener('click', () => { limit += PAGE; renderVeille(); });
+    renderVeille();
 });
