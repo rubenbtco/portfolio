@@ -4,238 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruben Battocchio | Portfolio</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <meta name="description" content="Portfolio de Ruben Battocchio, étudiant en BTS SIO : projets, compétences et veille technologique.">
+    <meta name="theme-color" content="#05060f">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
-    
-    <style>
-        :root {
-            --bg-dark: #050a08;            
-            --bg-card: rgba(10, 20, 15, 0.85); 
-            --primary: #10b981;
-            --secondary: #fbbf24;
-            --text-main: #ffffff;         
-            --text-sub: #d1fae5;
-            --glass-border: rgba(16, 185, 129, 0.3);
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .text-muted { color: var(--text-sub) !important; }
-
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--bg-dark); }
-        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
-
-        .glass-card {
-            background: var(--bg-card);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
-        }
-        
-        .glass-card:hover {
-            border-color: var(--primary);
-            box-shadow: 0 15px 30px rgba(16, 185, 129, 0.15);
-        }
-
-        .navbar {
-            background: rgba(5, 10, 8, 0.95) !important;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--glass-border);
-            padding: 1rem 0;
-        }
-        .navbar-brand { font-weight: 800; color: var(--primary) !important; letter-spacing: 1px; }
-        .nav-link { color: var(--text-main) !important; font-weight: 500; margin: 0 10px; transition: 0.3s; opacity: 0.9; }
-        .nav-link:hover { color: var(--secondary) !important; opacity: 1; text-shadow: 0 0 10px rgba(251, 191, 36, 0.4); }
-
-        .hero {
-            padding: 160px 0 100px;
-            background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.2), transparent 40%),
-                        radial-gradient(circle at bottom left, rgba(251, 191, 36, 0.15), transparent 40%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-        
-        .hero h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; color: #ffffff; text-shadow: 0 0 20px rgba(16, 185, 129, 0.2); }
-        .hero .lead { color: var(--text-sub) !important; font-weight: 400; font-size: 1.1rem;}
-
-        .code-editor-container {
-            text-align: left;
-            background: rgba(0, 0, 0, 0.6);
-            border: 1px solid var(--glass-border);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            max-width: 700px;
-            margin: 0 auto 2rem auto;
-            font-family: 'Fira Code', monospace;
-            font-size: 0.9rem;
-        }
-
-        .editor-header {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 8px 15px;
-            border-bottom: 1px solid var(--glass-border);
-            display: flex;
-            align-items: center;
-            font-size: 0.8rem;
-            color: var(--text-sub);
-        }
-        .editor-dots { display: flex; gap: 6px; margin-right: 15px; }
-        .dot { width: 10px; height: 10px; border-radius: 50%; }
-        .dot-red { background: #ff5f56; }
-        .dot-yellow { background: #ffbd2e; }
-        .dot-green { background: #27c93f; }
-
-        .editor-body { padding: 15px 0; display: flex; position: relative; }
-        .line-numbers {
-            text-align: right;
-            padding-right: 15px;
-            padding-left: 10px;
-            color: rgba(255,255,255,0.2);
-            user-select: none;
-            border-right: 1px solid rgba(255,255,255,0.05);
-        }
-        .line-numbers span { display: block; }
-        
-        .code-content { padding-left: 15px; white-space: pre; color: var(--text-main); overflow-x: auto; }
-
-        .syntax-comment { color: #6b7280; font-style: italic; }
-        .syntax-keyword { color: var(--secondary); font-weight: bold; }
-        .syntax-string { color: var(--primary); }
-        .syntax-function { color: #60a5fa; }
-        .syntax-variable { color: #f87171; }
-        .ti-cursor { color: var(--primary); font-weight: bold; }
-
-        section { padding: 100px 0; }
-        .section-title h2 { font-weight: 700; font-size: 2.5rem; margin-bottom: 50px; text-align: center; color: #ffffff; }
-        .section-title h2 span { 
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .skill-bar { height: 8px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
-        .skill-progress { background: linear-gradient(90deg, var(--primary), #34d399); transition: width 1.5s ease-in-out; }
-
-        .project-card { height: 100%; overflow: hidden; }
-        .project-card:hover { transform: translateY(-10px); }
-        .project-img { height: 200px; object-fit: cover; opacity: 0.9; transition: 0.3s; border-bottom: 1px solid var(--glass-border); }
-        .project-card:hover .project-img { opacity: 1; }
-        .project-card h5 { color: var(--primary); font-weight: 700; margin-bottom: 5px; }
-        .project-card p { color: var(--text-sub) !important; margin-bottom: 10px; }
-
-        .project-date {
-            font-size: 0.85rem;
-            color: var(--text-sub);
-            opacity: 0.8;
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
-        .project-date i { color: var(--secondary); margin-right: 5px; }
-
-        .language-badge {
-            background: rgba(251, 191, 36, 0.15);
-            border: 1px solid var(--secondary);
-            color: var(--secondary);
-            padding: 5px 15px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            margin: 5px;
-            font-weight: 600;
-        }
-
-        .veille-method-card { height: 100%; padding: 20px; text-align: left; }
-        .veille-icon { font-size: 2rem; color: var(--secondary); margin-bottom: 15px; }
-        .veille-label { color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 5px; }
-        
-        .table-veille { 
-            color: var(--text-main); 
-            border-color: var(--glass-border);
-            border-collapse: separate;
-            border-spacing: 0;
-            border-radius: 15px;
-            overflow: hidden;
-            width: 100%;
-        }
-        .table-veille thead { background: rgba(16, 185, 129, 0.1); }
-        .table-veille th { color: var(--primary); font-weight: 600; border: none; font-size: 1rem; vertical-align: middle; padding: 20px; }
-        .table-veille td { border-bottom: 1px solid rgba(16, 185, 129, 0.2); padding: 20px 15px; vertical-align: middle; font-size: 0.95rem; }
-        .table-veille thead tr:first-child th:first-child { border-top-left-radius: 15px; }
-        .table-veille thead tr:first-child th:last-child { border-top-right-radius: 15px; }
-        .table-veille tbody tr:last-child td:first-child { border-bottom-left-radius: 15px; }
-        .table-veille tbody tr:last-child td:last-child { border-bottom-right-radius: 15px; }
-        .table-veille tbody tr:last-child td { border-bottom: none; }
-        .table-veille a { color: var(--secondary); font-weight: 600; text-decoration: none; border-bottom: 1px dashed var(--secondary); }
-        .table-veille a:hover { color: #ffffff; border-color: #ffffff; }
-
-        .badge-impact { padding: 5px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
-        .impact-high { background: rgba(251, 191, 36, 0.2); color: var(--secondary); border: 1px solid var(--secondary); }
-        .impact-med { background: rgba(16, 185, 129, 0.2); color: var(--primary); border: 1px solid var(--primary); }
-        .impact-low { background: rgba(255, 255, 255, 0.1); color: var(--text-sub); border: 1px solid var(--text-sub); }
-
-        .badge-type { padding: 3px 9px; border-radius: 6px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-left: 6px; white-space: nowrap; }
-        .type-video { background: rgba(96, 165, 250, 0.2); color: #60a5fa; border: 1px solid #60a5fa; }
-        .type-article { background: rgba(255,255,255,0.08); color: var(--text-sub); border: 1px solid var(--text-sub); }
-
-        .btn-custom { background: linear-gradient(90deg, var(--primary), #059669); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 50px; padding: 12px 30px; font-weight: 700; transition: 0.3s; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
-        .btn-custom:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(16, 185, 129, 0.5); color: white; border-color: white; }
-        .btn-outline-light { border-color: var(--text-sub); color: var(--text-main); }
-        .btn-outline-light:hover { border-color: var(--secondary); color: var(--bg-dark); background: var(--secondary); }
-        .btn-outline-primary { border-color: var(--primary); color: var(--primary); font-weight: 600; }
-        .btn-outline-primary:hover { background: var(--primary); border-color: var(--primary); color: #ffffff; box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
-
-        /* Nav pills - Niveau 1 (Semestres - Émeraude) */
-        .nav-pills .nav-link { background: rgba(255,255,255,0.05); color: var(--text-main) !important; border: 1px solid var(--glass-border); margin: 5px; border-radius: 50px; font-weight: 600; padding: 10px 25px;}
-        .nav-pills .nav-link:hover { border-color: var(--primary); color: var(--primary) !important; }
-        .nav-pills .nav-link.active { background: var(--primary) !important; color: white !important; border-color: var(--primary); box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
-
-        /* Nav pills - Niveau 2 (Professeurs - Ambre) */
-        .nav-pills-teacher .nav-link { background: rgba(255,255,255,0.03); color: var(--text-sub) !important; border: 1px solid rgba(251, 191, 36, 0.4); margin: 4px; border-radius: 50px; padding: 8px 20px; font-size: 0.95rem; font-weight: 600; transition: 0.3s; }
-        .nav-pills-teacher .nav-link:hover { border-color: var(--secondary); color: var(--secondary) !important; }
-        .nav-pills-teacher .nav-link.active { background: rgba(251, 191, 36, 0.15) !important; color: var(--secondary) !important; border-color: var(--secondary); box-shadow: 0 0 12px rgba(251, 191, 36, 0.25); }
-
-        /* Nav pills - Niveau 3 (Niveaux - Discret) */
-        .nav-pills-sub .nav-link { background: transparent; color: rgba(255,255,255,0.6) !important; border: 1px dashed rgba(255, 255, 255, 0.3); margin: 3px; border-radius: 50px; padding: 5px 18px; font-size: 0.85rem; font-weight: 500; transition: 0.3s; }
-        .nav-pills-sub .nav-link:hover { border-color: #ffffff; color: #ffffff !important; }
-        .nav-pills-sub .nav-link.active { background: rgba(255, 255, 255, 0.1) !important; color: #ffffff !important; border: 1px solid #ffffff; }
-
-        .form-control { background: rgba(255, 255, 255, 0.08); border: 1px solid var(--glass-border); color: #ffffff; font-weight: 500; }
-        .form-control::placeholder { color: rgba(255,255,255,0.5); }
-        .form-control:focus { background: rgba(255, 255, 255, 0.15); border-color: var(--primary); box-shadow: 0 0 0 0.25rem rgba(16, 185, 129, 0.25); color: #ffffff; }
-
-        footer p { color: var(--text-sub) !important; }
-
-        .sub-tab-content { margin-top: 20px; }
-
-        @media (max-width: 768px) {
-            .hero { padding-top: 120px; text-align: center; }
-            .hero h1 { font-size: 2.5rem; }
-            .line-numbers { display: none; }
-            .code-content { padding-left: 15px; }
-            .table-veille th, .table-veille td { min-width: 120px; }
-            .table-veille td:nth-child(2) { min-width: 200px; } 
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">RUBEN<span>.B</span></a>
-            <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="border: none; color: white;">
+    <!-- Fond animé global -->
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <!-- ===================== NAVIGATION ===================== -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container nav-shell">
+            <a class="navbar-brand" href="#home"><span class="brand-mark">RB</span><span>Ruben<span class="brand-dot">.</span>dev</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Menu">
                 <span class="fas fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -245,82 +36,105 @@
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projets</a></li>
                     <li class="nav-item"><a class="nav-link" href="#veille">Veille</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link nav-cta" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- ===================== ACCUEIL (3D) ===================== -->
     <section id="home" class="hero">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5 text-center text-lg-start mb-5 mb-lg-0">
-                    <h1>Ruben Battocchio</h1>
-                    <p class="lead">Futur développeur, explorateur de technologies et passionné par la résolution de problèmes complexes.</p>
-                    <div class="mt-4">
-                        <a href="#about" class="btn btn-custom me-3 mb-3">Me découvrir</a>
-                        <a href="#contact" class="btn btn-outline-light rounded-pill px-4 py-2 mb-3">Me contacter</a>
+        <canvas id="hero-canvas" aria-hidden="true"></canvas>
+        <div class="container position-relative">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 hero-text">
+                    <div class="hero-badge"><span class="pulse"></span> Étudiant BTS SIO · Gap</div>
+                    <h1>
+                        <span class="hero-hello">Salut, moi c'est</span>
+                        <span class="hero-name" data-text="Ruben Battocchio">Ruben Battocchio</span>
+                    </h1>
+                    <p class="hero-lead">Futur développeur, explorateur de technologies et passionné par la résolution de problèmes complexes.</p>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn-neo btn-neo-primary"><i class="fas fa-cube me-2"></i>Voir mes projets</a>
+                        <a href="#contact" class="btn-neo btn-neo-ghost">Me contacter</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat"><span class="stat-num" data-count="projects">0</span><span class="stat-label">Projets</span></div>
+                        <div class="stat"><span class="stat-num" data-count="veille">0</span><span class="stat-label">Articles de veille</span></div>
+                        <div class="stat"><span class="stat-num">3</span><span class="stat-label">Langues</span></div>
                     </div>
                 </div>
-                
-                <div class="col-lg-7">
-                    <div class="code-editor-container glass-card">
-                        <div class="editor-header">
-                            <div class="editor-dots">
-                                <div class="dot dot-red"></div>
-                                <div class="dot dot-yellow"></div>
-                                <div class="dot dot-green"></div>
+
+                <div class="col-lg-6">
+                    <div class="editor-stage">
+                        <div class="code-editor-container" data-tilt data-tilt-max="10">
+                            <div class="editor-header">
+                                <div class="editor-dots">
+                                    <div class="dot dot-red"></div>
+                                    <div class="dot dot-yellow"></div>
+                                    <div class="dot dot-green"></div>
+                                </div>
+                                <span>profile_ruben.js — Portfolio</span>
                             </div>
-                            <span>profile_ruben.js — Portfolio</span>
-                        </div>
-                        <div class="editor-body">
-                            <div class="line-numbers">
-                                <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
-                                <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
-                                <span>11</span><span>12</span><span>13</span><span>14</span><span>15</span>
+                            <div class="editor-body">
+                                <div class="line-numbers">
+                                    <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+                                    <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+                                    <span>11</span><span>12</span><span>13</span><span>14</span><span>15</span>
+                                    <span>16</span><span>17</span><span>18</span><span>19</span><span>20</span>
+                                    <span>21</span><span>22</span><span>23</span>
+                                </div>
+                                <div class="code-content" id="typing-code"></div>
                             </div>
-                            <div class="code-content" id="typing-code"></div>
                         </div>
+                        <div class="orbit-chip chip-1"><i class="fab fa-java"></i> Java</div>
+                        <div class="orbit-chip chip-2"><i class="fab fa-php"></i> PHP</div>
+                        <div class="orbit-chip chip-3"><i class="fas fa-network-wired"></i> Réseau</div>
                     </div>
                 </div>
             </div>
         </div>
+        <a href="#about" class="scroll-hint" aria-label="Descendre"><span></span></a>
     </section>
 
+    <!-- ===================== À PROPOS ===================== -->
     <section id="about">
         <div class="container">
-            <div class="section-title"><h2>À propos <span>de moi</span></h2></div>
+            <div class="section-title reveal">
+                <span class="section-kicker">01 — Bio</span>
+                <h2>À propos <span>de moi</span></h2>
+            </div>
             <div class="row g-4">
-                <div class="col-lg-6">
-                    <div class="glass-card p-4 h-100">
-                        <h3 class="mb-4" style="color: var(--primary);">Mon Parcours</h3>
+                <div class="col-lg-7 reveal">
+                    <div class="glass-card p-4 p-lg-5 h-100" data-tilt data-tilt-max="4">
+                        <h3 class="card-heading"><i class="fas fa-route"></i> Mon Parcours</h3>
                         <p class="text-muted">Étudiant motivé et polyvalent, je me spécialise dans le développement logiciel et les réseaux. J'aime transformer des idées en lignes de code concrètes.</p>
-                        <div class="mt-4">
+                        <div class="mt-3 mb-4">
                             <span class="language-badge">Anglais (B2-C1)</span>
                             <span class="language-badge">Italien (B2)</span>
                             <span class="language-badge">Espagnol (A1)</span>
                         </div>
-                        <h4 class="mt-4 text-white">Formation</h4>
-                        <ul class="list-unstyled text-muted">
-                            <li class="mb-2"><i class="fas fa-school me-2" style="color: var(--primary);"></i> <strong>Lycée Dominique Villars</strong> - BTS SIO</li>
-                            <li class="mb-2"><i class="fas fa-graduation-cap me-2" style="color: var(--primary);"></i> <strong>Lycée A. Briand</strong> - Bac Général (Spé Math/NSI)</li>
-                            <li><i class="fas fa-university me-2" style="color: var(--primary);"></i> <strong>Université d'Avignon</strong> - Licence Informatique</li>
+                        <h4 class="card-subheading">Formation</h4>
+                        <ul class="timeline">
+                            <li><span class="tl-icon"><i class="fas fa-school"></i></span><div><strong>Lycée Dominique Villars</strong><small>BTS SIO</small></div></li>
+                            <li><span class="tl-icon"><i class="fas fa-university"></i></span><div><strong>Université d'Avignon</strong><small>Licence Informatique</small></div></li>
+                            <li><span class="tl-icon"><i class="fas fa-graduation-cap"></i></span><div><strong>Lycée A. Briand</strong><small>Bac Général (Spé Math/NSI)</small></div></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="glass-card p-4 h-100">
-                        <h3 class="mb-4" style="color: var(--secondary);">Infos & Contact</h3>
-                        <div class="row g-3">
-                            <div class="col-sm-6"><p class="small text-muted mb-1">Téléphone</p><p class="text-white fw-bold">06 69 45 51 35</p></div>
-                            <div class="col-sm-6"><p class="small text-muted mb-1">Email</p><p class="text-white fw-bold">ruben.battocchio28@gmail.com</p></div>
-                            <div class="col-12"><p class="small text-muted mb-1">Localisation</p><p class="text-white fw-bold">40g route Sainte-Marguerite, 05000 Gap</p></div>
+                <div class="col-lg-5 reveal">
+                    <div class="glass-card p-4 p-lg-5 h-100" data-tilt data-tilt-max="4">
+                        <h3 class="card-heading accent"><i class="fas fa-id-card"></i> Infos & Contact</h3>
+                        <div class="info-list">
+                            <div class="info-item"><i class="fas fa-phone"></i><div><small>Téléphone</small><a href="tel:+33669455135">06 69 45 51 35</a></div></div>
+                            <div class="info-item"><i class="fas fa-envelope"></i><div><small>Email</small><a href="mailto:ruben.battocchio28@gmail.com">ruben.battocchio28@gmail.com</a></div></div>
+                            <div class="info-item"><i class="fas fa-location-dot"></i><div><small>Localisation</small><span>40g route Sainte-Marguerite, 05000 Gap</span></div></div>
                         </div>
-                        <h4 class="mt-4 text-white">Passions</h4>
-                        <div class="d-flex flex-wrap gap-3">
-                            <span class="text-muted"><i class="fas fa-basketball-ball me-2" style="color: var(--secondary);"></i>Basket</span>
-                            <span class="text-muted"><i class="fas fa-film me-2" style="color: var(--secondary);"></i>Cinéma</span>
-                            <span class="text-muted"><i class="fas fa-gamepad me-2" style="color: var(--secondary);"></i>Jeux Vidéo</span>
+                        <h4 class="card-subheading">Passions</h4>
+                        <div class="passions">
+                            <span><i class="fas fa-basketball-ball"></i>Basket</span>
+                            <span><i class="fas fa-film"></i>Cinéma</span>
+                            <span><i class="fas fa-gamepad"></i>Jeux Vidéo</span>
                         </div>
                     </div>
                 </div>
@@ -328,46 +142,41 @@
         </div>
     </section>
 
-    <section id="skills" style="background: rgba(0,0,0,0.2);">
+    <!-- ===================== SKILLS ===================== -->
+    <!-- Pour changer un niveau : modifie data-level (0 à 100) -->
+    <section id="skills">
         <div class="container">
-            <div class="section-title"><h2>Mes <span>Skills</span></h2></div>
-            <div class="row g-5">
-                <div class="col-md-6">
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-2"><span>HTML/CSS</span><span style="color: var(--primary);">90%</span></div>
-                        <div class="skill-bar"><div class="skill-progress h-100" style="width: 90%"></div></div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-2"><span>Python</span><span style="color: var(--primary);">85%</span></div>
-                        <div class="skill-bar"><div class="skill-progress h-100" style="width: 85%"></div></div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-2"><span>SQL</span><span style="color: var(--primary);">80%</span></div>
-                        <div class="skill-bar"><div class="skill-progress h-100" style="width: 80%"></div></div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-2"><span>C++</span><span style="color: var(--primary);">75%</span></div>
-                        <div class="skill-bar"><div class="skill-progress h-100" style="width: 75%"></div></div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-2"><span>JavaScript</span><span style="color: var(--primary);">70%</span></div>
-                        <div class="skill-bar"><div class="skill-progress h-100" style="width: 70%"></div></div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-2"><span>Mathématiques</span><span style="color: var(--primary);">70%</span></div>
-                        <div class="skill-bar"><div class="skill-progress h-100" style="width: 70%"></div></div>
-                    </div>
+            <div class="section-title reveal">
+                <span class="section-kicker">02 — Compétences</span>
+                <h2>Mes <span>Skills</span></h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-6 col-md-4 col-lg-2 reveal"><div class="skill-card" data-tilt data-level="90"><div class="skill-ring"><svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fg" cx="60" cy="60" r="52"/></svg><i class="fab fa-html5"></i></div><h5>HTML/CSS</h5><span class="skill-pct">90%</span></div></div>
+                <div class="col-6 col-md-4 col-lg-2 reveal"><div class="skill-card" data-tilt data-level="85"><div class="skill-ring"><svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fg" cx="60" cy="60" r="52"/></svg><i class="fab fa-python"></i></div><h5>Python</h5><span class="skill-pct">85%</span></div></div>
+                <div class="col-6 col-md-4 col-lg-2 reveal"><div class="skill-card" data-tilt data-level="80"><div class="skill-ring"><svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fg" cx="60" cy="60" r="52"/></svg><i class="fas fa-database"></i></div><h5>SQL</h5><span class="skill-pct">80%</span></div></div>
+                <div class="col-6 col-md-4 col-lg-2 reveal"><div class="skill-card" data-tilt data-level="75"><div class="skill-ring"><svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fg" cx="60" cy="60" r="52"/></svg><i class="fas fa-code"></i></div><h5>C++</h5><span class="skill-pct">75%</span></div></div>
+                <div class="col-6 col-md-4 col-lg-2 reveal"><div class="skill-card" data-tilt data-level="70"><div class="skill-ring"><svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fg" cx="60" cy="60" r="52"/></svg><i class="fab fa-js"></i></div><h5>JavaScript</h5><span class="skill-pct">70%</span></div></div>
+                <div class="col-6 col-md-4 col-lg-2 reveal"><div class="skill-card" data-tilt data-level="70"><div class="skill-ring"><svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fg" cx="60" cy="60" r="52"/></svg><i class="fas fa-square-root-variable"></i></div><h5>Mathématiques</h5><span class="skill-pct">70%</span></div></div>
+            </div>
+            <div class="tech-marquee reveal" aria-hidden="true">
+                <div class="marquee-track">
+                    <span>Java</span><span>PHP</span><span>Python</span><span>SQL</span><span>JavaFX</span><span>HTML / CSS</span><span>JavaScript</span><span>Bootstrap</span><span>Git</span><span>Linux</span><span>DHCP</span><span>GLPI</span><span>Symfony</span><span>Flutter</span><span>Kali</span>
+                    <span>Java</span><span>PHP</span><span>Python</span><span>SQL</span><span>JavaFX</span><span>HTML / CSS</span><span>JavaScript</span><span>Bootstrap</span><span>Git</span><span>Linux</span><span>DHCP</span><span>GLPI</span><span>Symfony</span><span>Flutter</span><span>Kali</span>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ===================== PROJETS ===================== -->
+    <!-- Pour ajouter un projet : copie un bloc entre "DEBUT PROJET" et "FIN PROJET",
+         mets l'image dans assets/images/ et le compte-rendu dans le dossier projets/ correspondant. -->
     <section id="projects">
         <div class="container">
-            <div class="section-title"><h2>Réalisations <span>Projets</span></h2></div>
-            
+            <div class="section-title reveal">
+                <span class="section-kicker">03 — Réalisations</span>
+                <h2>Mes <span>Projets</span></h2>
+            </div>
+
             <!-- NIVEAU 1 : SEMESTRES -->
             <ul class="nav nav-pills justify-content-center mb-5" id="semesterTab" role="tablist">
                 <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#semestre1-2">Semestre 1 & 2</button></li>
@@ -1216,13 +1025,15 @@
         </div>
     </section>
 
-    <section id="veille" style="background: rgba(0,0,0,0.2);">
+    <!-- ===================== VEILLE ===================== -->
+    <section id="veille">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title reveal">
+                <span class="section-kicker">04 — Veille technologique</span>
                 <h2>Veille <span>Domotique</span></h2>
-                <p class="text-muted text-center">Suivi des innovations IoT, Protocoles et Maison Connectée - Mis à jour le 16/09/2026</p>
+                <p class="section-sub">Suivi des innovations IoT, Protocoles et Maison Connectée - Mis à jour le 16/09/2026</p>
             </div>
-            
+
             <div class="row g-4 mb-5">
                 <div class="col-md-4">
                     <div class="glass-card veille-method-card">
@@ -1482,18 +1293,32 @@
         </div>
     </section>
 
+    <!-- ===================== CONTACT ===================== -->
     <section id="contact">
         <div class="container">
-            <div class="section-title"><h2>Me <span>Contacter</span></h2></div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="glass-card p-5">
-                        <form id="contactForm">
+            <div class="section-title reveal">
+                <span class="section-kicker">05 — Contact</span>
+                <h2>Me <span>Contacter</span></h2>
+                <p class="section-sub">Un stage, une alternance, un projet ? Écris-moi.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 reveal">
+                    <div class="contact-side h-100">
+                        <a class="contact-tile" href="mailto:ruben.battocchio28@gmail.com"><i class="fas fa-envelope"></i><div><small>Email</small>ruben.battocchio28@gmail.com</div></a>
+                        <a class="contact-tile" href="tel:+33669455135"><i class="fas fa-phone"></i><div><small>Téléphone</small>06 69 45 51 35</div></a>
+                        <a class="contact-tile" href="https://github.com/rubenbtco" target="_blank" rel="noopener"><i class="fab fa-github"></i><div><small>GitHub</small>rubenbtco</div></a>
+                    </div>
+                </div>
+                <div class="col-lg-7 reveal">
+                    <div class="glass-card p-4 p-lg-5">
+                        <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                            <input type="hidden" name="form-name" value="contact">
+                            <p class="d-none"><label>Ne pas remplir : <input name="bot-field"></label></p>
                             <div class="row g-3">
-                                <div class="col-md-6"><input type="text" class="form-control rounded-pill" placeholder="Nom" required></div>
-                                <div class="col-md-6"><input type="email" class="form-control rounded-pill" placeholder="Email" required></div>
-                                <div class="col-12"><textarea class="form-control rounded-3" rows="5" placeholder="Message" required></textarea></div>
-                                <div class="col-12 text-center mt-4"><button type="submit" class="btn btn-custom px-5">Envoyer</button></div>
+                                <div class="col-md-6"><input type="text" name="nom" class="form-control" placeholder="Nom" required></div>
+                                <div class="col-md-6"><input type="email" name="email" class="form-control" placeholder="Email" required></div>
+                                <div class="col-12"><textarea name="message" class="form-control" rows="5" placeholder="Message" required></textarea></div>
+                                <div class="col-12 text-center mt-4"><button type="submit" class="btn-neo btn-neo-primary px-5"><i class="fas fa-paper-plane me-2"></i>Envoyer</button></div>
                             </div>
                         </form>
                     </div>
@@ -1502,81 +1327,21 @@
         </div>
     </section>
 
-    <footer class="py-5 border-top" style="border-color: rgba(255,255,255,0.1) !important;">
+    <footer class="site-footer">
         <div class="container text-center">
-            <div class="social-links mb-4">
-                <a href="https://github.com/rubenbtco" class="text-white fs-2 mx-3"><i class="fab fa-github"></i></a>
+            <a href="#" class="btn-neo btn-neo-ghost mb-4" id="downloadCV"><i class="fas fa-file-arrow-down me-2"></i>Télécharger mon CV</a>
+            <div class="social-links mb-3">
+                <a href="https://github.com/rubenbtco" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:ruben.battocchio28@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
-            <div class="mb-4">
-                 <a href="#" class="btn btn-outline-light btn-sm" id="downloadCV">Télécharger mon CV</a>
-            </div>
-            <p class="text-muted mb-0">&copy; 2026 Ruben Battocchio. Créé avec passion.</p>
+            <p class="mb-0">&copy; 2026 Ruben Battocchio. Créé avec passion.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) { window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' }); }
-            });
-        });
-
-        document.getElementById('downloadCV').addEventListener('click', function(e) {
-            e.preventDefault();
-            const link = document.createElement('a');
-            link.href = 'documents/cv/CV Ruben Battocchio 2024.pdf';
-            link.download = 'CV_Ruben_Battocchio.pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        });
-
-        function downloadReport(fileName) {
-            const link = document.createElement('a');
-            link.href = fileName;
-            link.download = fileName.split('/').pop();
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const codeContent = `
-<span class="syntax-comment">// Initialisation du profil étudiant</span><br>
-<span class="syntax-keyword">const</span> <span class="syntax-variable">Ruben</span> <span class="text-white">=</span> {<br>
-&nbsp;&nbsp;<span class="syntax-variable">role</span>: <span class="syntax-string">"Étudiant en BTS SIO au lycée Dominique Villars"</span>,<br>
-&nbsp;&nbsp;<span class="syntax-variable">localisation</span>: <span class="syntax-string">"Gap, France"</span>,<br>
-&nbsp;&nbsp;<span class="syntax-variable">passion</span>: [<span class="syntax-string">"Basketball"</span>, <span class="syntax-string">"Jeu Vidéo"</span>, <span class="syntax-string">"Cinéma"</span>],<br>
-<br>
-&nbsp;&nbsp;<span class="syntax-comment">// Compétences principales</span><br>
-&nbsp;&nbsp;<span class="syntax-variable">stackTechnique</span>: {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="syntax-variable">front</span>: [<span class="syntax-string">"HTML/CSS"</span>, <span class="syntax-string">"JS"</span>, <span class="syntax-string">"Bootstrap"</span>],<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="syntax-variable">back</span>: [<span class="syntax-string">"Python"</span>, <span class="syntax-string">"Java"</span>, <span class="syntax-string">"SQL"</span>],<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="syntax-variable">tools</span>: [<span class="syntax-string">"Git"</span>, <span class="syntax-string">"VS Code"</span>]<br>
-&nbsp;&nbsp;},<br>
-<br>
-&nbsp;&nbsp;<span class="syntax-comment">// Fonction d'initialisation</span><br>
-&nbsp;&nbsp;<span class="syntax-function">startMission</span>: <span class="syntax-keyword">function</span>() {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;console.<span class="syntax-function">log</span>(<span class="syntax-string">"Prêt à transformer des idées en réalité."</span>);<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="syntax-keyword">return</span> <span class="syntax-keyword">true</span>;<br>
-&nbsp;&nbsp;}<br>
-};<br>
-<br>
-<span class="syntax-comment">// Lancement...</span><br>
-<span class="syntax-variable">Ruben</span>.<span class="syntax-function">startMission</span>();
-`;
-
-            new TypeIt("#typing-code", {
-                strings: codeContent,
-                speed: 30,
-                lifeLike: true,
-                html: true,
-                cursorChar: "▋",
-            }).go();
-        });
-    </script>
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/scene3d.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
