@@ -322,6 +322,21 @@ section { padding: 120px 0; position: relative; }
     background: var(--gradient); color: #fff; margin-bottom: 18px; box-shadow: 0 12px 26px -12px rgba(79, 70, 229, .9);
 }
 .veille-label { color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: .8rem; letter-spacing: .12em; margin-bottom: 12px; }
+
+/* Outils de veille et paramétrage */
+.veille-tools-head { margin-bottom: 24px; }
+.veille-tools-head h3 { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 6px; }
+.veille-tools-head p { color: var(--text-dim); margin: 0; }
+.veille-tool-card { height: 100%; padding: 28px; text-align: left; }
+.vtool-head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.vtool-head .veille-icon { margin-bottom: 0; flex-shrink: 0; }
+.vtool-head h4 { font-family: var(--font-display); font-size: 1.15rem; margin: 0; }
+.vtool-head span { font-size: .8rem; color: var(--text-dim); }
+.vtool-role { font-size: .9rem; color: var(--text-sub); margin-bottom: 16px; }
+.vtool-params { margin: 0; }
+.vtool-params > div { display: grid; grid-template-columns: 105px 1fr; gap: 12px; padding: 9px 0; border-top: 1px dashed var(--border); }
+.vtool-params dt { font-family: var(--font-mono); font-size: .7rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--text-dim); padding-top: 2px; }
+.vtool-params dd { margin: 0; font-size: .85rem; color: var(--text-main); overflow-wrap: anywhere; }
 .veille-method-card li { padding: 5px 0; color: var(--text-main); }
 .veille-method-card li i { color: var(--text-dim) !important; }
 
