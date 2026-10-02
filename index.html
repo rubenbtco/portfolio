@@ -1128,7 +1128,7 @@
             <div class="section-title reveal">
                 <span class="section-kicker">04 — Veille technologique</span>
                 <h2>Veille <span>Domotique</span></h2>
-                <p class="section-sub">Un article par semaine sur la maison connectée : protocoles, Home Assistant, énergie, sécurité et IA. Mis à jour le 29/09/2026.</p>
+                <p class="section-sub">Un article par semaine sur la maison connectée : protocoles, Home Assistant, énergie, sécurité et IA. Mis à jour le 02/10/2026.</p>
             </div>
 
             <div class="row g-4 mb-5">
@@ -1199,11 +1199,65 @@
             <!-- Frise chronologique : le plus récent en haut -->
             <div class="veille-timeline" id="veilleTimeline">
 
-                <!-- SEPTEMBRE 2026 -->
-                <div class="vt-month"><span>Septembre 2026</span></div>
-                <article class="veille-item is-featured" data-cat="protocoles" data-theme="protocoles">
+                <!-- OCTOBRE 2026 -->
+                <div class="vt-month"><span>Octobre 2026</span></div>
+                <article class="veille-item is-featured" data-cat="energie protocoles" data-theme="energie">
                     <div class="vt-card">
                         <div class="vt-ribbon"><i class="fas fa-star"></i> Article de la semaine</div>
+                        <div class="vt-date"><strong>02</strong><span>oct. 2026</span></div>
+                        <div class="vt-meta">
+                            <span class="vt-cat"><i class="fas fa-bolt"></i>Énergie</span>
+                            <span class="vt-type"><i class="far fa-newspaper"></i>Article</span>
+                            <span class="vt-impact" data-level="2" title="Impact moyen"><i></i><i></i><i></i>Moyen</span>
+                        </div>
+                        <h4 class="vt-title"><a href="https://www.maison-et-domotique.com/173507-netatmo-nouveau-chauffage-connecte/" target="_blank" rel="noopener">Netatmo muscle son chauffage connecté : nouvelles têtes thermostatiques, Zigbee, Matter et gestion pièce par pièce</a></h4>
+                        <p class="vt-summary">Netatmo renouvelle son chauffage connecté : têtes thermostatiques en Zigbee, passerelle certifiée Matter et gestion pièce par pièce, sans compatibilité avec l'ancienne génération.</p>
+                        <div class="vt-analysis"><i class="fas fa-lightbulb"></i><p><strong>Mon analyse :</strong> Passer à un protocole standard ouvre l'écosystème, mais la rupture de compatibilité oblige à remplacer le matériel déjà installé.</p></div>
+                        <div class="vt-footer">
+                            <span class="vt-source"><span class="vt-source-logo">M</span>Maison &amp; Domotique</span>
+                            <a class="vt-link" href="https://www.maison-et-domotique.com/173507-netatmo-nouveau-chauffage-connecte/" target="_blank" rel="noopener">Lire l'article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SEPTEMBRE 2026 -->
+                <div class="vt-month"><span>Septembre 2026</span></div>
+                <article class="veille-item" data-cat="ha securite" data-theme="ha">
+                    <div class="vt-card">
+                        <div class="vt-date"><strong>29</strong><span>sept. 2026</span></div>
+                        <div class="vt-meta">
+                            <span class="vt-cat"><i class="fas fa-house-signal"></i>Logiciel open source</span>
+                            <span class="vt-type"><i class="far fa-newspaper"></i>Article</span>
+                            <span class="vt-impact" data-level="3" title="Impact fort"><i></i><i></i><i></i>Fort</span>
+                        </div>
+                        <h4 class="vt-title"><a href="https://www.igen.fr/domotique/2026/09/hacs-va-integrer-home-assistant-pour-faciliter-lacces-aux-extensions-communautaires-158333" target="_blank" rel="noopener">HACS va intégrer Home Assistant pour faciliter l’accès aux extensions communautaires</a></h4>
+                        <p class="vt-summary">HACS, le catalogue d'extensions communautaires, va être intégré au cœur de Home Assistant : activation en un clic, sans compte GitHub.</p>
+                        <div class="vt-analysis"><i class="fas fa-lightbulb"></i><p><strong>Mon analyse :</strong> L'installation devient plus simple, mais ce code n'est pas validé par l'équipe : il faut rester attentif à ce que l'on installe.</p></div>
+                        <div class="vt-footer">
+                            <span class="vt-source"><span class="vt-source-logo">I</span>iGeneration</span>
+                            <a class="vt-link" href="https://www.igen.fr/domotique/2026/09/hacs-va-integrer-home-assistant-pour-faciliter-lacces-aux-extensions-communautaires-158333" target="_blank" rel="noopener">Lire l'article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                <article class="veille-item" data-cat="ha materiel" data-theme="ha">
+                    <div class="vt-card">
+                        <div class="vt-date"><strong>29</strong><span>sept. 2026</span></div>
+                        <div class="vt-meta">
+                            <span class="vt-cat"><i class="fas fa-house-signal"></i>Logiciel open source</span>
+                            <span class="vt-type"><i class="fas fa-podcast"></i>Podcast</span>
+                            <span class="vt-impact" data-level="2" title="Impact moyen"><i></i><i></i><i></i>Moyen</span>
+                        </div>
+                        <h4 class="vt-title"><a href="https://www.domo-blog.fr/domotique-chronique-s1e37-domotique-proxy-bluetooth-ble-adv/" target="_blank" rel="noopener">Domotique Chronique S1E37 : Proxy Bluetooth pour fiabiliser le Bluetooth de Home Assistant, même en cluster Proxmox</a></h4>
+                        <p class="vt-summary">Épisode du podcast Domotique Chronique : un proxy Bluetooth à base d'ESP32 et d'ESPHome relaie les signaux BLE par le réseau, à la place d'un dongle USB.</p>
+                        <div class="vt-analysis"><i class="fas fa-lightbulb"></i><p><strong>Mon analyse :</strong> Déporter le Bluetooth sur le réseau règle le problème des clés USB en machine virtuelle.</p></div>
+                        <div class="vt-footer">
+                            <span class="vt-source"><span class="vt-source-logo">D</span>Domo-Blog</span>
+                            <a class="vt-link" href="https://www.domo-blog.fr/domotique-chronique-s1e37-domotique-proxy-bluetooth-ble-adv/" target="_blank" rel="noopener">Lire l'article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                <article class="veille-item" data-cat="protocoles" data-theme="protocoles">
+                    <div class="vt-card">
                         <div class="vt-date"><strong>29</strong><span>sept. 2026</span></div>
                         <div class="vt-meta">
                             <span class="vt-cat"><i class="fas fa-tower-broadcast"></i>Protocoles &amp; Réseau</span>
@@ -1216,6 +1270,23 @@
                         <div class="vt-footer">
                             <span class="vt-source"><span class="vt-source-logo">D</span>Domo-Blog</span>
                             <a class="vt-link" href="https://www.domo-blog.fr/zigbee-suzi-la-csa-ouvre-officiellement-la-certification-pour-le-sub-ghz/" target="_blank" rel="noopener">Lire l'article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                <article class="veille-item" data-cat="materiel energie" data-theme="materiel">
+                    <div class="vt-card">
+                        <div class="vt-date"><strong>25</strong><span>sept. 2026</span></div>
+                        <div class="vt-meta">
+                            <span class="vt-cat"><i class="fas fa-microchip"></i>Matériel réseau</span>
+                            <span class="vt-type"><i class="far fa-newspaper"></i>Article</span>
+                            <span class="vt-impact" data-level="3" title="Impact fort"><i></i><i></i><i></i>Fort</span>
+                        </div>
+                        <h4 class="vt-title"><a href="https://www.maison-et-domotique.com/173407-schneider-electric-rachete-shelly/" target="_blank" rel="noopener">Shelly change de dimension : Schneider Electric veut s’offrir la pépite de la maison connectée</a></h4>
+                        <p class="vt-summary">Schneider Electric lance une offre d'environ 1,2 milliard d'euros pour racheter Shelly, avec une finalisation prévue début 2027.</p>
+                        <div class="vt-analysis"><i class="fas fa-lightbulb"></i><p><strong>Mon analyse :</strong> À surveiller : l'API locale et le MQTT, qui font l'intérêt de Shelly avec Home Assistant, devront survivre au rachat.</p></div>
+                        <div class="vt-footer">
+                            <span class="vt-source"><span class="vt-source-logo">M</span>Maison &amp; Domotique</span>
+                            <a class="vt-link" href="https://www.maison-et-domotique.com/173407-schneider-electric-rachete-shelly/" target="_blank" rel="noopener">Lire l'article <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </article>
