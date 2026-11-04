@@ -1152,7 +1152,7 @@
             <div class="section-title reveal">
                 <span class="section-kicker">04 — Veille technologique</span>
                 <h2>Veille <span>Domotique</span></h2>
-                <p class="section-sub">Deux à trois articles par semaine sur la maison connectée : protocoles, Home Assistant, énergie, sécurité et IA. Mis à jour le 16/10/2026.</p>
+                <p class="section-sub">Deux à trois articles par semaine sur la maison connectée : protocoles, Home Assistant, énergie, sécurité et IA. Mis à jour le 04/11/2026.</p>
             </div>
 
             <div class="row g-4 mb-5">
@@ -1288,11 +1288,150 @@
             <!-- Frise chronologique : le plus récent en haut -->
             <div class="veille-timeline" id="veilleTimeline">
 
-                <!-- OCTOBRE 2026 -->
-                <div class="vt-month"><span>Octobre 2026</span></div>
-                <article class="veille-item is-featured" data-cat="energie ha" data-theme="energie">
+                <!-- NOVEMBRE 2026 -->
+                <div class="vt-month"><span>Novembre 2026</span></div>
+                <article class="veille-item is-featured" data-cat="ha" data-theme="ha">
                     <div class="vt-card">
                         <div class="vt-ribbon"><i class="fas fa-star"></i> Article de la semaine</div>
+                        <div class="vt-date"><strong>04</strong><span>nov. 2026</span></div>
+                        <div class="vt-meta">
+                            <span class="vt-cat"><i class="fas fa-house-signal"></i>Automatisation</span>
+                            <span class="vt-type"><i class="far fa-newspaper"></i>Article</span>
+                            <span class="vt-impact" data-level="3" title="Impact fort"><i></i><i></i><i></i>Fort</span>
+                        </div>
+                        <h4 class="vt-title"><a href="https://www.domo-blog.fr/home-assistant-2026-11-faites-votre-marche-excluez-intrus-qui-a-allume-lumiere/" target="_blank" rel="noopener">Home Assistant 2026.11 : faites votre marché, excluez l’intrus et découvrez enfin qui a allumé la lumière !</a></h4>
+                        <p class="vt-summary">La version 2026.11 de Home Assistant intègre le Marketplace (ex-HACS) dans les paramètres, ajoute des exceptions dans les automatisations, revoit le nommage des entités et apporte des outils pour savoir ce qui a déclenché un appareil.</p>
+                        <div class="vt-analysis"><i class="fas fa-lightbulb"></i><p><strong>Mon analyse :</strong> Une mise à jour importante : installer une intégration communautaire se fait maintenant en un clic, sans redémarrage.</p></div>
+                        <div class="vt-footer">
+                            <span class="vt-source"><span class="vt-source-logo">D</span>Domo-Blog</span>
+                            <a class="vt-link" href="https://www.domo-blog.fr/home-assistant-2026-11-faites-votre-marche-excluez-intrus-qui-a-allume-lumiere/" target="_blank" rel="noopener">Lire l'article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                <article class="veille-item" data-cat="protocoles ha" data-theme="protocoles">
+                    <div class="vt-card">
+                        <div class="vt-date"><strong>03</strong><span>nov. 2026</span></div>
+                        <div class="vt-meta">
+                            <span class="vt-cat"><i class="fas fa-tower-broadcast"></i>Standard IoT</span>
+                            <span class="vt-type"><i class="far fa-newspaper"></i>Article</span>
+                            <span class="vt-impact" data-level="2" title="Impact moyen"><i></i><i></i><i></i>Moyen</span>
+                        </div>
+                        <h4 class="vt-title"><a href="https://www.maison-et-domotique.com/174122-home-assistant-matter-1-6-1/" target="_blank" rel="noopener">Home Assistant passe à la vitesse supérieure avec Matter 1.6.1 et matter.js</a></h4>
+                        <p class="vt-summary">matter.js, la bibliothèque TypeScript qui fait tourner le Matter Server 9.0 de Home Assistant, prend en charge Matter 1.6.1 : communications de groupe (Groupcast), meilleure gestion des appareils sur batterie et plus de contrôle sur les mises à jour OTA.</p>
+                        <div class="vt-analysis"><i class="fas fa-lightbulb"></i><p><strong>Mon analyse :</strong> En quittant le SDK C++ pour matter.js, Home Assistant peut suivre les nouvelles versions de Matter beaucoup plus vite.</p></div>
+                        <div class="vt-footer">
+                            <span class="vt-source"><span class="vt-source-logo">M</span>Maison &amp; Domotique</span>
+                            <a class="vt-link" href="https://www.maison-et-domotique.com/174122-home-assistant-matter-1-6-1/" target="_blank" rel="noopener">Lire l'article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                <article class="veille-item" data-cat="energie materiel" data-theme="energie">
+                    <div class="vt-card">
+                        <div class="vt-date"><strong>02</strong><span>nov. 2026</span></div>
+                        <div class="vt-meta">
+                            <span class="vt-cat"><i class="fas fa-bolt"></i>Énergie</span>
+                            <span class="vt-type"><i class="far fa-newspaper"></i>Article</span>
+                            <span class="vt-impact" data-level="2" title="Impact moyen"><i></i><i></i><i></i>Moyen</span>
+                        </div>
+                        <h4 class="vt-title"><a href="https://www.domo-blog.fr/test-de-lecodevices-3-le-gestionnaire-denergie-local-ultime-sous-mqtt-et-home-assistant/" target="_blank" rel="noopener">Test de l’Ecodevices 3 : Le gestionnaire d’énergie local ultime sous MQTT et Home Assistant</a></h4>
+                        <p class="vt-summary">Test de l'Ecodevices 3 de GCE Electronics, un module rail DIN de 6 modules qui centralise les compteurs de la maison et envoie ses données en MQTT, récupérées ensuite dans Home Assistant avec des capteurs MQTT en YAML.</p>
+                        <div class="vt-analysis"><i class="fas fa-lightbulb"></i><p><strong>Mon analyse :</strong> Le MQTT natif permet un suivi de l'énergie 100 % local, même si les données brutes demandent un peu de configuration.</p></div>
+                        <div class="vt-footer">
+                            <span class="vt-source"><span class="vt-source-logo">D</span>Domo-Blog</span>
+                            <a class="vt-link" href="https://www.domo-blog.fr/test-de-lecodevices-3-le-gestionnaire-denergie-local-ultime-sous-mqtt-et-home-assistant/" target="_blank" rel="noopener">Lire l'article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- OCTOBRE 2026 -->
+                <div class="vt-month"><span>Octobre 2026</span></div>
+                <article class="veille-item" data-cat="ha securite" data-theme="ha">
+                    <div class="vt-card">
+                        <div class="vt-date"><strong>30</strong><span>oct. 2026</span></div>
+                        <div class="vt-meta">
+                            <span class="vt-cat"><i class="fas fa-house-signal"></i>Infrastructure</span>
+                            <span class="vt-type"><i class="far fa-newspaper"></i>Article</span>
+                            <span class="vt-impact" data-level="1" title="Impact faible"><i></i><i></i><i></i>Faible</span>
+                        </div>
+                        <h4 class="vt-title"><a href="https://www.maison-et-domotique.com/173969-home-assistant-cloud-devient-home-assistant-link/" target="_blank" rel="noopener">Home Assistant Cloud devient Home Assistant Link : bien plus qu’un simple changement de nom</a></h4>
+                        <p class="vt-summary">À partir de la version 2026.12 du 2 décembre, Home Assistant Cloud de Nabu Casa s'appellera Home Assistant Link, avec le même abonnement et les mêmes fonctions : accès à distance, Alexa et Google Assistant, voix en ligne et sauvegardes externes.</p>
+                        <div class="vt-analysis"><i class="fas fa-lightbulb"></i><p><strong>Mon analyse :</strong> Le nom suit enfin la philosophie du projet : la maison fonctionne en local, le service en ligne n'est qu'une option.</p></div>
+                        <div class="vt-footer">
+                            <span class="vt-source"><span class="vt-source-logo">M</span>Maison &amp; Domotique</span>
+                            <a class="vt-link" href="https://www.maison-et-domotique.com/173969-home-assistant-cloud-devient-home-assistant-link/" target="_blank" rel="noopener">Lire l'article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                <article class="veille-item" data-cat="ha" data-theme="ha">
+                    <div class="vt-card">
+                        <div class="vt-date"><strong>29</strong><span>oct. 2026</span></div>
+                        <div class="vt-meta">
+                            <span class="vt-cat"><i class="fas fa-house-signal"></i>Logiciel open source</span>
+                            <span class="vt-type"><i class="far fa-newspaper"></i>Article</span>
+                            <span class="vt-impact" data-level="3" title="Impact fort"><i></i><i></i><i></i>Fort</span>
+                        </div>
+                        <h4 class="vt-title"><a href="https://www.maison-et-domotique.com/174118-home-assistant-transforme-hacs-en-marketplace/" target="_blank" rel="noopener">Home Assistant transforme HACS en Marketplace : voici tout ce qui va changer</a></h4>
+                        <p class="vt-summary">Avec Home Assistant 2026.11, HACS entre dans le Core sous le nom de Marketplace : une intégration activée par défaut, dans Paramètres &gt; Marketplace, qui reprend le catalogue de HACS sans installation manuelle.</p>
+                        <div class="vt-analysis"><i class="fas fa-lightbulb"></i><p><strong>Mon analyse :</strong> Les projets de la communauté deviennent accessibles aux débutants, mais Home Assistant devra veiller à leur qualité.</p></div>
+                        <div class="vt-footer">
+                            <span class="vt-source"><span class="vt-source-logo">M</span>Maison &amp; Domotique</span>
+                            <a class="vt-link" href="https://www.maison-et-domotique.com/174118-home-assistant-transforme-hacs-en-marketplace/" target="_blank" rel="noopener">Lire l'article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                <article class="veille-item" data-cat="ia materiel" data-theme="ia">
+                    <div class="vt-card">
+                        <div class="vt-date"><strong>27</strong><span>oct. 2026</span></div>
+                        <div class="vt-meta">
+                            <span class="vt-cat"><i class="fas fa-brain"></i>Intelligence artificielle</span>
+                            <span class="vt-type"><i class="far fa-newspaper"></i>Article</span>
+                            <span class="vt-impact" data-level="1" title="Impact faible"><i></i><i></i><i></i>Faible</span>
+                        </div>
+                        <h4 class="vt-title"><a href="https://www.domo-blog.fr/ugreen-home-agent-100-ce-nest-pas-encore-lheure-pour-la-revolution-domotique/" target="_blank" rel="noopener">Ugreen Home Agent 100 : Ce n’est pas encore l’heure pour la révolution domotique</a></h4>
+                        <p class="vt-summary">Test d'une version bêta du Ugreen HA100, un hub qui associe NAS, IA locale et domotique Matter : le stockage est solide, mais l'administration se fait seulement sur mobile, l'IA ne parle qu'anglais et Matter manque de stabilité.</p>
+                        <div class="vt-analysis"><i class="fas fa-lightbulb"></i><p><strong>Mon analyse :</strong> L'idée d'une IA locale qui gère la maison est intéressante, mais le produit n'est pas encore prêt face à Home Assistant.</p></div>
+                        <div class="vt-footer">
+                            <span class="vt-source"><span class="vt-source-logo">D</span>Domo-Blog</span>
+                            <a class="vt-link" href="https://www.domo-blog.fr/ugreen-home-agent-100-ce-nest-pas-encore-lheure-pour-la-revolution-domotique/" target="_blank" rel="noopener">Lire l'article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                <article class="veille-item" data-cat="energie materiel" data-theme="energie">
+                    <div class="vt-card">
+                        <div class="vt-date"><strong>23</strong><span>oct. 2026</span></div>
+                        <div class="vt-meta">
+                            <span class="vt-cat"><i class="fas fa-bolt"></i>Énergie</span>
+                            <span class="vt-type"><i class="far fa-newspaper"></i>Article</span>
+                            <span class="vt-impact" data-level="2" title="Impact moyen"><i></i><i></i><i></i>Moyen</span>
+                        </div>
+                        <h4 class="vt-title"><a href="https://www.maison-et-domotique.com/173961-shelly-pilot-wire-gen4-module-radiateurs-electriques-annonce/" target="_blank" rel="noopener">Shelly Pilot Wire Gen4 : le module que nos radiateurs électriques attendaient enfin ?</a></h4>
+                        <p class="vt-summary">Shelly annonce le Pilot Wire Gen4, un module pour radiateurs à fil pilote qui gère les six ordres (Confort, Éco, Hors-gel…), mesure la consommation et s'appuie sur la plateforme Gen4 (Wi-Fi, Zigbee, Bluetooth et Matter).</p>
+                        <div class="vt-analysis"><i class="fas fa-lightbulb"></i><p><strong>Mon analyse :</strong> Le fil pilote est très répandu en France, et peu de modules savent le piloter proprement : ce produit comble un vrai manque.</p></div>
+                        <div class="vt-footer">
+                            <span class="vt-source"><span class="vt-source-logo">M</span>Maison &amp; Domotique</span>
+                            <a class="vt-link" href="https://www.maison-et-domotique.com/173961-shelly-pilot-wire-gen4-module-radiateurs-electriques-annonce/" target="_blank" rel="noopener">Lire l'article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                <article class="veille-item" data-cat="materiel ha" data-theme="materiel">
+                    <div class="vt-card">
+                        <div class="vt-date"><strong>20</strong><span>oct. 2026</span></div>
+                        <div class="vt-meta">
+                            <span class="vt-cat"><i class="fas fa-microchip"></i>Équipements</span>
+                            <span class="vt-type"><i class="far fa-newspaper"></i>Article</span>
+                            <span class="vt-impact" data-level="1" title="Impact faible"><i></i><i></i><i></i>Faible</span>
+                        </div>
+                        <h4 class="vt-title"><a href="https://www.maison-et-domotique.com/173838-hiver-maison-connectee-surveiller-qualite-air/" target="_blank" rel="noopener">Cet hiver, votre maison connectée devrait aussi surveiller l’air que vous respirez</a></h4>
+                        <p class="vt-summary">En hiver, on aère moins et le CO2 monte vite. L'article présente les capteurs de qualité de l'air connectés, comme le Smart CO2 d'Eoleaf sous Tuya, et des automatisations Home Assistant : alerte pour aérer, VMC qui accélère.</p>
+                        <div class="vt-analysis"><i class="fas fa-lightbulb"></i><p><strong>Mon analyse :</strong> La qualité de l'air devient une donnée comme la température, qui peut déclencher des actions dans la maison.</p></div>
+                        <div class="vt-footer">
+                            <span class="vt-source"><span class="vt-source-logo">M</span>Maison &amp; Domotique</span>
+                            <a class="vt-link" href="https://www.maison-et-domotique.com/173838-hiver-maison-connectee-surveiller-qualite-air/" target="_blank" rel="noopener">Lire l'article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                <article class="veille-item" data-cat="energie ha" data-theme="energie">
+                    <div class="vt-card">
                         <div class="vt-date"><strong>16</strong><span>oct. 2026</span></div>
                         <div class="vt-meta">
                             <span class="vt-cat"><i class="fas fa-bolt"></i>Énergie</span>
