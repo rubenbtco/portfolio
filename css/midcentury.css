@@ -1,0 +1,220 @@
+/* ==========================================================
+   Thème mid-century moderne (thème par défaut)
+   Crème · noyer · orange brûlé · moutarde · olive · bleu canard
+   ========================================================== */
+
+html[data-palette="midcentury"] {
+    --bg: #f6ecd9;
+    --bg-2: #fbf4e6;
+    --surface: #fffaf0;
+    --surface-strong: #fffaf0;
+    --border: rgba(107, 66, 38, 0.18);
+    --border-strong: rgba(209, 96, 61, 0.55);
+
+    --primary: #c4552f;      /* orange brûlé */
+    --secondary: #2a8a7e;    /* bleu canard */
+    --accent: #c98f12;       /* moutarde */
+    --olive: #7d8b4f;
+    --walnut: #6b4226;
+    --primary-soft: rgba(196, 85, 47, 0.1);
+    --secondary-soft: rgba(42, 138, 126, 0.1);
+    --accent-soft: rgba(201, 143, 18, 0.12);
+    --gradient: linear-gradient(110deg, #c4552f 0%, #e0a526 50%, #c4552f 100%);
+
+    --text-main: #2e2118;
+    --text-sub: #5e4636;
+    --text-dim: #866a55;
+
+    --shadow-sm: 4px 4px 0 rgba(107, 66, 38, 0.1);
+    --shadow: 6px 6px 0 rgba(107, 66, 38, 0.14);
+    --shadow-lg: 8px 8px 0 rgba(196, 85, 47, 0.22);
+
+    --radius: 16px;
+    --font-display: 'Josefin Sans', 'Jost', sans-serif;
+    --font-body: 'Jost', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+}
+
+html[data-palette="midcentury"] body { background: var(--bg); }
+html[data-palette="midcentury"] h1,
+html[data-palette="midcentury"] h2,
+html[data-palette="midcentury"] h3 { letter-spacing: 0; font-weight: 700; }
+html[data-palette="midcentury"] ::selection { background: var(--primary); color: #fffaf0; }
+html[data-palette="midcentury"] ::-webkit-scrollbar-thumb { background: linear-gradient(var(--primary), var(--accent)); }
+
+/* ---------- Décor de fond : trame de points, grandes formes, étoiles atomiques ---------- */
+html[data-palette="midcentury"] .bg-grid {
+    background-image: radial-gradient(rgba(107, 66, 38, 0.16) 1.2px, transparent 1.4px);
+    background-size: 26px 26px;
+}
+html[data-palette="midcentury"] .bg-glow { filter: none; animation: none; }
+html[data-palette="midcentury"] .bg-glow-1 {
+    width: 420px; height: 420px; top: -150px; right: -120px; opacity: .22;
+    background: #e0a526; border-radius: 50%;
+}
+html[data-palette="midcentury"] .bg-glow-2 {
+    width: 520px; height: 260px; bottom: -40px; left: -160px; opacity: .16;
+    background: #2a8a7e; border-radius: 50% 50% 46% 54% / 100% 100% 0 0;
+    transform: rotate(18deg);
+}
+
+/* ---------- Navigation ---------- */
+html[data-palette="midcentury"] .nav-shell { background: rgba(255, 250, 240, 0.85); border: 2px solid var(--border); box-shadow: var(--shadow-sm); }
+html[data-palette="midcentury"] .navbar.scrolled .nav-shell { background: rgba(255, 250, 240, 0.96); box-shadow: var(--shadow); }
+html[data-palette="midcentury"] .brand-mark { background: var(--primary); border-radius: 50%; box-shadow: 3px 3px 0 var(--walnut); }
+html[data-palette="midcentury"] .navbar .nav-link { font-family: var(--font-display); font-weight: 600; }
+
+/* ---------- Boutons : aplats et ombre décalée ---------- */
+html[data-palette="midcentury"] .btn-neo { font-family: var(--font-display); letter-spacing: .02em; }
+html[data-palette="midcentury"] .btn-neo-primary { background: var(--primary); color: #fffaf0; box-shadow: 4px 4px 0 var(--walnut); }
+html[data-palette="midcentury"] .btn-neo-primary:hover { background: var(--accent); color: var(--text-main); transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--walnut); }
+html[data-palette="midcentury"] .btn-neo-ghost { background: var(--surface); border: 2px solid var(--walnut); box-shadow: 4px 4px 0 rgba(107, 66, 38, .2); }
+html[data-palette="midcentury"] .btn-neo-ghost:hover { color: var(--primary); transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(107, 66, 38, .25); }
+
+/* ---------- Intro ---------- */
+html[data-palette="midcentury"] .intro-step::before { background: var(--accent); height: 3px; }
+html[data-palette="midcentury"] .intro-tags span,
+html[data-palette="midcentury"] .intro-badge { background: var(--surface); border: 2px solid var(--border); box-shadow: none; }
+html[data-palette="midcentury"] .pulse { background: var(--secondary); box-shadow: 0 0 0 0 rgba(42, 138, 126, .6); }
+
+/* ---------- Titres de section ---------- */
+html[data-palette="midcentury"] .section-kicker { color: var(--secondary); }
+html[data-palette="midcentury"] .section-kicker::before { content: '✦'; color: var(--accent); margin-right: 8px; }
+
+/* ---------- Cartes ---------- */
+html[data-palette="midcentury"] .glass-card,
+html[data-palette="midcentury"] .skill-card {
+    background: var(--surface); backdrop-filter: none; -webkit-backdrop-filter: none;
+    border: 2px solid var(--border); box-shadow: var(--shadow-sm);
+}
+html[data-palette="midcentury"] .glass-card:hover,
+html[data-palette="midcentury"] .skill-card:hover { border-color: var(--border-strong); box-shadow: var(--shadow-lg); }
+html[data-palette="midcentury"] .tilt-glare { background: radial-gradient(circle at var(--gx, 50%) var(--gy, 50%), rgba(255, 236, 200, .5), transparent 55%); }
+html[data-palette="midcentury"] .card-heading i { border-radius: 50%; }
+html[data-palette="midcentury"] .language-badge { border: 2px solid rgba(42, 138, 126, .3); }
+html[data-palette="midcentury"] .timeline::before { background: linear-gradient(var(--primary), var(--accent)); opacity: .5; }
+html[data-palette="midcentury"] .tl-icon { background: var(--surface); border: 2px solid var(--primary); }
+html[data-palette="midcentury"] .info-item { background: var(--bg-2); border: 2px solid var(--border); }
+html[data-palette="midcentury"] .passions span { border: 2px solid rgba(201, 143, 18, .3); }
+
+/* ---------- Compétences ---------- */
+html[data-palette="midcentury"] .ring-bg { stroke: rgba(107, 66, 38, .1); }
+html[data-palette="midcentury"] .ring-fg { stroke: var(--primary); stroke-linecap: butt; }
+html[data-palette="midcentury"] .col-6:nth-child(3n+2) .ring-fg { stroke: var(--secondary); }
+html[data-palette="midcentury"] .col-6:nth-child(3n) .ring-fg { stroke: var(--accent); }
+html[data-palette="midcentury"] .marquee-track span { background: var(--surface); border: 2px solid var(--border); }
+
+/* ---------- Onglets et cartes projet ---------- */
+html[data-palette="midcentury"] .nav-pills .nav-link { background: var(--surface); border: 2px solid var(--border); box-shadow: none; font-family: var(--font-display); }
+html[data-palette="midcentury"] .nav-pills .nav-link.active { background: var(--primary) !important; color: #fffaf0 !important; border-color: var(--primary); box-shadow: 4px 4px 0 var(--walnut); }
+html[data-palette="midcentury"] .nav-pills-teacher .nav-link.active { background: var(--secondary) !important; color: #fffaf0 !important; border-color: var(--secondary); box-shadow: 3px 3px 0 var(--walnut); }
+html[data-palette="midcentury"] .nav-pills-sub .nav-link.active { background: var(--accent) !important; color: var(--text-main) !important; border: 2px solid var(--accent); }
+html[data-palette="midcentury"] .project-card { background: var(--surface); }
+html[data-palette="midcentury"] .project-card .project-img { border-bottom: 2px solid var(--border); }
+html[data-palette="midcentury"] .btn-outline-primary { border: 2px solid var(--primary); }
+html[data-palette="midcentury"] .btn-outline-primary:hover,
+html[data-palette="midcentury"] .btn-outline-primary:focus { background: var(--primary); border-color: var(--primary); color: #fffaf0; box-shadow: 4px 4px 0 var(--walnut); }
+
+/* ---------- Veille ---------- */
+html[data-palette="midcentury"] [data-theme="protocoles"] { --c: #2a8a7e; --c-soft: rgba(42, 138, 126, .1); }
+html[data-palette="midcentury"] [data-theme="ha"]         { --c: #c4552f; --c-soft: rgba(196, 85, 47, .1); }
+html[data-palette="midcentury"] [data-theme="energie"]    { --c: #c98f12; --c-soft: rgba(201, 143, 18, .12); }
+html[data-palette="midcentury"] [data-theme="securite"]   { --c: #9c3b2e; --c-soft: rgba(156, 59, 46, .1); }
+html[data-palette="midcentury"] [data-theme="ia"]         { --c: #7d8b4f; --c-soft: rgba(125, 139, 79, .12); }
+html[data-palette="midcentury"] [data-theme="materiel"]   { --c: #6b4226; --c-soft: rgba(107, 66, 38, .1); }
+/* ---------- Contact et pied de page ---------- */
+html[data-palette="midcentury"] .contact-tile { background: var(--surface); border: 2px solid var(--border); }
+html[data-palette="midcentury"] .contact-tile i { border-radius: 50%; }
+html[data-palette="midcentury"] .contact-tile:hover i { background: var(--primary); color: #fffaf0; }
+html[data-palette="midcentury"] .form-control,
+html[data-palette="midcentury"] .form-control:focus { background: var(--bg-2); border: 2px solid var(--border); }
+html[data-palette="midcentury"] .form-control:focus { border-color: var(--primary); }
+html[data-palette="midcentury"] .site-footer { background: var(--walnut); border-top: 6px solid var(--accent); }
+html[data-palette="midcentury"] .site-footer p { color: #e8d6bc; }
+html[data-palette="midcentury"] .site-footer .btn-neo-ghost { background: transparent; color: #fffaf0; border-color: #e8d6bc; box-shadow: 4px 4px 0 rgba(0, 0, 0, .25); }
+html[data-palette="midcentury"] .site-footer .btn-neo-ghost:hover { background: var(--accent); color: var(--text-main); border-color: var(--accent); }
+html[data-palette="midcentury"] .social-links a { color: #fffaf0; border: 2px solid rgba(232, 214, 188, .5); border-radius: 50%; }
+html[data-palette="midcentury"] .social-links a:hover { background: var(--primary); }
+
+html[data-palette="midcentury"] .vs-bar { background: rgba(107, 66, 38, .08); }
+
+/* ==========================================================
+   Identité inspirée des alertes Twitch xariontv :
+   cartes à bordure épaisse et bloc d'ombre décalé, titres en relief,
+   section sombre étoilée et section bleu canard à rayons
+   ========================================================== */
+html[data-palette="midcentury"] {
+    --choco: #2f1f17;
+    --frame: #4a3020;
+    --orange: #d1603d;
+    --gold: #e5a832;
+    --teal: #2e6b66;
+    --cream: #f6ecd9;
+}
+
+/* Cartes : bordure épaisse et bloc d'ombre plein, orange ou moutarde en alternance */
+html[data-palette="midcentury"] .glass-card,
+html[data-palette="midcentury"] .skill-card,
+html[data-palette="midcentury"] .vt-card,
+html[data-palette="midcentury"] .contact-tile {
+    border: 3px solid var(--frame); border-radius: 20px;
+    box-shadow: 9px 9px 0 var(--block, var(--orange));
+}
+html[data-palette="midcentury"] .col-lg-4:nth-child(even) > .glass-card,
+html[data-palette="midcentury"] .col-md-6:nth-child(even) > .glass-card,
+html[data-palette="midcentury"] .col-6:nth-child(even) > .skill-card,
+html[data-palette="midcentury"] .veille-item:nth-child(even) .vt-card,
+html[data-palette="midcentury"] .contact-tile:nth-child(even) { --block: var(--gold); }
+html[data-palette="midcentury"] .glass-card:hover,
+html[data-palette="midcentury"] .skill-card:hover,
+html[data-palette="midcentury"] .vt-card:hover { border-color: var(--frame); box-shadow: 12px 12px 0 var(--block, var(--orange)); }
+html[data-palette="midcentury"] .project-card .project-img { border-bottom: 3px solid var(--frame); }
+
+/* Boutons, navigation et onglets dans le même esprit */
+html[data-palette="midcentury"] .nav-shell { border: 3px solid var(--frame); box-shadow: 6px 6px 0 var(--orange); }
+html[data-palette="midcentury"] .btn-neo-primary { background: var(--orange); border: 3px solid var(--frame); box-shadow: 5px 5px 0 var(--gold); }
+html[data-palette="midcentury"] .btn-neo-primary:hover { background: var(--gold); box-shadow: 7px 7px 0 var(--orange); }
+html[data-palette="midcentury"] .nav-pills .nav-link { border: 3px solid var(--frame); }
+html[data-palette="midcentury"] .nav-pills .nav-link.active { background: var(--orange) !important; border-color: var(--frame); box-shadow: 5px 5px 0 var(--gold); }
+html[data-palette="midcentury"] .nav-pills-teacher .nav-link.active { background: var(--teal) !important; border-color: var(--frame); box-shadow: 4px 4px 0 var(--gold); }
+html[data-palette="midcentury"] .nav-pills-sub .nav-link.active { background: var(--gold) !important; border-color: var(--frame); box-shadow: 3px 3px 0 var(--orange); }
+
+/* Titres en relief : majuscules, mot clé moutarde sur ombre orange décalée */
+html[data-palette="midcentury"] .section-title h2 { text-transform: uppercase; letter-spacing: .03em; }
+html[data-palette="midcentury"] .section-title h2 span,
+html[data-palette="midcentury"] .intro-caption .grad {
+    background: none; -webkit-text-fill-color: currentColor; animation: none;
+    color: var(--gold); text-shadow: 3px 3px 0 var(--orange), 5px 5px 0 var(--frame);
+}
+html[data-palette="midcentury"] .intro-caption h1,
+html[data-palette="midcentury"] .intro-caption h2 { text-transform: uppercase; letter-spacing: .02em; }
+html[data-palette="midcentury"] .intro-caption .grad { text-shadow: 4px 4px 0 var(--orange), 7px 7px 0 var(--frame); }
+
+/* Section Compétences : ciel sombre étoilé */
+html[data-palette="midcentury"] #skills {
+    --text-main: var(--cream); --text-sub: #e0cdb1; --text-dim: #c4a98c;
+    --surface: #3b2a20; --border: rgba(246, 236, 217, .18); --frame: #1c120d;
+    background-color: var(--choco);
+    background-image:
+        radial-gradient(circle, rgba(246, 236, 217, .9) 1.2px, transparent 1.6px),
+        radial-gradient(circle, rgba(246, 236, 217, .5) 1px, transparent 1.4px),
+        radial-gradient(circle, rgba(229, 168, 50, .8) 1.4px, transparent 1.8px);
+    background-size: 190px 170px, 120px 110px, 310px 260px;
+    background-position: 0 0, 60px 40px, 140px 90px;
+}
+html[data-palette="midcentury"] #skills .ring-bg { stroke: rgba(246, 236, 217, .12); }
+html[data-palette="midcentury"] #skills .section-kicker { color: var(--gold); }
+
+/* Section Contact : bleu canard et rayons de soleil */
+html[data-palette="midcentury"] #contact {
+    --text-main: var(--cream); --text-sub: #d8e6e2; --text-dim: #b7cfc9;
+    --surface: #275b57; --border: rgba(246, 236, 217, .2); --frame: #1d3f3c;
+    background-color: var(--teal);
+    background-image: repeating-conic-gradient(from 0deg at 85% 20%, rgba(246, 236, 217, .07) 0deg 9deg, transparent 9deg 22deg);
+}
+html[data-palette="midcentury"] #contact .section-kicker { color: var(--gold); }
+html[data-palette="midcentury"] #contact .form-control { background: var(--cream); color: #2e2118; border-color: var(--frame); }
+html[data-palette="midcentury"] #contact .form-control::placeholder { color: #866a55; }
+html[data-palette="midcentury"] #contact .contact-tile i { background: rgba(246, 236, 217, .12); color: var(--gold); }
+
+html[data-palette="midcentury"] .vt-impact i { background: rgba(107, 66, 38, .14); }

@@ -171,9 +171,12 @@
     }
 
     /* ---------- Style mid-century : juke-box et vinyle ---------- */
+    // Sur l'ambiance « canard » (fond bleu canard), le bleu canard des formes passe en bleu-vert clair
+    const canard = document.documentElement.dataset.ambiance === 'canard';
     const MC = {
-        teal: new THREE.Color(0x2a9d8f), mustard: new THREE.Color(0xe0a526), orange: new THREE.Color(0xd1603d),
-        walnut: new THREE.Color(0x6b4226), ink: new THREE.Color(0x2b2118), sheen: new THREE.Color(0x6e5d4e), mint: new THREE.Color(0x5fb3a8)
+        teal: new THREE.Color(canard ? 0x9fd8cf : 0x2a9d8f), mustard: new THREE.Color(0xe0a526), orange: new THREE.Color(canard ? 0xf08a5d : 0xd1603d),
+        walnut: new THREE.Color(canard ? 0x1d3f3c : 0x6b4226), ink: new THREE.Color(canard ? 0x16302e : 0x2b2118),
+        sheen: new THREE.Color(canard ? 0x4f7f7a : 0x6e5d4e), mint: new THREE.Color(canard ? 0xd8efe9 : 0x5fb3a8)
     };
     const jukeCol = new Float32Array(N * 3), vinylCol = new Float32Array(N * 3);
 
@@ -305,8 +308,12 @@
     /* ---------- Particules ---------- */
     const geo = new THREE.BufferGeometry();
     const pos = new Float32Array(N * 3), col = new Float32Array(N * 3), seed = new Float32Array(N), dir = new Float32Array(N * 3);
-    const vintage = document.documentElement.dataset.palette === 'vintage';
-    const palette = (vintage ? [0x8c2f39, 0x3f6c63, 0xb07d1e, 0x6b4e71, 0x2b2118] : [0x4f46e5, 0x06b6d4, 0xec4899, 0x6366f1, 0x1e293b]).map(c => new THREE.Color(c));
+    const palettes = {
+        midcentury: canard ? [0xf08a5d, 0x9fd8cf, 0xe5a832, 0xf6ecd9, 0x1d3f3c] : [0xc4552f, 0x2a8a7e, 0xc98f12, 0x7d8b4f, 0x6b4226],
+        vintage: [0x8c2f39, 0x3f6c63, 0xb07d1e, 0x6b4e71, 0x2b2118],
+        classique: [0x4f46e5, 0x06b6d4, 0xec4899, 0x6366f1, 0x1e293b]
+    };
+    const palette = (palettes[document.documentElement.dataset.palette] || palettes.classique).map(c => new THREE.Color(c));
     for (let i = 0; i < N; i++) {
         const c = palette[i % 5 === 4 && Math.random() > .5 ? 4 : i % 4 === 3 ? 0 : i % 4];
         col[i * 3] = c.r; col[i * 3 + 1] = c.g; col[i * 3 + 2] = c.b;

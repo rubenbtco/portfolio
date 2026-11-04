@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruben Battocchio | Portfolio</title>
     <meta name="description" content="Portfolio de Ruben Battocchio, étudiant en BTS SIO : projets, compétences et veille technologique domotique.">
-    <meta name="theme-color" content="#f4f6fb">
+    <meta name="theme-color" content="#f6ecd9">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,14 +14,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/vintage.css">
+    <link rel="stylesheet" href="css/midcentury.css">
+    <link rel="stylesheet" href="css/canard.css">
     <script>
-        if (new URLSearchParams(location.search).get('theme') === 'vintage') {
-            document.documentElement.dataset.palette = 'vintage';
+        // Thème : THEME ('midcentury', 'classique' = thème d'origine, 'vintage'), ou ?theme=… pour comparer.
+        // Ambiance du mid-century : AMBIANCE ('pro' = fond crème, 'canard' = tout en bleu canard),
+        // ou ?ambiance=pro / ?ambiance=canard pour comparer.
+        (function () {
+            const THEME = 'midcentury';
+            const AMBIANCE = 'pro';
+            const params = new URLSearchParams(location.search);
+            const theme = params.get('theme') || THEME;
+            if (theme === 'midcentury' && (params.get('ambiance') || AMBIANCE) === 'canard') document.documentElement.dataset.ambiance = 'canard';
+            const meta = document.querySelector('meta[name="theme-color"]');
+            if (meta && document.documentElement.dataset.ambiance) meta.content = '#2e6b66';
+            const fonts = {
+                midcentury: 'family=Josefin+Sans:wght@400;600;700&family=Jost:wght@300;400;500;600&family=DM+Mono:wght@400;500',
+                vintage: 'family=Playfair+Display:wght@500;700&family=Lora:wght@400;500;600&family=Courier+Prime'
+            };
+            if (!fonts[theme]) return;
+            document.documentElement.dataset.palette = theme;
             const f = document.createElement('link');
             f.rel = 'stylesheet';
-            f.href = 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lora:wght@400;500;600&family=Courier+Prime&display=swap';
+            f.href = 'https://fonts.googleapis.com/css2?' + fonts[theme] + '&display=swap';
             document.head.appendChild(f);
-        }
+        })();
     </script>
 </head>
 <body>
@@ -63,6 +80,7 @@
                     <div class="intro-badge"><span class="pulse"></span> Étudiant BTS SIO · Gap</div>
                     <h1>Ruben<br><span class="grad">Battocchio</span></h1>
                     <p>Futur développeur, explorateur de technologies et passionné par la résolution de problèmes complexes.</p>
+                    <a href="#" class="btn-neo btn-neo-primary mt-3" id="downloadCV"><i class="fas fa-file-arrow-down me-2"></i>Télécharger mon CV</a>
                 </div>
                 <div class="intro-caption" data-stage="1">
                     <div class="intro-step">01 · Développement</div>
@@ -3599,7 +3617,6 @@
 
     <footer class="site-footer">
         <div class="container text-center">
-            <a href="#" class="btn-neo btn-neo-ghost mb-4" id="downloadCV"><i class="fas fa-file-arrow-down me-2"></i>Télécharger mon CV</a>
             <div class="social-links mb-3">
                 <a href="https://github.com/rubenbtco" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 <a href="mailto:ruben.battocchio28@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>

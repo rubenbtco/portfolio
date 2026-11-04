@@ -1,0 +1,79 @@
+/* ==========================================================
+   Ambiance « canard » : le style de la section Contact sur toute la page
+   (bleu canard, rayons de soleil, textes crème).
+   Se pose par-dessus le thème mid-century ; sans elle, on retrouve
+   le style « pro » (fond crème, section Compétences sombre).
+   ========================================================== */
+
+html[data-ambiance="canard"] {
+    --bg: #2e6b66;
+    --bg-2: #2a625d;
+    --surface: #275b57;
+    --surface-strong: #275b57;
+    --border: rgba(246, 236, 217, 0.2);
+    --border-strong: rgba(229, 168, 50, 0.7);
+    --frame: #1d3f3c;
+
+    --primary: #f08a5d;
+    --secondary: #9fd8cf;
+    --accent: #e5a832;
+    --primary-soft: rgba(240, 138, 93, 0.14);
+    --secondary-soft: rgba(159, 216, 207, 0.14);
+    --accent-soft: rgba(229, 168, 50, 0.16);
+
+    --text-main: #f6ecd9;
+    --text-sub: #d8e6e2;
+    --text-dim: #b7cfc9;
+}
+
+/* Fond bleu canard et rayons de soleil sur toute la page */
+html[data-ambiance="canard"] body {
+    background-color: var(--teal);
+    background-image: repeating-conic-gradient(from 0deg at 85% 12%, rgba(246, 236, 217, .06) 0deg 9deg, transparent 9deg 22deg);
+    background-attachment: fixed;
+}
+html[data-ambiance="canard"] .bg-grid { background-image: radial-gradient(rgba(246, 236, 217, 0.08) 1.2px, transparent 1.4px); }
+html[data-ambiance="canard"] .bg-glow-1 { background: #e5a832; opacity: .14; }
+html[data-ambiance="canard"] .bg-glow-2 { background: #1d3f3c; opacity: .35; }
+
+/* Les sections Compétences et Contact suivent le reste de la page */
+html[data-ambiance="canard"] #skills,
+html[data-ambiance="canard"] #contact { background: transparent; }
+html[data-ambiance="canard"] #skills { --surface: #275b57; --border: rgba(246, 236, 217, .2); --frame: #1d3f3c; }
+html[data-ambiance="canard"] .section-kicker { color: var(--accent); }
+
+/* Navigation */
+html[data-ambiance="canard"] .nav-shell,
+html[data-ambiance="canard"] .navbar.scrolled .nav-shell { background: rgba(29, 63, 60, 0.92); }
+html[data-ambiance="canard"] .navbar .nav-link { color: var(--text-sub) !important; }
+html[data-ambiance="canard"] .navbar .nav-link:hover,
+html[data-ambiance="canard"] .navbar .nav-link.active { color: var(--accent) !important; background: rgba(229, 168, 50, .14); }
+html[data-ambiance="canard"] .navbar .nav-cta { background: var(--orange); color: var(--cream) !important; }
+html[data-ambiance="canard"] .navbar .nav-cta:hover { background: var(--accent); color: var(--choco) !important; }
+
+/* Champs de saisie : crème, texte foncé, comme dans le formulaire de contact */
+html[data-ambiance="canard"] .form-control,
+html[data-ambiance="canard"] .form-control:focus { background: var(--cream); color: #2e2118; border-color: var(--frame); }
+html[data-ambiance="canard"] .form-control::placeholder { color: #866a55; }
+html[data-ambiance="canard"] .veille-search i { color: #866a55; z-index: 1; }
+
+/* Détails rendus illisibles par le fond foncé */
+html[data-ambiance="canard"] .vt-source-logo { color: var(--choco); }
+html[data-ambiance="canard"] .vt-card { background: var(--surface); }
+html[data-ambiance="canard"] .veille-item.is-featured .vt-card {
+    background: var(--surface); border: 3px solid var(--frame); box-shadow: 10px 10px 0 var(--accent);
+}
+html[data-ambiance="canard"] .vt-month span { background: var(--choco); color: var(--cream); }
+html[data-ambiance="canard"] .ring-bg { stroke: rgba(246, 236, 217, .12); }
+html[data-ambiance="canard"] .project-card .project-img { background: #fffaf0; }
+html[data-ambiance="canard"] .btn-neo-ghost { color: var(--text-main); border-color: var(--cream); }
+
+/* Couleurs des thèmes de la veille, éclaircies pour le fond bleu canard */
+html[data-ambiance="canard"] [data-theme="protocoles"] { --c: #9fd8cf; --c-soft: rgba(159, 216, 207, .14); }
+html[data-ambiance="canard"] [data-theme="ha"]         { --c: #f08a5d; --c-soft: rgba(240, 138, 93, .14); }
+html[data-ambiance="canard"] [data-theme="energie"]    { --c: #e5a832; --c-soft: rgba(229, 168, 50, .16); }
+html[data-ambiance="canard"] [data-theme="securite"]   { --c: #f2a38f; --c-soft: rgba(242, 163, 143, .14); }
+html[data-ambiance="canard"] [data-theme="ia"]         { --c: #c9d68f; --c-soft: rgba(201, 214, 143, .14); }
+html[data-ambiance="canard"] [data-theme="materiel"]   { --c: #e8d6bc; --c-soft: rgba(232, 214, 188, .12); }
+html[data-ambiance="canard"] .vs-bar,
+html[data-ambiance="canard"] .vt-impact i { background: rgba(246, 236, 217, .12); }
