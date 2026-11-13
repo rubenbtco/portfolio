@@ -1,7 +1,7 @@
 /* ==========================================================
    Intro 3D pilotée par le scroll (Three.js)
    Des particules passent d'une forme à l'autre au fil du scroll :
-   sphère armillaire → </> → réseau → juke-box → vinyle dans sa pochette,
+   sphère armillaire → </> → réseau → tourne-disque → vinyle dans sa pochette,
    puis explosent et disparaissent pour laisser place aux projets.
    ========================================================== */
 (function () {
@@ -170,7 +170,7 @@
         return armBase.slice();
     }
 
-    /* ---------- Style mid-century : juke-box et vinyle ---------- */
+    /* ---------- Style mid-century : tourne-disque et vinyle ---------- */
     // Sur l'ambiance « canard » (fond bleu canard), le bleu canard des formes passe en bleu-vert clair
     const canard = document.documentElement.dataset.ambiance === 'canard';
     const MC = {
@@ -178,7 +178,7 @@
         walnut: new THREE.Color(canard ? 0x1d3f3c : 0x6b4226), ink: new THREE.Color(canard ? 0x16302e : 0x2b2118),
         sheen: new THREE.Color(canard ? 0x4f7f7a : 0x6e5d4e), mint: new THREE.Color(canard ? 0xd8efe9 : 0x5fb3a8)
     };
-    const jukeCol = new Float32Array(N * 3), vinylCol = new Float32Array(N * 3);
+    const turnCol = new Float32Array(N * 3), vinylCol = new Float32Array(N * 3);
 
     // Tire un point au hasard sur une liste de segments (proportionnellement à leur longueur)
     function segPicker(segs, jitter) {
@@ -231,41 +231,72 @@
         return out;
     }
 
-    function jukebox() {
-        const W = 2.0, yb = -2.6, ys = 0.6, zf = 0.55, zb = -0.55, a = new Float32Array(N * 3);
-        // caisse : côtés droits surmontés d'une arche, à l'avant et à l'arrière
-        const body = [];
-        [zf, zb].forEach(z => body.push([[-W, yb, z], [-W, ys, z]], [[W, yb, z], [W, ys, z]], [[-W, yb, z], [W, yb, z]], ...arc(0, ys, W, z, 0, Math.PI, 30)));
-        const depth = [[-W, yb], [W, yb], [-W, ys], [W, ys], [0, ys + W]].map(([x, y]) => [[x, y, zf], [x, y, zb]]);
-        // tubes lumineux qui suivent l'arche
-        const tubeO = [...arc(0, ys, 1.75, zf + 0.03, 0, Math.PI), [[-1.75, -0.9, zf + 0.03], [-1.75, ys, zf + 0.03]], [[1.75, -0.9, zf + 0.03], [1.75, ys, zf + 0.03]]];
-        const tubeI = [...arc(0, ys, 1.5, zf + 0.03, 0, Math.PI), [[-1.5, -0.9, zf + 0.03], [-1.5, ys, zf + 0.03]], [[1.5, -0.9, zf + 0.03], [1.5, ys, zf + 0.03]]];
-        // vitrine en arche et disque visible
-        const glass = [...arc(0, 0.45, 1.1, zf, 0, Math.PI), [[-1.1, 0.0, zf], [-1.1, 0.45, zf]], [[1.1, 0.0, zf], [1.1, 0.45, zf]], [[-1.1, 0.0, zf], [1.1, 0.0, zf]]];
-        const disc = () => { const r = 0.2 + 0.45 * Math.sqrt(Math.random()), t = Math.random() * Math.PI * 2; return [Math.cos(t) * r, 0.75 + Math.sin(t) * r * 0.45, zf - 0.15]; };
-        const label = () => { const r = 0.17 * Math.sqrt(Math.random()), t = Math.random() * Math.PI * 2; return [Math.cos(t) * r, 0.75 + Math.sin(t) * r * 0.45, zf - 0.14]; };
-        // panneau de sélection : cadre, étiquettes des titres, rangée de boutons
-        const panel = rect(-1.2, -0.75, 1.2, -0.15, zf);
-        const titles = [];
-        for (let col = 0; col < 4; col++) for (let row = 0; row < 3; row++) {
-            const x0 = -1.1 + col * 0.56, y = -0.28 - row * 0.15;
-            titles.push([[x0, y, zf], [x0 + 0.42, y, zf]]);
+    // Tourne-disque : le disque et son étiquette tournent sur le plateau
+    const turnLocal = new Float32Array(N * 3), turnSpin = new Uint8Array(N), turnPos = new Float32Array(N * 3);
+    const TT = { cx: -0.7, cz: 0, ry: -0.3, rx: 0.8, dy: 0, k: 0.82 };
+
+    function turntable() {
+        const X = 3.0, Z = 2.15, H = 0.55, jit = s => (Math.random() - 0.5) * s;
+        const rectXZ = (x0, z0, x1, z1, y) => [[[x0, y, z0], [x1, y, z0]], [[x1, y, z0], [x1, y, z1]], [[x1, y, z1], [x0, y, z1]], [[x0, y, z1], [x0, y, z0]]];
+        const ring = (cx, cz, r, y0, y1) => () => { const t = Math.random() * Math.PI * 2; return [cx + Math.cos(t) * r, y0 + (y1 - y0) * Math.random(), cz + Math.sin(t) * r]; };
+        const disk = (cx, cz, r, y) => () => { const d = r * Math.sqrt(Math.random()), t = Math.random() * Math.PI * 2; return [cx + Math.cos(t) * d, y, cz + Math.sin(t) * d]; };
+        // socle en noyer : arêtes, filet doré sur le dessus, lattes en façade, pieds
+        const plinth = [...rectXZ(-X, -Z, X, Z, 0), ...rectXZ(-X, -Z, X, Z, -H),
+            ...[[-X, -Z], [X, -Z], [X, Z], [-X, Z]].map(([x, z]) => [[x, 0, z], [x, -H, z]])];
+        const trim = rectXZ(-X + 0.15, -Z + 0.15, X - 0.15, Z - 0.15, 0);
+        const front = [-0.18, -0.37].map(y => [[-X, y, Z], [X, y, Z]]);
+        const foot = () => { const fx = Math.random() < 0.5 ? -(X - 0.45) : X - 0.45, fz = Math.random() < 0.5 ? -(Z - 0.45) : Z - 0.45; return ring(fx, fz, 0.18, -H - 0.3, -H)(); };
+        // plateau, disque à sillons, étiquette bicolore (pour voir la rotation), axe central
+        const { cx, cz } = TT;
+        const groove = () => { const r = 0.62 + Math.floor(Math.random() * 18) * 0.062 + jit(0.015), t = Math.random() * Math.PI * 2; return [cx + Math.cos(t) * r, 0.2, cz + Math.sin(t) * r]; };
+        let labelTurn = false;
+        const label = () => { const r = 0.55 * Math.sqrt(Math.random()), t = Math.random() * Math.PI * 2; labelTurn = t < 1.2; return [cx + Math.cos(t) * r, 0.21, cz + Math.sin(t) * r]; };
+        // bras de lecture : pivot, contrepoids, bras coudé, cellule posée sur le disque, repose-bras
+        const P = [2.05, 0.5, -1.25];
+        const arm = [[P, [1.55, 0.5, 0.75]], [[1.55, 0.5, 0.75], [0.55, 0.3, 1.05]]];
+        const weight = () => { const t = Math.random(), u = Math.random() * Math.PI * 2; return [P[0] + 0.3 * t + Math.cos(u) * 0.13, P[1] + Math.sin(u) * 0.13, P[2] - 0.6 * t - 0.05]; };
+        const head = () => [0.55 + jit(0.22), 0.3 + jit(0.06), 1.05 + jit(0.14)];
+        // boutons de volume et de vitesse
+        const knob = () => disk(Math.random() < 0.5 ? 2.2 : 1.55, 1.55, 0.2, 0.03)();
+        const speeds = [...rectXZ(-2.6, 1.5, -2.2, 1.8, 0.02), ...rectXZ(-2.05, 1.5, -1.65, 1.8, 0.02)];
+        const parts = [
+            [11, segPicker(plinth, 0.03), MC.walnut, 0], [6, segPicker(trim, 0.03), MC.mustard, 0], [4, segPicker(front, 0.04), MC.walnut, 0],
+            [4, foot, MC.walnut, 0],
+            [7, ring(cx, cz, 1.85, 0.02, 0.18), MC.sheen, 0], [4, ring(cx, cz, 1.85, 0.18, 0.18), MC.mint, 0],
+            [26, groove, () => Math.random() < 0.8 ? MC.ink : MC.sheen, 1], [7, label, () => labelTurn ? MC.mustard : MC.orange, 1],
+            [1, () => [cx + jit(0.04), 0.2 + Math.random() * 0.25, cz + jit(0.04)], MC.sheen, 0],
+            [2, disk(P[0], P[2], 0.35, 0.02), MC.mustard, 0], [1, () => [P[0] + jit(0.06), Math.random() * 0.5, P[2] + jit(0.06)], MC.sheen, 0],
+            [3, weight, MC.teal, 0], [6, segPicker(arm, 0.03), MC.mint, 0], [2, head, MC.orange, 0],
+            [1, () => [2.45 + jit(0.05), Math.random() * 0.45, 0.55 + jit(0.05)], MC.sheen, 0],
+            [3, knob, MC.teal, 0], [3, segPicker(speeds, 0.02), MC.mustard, 0]
+        ];
+        const total = parts.reduce((s, p) => s + p[0], 0);
+        for (let i = 0; i < N; i++) {
+            let r = Math.random() * total, j = 0;
+            while (r > parts[j][0] && j < parts.length - 1) r -= parts[j++][0];
+            const p = parts[j][1](), c = typeof parts[j][2] === 'function' ? parts[j][2]() : parts[j][2];
+            turnLocal.set(p, i * 3);
+            turnSpin[i] = parts[j][3];
+            turnCol[i * 3] = c.r; turnCol[i * 3 + 1] = c.g; turnCol[i * 3 + 2] = c.b;
         }
-        const button = () => { const b = Math.floor(Math.random() * 8), t = Math.random() * Math.PI * 2, r = 0.06 * Math.sqrt(Math.random()); return [-1.05 + b * 0.3 + Math.cos(t) * r, -0.95 + Math.sin(t) * r, zf + 0.02]; };
-        // grille du haut-parleur à lattes verticales
-        const grille = rect(-1.25, -2.3, 1.25, -1.2, zf), slats = [];
-        for (let s = 0; s < 11; s++) { const x = -1.1 + s * 0.22; slats.push([[x, -2.2, zf], [x, -1.3, zf]]); }
-        // socle et pieds fuselés
-        const plinth = [...rect(-2.2, yb - 0.3, 2.2, yb, zf + 0.05), [[-1.7, yb - 0.3, zf], [-2.0, yb - 0.8, zf + 0.15]], [[1.7, yb - 0.3, zf], [2.0, yb - 0.8, zf + 0.15]],
-                        [[-1.7, yb - 0.3, zb], [-2.0, yb - 0.8, zb - 0.15]], [[1.7, yb - 0.3, zb], [2.0, yb - 0.8, zb - 0.15]]];
-        return build([
-            [22, segPicker(body, 0.04), MC.walnut], [5, segPicker(depth, 0.04), MC.walnut],
-            [10, segPicker(tubeO, 0.06), MC.orange], [8, segPicker(tubeI, 0.06), MC.mustard],
-            [6, segPicker(glass, 0.03), MC.mint], [9, disc, () => Math.random() < 0.75 ? MC.ink : MC.sheen], [2, label, MC.mustard],
-            [5, segPicker(panel, 0.03), MC.teal], [6, segPicker(titles, 0.03), MC.mint], [4, button, MC.mustard],
-            [4, segPicker(grille, 0.03), MC.walnut], [10, segPicker(slats, 0.04), MC.teal],
-            [9, segPicker(plinth, 0.04), MC.walnut]
-        ], a, jukeCol, -0.35, 0.08, 0.45);
+        return turntableView(0);
+    }
+
+    // Fait tourner le disque d'un angle donné puis applique l'angle de vue
+    function turntableView(ang) {
+        const c = Math.cos(ang), s = Math.sin(ang), cy = Math.cos(TT.ry), sy = Math.sin(TT.ry), cx = Math.cos(TT.rx), sx = Math.sin(TT.rx);
+        for (let i = 0; i < N; i++) {
+            const j = i * 3;
+            let x = turnLocal[j], y = turnLocal[j + 1], z = turnLocal[j + 2];
+            if (turnSpin[i]) {
+                const dx = x - TT.cx, dz = z - TT.cz;
+                x = TT.cx + dx * c - dz * s; z = TT.cz + dx * s + dz * c;
+            }
+            [x, z] = [x * cy + z * sy, -x * sy + z * cy];
+            [y, z] = [y * cx - z * sx, y * sx + z * cx];
+            turnPos[j] = x * TT.k; turnPos[j + 1] = y * TT.k + TT.dy; turnPos[j + 2] = z * TT.k;
+        }
+        return turnPos;
     }
 
     function vinyl() {
@@ -303,7 +334,7 @@
         ], a, vinylCol, -0.25, 0.1, 0);
     }
 
-    const shapes = [armillary(), text('</>', isMobile ? 5 : 6.5), network(), jukebox(), vinyl()];
+    const shapes = [armillary(), text('</>', isMobile ? 5 : 6.5), network(), turntable(), vinyl()];
 
     /* ---------- Particules ---------- */
     const geo = new THREE.BufferGeometry();
@@ -323,7 +354,7 @@
     }
     const base = col.slice();
     // Couleurs propres à certaines formes (null = palette du site)
-    const looks = [armCol, null, null, jukeCol, vinylCol];
+    const looks = [armCol, null, null, turnCol, vinylCol];
     col.set(looks[0]);
     let lastLook = '';
     pos.set(shapes[0]);
@@ -416,6 +447,9 @@
                 A[j] = px; A[j + 1] = py * vc - pz * vs + 0.45; A[j + 2] = py * vs + pz * vc;
             }
         }
+
+        // Le disque tourne sur la platine
+        if (k === 2 || k === 3) turntableView(-time * 2);
 
         // Explosion finale
         const q = p > MORPH_END ? (p - MORPH_END) / (1 - MORPH_END) : 0;
