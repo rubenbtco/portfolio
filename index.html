@@ -1192,7 +1192,7 @@
             <div class="section-title reveal">
                 <span class="section-kicker">04 — Veille technologique</span>
                 <h2>Veille <span>Domotique</span></h2>
-                <p class="section-sub">Deux à trois articles par semaine sur la maison connectée : protocoles, Home Assistant, énergie, sécurité et IA. Mis à jour le 04/11/2026.</p>
+                <p class="section-sub">Deux à trois articles par semaine sur la maison connectée : protocoles, Home Assistant, énergie, sécurité et IA. Mis à jour le 18/11/2026.</p>
             </div>
 
             <div class="row g-4 mb-5">
@@ -1330,9 +1330,111 @@
 
                 <!-- NOVEMBRE 2026 -->
                 <div class="vt-month"><span>Novembre 2026</span></div>
-                <article class="veille-item is-featured" data-cat="ha" data-theme="ha">
+                <article class="veille-item is-featured" data-cat="protocoles ha" data-theme="protocoles">
                     <div class="vt-card">
                         <div class="vt-ribbon"><i class="fas fa-star"></i> Article de la semaine</div>
+                        <div class="vt-date"><strong>18</strong><span>nov. 2026</span></div>
+                        <div class="vt-meta">
+                            <span class="vt-cat"><i class="fas fa-tower-broadcast"></i>Standard IoT</span>
+                            <span class="vt-type"><i class="far fa-newspaper"></i>Article</span>
+                            <span class="vt-impact" data-level="3" title="Impact fort"><i></i><i></i><i></i>Fort</span>
+                        </div>
+                        <h4 class="vt-title"><a href="https://www.domo-blog.fr/pourquoi-plus-de-50-des-utilisateurs-de-home-assistant-ont-deja-installe-matter/" target="_blank" rel="noopener">Pourquoi plus de 50% des utilisateurs de Home Assistant ont déjà installé Matter</a></h4>
+                        <p class="vt-summary">D'après les statistiques officielles de Home Assistant, 55,5 % des installations (243 869) ont l'application Matter Server, ce qui la place 3e des applications les plus installées, juste derrière MQTT. L'article l'explique par la curiosité de la communauté et par les nouveaux appareils qui ne sont plus vendus qu'en Thread ou Matter.</p>
+                        <div class="vt-analysis"><i class="fas fa-lightbulb"></i><p><strong>Mon analyse :</strong> Matter n'est plus une promesse : beaucoup l'installent parce qu'un appareil récent l'impose, même s'ils ne l'utilisent pas encore pour toute la maison.</p></div>
+                        <div class="vt-footer">
+                            <span class="vt-source"><span class="vt-source-logo">D</span>Domo-Blog</span>
+                            <a class="vt-link" href="https://www.domo-blog.fr/pourquoi-plus-de-50-des-utilisateurs-de-home-assistant-ont-deja-installe-matter/" target="_blank" rel="noopener">Lire l'article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                <article class="veille-item" data-cat="protocoles ha" data-theme="protocoles">
+                    <div class="vt-card">
+                        <div class="vt-date"><strong>17</strong><span>nov. 2026</span></div>
+                        <div class="vt-meta">
+                            <span class="vt-cat"><i class="fas fa-tower-broadcast"></i>Protocoles &amp; Réseau</span>
+                            <span class="vt-type"><i class="far fa-newspaper"></i>Article</span>
+                            <span class="vt-impact" data-level="2" title="Impact moyen"><i></i><i></i><i></i>Moyen</span>
+                        </div>
+                        <h4 class="vt-title"><a href="https://www.domo-blog.fr/zigbee2mqtt-comment-resoudre-les-problemes-dinstabilite-et-les-crashs-au-demarrage/" target="_blank" rel="noopener">Zigbee2MQTT : Comment résoudre les problèmes d’instabilité et les crashs au démarrage</a></h4>
+                        <p class="vt-summary">Guide pour dépanner Zigbee2MQTT quand il plante au démarrage (erreurs HOST_FATAL_ERROR ou ASH_NCP_FATAL_ERROR) avec un contrôleur SLZB ou EFR32. La cause est souvent un module routeur qui répond UNSUPPORTED_ATTRIBUTE à une commande de configuration, ce qui fait redémarrer l'adaptateur.</p>
+                        <div class="vt-analysis"><i class="fas fa-lightbulb"></i><p><strong>Mon analyse :</strong> Une bonne méthode de dépannage : sauvegarder d'abord, puis lire les logs pour trouver l'adresse IEEE de l'appareil fautif avant de toucher à quoi que ce soit.</p></div>
+                        <div class="vt-footer">
+                            <span class="vt-source"><span class="vt-source-logo">D</span>Domo-Blog</span>
+                            <a class="vt-link" href="https://www.domo-blog.fr/zigbee2mqtt-comment-resoudre-les-problemes-dinstabilite-et-les-crashs-au-demarrage/" target="_blank" rel="noopener">Lire l'article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                <article class="veille-item" data-cat="materiel securite ha" data-theme="materiel">
+                    <div class="vt-card">
+                        <div class="vt-date"><strong>16</strong><span>nov. 2026</span></div>
+                        <div class="vt-meta">
+                            <span class="vt-cat"><i class="fas fa-microchip"></i>Matériel</span>
+                            <span class="vt-type"><i class="far fa-newspaper"></i>Article</span>
+                            <span class="vt-impact" data-level="2" title="Impact moyen"><i></i><i></i><i></i>Moyen</span>
+                        </div>
+                        <h4 class="vt-title"><a href="https://www.domo-blog.fr/shelly-deploie-son-firmware-2-2-0-ce-qui-change-pour-un-usage-local-avec-home-assistant/" target="_blank" rel="noopener">Shelly déploie son firmware 2.2.0 : ce qui change pour un usage local avec Home Assistant</a></h4>
+                        <p class="vt-summary">Le firmware 2.2.0, sorti le 11 novembre pour les Shelly Gen2 et suivants, ajoute la sauvegarde complète de la configuration (chiffrable en AES-128), un délai de remise sous tension par sortie, la découverte mDNS entre modules et de nouveaux appels RPC pour piloter plusieurs relais d'un coup.</p>
+                        <div class="vt-analysis"><i class="fas fa-lightbulb"></i><p><strong>Mon analyse :</strong> La sauvegarde manquait vraiment : un module réinitialisé n'oblige plus à tout reconfigurer. Il faut juste chiffrer l'archive, car elle contient les mots de passe Wi-Fi.</p></div>
+                        <div class="vt-footer">
+                            <span class="vt-source"><span class="vt-source-logo">D</span>Domo-Blog</span>
+                            <a class="vt-link" href="https://www.domo-blog.fr/shelly-deploie-son-firmware-2-2-0-ce-qui-change-pour-un-usage-local-avec-home-assistant/" target="_blank" rel="noopener">Lire l'article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                <article class="veille-item" data-cat="securite" data-theme="securite">
+                    <div class="vt-card">
+                        <div class="vt-date"><strong>14</strong><span>nov. 2026</span></div>
+                        <div class="vt-meta">
+                            <span class="vt-cat"><i class="fas fa-shield-halved"></i>Contrôle d'accès</span>
+                            <span class="vt-type"><i class="far fa-newspaper"></i>Article</span>
+                            <span class="vt-impact" data-level="1" title="Impact faible"><i></i><i></i><i></i>Faible</span>
+                        </div>
+                        <h4 class="vt-title"><a href="https://www.maison-et-domotique.com/174435-securiser-son-logement-efficacement-bons-reflexes-et-equipements/" target="_blank" rel="noopener">Sécuriser son logement efficacement : les bons réflexes et équipements</a></h4>
+                        <p class="vt-summary">Guide sur la sécurité de la maison en quatre niveaux : dissuader, retarder, détecter et réagir. Il rappelle l'importance de la barrière physique (porte, serrure, fenêtres du rez-de-chaussée) et des gestes simples, comme fermer les volets ou simuler une présence pendant les absences.</p>
+                        <div class="vt-analysis"><i class="fas fa-lightbulb"></i><p><strong>Mon analyse :</strong> La domotique ne remplace pas les bases : une alarme ou une caméra n'est utile que si les accès sont déjà bien protégés.</p></div>
+                        <div class="vt-footer">
+                            <span class="vt-source"><span class="vt-source-logo">M</span>Maison &amp; Domotique</span>
+                            <a class="vt-link" href="https://www.maison-et-domotique.com/174435-securiser-son-logement-efficacement-bons-reflexes-et-equipements/" target="_blank" rel="noopener">Lire l'article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                <article class="veille-item" data-cat="materiel ha" data-theme="materiel">
+                    <div class="vt-card">
+                        <div class="vt-date"><strong>12</strong><span>nov. 2026</span></div>
+                        <div class="vt-meta">
+                            <span class="vt-cat"><i class="fas fa-microchip"></i>Matériel</span>
+                            <span class="vt-type"><i class="far fa-newspaper"></i>Article</span>
+                            <span class="vt-impact" data-level="2" title="Impact moyen"><i></i><i></i><i></i>Moyen</span>
+                        </div>
+                        <h4 class="vt-title"><a href="https://www.maison-et-domotique.com/174579-home-assistant-connect-aux-2-lancement/" target="_blank" rel="noopener">Home Assistant Connect AUX-2 : le couteau suisse à 59 € qui connecte vos anciens appareils</a></h4>
+                        <p class="vt-summary">Nabu Casa a présenté le 11 novembre le Connect AUX-2, un boîtier à 59 € qui réunit audio multiroom, ports série RS-232 et RS-485, Modbus, passerelle Z-Wave, proxy Bluetooth et alimentation PoE. Le but est de relier à Home Assistant des appareils anciens qui n'ont pas de connexion réseau.</p>
+                        <div class="vt-analysis"><i class="fas fa-lightbulb"></i><p><strong>Mon analyse :</strong> Une approche intéressante : plutôt que de remplacer un ampli ou un onduleur qui fonctionne, on le rend pilotable en local.</p></div>
+                        <div class="vt-footer">
+                            <span class="vt-source"><span class="vt-source-logo">M</span>Maison &amp; Domotique</span>
+                            <a class="vt-link" href="https://www.maison-et-domotique.com/174579-home-assistant-connect-aux-2-lancement/" target="_blank" rel="noopener">Lire l'article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                <article class="veille-item" data-cat="protocoles materiel" data-theme="protocoles">
+                    <div class="vt-card">
+                        <div class="vt-date"><strong>09</strong><span>nov. 2026</span></div>
+                        <div class="vt-meta">
+                            <span class="vt-cat"><i class="fas fa-tower-broadcast"></i>Protocoles &amp; Réseau</span>
+                            <span class="vt-type"><i class="far fa-newspaper"></i>Article</span>
+                            <span class="vt-impact" data-level="2" title="Impact moyen"><i></i><i></i><i></i>Moyen</span>
+                        </div>
+                        <h4 class="vt-title"><a href="https://www.maison-et-domotique.com/174126-philips-hue-libere-thread-sur-ses-nouvelles-ampoules-sans-abandonner-zigbee/" target="_blank" rel="noopener">Philips Hue libère Thread sur ses nouvelles ampoules sans abandonner Zigbee</a></h4>
+                        <p class="vt-summary">Le firmware 1.164.2 des ampoules Hue récentes apporte Matter 1.4.1 et permet d'utiliser Zigbee et Matter over Thread en même temps, sans passer obligatoirement par le pont Hue. La Sync Box 4K reçoit aussi son premier firmware correctif, axé sur la stabilité.</p>
+                        <div class="vt-analysis"><i class="fas fa-lightbulb"></i><p><strong>Mon analyse :</strong> Hue garde son Zigbee fiable tout en s'ouvrant à Thread : une même ampoule peut maintenant servir aux deux écosystèmes.</p></div>
+                        <div class="vt-footer">
+                            <span class="vt-source"><span class="vt-source-logo">M</span>Maison &amp; Domotique</span>
+                            <a class="vt-link" href="https://www.maison-et-domotique.com/174126-philips-hue-libere-thread-sur-ses-nouvelles-ampoules-sans-abandonner-zigbee/" target="_blank" rel="noopener">Lire l'article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                <article class="veille-item" data-cat="ha" data-theme="ha">
+                    <div class="vt-card">
                         <div class="vt-date"><strong>04</strong><span>nov. 2026</span></div>
                         <div class="vt-meta">
                             <span class="vt-cat"><i class="fas fa-house-signal"></i>Automatisation</span>
